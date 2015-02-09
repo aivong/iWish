@@ -8,12 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		8E97304F1A86BA2C006543B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E97304E1A86BA2C006543B1 /* AppDelegate.swift */; };
-		8E9730511A86BA2C006543B1 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9730501A86BA2C006543B1 /* MasterViewController.swift */; };
-		8E9730531A86BA2C006543B1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9730521A86BA2C006543B1 /* DetailViewController.swift */; };
 		8E9730561A86BA2C006543B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E9730541A86BA2C006543B1 /* Main.storyboard */; };
 		8E9730581A86BA2C006543B1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E9730571A86BA2C006543B1 /* Images.xcassets */; };
 		8E97305B1A86BA2C006543B1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E9730591A86BA2C006543B1 /* LaunchScreen.xib */; };
 		8E9730671A86BA2C006543B1 /* iWishTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9730661A86BA2C006543B1 /* iWishTests.swift */; };
+		8EDE536E1A8920DC008B49A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDE536D1A8920DC008B49A0 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,14 +29,13 @@
 		8E9730491A86BA2C006543B1 /* iWish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iWish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E97304D1A86BA2C006543B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E97304E1A86BA2C006543B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8E9730501A86BA2C006543B1 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		8E9730521A86BA2C006543B1 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		8E9730551A86BA2C006543B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8E9730571A86BA2C006543B1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8E97305A1A86BA2C006543B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		8E9730601A86BA2C006543B1 /* iWishTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iWishTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E9730651A86BA2C006543B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E9730661A86BA2C006543B1 /* iWishTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iWishTests.swift; sourceTree = "<group>"; };
+		8EDE536D1A8920DC008B49A0 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,9 +78,8 @@
 			isa = PBXGroup;
 			children = (
 				8E97304E1A86BA2C006543B1 /* AppDelegate.swift */,
-				8E9730501A86BA2C006543B1 /* MasterViewController.swift */,
-				8E9730521A86BA2C006543B1 /* DetailViewController.swift */,
 				8E9730541A86BA2C006543B1 /* Main.storyboard */,
+				8EDE536D1A8920DC008B49A0 /* ViewController.swift */,
 				8E9730571A86BA2C006543B1 /* Images.xcassets */,
 				8E9730591A86BA2C006543B1 /* LaunchScreen.xib */,
 				8E97304C1A86BA2C006543B1 /* Supporting Files */,
@@ -215,8 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E9730531A86BA2C006543B1 /* DetailViewController.swift in Sources */,
-				8E9730511A86BA2C006543B1 /* MasterViewController.swift in Sources */,
+				8EDE536E1A8920DC008B49A0 /* ViewController.swift in Sources */,
 				8E97304F1A86BA2C006543B1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,6 +405,7 @@
 				8E97306C1A86BA2D006543B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8E97306D1A86BA2D006543B1 /* Build configuration list for PBXNativeTarget "iWishTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +414,7 @@
 				8E97306F1A86BA2D006543B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
