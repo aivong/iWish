@@ -1,16 +1,31 @@
 //
-//  ViewController.swift
+//  LoginViewController.swift
 //  iWish
 //
-//  Created by Ai Vong on 2/9/15.
+//  Created by Zachary Bohlin on 2/11/15.
 //  Copyright (c) 2015 WIS CS428. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
 
-
+    @IBOutlet weak var usernameTextField: UITextField!
+    
+    @IBOutlet weak var passwordTextField: UITextField!
+    
+    @IBAction func loginAction(sender: AnyObject) {
+        
+        let fakeu = "iwish"
+        let fakep = "pw"
+        if usernameTextField.text == fakeu && passwordTextField.text == fakep{
+            performSegueWithIdentifier("LoginSegue", sender: self)
+        }
+        
+    
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8446A9901A8BC07800D51024 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446A98F1A8BC07800D51024 /* LoginViewController.swift */; };
 		8E97304F1A86BA2C006543B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E97304E1A86BA2C006543B1 /* AppDelegate.swift */; };
 		8E9730561A86BA2C006543B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E9730541A86BA2C006543B1 /* Main.storyboard */; };
 		8E9730581A86BA2C006543B1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E9730571A86BA2C006543B1 /* Images.xcassets */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8446A98F1A8BC07800D51024 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8E9730491A86BA2C006543B1 /* iWish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iWish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E97304D1A86BA2C006543B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E97304E1A86BA2C006543B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +58,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8446A9931A8BCD6600D51024 /* iWishImages */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = iWishImages;
+			sourceTree = "<group>";
+		};
 		8E9730401A86BA2C006543B1 = {
 			isa = PBXGroup;
 			children = (
@@ -77,12 +86,14 @@
 		8E97304B1A86BA2C006543B1 /* iWish */ = {
 			isa = PBXGroup;
 			children = (
+				8446A9931A8BCD6600D51024 /* iWishImages */,
 				8E97304E1A86BA2C006543B1 /* AppDelegate.swift */,
 				8E9730541A86BA2C006543B1 /* Main.storyboard */,
 				8EDE536D1A8920DC008B49A0 /* ViewController.swift */,
 				8E9730571A86BA2C006543B1 /* Images.xcassets */,
 				8E9730591A86BA2C006543B1 /* LaunchScreen.xib */,
 				8E97304C1A86BA2C006543B1 /* Supporting Files */,
+				8446A98F1A8BC07800D51024 /* LoginViewController.swift */,
 			);
 			path = iWish;
 			sourceTree = "<group>";
@@ -212,6 +223,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8446A9901A8BC07800D51024 /* LoginViewController.swift in Sources */,
 				8EDE536E1A8920DC008B49A0 /* ViewController.swift in Sources */,
 				8E97304F1A86BA2C006543B1 /* AppDelegate.swift in Sources */,
 			);
