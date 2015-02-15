@@ -16,11 +16,17 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginAction(sender: AnyObject) {
         
-        let fakeu = "iwish"
-        let fakep = "pw"
-        if usernameTextField.text == fakeu && passwordTextField.text == fakep{
-            performSegueWithIdentifier("LoginSegue", sender: self)
+        let testDataUsers = [Users(username: "bohlin2", password: "pw")]
+        
+        for user in testDataUsers{
+            
+            if usernameTextField.text == user.username && passwordTextField.text == user.password{
+                performSegueWithIdentifier("LoginSegue", sender: self)
+            }
+            
         }
+        usernameTextField.text = ""
+        passwordTextField.text = ""
         
     
     }

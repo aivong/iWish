@@ -7,7 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8433929B1A8D0B2500E5B01B /* WishListGift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433929A1A8D0B2500E5B01B /* WishListGift.swift */; };
+		8433929D1A8D2C1A00E5B01B /* DatabaseConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433929C1A8D2C1A00E5B01B /* DatabaseConnection.swift */; };
 		8446A9901A8BC07800D51024 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446A98F1A8BC07800D51024 /* LoginViewController.swift */; };
+		8446A9971A8D00F200D51024 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446A9961A8D00F200D51024 /* Users.swift */; };
+		8446A9991A8D055000D51024 /* WishListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446A9981A8D055000D51024 /* WishListTableViewController.swift */; };
+		849337AC1A8E6927003456B5 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849337A91A8E6913003456B5 /* Alamofire.framework */; };
+		849337AD1A8E6927003456B5 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 849337A91A8E6913003456B5 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		849337B21A905551003456B5 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849337B11A905551003456B5 /* SwiftyJSON.swift */; };
 		8E97304F1A86BA2C006543B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E97304E1A86BA2C006543B1 /* AppDelegate.swift */; };
 		8E9730561A86BA2C006543B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E9730541A86BA2C006543B1 /* Main.storyboard */; };
 		8E9730581A86BA2C006543B1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E9730571A86BA2C006543B1 /* Images.xcassets */; };
@@ -17,6 +24,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		849337A81A8E6913003456B5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 849337A31A8E6913003456B5 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 27AB60071A7FAFBF0069F786;
+			remoteInfo = Alamofire;
+		};
+		849337AA1A8E6913003456B5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 849337A31A8E6913003456B5 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 27AB60121A7FAFBF0069F786;
+			remoteInfo = AlamofireTests;
+		};
+		849337AE1A8E6927003456B5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 849337A31A8E6913003456B5 /* Alamofire.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 27AB60061A7FAFBF0069F786;
+			remoteInfo = Alamofire;
+		};
 		8E9730611A86BA2C006543B1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8E9730411A86BA2C006543B1 /* Project object */;
@@ -26,8 +54,28 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		849337B01A8E6927003456B5 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				849337AD1A8E6927003456B5 /* Alamofire.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		8433929A1A8D0B2500E5B01B /* WishListGift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishListGift.swift; sourceTree = "<group>"; };
+		8433929C1A8D2C1A00E5B01B /* DatabaseConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseConnection.swift; sourceTree = "<group>"; };
 		8446A98F1A8BC07800D51024 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		8446A9961A8D00F200D51024 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Users.swift; path = ../Users.swift; sourceTree = "<group>"; };
+		8446A9981A8D055000D51024 /* WishListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishListTableViewController.swift; sourceTree = "<group>"; };
+		849337A31A8E6913003456B5 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
+		849337B11A905551003456B5 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		8E9730491A86BA2C006543B1 /* iWish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iWish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E97304D1A86BA2C006543B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E97304E1A86BA2C006543B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				849337AC1A8E6927003456B5 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,9 +114,19 @@
 			path = iWishImages;
 			sourceTree = "<group>";
 		};
+		849337A41A8E6913003456B5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				849337A91A8E6913003456B5 /* Alamofire.framework */,
+				849337AB1A8E6913003456B5 /* AlamofireTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		8E9730401A86BA2C006543B1 = {
 			isa = PBXGroup;
 			children = (
+				849337A31A8E6913003456B5 /* Alamofire.xcodeproj */,
 				8E97304B1A86BA2C006543B1 /* iWish */,
 				8E9730631A86BA2C006543B1 /* iWishTests */,
 				8E97304A1A86BA2C006543B1 /* Products */,
@@ -94,6 +153,8 @@
 				8E9730591A86BA2C006543B1 /* LaunchScreen.xib */,
 				8E97304C1A86BA2C006543B1 /* Supporting Files */,
 				8446A98F1A8BC07800D51024 /* LoginViewController.swift */,
+				8446A9981A8D055000D51024 /* WishListTableViewController.swift */,
+				8433929C1A8D2C1A00E5B01B /* DatabaseConnection.swift */,
 			);
 			path = iWish;
 			sourceTree = "<group>";
@@ -101,7 +162,10 @@
 		8E97304C1A86BA2C006543B1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				849337B11A905551003456B5 /* SwiftyJSON.swift */,
+				8446A9961A8D00F200D51024 /* Users.swift */,
 				8E97304D1A86BA2C006543B1 /* Info.plist */,
+				8433929A1A8D0B2500E5B01B /* WishListGift.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -133,10 +197,12 @@
 				8E9730451A86BA2C006543B1 /* Sources */,
 				8E9730461A86BA2C006543B1 /* Frameworks */,
 				8E9730471A86BA2C006543B1 /* Resources */,
+				849337B01A8E6927003456B5 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				849337AF1A8E6927003456B5 /* PBXTargetDependency */,
 			);
 			name = iWish;
 			productName = iWish;
@@ -190,6 +256,12 @@
 			mainGroup = 8E9730401A86BA2C006543B1;
 			productRefGroup = 8E97304A1A86BA2C006543B1 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 849337A41A8E6913003456B5 /* Products */;
+					ProjectRef = 849337A31A8E6913003456B5 /* Alamofire.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				8E9730481A86BA2C006543B1 /* iWish */,
@@ -197,6 +269,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		849337A91A8E6913003456B5 /* Alamofire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire.framework;
+			remoteRef = 849337A81A8E6913003456B5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		849337AB1A8E6913003456B5 /* AlamofireTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = AlamofireTests.xctest;
+			remoteRef = 849337AA1A8E6913003456B5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		8E9730471A86BA2C006543B1 /* Resources */ = {
@@ -223,9 +312,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8433929B1A8D0B2500E5B01B /* WishListGift.swift in Sources */,
+				8433929D1A8D2C1A00E5B01B /* DatabaseConnection.swift in Sources */,
+				8446A9971A8D00F200D51024 /* Users.swift in Sources */,
+				849337B21A905551003456B5 /* SwiftyJSON.swift in Sources */,
 				8446A9901A8BC07800D51024 /* LoginViewController.swift in Sources */,
 				8EDE536E1A8920DC008B49A0 /* ViewController.swift in Sources */,
 				8E97304F1A86BA2C006543B1 /* AppDelegate.swift in Sources */,
+				8446A9991A8D055000D51024 /* WishListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +334,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		849337AF1A8E6927003456B5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Alamofire;
+			targetProxy = 849337AE1A8E6927003456B5 /* PBXContainerItemProxy */;
+		};
 		8E9730621A86BA2C006543B1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8E9730481A86BA2C006543B1 /* iWish */;
@@ -348,6 +447,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = iWish/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -358,6 +458,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = iWish/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
