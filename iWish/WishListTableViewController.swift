@@ -160,7 +160,6 @@ class WishListTableViewController: UITableViewController {
             gVC?.giftName = selectedGift.name
             gVC?.giftDescription = selectedGift.description
             gVC?.giftPrice = selectedGift.price
-            println(selectedGift.price)
         }
     }
 
