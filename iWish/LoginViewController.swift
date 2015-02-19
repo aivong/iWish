@@ -11,7 +11,6 @@ import UIKit
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var usernameTextField: UITextField!
-    
     @IBOutlet weak var passwordTextField: UITextField!
     
     @IBAction func loginAction(sender: AnyObject) {
@@ -34,8 +33,10 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        performSegueWithIdentifier("LoginSegue", sender: self)
     }
 
     override func didReceiveMemoryWarning() {

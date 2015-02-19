@@ -13,7 +13,8 @@ class WishListTableViewController: UITableViewController {
     let testData = [WishListGift(giftID: 0, giftName: "Hot Wheels", giftDescription: "Fun little car", giftPrice: 2.00), WishListGift(giftID: 1, giftName: "GI Joe", giftDescription: "Action Figure", giftPrice: 4.99)]
     
     var gifts = [WishListGift]()
-    var selectedGift = WishListGift(giftID: 0, giftName: "None", giftDescription: "None", giftPrice: 0.00)
+    var selectedGift : WishListGift!
+    
     @IBAction func cancelAddGift(segue: UIStoryboardSegue){
         
     }
@@ -70,6 +71,10 @@ class WishListTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
+    override func viewDidAppear(animated: Bool) {
+        selectedGift = WishListGift(giftID: 0, giftName: "None", giftDescription: "None", giftPrice: 0.00)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -99,12 +104,10 @@ class WishListTableViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-        selectedGift = gifts[indexPath.row]
-        performSegueWithIdentifier("GiftDetailSegue", sender: self)
-        
-    }
+//    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//        
+//        selectedGift = gifts[indexPath.row]
+//    }
 
 
     
@@ -152,14 +155,20 @@ class WishListTableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
-        if(segue.identifier == "GiftDetailSegue"){
-            let navVC = segue.destinationViewController as UINavigationController
-            let gVC = navVC.viewControllers.first as? GiftDetailViewController
-            gVC?.giftName = selectedGift.name
-            gVC?.giftDescription = selectedGift.description
-            gVC?.giftPrice = selectedGift.price
+        if(segue.destinationViewController.isKindOfClass(GiftDetailViewController)){
+            
+            let vc = segue.destinationViewController as GiftDetailViewController
+            
+            let path = self.tableView.indexPathForSelectedRow()!
+            vc.gift = gifts[path.row]
+
+//            vc.giftName = selectedGift.name
+//            vc.giftDescription = selectedGift.description
+//            vc.giftPrice = selectedGift.price
+            
         }
     }
 
