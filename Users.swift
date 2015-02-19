@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Users{
+class Users {
     
     var username:String!
     var password:String!

@@ -8,6 +8,8 @@
 
 import UIKit
 import XCTest
+import iWish
+import AlamoFire
 
 class iWishTests: XCTestCase {
     
@@ -23,6 +25,8 @@ class iWishTests: XCTestCase {
     
     func testExample() {
         // This is an example of a functional test case.
+        var user = Users.init(username: "kbfrenc2", password: "test")
+        
         XCTAssert(true, "Pass")
     }
     
