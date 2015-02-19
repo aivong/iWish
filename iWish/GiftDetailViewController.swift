@@ -14,15 +14,23 @@ class GiftDetailViewController: UIViewController {
     @IBOutlet weak var giftPriceDetail: UILabel!
     @IBOutlet weak var giftDescriptionDetail: UILabel!
     
-    var giftName: String!
-    var giftDescription: String!
-    var giftPrice: Double!
+    var gift : WishListGift!
+    
+//    var giftName: String!
+//    var giftDescription: String!
+//    var giftPrice: Double!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        giftNameDetail.text = giftName
-        giftDescriptionDetail.text = giftDescription
-        giftPriceDetail.text = "$" + String(format:"%.2f", giftPrice)
+        
+        giftNameDetail.text = gift.name
+        giftDescriptionDetail.text = gift.description
+        giftPriceDetail.text = "$" + String(format:"%.2f", gift.price)
+
+        
+//        giftNameDetail.text = giftName
+//        giftDescriptionDetail.text = giftDescription
+//        giftPriceDetail.text = "$" + String(format:"%.2f", giftPrice)
         // Do any additional setup after loading the view.
     }
 
