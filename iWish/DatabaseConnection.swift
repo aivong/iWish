@@ -14,6 +14,7 @@ class DatabaseConnection{
     class func GetGifts(query: String, completionHandler: (responseObject: [WishListGift]?, error: NSError?) -> ()){
         GetWishListGifts(query, completionHandler: completionHandler)
     }
+    
     private class func GetWishListGifts(query: String, completionHandler: (responseObject: [WishListGift]?, error: NSError?)->()){
         let password = "A7B129MNP"
         Alamofire.request(.GET, "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php", parameters: ["password": password, "query":query]).responseJSON() {
@@ -42,6 +43,7 @@ class DatabaseConnection{
     class func InsertGift(query: String, completionHandler: (responseObject: Bool?, error: NSError?)->()){
         InsertGiftQuery(query, completionHandler: completionHandler)
     }
+    
     private class func InsertGiftQuery(query: String, completionHandler: (responseObject: Bool?, error: NSError?)->()){
         let password = "A7B129MNP"
         Alamofire.request(.GET, "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php", parameters: ["password": password, "query":query]).responseJSON() {

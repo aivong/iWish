@@ -14,35 +14,7 @@ class WishListTableViewController: UITableViewController {
     
     var gifts = [WishListGift]()
     var selectedGift : WishListGift!
-    
-    @IBAction func cancelAddGift(segue: UIStoryboardSegue){
         
-    }
-    
-    @IBAction func saveGift(segue: UIStoryboardSegue){
-        let addGiftVC = segue.sourceViewController as AddGiftViewController
-        let newGiftName = addGiftVC.giftName.text
-        let newGiftPrice = addGiftVC.giftPrice.text
-        let newGiftDesc = addGiftVC.giftDescription.text
-        
-        if newGiftName == "" || newGiftPrice == "" || newGiftDesc == ""{
-            alertUser("Not Saved",  messageText: "Please fill in all fields", buttonText: "OK")
-        }
-        else if countElements(newGiftName) > 20{
-            alertUser("Warning!",  messageText: "Name must be no more than 20 characters", buttonText: "OK")
-        }
-        else if countElements(newGiftDesc) > 500{
-            alertUser("Warning!",  messageText: "Description is too long! 500 characters max", buttonText: "OK")
-        }
-        else{
-            let query = "INSERT INTO WishListGifts (user, name, description, price) VALUES ('bohlin2', '\(newGiftName)', '\(newGiftDesc)', \(newGiftPrice))"
-            DatabaseConnection.InsertGift(query){ responseObject, error in
-                self.getUsersFeaturedGifts()
-            }
-        }
-        
-    }
-    
     func getUsersFeaturedGifts(){
         DatabaseConnection.GetGifts("SELECT * FROM WishListGifts ORDER BY name") { responseObject, error in
             if responseObject != nil {
@@ -64,7 +36,7 @@ class WishListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getUsersFeaturedGifts()
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        //self.navigationController?.setNavigationBarHidden(true, animated: false)
     
         
         // Uncomment the following line to preserve selection between presentations
@@ -76,6 +48,7 @@ class WishListTableViewController: UITableViewController {
     
     override func viewDidAppear(animated: Bool) {
         selectedGift = WishListGift(giftID: 0, giftName: "None", giftDescription: "None", giftPrice: 0.00)
+        getUsersFeaturedGifts()
     }
     
     override func didReceiveMemoryWarning() {

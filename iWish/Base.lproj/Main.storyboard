@@ -396,12 +396,12 @@
                     <navigationItem key="navigationItem" title="Add Gift" id="Fwh-ns-Q8g">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="WF2-2b-6ek">
                             <connections>
-                                <segue destination="QwF-74-o9l" kind="unwind" unwindAction="cancelAddGift:" id="YTl-7l-b4w"/>
+                                <action selector="cancelPressed:" destination="k3N-Eb-YaZ" id="2Y8-7U-2Nt"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="XfZ-96-5cV">
                             <connections>
-                                <segue destination="QwF-74-o9l" kind="unwind" identifier="SaveGiftSegue" unwindAction="saveGift:" id="gx7-ko-9D5"/>
+                                <action selector="savePressed:" destination="k3N-Eb-YaZ" id="NkA-mT-jIr"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -412,7 +412,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TVK-oS-uRs" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="QwF-74-o9l" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1187" y="-1408"/>
         </scene>
