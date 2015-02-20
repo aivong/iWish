@@ -164,11 +164,6 @@ class WishListTableViewController: UITableViewController {
             
             let path = self.tableView.indexPathForSelectedRow()!
             vc.gift = gifts[path.row]
-
-//            vc.giftName = selectedGift.name
-//            vc.giftDescription = selectedGift.description
-//            vc.giftPrice = selectedGift.price
-            
         }
     }
 

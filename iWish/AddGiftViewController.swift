@@ -14,11 +14,11 @@ class AddGiftViewController: UIViewController {
     @IBOutlet weak var giftPrice: UITextField!
     @IBOutlet weak var giftDescription: UITextView!
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         giftDescription.layer.borderWidth = 1
-        // Do any additional setup after loading the view.
+        giftDescription.layer.borderColor = UIColor.blackColor().CGColor
+
     }
 
     override func didReceiveMemoryWarning() {
