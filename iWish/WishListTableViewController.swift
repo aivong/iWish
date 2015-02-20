@@ -49,7 +49,7 @@ class WishListTableViewController: UITableViewController {
                 self.gifts = responseObject!
                 self.tableView.reloadData()
             }
-            else{
+            else {
                 self.alertUser("No Data", messageText: "Could not retrieve data", buttonText: "OK")
             }
         }
@@ -64,6 +64,9 @@ class WishListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getUsersFeaturedGifts()
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+    
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

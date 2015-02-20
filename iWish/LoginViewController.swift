@@ -74,7 +74,7 @@ class LoginViewController: UIViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-//        performSegueWithIdentifier("LoginSegue", sender: self)
+        performSegueWithIdentifier("LoginSegue", sender: self)
         usernameTextField.becomeFirstResponder()
     }
 
