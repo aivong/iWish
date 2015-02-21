@@ -18,9 +18,6 @@ class AddGiftViewController: UIViewController {
         super.viewDidLoad()
         giftDescription.layer.borderWidth = 1
         giftDescription.layer.borderColor = UIColor.blackColor().CGColor
-        
-
-
     }
     
     

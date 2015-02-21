@@ -38,6 +38,7 @@
 		CD8ACFBF1A96BBFB00426C14 /* unicorn.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD8ACFBE1A96BBFB00426C14 /* unicorn.jpg */; };
 		CD8ACFC11A96C19B00426C14 /* user168.png in Resources */ = {isa = PBXBuildFile; fileRef = CD8ACFC01A96C19B00426C14 /* user168.png */; };
 		CD8ACFC31A96C20100426C14 /* door24.png in Resources */ = {isa = PBXBuildFile; fileRef = CD8ACFC21A96C20100426C14 /* door24.png */; };
+		CDA585C01A980C9E009842E9 /* AddRemoveGiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA585BF1A980C9E009842E9 /* AddRemoveGiftTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +110,7 @@
 		CD8ACFBE1A96BBFB00426C14 /* unicorn.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = unicorn.jpg; path = ../../../../Desktop/unicorn.jpg; sourceTree = "<group>"; };
 		CD8ACFC01A96C19B00426C14 /* user168.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user168.png; sourceTree = "<group>"; };
 		CD8ACFC21A96C20100426C14 /* door24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = door24.png; sourceTree = "<group>"; };
+		CDA585BF1A980C9E009842E9 /* AddRemoveGiftTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddRemoveGiftTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				8E9730661A86BA2C006543B1 /* iWishTests.swift */,
+				CDA585BF1A980C9E009842E9 /* AddRemoveGiftTests.swift */,
 				8E9730641A86BA2C006543B1 /* Supporting Files */,
 			);
 			path = iWishTests;
@@ -429,6 +432,7 @@
 				CD4041591A967D7F00DB40D5 /* DatabaseConnection.swift in Sources */,
 				CD4041501A967D5E00DB40D5 /* Users.swift in Sources */,
 				CD4041571A967D7400DB40D5 /* EventsTableViewController.swift in Sources */,
+				CDA585C01A980C9E009842E9 /* AddRemoveGiftTests.swift in Sources */,
 				8E9730671A86BA2C006543B1 /* iWishTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
