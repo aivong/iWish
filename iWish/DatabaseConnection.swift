@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 class DatabaseConnection{
-    //Funcitons to return gifts
+    //Functions to return gifts
     class func GetGifts(query: String, completionHandler: (responseObject: [WishListGift]?, error: NSError?) -> ()){
         GetWishListGifts(query, completionHandler: completionHandler)
     }
