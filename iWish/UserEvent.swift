@@ -13,11 +13,13 @@ class UserEvent{
     var eventID:Int!
     var name:String!
     var date:String!
+    var description:String!
     
-    init(giftID: Int, giftName:String, giftDescription:String, giftPrice:Double){
-        self.eventID = giftID
-        self.name = giftName
-        self.date = giftDescription
+    init(eventID: Int, eventName:String, eventDate:String, eventDescription:String){
+        self.eventID = eventID
+        self.name = eventName
+        self.date = eventDate
+        self.description = eventDescription
     }
     
     func descripe () -> String {

@@ -13,9 +13,43 @@ class EventsTableViewController: UITableViewController {
     let headerNames = ["Requests", "My Events", "Past Events", "Upcoming Events"]
     let spaceHeaderNames = ["Requests", "", "", "", "My Events", "", "", "", "Past Events", "", "", "", "Upcoming Events"]
     let pastEvents = ["Luncheon", "Breakfast", "GF Birthday", "Lunar Solstice", "New Years", "Martin Luther King Birthday"]
-    let upcomingEvents = ["My Birthday", "Fathers Day", "Columbus Day", "Presidents Day", "Labor Day", "Mothers Day"]
+//    let upcomingEvents = ["My Birthday", "Fathers Day", "Columbus Day", "Presidents Day", "Labor Day", "Mothers Day"]
     let myEvents = ["Party", "Pregame", "Barcrawl", "Unofficial", "Beer Pong", "Ping Pong Tournament"]
     let requests = ["Bulls Game", "Hawks Game", "Cubs Game", "Bears Game"]
+    
+    var upcomingEvents = [UserEvent]()
+    
+    @IBAction func cancelAddEvent(segue: UIStoryboardSegue){
+        
+    }
+    
+    @IBAction func saveEvent(segue: UIStoryboardSegue){
+        let addEventVC = segue.sourceViewController as AddEventViewController
+        let newGiftName = addEventVC.eventName.text
+        let newGiftDate = addEventVC.eventDate.text
+        let newGiftDesc = addEventVC.eventDescription.text
+        
+        if newGiftName == "" || newGiftDate == "" || newGiftDesc == ""{
+            alertUser("Not Saved",  messageText: "Please fill in all fields", buttonText: "OK")
+        }
+        else if countElements(newGiftName) > 20{
+            alertUser("Warning!",  messageText: "Name must be no more than 20 characters", buttonText: "OK")
+        }
+        else if countElements(newGiftDesc) > 500{
+            alertUser("Warning!",  messageText: "Description is too long! 500 characters max", buttonText: "OK")
+        }
+        else{
+            upcomingEvents.append(UserEvent(eventID: 1,eventName: newGiftName,eventDate: newGiftDate,eventDescription: newGiftDesc));
+        }
+        
+    }
+    
+    func alertUser(titleText: String, messageText: String, buttonText: String){
+        let alertController = UIAlertController(title: titleText, message: messageText, preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: buttonText, style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -69,7 +103,7 @@ class EventsTableViewController: UITableViewController {
         case 2:
             cell.textLabel?.text = pastEvents[indexPath.row]
         case 3:
-            cell.textLabel?.text = upcomingEvents[indexPath.row]
+            cell.textLabel?.text = upcomingEvents[indexPath.row].name
         default:
             cell.textLabel?.text = ""
         }
@@ -120,14 +154,23 @@ class EventsTableViewController: UITableViewController {
     */
 
 
-    /*
-    // MARK: - Navigation
-
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
+        if(segue.destinationViewController.isKindOfClass(EventDetailViewController)){
+            
+            let vc = segue.destinationViewController as EventDetailViewController
+            
+            let path = self.tableView.indexPathForSelectedRow()!
+            vc.event = upcomingEvents[path.row]
+            
+            //            vc.giftName = selectedGift.name
+            //            vc.giftDescription = selectedGift.description
+            //            vc.giftPrice = selectedGift.price
+            
+        }
     }
-    */
 
 }

@@ -1,5 +1,5 @@
 //
-//  AddEventViewController.swift
+//  EventDetailViewController.swift
 //  iWish
 //
 //  Created by kamenye2 on 2/22/15.
@@ -8,32 +8,37 @@
 
 import UIKit
 
-class AddEventViewController: UIViewController {
+class EventDetailViewController: UIViewController {
+
+    @IBOutlet weak var eventNameDetail: UILabel!
+    @IBOutlet weak var eventDateDetail: UILabel!
+    @IBOutlet weak var eventDescriptionDetail: UILabel!
     
-    @IBOutlet weak var eventName: UITextField!
-    @IBOutlet weak var eventDate: UITextField!
-    @IBOutlet weak var eventDescription: UITextView!
-    
+    var event : UserEvent!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        eventDescription.layer.borderWidth = 1
+        
+        eventNameDetail.text = event.name
+        eventDescriptionDetail.text = event.description
+        eventDateDetail.text = event.date
+
         // Do any additional setup after loading the view.
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    
+
     /*
     // MARK: - Navigation
-    
+
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
     }
     */
 
