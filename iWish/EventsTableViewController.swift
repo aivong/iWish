@@ -12,10 +12,10 @@ class EventsTableViewController: UITableViewController {
 
     let headerNames = ["Requests", "My Events", "Past Events", "Upcoming Events"]
     let spaceHeaderNames = ["Requests", "", "", "", "My Events", "", "", "", "Past Events", "", "", "", "Upcoming Events"]
-    let pastEvents = ["Luncheon", "Breakfast", "GF Birthday", "Lunar Solstice", "New Years", "Martin Luther King Birthday"]
+    let pastEvents = ["Luncheon"]
 //    let upcomingEvents = ["My Birthday", "Fathers Day", "Columbus Day", "Presidents Day", "Labor Day", "Mothers Day"]
-    let myEvents = ["Party", "Pregame", "Barcrawl", "Unofficial", "Beer Pong", "Ping Pong Tournament"]
-    let requests = ["Bulls Game", "Hawks Game", "Cubs Game", "Bears Game"]
+    let myEvents = ["Party"]
+    let requests = ["Bulls Game"]
     
     var upcomingEvents = [UserEvent]()
     
@@ -40,8 +40,25 @@ class EventsTableViewController: UITableViewController {
         }
         else{
             upcomingEvents.append(UserEvent(eventID: 1,eventName: newGiftName,eventDate: newGiftDate,eventDescription: newGiftDesc));
+            let query = "INSERT INTO Events (eventID, userID, name, date, description, guestListID) VALUES (NULL,'bohlin2', '\(newGiftName)', '\(newGiftDate)', '\(newGiftDesc)', NULL)"
+            DatabaseConnection.InsertGift(query){ responseObject, error in
+                self.getUsersFeaturedGifts()
+            }
         }
         
+    }
+    
+    func getUsersFeaturedGifts(){
+        DatabaseConnection.GetEvents("SELECT * FROM Events ORDER BY name") { responseObject, error in
+            if responseObject != nil {
+                self.upcomingEvents = responseObject!
+                self.tableView.reloadData()
+            }
+            else{
+                self.alertUser("No Data", messageText: "Could not retrieve data", buttonText: "OK")
+            }
+        }
+    
     }
     
     func alertUser(titleText: String, messageText: String, buttonText: String){
@@ -50,9 +67,24 @@ class EventsTableViewController: UITableViewController {
         self.presentViewController(alertController, animated: true, completion: nil)
     }
     
+    // Override to support editing the table view.
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            // Delete the row from the data source
+            var wlg = upcomingEvents[indexPath.row]
+            DatabaseConnection.DeleteEvent(wlg.name){ responseObject, error in
+                //Do something when gift finishes being deleted
+            }
+            upcomingEvents.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        } else if editingStyle == .Insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        getUsersFeaturedGifts()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
