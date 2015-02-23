@@ -14,18 +14,60 @@ class AddGiftViewController: UIViewController {
     @IBOutlet weak var giftPrice: UITextField!
     @IBOutlet weak var giftDescription: UITextView!
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         giftDescription.layer.borderWidth = 1
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        giftDescription.layer.borderColor = UIColor.blackColor().CGColor
     }
     
+    
+    @IBAction func cancelPressed(sender: AnyObject) {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    @IBAction func savePressed(sender: AnyObject) {
+        
+        if self.validInputs() {
+            
+            let query = "INSERT INTO WishListGifts (user, name, description, price) VALUES ('bohlin2', '\(giftName.text)', '\(giftDescription.text)', \(giftPrice.text))"
+            
+            DatabaseConnection.InsertGift(query){ responseObject, error in
+                //CHECK FOR ERRORS
+                self.giftSuccessfullyAdded()
+            }
+        }
+    }
+    
+    private func giftSuccessfullyAdded() {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    private func validInputs() -> Bool {
+        
+        var alertTitle = ""
+        var alertBody = ""
+        
+        if (giftName.text == "" || giftPrice.text == "" || giftDescription.text == "") {
+            alertTitle = "Empty Fields"
+            alertBody = "Please fill in all fields"
+        } else if countElements(giftName.text) > 20 {
+            alertTitle = "Invalid Name"
+            alertBody = "Name must be 20 or fewer characters"
+        } else if countElements(giftDescription.text) > 500 {
+            alertTitle = "Invalid Description"
+            alertBody = "Description must be 500 or fewer characters"
+        }
+        
+        if alertTitle == "" {
+            return true
+        } else {
+            let alertView = UIAlertView(title: alertTitle, message: alertBody, delegate: nil, cancelButtonTitle: "OK")
+            alertView.show()
+            return false
+        }
+    }
+    
+
 
     /*
     // MARK: - Navigation

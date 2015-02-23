@@ -24,6 +24,21 @@
 		8E97305B1A86BA2C006543B1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E9730591A86BA2C006543B1 /* LaunchScreen.xib */; };
 		8E9730671A86BA2C006543B1 /* iWishTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9730661A86BA2C006543B1 /* iWishTests.swift */; };
 		8EDE536E1A8920DC008B49A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDE536D1A8920DC008B49A0 /* ViewController.swift */; };
+		CD4041501A967D5E00DB40D5 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446A9961A8D00F200D51024 /* Users.swift */; };
+		CD4041521A967D6800DB40D5 /* AddGiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849337B31A914F58003456B5 /* AddGiftViewController.swift */; };
+		CD4041531A967D6A00DB40D5 /* GiftDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849337B51A91AE63003456B5 /* GiftDetailViewController.swift */; };
+		CD4041541A967D6D00DB40D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDE536D1A8920DC008B49A0 /* ViewController.swift */; };
+		CD4041551A967D6F00DB40D5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446A98F1A8BC07800D51024 /* LoginViewController.swift */; };
+		CD4041561A967D7100DB40D5 /* WishListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446A9981A8D055000D51024 /* WishListTableViewController.swift */; };
+		CD4041571A967D7400DB40D5 /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849337B91A94137F003456B5 /* EventsTableViewController.swift */; };
+		CD4041581A967D7900DB40D5 /* WishListGift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433929A1A8D0B2500E5B01B /* WishListGift.swift */; };
+		CD4041591A967D7F00DB40D5 /* DatabaseConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433929C1A8D2C1A00E5B01B /* DatabaseConnection.swift */; };
+		CD40415A1A967D8800DB40D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E97304E1A86BA2C006543B1 /* AppDelegate.swift */; };
+		CD40415B1A967D8C00DB40D5 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849337B11A905551003456B5 /* SwiftyJSON.swift */; };
+		CD8ACFBF1A96BBFB00426C14 /* unicorn.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD8ACFBE1A96BBFB00426C14 /* unicorn.jpg */; };
+		CD8ACFC11A96C19B00426C14 /* user168.png in Resources */ = {isa = PBXBuildFile; fileRef = CD8ACFC01A96C19B00426C14 /* user168.png */; };
+		CD8ACFC31A96C20100426C14 /* door24.png in Resources */ = {isa = PBXBuildFile; fileRef = CD8ACFC21A96C20100426C14 /* door24.png */; };
+		CDA585C01A980C9E009842E9 /* AddRemoveGiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA585BF1A980C9E009842E9 /* AddRemoveGiftTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +107,10 @@
 		8E9730651A86BA2C006543B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E9730661A86BA2C006543B1 /* iWishTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iWishTests.swift; sourceTree = "<group>"; };
 		8EDE536D1A8920DC008B49A0 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CD8ACFBE1A96BBFB00426C14 /* unicorn.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = unicorn.jpg; path = ../../../../Desktop/unicorn.jpg; sourceTree = "<group>"; };
+		CD8ACFC01A96C19B00426C14 /* user168.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user168.png; sourceTree = "<group>"; };
+		CD8ACFC21A96C20100426C14 /* door24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = door24.png; sourceTree = "<group>"; };
+		CDA585BF1A980C9E009842E9 /* AddRemoveGiftTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddRemoveGiftTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,19 +170,11 @@
 		8E97304B1A86BA2C006543B1 /* iWish */ = {
 			isa = PBXGroup;
 			children = (
-				8446A9931A8BCD6600D51024 /* iWishImages */,
-				8E97304E1A86BA2C006543B1 /* AppDelegate.swift */,
 				8E9730541A86BA2C006543B1 /* Main.storyboard */,
-				8EDE536D1A8920DC008B49A0 /* ViewController.swift */,
-				8E9730571A86BA2C006543B1 /* Images.xcassets */,
-				8E9730591A86BA2C006543B1 /* LaunchScreen.xib */,
-				8E97304C1A86BA2C006543B1 /* Supporting Files */,
-				8446A98F1A8BC07800D51024 /* LoginViewController.swift */,
-				8446A9981A8D055000D51024 /* WishListTableViewController.swift */,
+				CD40414B1A967A8800DB40D5 /* View Controllers */,
+				CD40414D1A967AB200DB40D5 /* Models */,
 				8433929C1A8D2C1A00E5B01B /* DatabaseConnection.swift */,
-				849337B31A914F58003456B5 /* AddGiftViewController.swift */,
-				849337B51A91AE63003456B5 /* GiftDetailViewController.swift */,
-				849337B91A94137F003456B5 /* EventsTableViewController.swift */,
+				8E97304C1A86BA2C006543B1 /* Supporting Files */,
 			);
 			path = iWish;
 			sourceTree = "<group>";
@@ -171,10 +182,15 @@
 		8E97304C1A86BA2C006543B1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CD8ACFC21A96C20100426C14 /* door24.png */,
+				CD8ACFC01A96C19B00426C14 /* user168.png */,
+				CD8ACFBE1A96BBFB00426C14 /* unicorn.jpg */,
+				8446A9931A8BCD6600D51024 /* iWishImages */,
+				8E9730571A86BA2C006543B1 /* Images.xcassets */,
+				8E9730591A86BA2C006543B1 /* LaunchScreen.xib */,
+				8E97304E1A86BA2C006543B1 /* AppDelegate.swift */,
 				849337B11A905551003456B5 /* SwiftyJSON.swift */,
-				8446A9961A8D00F200D51024 /* Users.swift */,
 				8E97304D1A86BA2C006543B1 /* Info.plist */,
-				8433929A1A8D0B2500E5B01B /* WishListGift.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -183,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				8E9730661A86BA2C006543B1 /* iWishTests.swift */,
+				CDA585BF1A980C9E009842E9 /* AddRemoveGiftTests.swift */,
 				8E9730641A86BA2C006543B1 /* Supporting Files */,
 			);
 			path = iWishTests;
@@ -194,6 +211,68 @@
 				8E9730651A86BA2C006543B1 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CD4041461A967A3800DB40D5 /* Events ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				849337B91A94137F003456B5 /* EventsTableViewController.swift */,
+			);
+			name = "Events ViewControllers";
+			sourceTree = "<group>";
+		};
+		CD4041471A967A4700DB40D5 /* Wish List ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				849337B51A91AE63003456B5 /* GiftDetailViewController.swift */,
+				849337B31A914F58003456B5 /* AddGiftViewController.swift */,
+				8446A9981A8D055000D51024 /* WishListTableViewController.swift */,
+			);
+			name = "Wish List ViewControllers";
+			sourceTree = "<group>";
+		};
+		CD4041481A967A5100DB40D5 /* Profile ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Profile ViewControllers";
+			sourceTree = "<group>";
+		};
+		CD4041491A967A5B00DB40D5 /* Friends ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Friends ViewControllers";
+			sourceTree = "<group>";
+		};
+		CD40414A1A967A6500DB40D5 /* Settings ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Settings ViewControllers";
+			sourceTree = "<group>";
+		};
+		CD40414B1A967A8800DB40D5 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CD4041461A967A3800DB40D5 /* Events ViewControllers */,
+				CD4041471A967A4700DB40D5 /* Wish List ViewControllers */,
+				CD4041481A967A5100DB40D5 /* Profile ViewControllers */,
+				CD4041491A967A5B00DB40D5 /* Friends ViewControllers */,
+				CD40414A1A967A6500DB40D5 /* Settings ViewControllers */,
+				8EDE536D1A8920DC008B49A0 /* ViewController.swift */,
+				8446A98F1A8BC07800D51024 /* LoginViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		CD40414D1A967AB200DB40D5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8446A9961A8D00F200D51024 /* Users.swift */,
+				8433929A1A8D0B2500E5B01B /* WishListGift.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,9 +380,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD8ACFBF1A96BBFB00426C14 /* unicorn.jpg in Resources */,
 				8E9730561A86BA2C006543B1 /* Main.storyboard in Resources */,
 				8E97305B1A86BA2C006543B1 /* LaunchScreen.xib in Resources */,
 				8E9730581A86BA2C006543B1 /* Images.xcassets in Resources */,
+				CD8ACFC11A96C19B00426C14 /* user168.png in Resources */,
+				CD8ACFC31A96C20100426C14 /* door24.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +421,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD40415A1A967D8800DB40D5 /* AppDelegate.swift in Sources */,
+				CD4041551A967D6F00DB40D5 /* LoginViewController.swift in Sources */,
+				CD4041561A967D7100DB40D5 /* WishListTableViewController.swift in Sources */,
+				CD40415B1A967D8C00DB40D5 /* SwiftyJSON.swift in Sources */,
+				CD4041541A967D6D00DB40D5 /* ViewController.swift in Sources */,
+				CD4041581A967D7900DB40D5 /* WishListGift.swift in Sources */,
+				CD4041521A967D6800DB40D5 /* AddGiftViewController.swift in Sources */,
+				CD4041531A967D6A00DB40D5 /* GiftDetailViewController.swift in Sources */,
+				CD4041591A967D7F00DB40D5 /* DatabaseConnection.swift in Sources */,
+				CD4041501A967D5E00DB40D5 /* Users.swift in Sources */,
+				CD4041571A967D7400DB40D5 /* EventsTableViewController.swift in Sources */,
+				CDA585C01A980C9E009842E9 /* AddRemoveGiftTests.swift in Sources */,
 				8E9730671A86BA2C006543B1 /* iWishTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
