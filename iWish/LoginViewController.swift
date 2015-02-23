@@ -29,6 +29,8 @@ class LoginViewController: UIViewController {
     var blurView: UIVisualEffectView!
     let cornerRadius : CGFloat = 10
     
+    var users = [Users]()
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -64,8 +66,43 @@ class LoginViewController: UIViewController {
 //        }
 //        
         //performSegueWithIdentifier("LoginSegue", sender: self)
+        if self.validInputs() {
+            //let query = "SELECT * FROM Users WHERE username = '\(usernameTextField.text)' AND password = '\(passwordTextField.text)')"
+            let query = "SELECT * FROM Users WHERE username = '\(usernameTextField.text)'"
+            
+            DatabaseConnection.GetUser(query) { responseObject, error in
+                //CHECK FOR ERRORS
+                if responseObject != nil {
+                    self.users = responseObject!
+                }
+                else {
+                    self.userVerified()
+                }
+            }
+
+        }
 
     }
+
+    private func validInputs() -> Bool {
+        var alertTitle = ""
+        var alertBody = ""
+        
+        if (usernameTextField.text == "" || passwordTextField.text == "") {
+            alertTitle = "Empty Fields"
+            alertBody = "Please fill in all fields"
+        }
+        
+        if alertTitle == "" {
+            return true
+        } else {
+            let alertView = UIAlertView(title: alertTitle, message: alertBody, delegate: nil, cancelButtonTitle: "OK")
+            alertView.show()
+            return false
+        }
+        
+    }
+    
     
     @IBAction func registerPushed(sender: UIView) {
         performSegueWithIdentifier("RegisterSegue", sender: self)
@@ -79,6 +116,9 @@ class LoginViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    private func userVerified(){
+        self.navigationController?.popViewControllerAnimated(true)
     }
     
 

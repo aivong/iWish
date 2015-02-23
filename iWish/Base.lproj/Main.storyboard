@@ -62,7 +62,7 @@
                                         </state>
                                         <connections>
                                             <action selector="logInPushed:" destination="lUF-FK-sLw" eventType="touchUpInside" id="VWh-Is-DE5"/>
-                                            <segue destination="vBT-5C-EOt" kind="show" identifier="LoginSegue" id="kDv-Be-AKt"/>
+                                            <segue destination="vBT-5C-EOt" kind="show" identifier="LoggedSegue" id="cuI-KM-YaZ"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -91,7 +91,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ViW-4A-3K6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2160" y="-631"/>
+            <point key="canvasLocation" x="-2053.5" y="-636"/>
         </scene>
         <!--Events-->
         <scene sceneID="0ot-SZ-gBw">
