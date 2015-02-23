@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 class DatabaseConnection{
-    //Funcitons to return gifts
+    //Functions to return gifts
     class func GetGifts(query: String, completionHandler: (responseObject: [WishListGift]?, error: NSError?) -> ()){
         GetWishListGifts(query, completionHandler: completionHandler)
     }
@@ -65,6 +65,70 @@ class DatabaseConnection{
     private class func DeleteGiftQuery(giftID: Int, completionHandler: (responseObject: Bool?, error: NSError?)->()){
         let password = "A7B129MNP"
         Alamofire.request(.GET, "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php", parameters: ["password": password, "query":"DELETE FROM WishListGifts WHERE id=\(giftID)"]).responseJSON() {
+            (_, _, data, error) in
+            if error != nil{
+                completionHandler(responseObject: false, error: error)
+            }
+            else{
+                completionHandler(responseObject: true, error: error)
+            }
+            
+        }
+    }
+    
+    //Functions to return events
+    class func GetEvents(query: String, completionHandler: (responseObject: [UserEvent]?, error: NSError?) -> ()){
+        GetEventsList(query, completionHandler: completionHandler)
+    }
+    private class func GetEventsList(query: String, completionHandler: (responseObject: [UserEvent]?, error: NSError?)->()){
+        let password = "A7B129MNP"
+        Alamofire.request(.GET, "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php", parameters: ["password": password, "query":query]).responseJSON() {
+            (_, _, data, error) in
+            var events = Array<UserEvent>()
+            if data != nil{
+                let json = JSON(data!)
+                for i in 0..<json.count{
+                    let id = (json[i]["id"]).intValue
+                    let name = (json[i]["name"]).stringValue
+                    let date = (json[i]["date"]).stringValue
+                    let description = (json[i]["description"]).stringValue
+                    events.append(UserEvent(eventID: id, eventName: name, eventDate: date, eventDescription: description))
+                    
+                    completionHandler(responseObject: events, error: error)
+                }
+            }
+            else{
+                completionHandler(responseObject: nil, error: error)
+            }
+        }
+        
+    }
+    
+    //Functions to insert events
+    class func InsertEvent(query: String, completionHandler: (responseObject: Bool?, error: NSError?)->()){
+        InsertEventsQuery(query, completionHandler: completionHandler)
+    }
+    private class func InsertEventsQuery(query: String, completionHandler: (responseObject: Bool?, error: NSError?)->()){
+        let password = "A7B129MNP"
+        Alamofire.request(.GET, "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php", parameters: ["password": password, "query":query]).responseJSON() {
+            (_, _, data, error) in
+            if error != nil{
+                completionHandler(responseObject: false, error: error)
+            }
+            else{
+                completionHandler(responseObject: true, error: error)
+            }
+            
+        }
+    }
+    
+    //Functions to delete events
+    class func DeleteEvent(name: String, completionHandler: (responseObject: Bool?, error: NSError?)->()){
+        DeleteEventsQuery(name, completionHandler: completionHandler)
+    }
+    private class func DeleteEventsQuery(name: String, completionHandler: (responseObject: Bool?, error: NSError?)->()){
+        let password = "A7B129MNP"
+        Alamofire.request(.GET, "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php", parameters: ["password": password, "query":"DELETE FROM Events WHERE name=\(name)"]).responseJSON() {
             (_, _, data, error) in
             if error != nil{
                 completionHandler(responseObject: false, error: error)
