@@ -25,6 +25,9 @@
 		8E9730671A86BA2C006543B1 /* iWishTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9730661A86BA2C006543B1 /* iWishTests.swift */; };
 		8EDE536E1A8920DC008B49A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDE536D1A8920DC008B49A0 /* ViewController.swift */; };
 		8EE8E70D1A9A8AA0000F6076 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE8E70C1A9A8AA0000F6076 /* CreateAccountViewController.swift */; };
+		8EFEFCDD1A9AA460004EC929 /* user168.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EFEFCDC1A9AA460004EC929 /* user168.png */; };
+		8EFEFCE01A9AA496004EC929 /* door24.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EFEFCDF1A9AA496004EC929 /* door24.png */; };
+		8EFEFCE21A9AA4D8004EC929 /* unicorn.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8EFEFCE11A9AA4D8004EC929 /* unicorn.jpg */; };
 		CD4041501A967D5E00DB40D5 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446A9961A8D00F200D51024 /* Users.swift */; };
 		CD4041521A967D6800DB40D5 /* AddGiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849337B31A914F58003456B5 /* AddGiftViewController.swift */; };
 		CD4041531A967D6A00DB40D5 /* GiftDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849337B51A91AE63003456B5 /* GiftDetailViewController.swift */; };
@@ -105,6 +108,9 @@
 		8E9730661A86BA2C006543B1 /* iWishTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iWishTests.swift; sourceTree = "<group>"; };
 		8EDE536D1A8920DC008B49A0 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8EE8E70C1A9A8AA0000F6076 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		8EFEFCDC1A9AA460004EC929 /* user168.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user168.png; sourceTree = "<group>"; };
+		8EFEFCDF1A9AA496004EC929 /* door24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = door24.png; sourceTree = "<group>"; };
+		8EFEFCE11A9AA4D8004EC929 /* unicorn.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = unicorn.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +182,9 @@
 		8E97304C1A86BA2C006543B1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8EFEFCE11A9AA4D8004EC929 /* unicorn.jpg */,
+				8EFEFCDF1A9AA496004EC929 /* door24.png */,
+				8EFEFCDC1A9AA460004EC929 /* user168.png */,
 				8446A9931A8BCD6600D51024 /* iWishImages */,
 				8E9730571A86BA2C006543B1 /* Images.xcassets */,
 				8E9730591A86BA2C006543B1 /* LaunchScreen.xib */,
@@ -371,9 +380,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EFEFCDD1A9AA460004EC929 /* user168.png in Resources */,
 				8E9730561A86BA2C006543B1 /* Main.storyboard in Resources */,
 				8E97305B1A86BA2C006543B1 /* LaunchScreen.xib in Resources */,
 				8E9730581A86BA2C006543B1 /* Images.xcassets in Resources */,
+				8EFEFCE21A9AA4D8004EC929 /* unicorn.jpg in Resources */,
+				8EFEFCE01A9AA496004EC929 /* door24.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

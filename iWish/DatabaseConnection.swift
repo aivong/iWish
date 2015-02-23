@@ -75,4 +75,23 @@ class DatabaseConnection{
             
         }
     }
+    
+    //Functions to Create an account
+    class func InsertUser(query: String, completionHandler: (responseObject: Bool?, error: NSError?)->()){
+        InsertUserQuery(query, completionHandler: completionHandler)
+    }
+    
+    private class func InsertUserQuery(query: String, completionHandler: (responseObject: Bool?, error: NSError?)->()){
+        let password = "A7B129MNP"
+        Alamofire.request(.GET, "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php", parameters: ["password": password, "query":query]).responseJSON() {
+            (_, _, data, error) in
+            if error != nil{
+                completionHandler(responseObject: false, error: error)
+            }
+            else{
+                completionHandler(responseObject: true, error: error)
+            }
+            
+        }
+    }
 }

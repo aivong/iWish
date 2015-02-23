@@ -51,30 +51,28 @@ class LoginViewController: UIViewController {
     
     
     
-    @IBAction func logInPushed(sender: AnyObject) {
+    @IBAction func logInPushed(sender: UIButton) {
         
-        let testDataUsers = [Users(username: "bohlin2", password: "pw")]
-        
-        for user in testDataUsers{
-            
-            if usernameTextField.text == user.username && passwordTextField.text == user.password{
-                performSegueWithIdentifier("LoginSegue", sender: self)
-            }
-            
-        }
-        
-        usernameTextField.text = ""
-        passwordTextField.text = ""
+//        let testDataUsers = [Users(username: "bohlin2", password: "pw")]
+//        
+//        for user in testDataUsers{
+//            
+//            if usernameTextField.text == user.username && passwordTextField.text == user.password{
+//                performSegueWithIdentifier("LoginSegue", sender: self)
+//            }
+//            
+//        }
+//        
+        //performSegueWithIdentifier("LoginSegue", sender: self)
+
     }
     
-    @IBAction func registerPushed(sender: AnyObject) {
-        
-        let alert = UIAlertView(title: "Not Implemented", message: "Registration is not yet implemented", delegate: nil, cancelButtonTitle: "OK")
-        alert.show()
+    @IBAction func registerPushed(sender: UIView) {
+        performSegueWithIdentifier("RegisterSegue", sender: self)
     }
     
     override func viewDidAppear(animated: Bool) {
-        performSegueWithIdentifier("LoginSegue", sender: self)
+        //performSegueWithIdentifier("LoginSegue", sender: self)
         usernameTextField.becomeFirstResponder()
     }
 
