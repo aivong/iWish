@@ -199,6 +199,9 @@
 		CD4041461A967A3800DB40D5 /* Events ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				398633BB1A9A801C0003A7EA /* EventDetailViewController.swift */,
+				398633B91A9A66850003A7EA /* AddEventViewController.swift */,
+				849337B91A94137F003456B5 /* EventsTableViewController.swift */,
 			);
 			name = "Events ViewControllers";
 			sourceTree = "<group>";
@@ -206,6 +209,9 @@
 		CD4041471A967A4700DB40D5 /* Wish List ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				849337B31A914F58003456B5 /* AddGiftViewController.swift */,
+				849337B51A91AE63003456B5 /* GiftDetailViewController.swift */,
+				8446A9981A8D055000D51024 /* WishListTableViewController.swift */,
 			);
 			name = "Wish List ViewControllers";
 			sourceTree = "<group>";
@@ -234,14 +240,8 @@
 		CD40414B1A967A8800DB40D5 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				398633BB1A9A801C0003A7EA /* EventDetailViewController.swift */,
-				398633B91A9A66850003A7EA /* AddEventViewController.swift */,
-				849337B31A914F58003456B5 /* AddGiftViewController.swift */,
-				849337B51A91AE63003456B5 /* GiftDetailViewController.swift */,
 				8EDE536D1A8920DC008B49A0 /* ViewController.swift */,
 				8446A98F1A8BC07800D51024 /* LoginViewController.swift */,
-				8446A9981A8D055000D51024 /* WishListTableViewController.swift */,
-				849337B91A94137F003456B5 /* EventsTableViewController.swift */,
 				CD40414A1A967A6500DB40D5 /* Settings ViewControllers */,
 				CD4041491A967A5B00DB40D5 /* Friends ViewControllers */,
 				CD4041481A967A5100DB40D5 /* Profile ViewControllers */,
