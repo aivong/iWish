@@ -10,6 +10,8 @@
 		8433929B1A8D0B2500E5B01B /* WishListGift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433929A1A8D0B2500E5B01B /* WishListGift.swift */; };
 		8433929D1A8D2C1A00E5B01B /* DatabaseConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433929C1A8D2C1A00E5B01B /* DatabaseConnection.swift */; };
 		843773BB1A9D8EF900DE9D09 /* SearchUsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843773BA1A9D8EF900DE9D09 /* SearchUsersTableViewController.swift */; };
+		843773BD1A9F783600DE9D09 /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843773BC1A9F783600DE9D09 /* FriendsTableViewController.swift */; };
+		843773C11A9F7DC200DE9D09 /* RequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843773C01A9F7DC200DE9D09 /* RequestTableViewCell.swift */; };
 		8446A9901A8BC07800D51024 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446A98F1A8BC07800D51024 /* LoginViewController.swift */; };
 		8446A9971A8D00F200D51024 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446A9961A8D00F200D51024 /* Users.swift */; };
 		8446A9991A8D055000D51024 /* WishListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446A9981A8D055000D51024 /* WishListTableViewController.swift */; };
@@ -88,6 +90,8 @@
 		8433929A1A8D0B2500E5B01B /* WishListGift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishListGift.swift; sourceTree = "<group>"; };
 		8433929C1A8D2C1A00E5B01B /* DatabaseConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseConnection.swift; sourceTree = "<group>"; };
 		843773BA1A9D8EF900DE9D09 /* SearchUsersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchUsersTableViewController.swift; sourceTree = "<group>"; };
+		843773BC1A9F783600DE9D09 /* FriendsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
+		843773C01A9F7DC200DE9D09 /* RequestTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestTableViewCell.swift; sourceTree = "<group>"; };
 		8446A98F1A8BC07800D51024 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8446A9961A8D00F200D51024 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Users.swift; path = ../Users.swift; sourceTree = "<group>"; };
 		8446A9981A8D055000D51024 /* WishListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishListTableViewController.swift; sourceTree = "<group>"; };
@@ -235,6 +239,8 @@
 			isa = PBXGroup;
 			children = (
 				843773BA1A9D8EF900DE9D09 /* SearchUsersTableViewController.swift */,
+				843773BC1A9F783600DE9D09 /* FriendsTableViewController.swift */,
+				843773C01A9F7DC200DE9D09 /* RequestTableViewCell.swift */,
 			);
 			name = "Friends ViewControllers";
 			sourceTree = "<group>";
@@ -405,7 +411,9 @@
 				849337B41A914F58003456B5 /* AddGiftViewController.swift in Sources */,
 				8E97304F1A86BA2C006543B1 /* AppDelegate.swift in Sources */,
 				849337D01A9B8DD6003456B5 /* EasyDate.swift in Sources */,
+				843773C11A9F7DC200DE9D09 /* RequestTableViewCell.swift in Sources */,
 				8446A9991A8D055000D51024 /* WishListTableViewController.swift in Sources */,
+				843773BD1A9F783600DE9D09 /* FriendsTableViewController.swift in Sources */,
 				849337B61A91AE63003456B5 /* GiftDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
