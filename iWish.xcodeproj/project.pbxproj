@@ -11,6 +11,7 @@
 		8433929D1A8D2C1A00E5B01B /* DatabaseConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433929C1A8D2C1A00E5B01B /* DatabaseConnection.swift */; };
 		843773BB1A9D8EF900DE9D09 /* SearchUsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843773BA1A9D8EF900DE9D09 /* SearchUsersTableViewController.swift */; };
 		843773BD1A9F783600DE9D09 /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843773BC1A9F783600DE9D09 /* FriendsTableViewController.swift */; };
+		843773C71A9FBF7A00DE9D09 /* FriendsProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843773C61A9FBF7A00DE9D09 /* FriendsProfileViewController.swift */; };
 		8446A9901A8BC07800D51024 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446A98F1A8BC07800D51024 /* LoginViewController.swift */; };
 		8446A9971A8D00F200D51024 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446A9961A8D00F200D51024 /* Users.swift */; };
 		8446A9991A8D055000D51024 /* WishListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446A9981A8D055000D51024 /* WishListTableViewController.swift */; };
@@ -90,6 +91,7 @@
 		8433929C1A8D2C1A00E5B01B /* DatabaseConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseConnection.swift; sourceTree = "<group>"; };
 		843773BA1A9D8EF900DE9D09 /* SearchUsersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchUsersTableViewController.swift; sourceTree = "<group>"; };
 		843773BC1A9F783600DE9D09 /* FriendsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
+		843773C61A9FBF7A00DE9D09 /* FriendsProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsProfileViewController.swift; sourceTree = "<group>"; };
 		8446A98F1A8BC07800D51024 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8446A9961A8D00F200D51024 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Users.swift; path = ../Users.swift; sourceTree = "<group>"; };
 		8446A9981A8D055000D51024 /* WishListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishListTableViewController.swift; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 			children = (
 				843773BA1A9D8EF900DE9D09 /* SearchUsersTableViewController.swift */,
 				843773BC1A9F783600DE9D09 /* FriendsTableViewController.swift */,
+				843773C61A9FBF7A00DE9D09 /* FriendsProfileViewController.swift */,
 			);
 			name = "Friends ViewControllers";
 			sourceTree = "<group>";
@@ -399,6 +402,7 @@
 			files = (
 				843773BB1A9D8EF900DE9D09 /* SearchUsersTableViewController.swift in Sources */,
 				849337BA1A94137F003456B5 /* EventsTableViewController.swift in Sources */,
+				843773C71A9FBF7A00DE9D09 /* FriendsProfileViewController.swift in Sources */,
 				8433929B1A8D0B2500E5B01B /* WishListGift.swift in Sources */,
 				8433929D1A8D2C1A00E5B01B /* DatabaseConnection.swift in Sources */,
 				8446A9971A8D00F200D51024 /* Users.swift in Sources */,
