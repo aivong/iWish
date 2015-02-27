@@ -10,6 +10,8 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
+    //var userVerified : Bool = false
+    
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
@@ -55,35 +57,57 @@ class LoginViewController: UIViewController {
     
     @IBAction func logInPushed(sender: UIButton) {
         
-//        let testDataUsers = [Users(username: "bohlin2", password: "pw")]
-//        
-//        for user in testDataUsers{
-//            
-//            if usernameTextField.text == user.username && passwordTextField.text == user.password{
-//                performSegueWithIdentifier("LoginSegue", sender: self)
-//            }
-//            
-//        }
-//        
+        //        let testDataUsers = [Users(username: "bohlin2", password: "pw")]
+        //
+        //        for user in testDataUsers{
+        //
+        //            if usernameTextField.text == user.username && passwordTextField.text == user.password{
+        //                performSegueWithIdentifier("LoginSegue", sender: self)
+        //            }
+        //
+        //        }
+        //
         //performSegueWithIdentifier("LoginSegue", sender: self)
         if self.validInputs() {
             //let query = "SELECT * FROM Users WHERE username = '\(usernameTextField.text)' AND password = '\(passwordTextField.text)')"
             let query = "SELECT * FROM Users WHERE username = '\(usernameTextField.text)'"
             
+            println(query)
+            
             DatabaseConnection.GetUser(query) { responseObject, error in
                 //CHECK FOR ERRORS
                 if responseObject != nil {
                     self.users = responseObject!
+                    println("NEVER NIL NEVER NIL")
+                    if self.users[0].password == nil {
+                        println("FAIL")
+                    }
+                    else {
+                        VerifyState.userVerified = true
+                        VerifyState.username = self.users[0].username
+                        println(self.users[0].username)
+                        println(self.users[0].password)
+                        if(self.users[0].username == self.usernameTextField.text && self.users[0].password == self.passwordTextField.text) {
+                            //println("SUCCESS")
+                        }
+                        if VerifyState.userVerified && VerifyState.username == self.users[0].username {
+                            println("SUCCESS")
+                           // self.performSegueWithIdentifier("LoggedSegue", sender: self)
+                            
+                        }
+                    }
                 }
                 else {
-                    self.userVerified()
+                    //self.alertUser("No Data", messageText: "Could not retrieve data", buttonText: "OK")
+                    if VerifyState.userVerified {
+                        println("FAIL")
+                    }
                 }
             }
-
         }
-
+        
     }
-
+    
     private func validInputs() -> Bool {
         var alertTitle = ""
         var alertBody = ""
@@ -112,24 +136,20 @@ class LoginViewController: UIViewController {
         //performSegueWithIdentifier("LoginSegue", sender: self)
         usernameTextField.becomeFirstResponder()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    private func userVerified(){
-        self.navigationController?.popViewControllerAnimated(true)
-    }
     
-
     /*
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
     }
     */
-
+    
 }

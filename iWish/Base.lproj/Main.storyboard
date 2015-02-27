@@ -62,7 +62,7 @@
                                         </state>
                                         <connections>
                                             <action selector="logInPushed:" destination="lUF-FK-sLw" eventType="touchUpInside" id="VWh-Is-DE5"/>
-                                            <segue destination="vBT-5C-EOt" kind="show" identifier="LoggedSegue" id="cuI-KM-YaZ"/>
+                                            <segue destination="vBT-5C-EOt" kind="show" id="6FO-1l-Cpk"/>
                                         </connections>
                                     </button>
                                 </subviews>
