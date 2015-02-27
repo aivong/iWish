@@ -39,6 +39,8 @@ class DatabaseConnection{
         
     }
     
+
+    
     //Functions to insert gifts
     class func InsertGift(query: String, completionHandler: (responseObject: Bool?, error: NSError?)->()){
         InsertGiftQuery(query, completionHandler: completionHandler)
@@ -75,4 +77,69 @@ class DatabaseConnection{
             
         }
     }
+    
+    //Functions to Create an account
+    class func InsertUser(query: String, completionHandler: (responseObject: Bool?, error: NSError?)->()){
+        InsertUserQuery(query, completionHandler: completionHandler)
+    }
+    
+    private class func InsertUserQuery(query: String, completionHandler: (responseObject: Bool?, error: NSError?)->()){
+        let password = "A7B129MNP"
+        Alamofire.request(.GET, "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php", parameters: ["password": password, "query":query]).responseJSON() {
+            (_, _, data, error) in
+            if error != nil{
+                completionHandler(responseObject: false, error: error)
+            }
+            else{
+                completionHandler(responseObject: true, error: error)
+            }
+            
+        }
+    }
+    
+//    class func CheckUser(query: String, completionHandler: (responseObject: Bool?, error: NSError?)->()){
+//        InsertUserQuery(query, completionHandler: completionHandler)
+//    }
+//    
+//    private class func CheckUserQuery(query: String, completionHandler: (responseObject: Bool?, error: NSError?)->()){
+//        let password = "A7B129MNP"
+//        Alamofire.request(.GET, "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php", parameters: ["password": password, "query":query]).responseJSON() {
+//            (_, _, data, error) in
+//            if data != nil{
+//                let json = JSON(data!)
+//                if json.count > 0 {
+//                    completionHandler(responseObject: true, error: error)
+//                }
+//            }
+//            else{
+//                completionHandler(responseObject: false, error: error)
+//            }
+//        }
+//    }
+    class func GetUser(query: String, completionHandler: (responseObject: [Users]?, error: NSError?) -> ()){
+        GetUsers(query, completionHandler: completionHandler)
+    }
+    
+    private class func GetUsers(query: String, completionHandler: (responseObject: [Users]?, error: NSError?)->()){
+        let password = "A7B129MNP"
+        Alamofire.request(.GET, "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php", parameters: ["password": password, "query":query]).responseJSON() {
+            (_, _, data, error) in
+            var users = Array<Users>()
+            if data != nil{
+                let json = JSON(data!)
+                for i in 0..<json.count{
+                    let username = (json[i]["username"]).stringValue
+                    let password = (json[i]["password"]).stringValue
+                    users.append(Users(username: username, password: password))
+                    
+                    completionHandler(responseObject: users, error: error)
+                }
+            }
+            else{
+                completionHandler(responseObject: nil, error: error)
+            }
+        }
+        
+    }
+
 }

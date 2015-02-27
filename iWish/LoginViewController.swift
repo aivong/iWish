@@ -29,6 +29,8 @@ class LoginViewController: UIViewController {
     var blurView: UIVisualEffectView!
     let cornerRadius : CGFloat = 10
     
+    var users = [Users]()
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -51,36 +53,72 @@ class LoginViewController: UIViewController {
     
     
     
-    @IBAction func logInPushed(sender: AnyObject) {
+    @IBAction func logInPushed(sender: UIButton) {
         
-        let testDataUsers = [Users(username: "bohlin2", password: "pw")]
-        
-        for user in testDataUsers{
+//        let testDataUsers = [Users(username: "bohlin2", password: "pw")]
+//        
+//        for user in testDataUsers{
+//            
+//            if usernameTextField.text == user.username && passwordTextField.text == user.password{
+//                performSegueWithIdentifier("LoginSegue", sender: self)
+//            }
+//            
+//        }
+//        
+        //performSegueWithIdentifier("LoginSegue", sender: self)
+        if self.validInputs() {
+            //let query = "SELECT * FROM Users WHERE username = '\(usernameTextField.text)' AND password = '\(passwordTextField.text)')"
+            let query = "SELECT * FROM Users WHERE username = '\(usernameTextField.text)'"
             
-            if usernameTextField.text == user.username && passwordTextField.text == user.password{
-                performSegueWithIdentifier("LoginSegue", sender: self)
+            DatabaseConnection.GetUser(query) { responseObject, error in
+                //CHECK FOR ERRORS
+                if responseObject != nil {
+                    self.users = responseObject!
+                }
+                else {
+                    self.userVerified()
+                }
             }
-            
+
+        }
+
+    }
+
+    private func validInputs() -> Bool {
+        var alertTitle = ""
+        var alertBody = ""
+        
+        if (usernameTextField.text == "" || passwordTextField.text == "") {
+            alertTitle = "Empty Fields"
+            alertBody = "Please fill in all fields"
         }
         
-        usernameTextField.text = ""
-        passwordTextField.text = ""
+        if alertTitle == "" {
+            return true
+        } else {
+            let alertView = UIAlertView(title: alertTitle, message: alertBody, delegate: nil, cancelButtonTitle: "OK")
+            alertView.show()
+            return false
+        }
+        
     }
     
-    @IBAction func registerPushed(sender: AnyObject) {
-        
-        let alert = UIAlertView(title: "Not Implemented", message: "Registration is not yet implemented", delegate: nil, cancelButtonTitle: "OK")
-        alert.show()
+    
+    @IBAction func registerPushed(sender: UIView) {
+        performSegueWithIdentifier("RegisterSegue", sender: self)
     }
     
     override func viewDidAppear(animated: Bool) {
-        performSegueWithIdentifier("LoginSegue", sender: self)
+        //performSegueWithIdentifier("LoginSegue", sender: self)
         usernameTextField.becomeFirstResponder()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    private func userVerified(){
+        self.navigationController?.popViewControllerAnimated(true)
     }
     
 
