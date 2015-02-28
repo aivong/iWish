@@ -10,6 +10,7 @@ import Foundation
 import Alamofire
 
 class DatabaseConnection{
+    
     //Funcitons to return gifts
     class func GetGifts(query: String, completionHandler: (responseObject: [WishListGift]?, error: NSError?) -> ()){
         GetWishListGifts(query, completionHandler: completionHandler)
@@ -65,6 +66,30 @@ class DatabaseConnection{
     private class func DeleteGiftQuery(giftID: Int, completionHandler: (responseObject: Bool?, error: NSError?)->()){
         let password = "A7B129MNP"
         Alamofire.request(.GET, "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php", parameters: ["password": password, "query":"DELETE FROM WishListGifts WHERE id=\(giftID)"]).responseJSON() {
+            (_, _, data, error) in
+            if error != nil{
+                completionHandler(responseObject: false, error: error)
+            }
+            else{
+                completionHandler(responseObject: true, error: error)
+            }
+            
+        }
+    }
+    
+    //Functions to update gifts
+    class func UpdateGift(gift: WishListGift, completionHandler: (responseObject: Bool?, error: NSError?)->()){
+        UpdateGiftQuery(gift, completionHandler: completionHandler)
+    }
+    
+    private class func UpdateGiftQuery(gift: WishListGift, completionHandler: (responseObject: Bool?, error: NSError?)->()){
+        
+        let password = "A7B129MNP"
+        let url = "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php"
+        let query = "UPDATE WishListGifts SET name=\(gift.name), description=\(gift.description), price=\(gift.price) WHERE id=\(gift.databaseID)"
+        let parameters = ["password": password, "query":query]
+        
+        Alamofire.request(.GET, url, parameters: parameters).responseJSON() {
             (_, _, data, error) in
             if error != nil{
                 completionHandler(responseObject: false, error: error)

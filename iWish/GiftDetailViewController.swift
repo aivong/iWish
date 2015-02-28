@@ -8,46 +8,192 @@
 
 import UIKit
 
-class GiftDetailViewController: UIViewController {
-
-    @IBOutlet weak var giftNameDetail: UILabel!
-    @IBOutlet weak var giftPriceDetail: UILabel!
-    @IBOutlet weak var giftDescriptionDetail: UILabel!
+class GiftDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate {
     
     var gift : WishListGift!
     
-//    var giftName: String!
-//    var giftDescription: String!
-//    var giftPrice: Double!
+    let rightTextViewCellIndentifier: String = "rightTextViewCell"
+    let largeImageViewCellIdentifier: String = "largeImageViewCell"
+    let rightBoxCellIdentifier: String = "rightBoxCell"
+    let rightDetailCellIdentifier: String = "rightDetailCell"
+    let centerLabelCellIdentifier: String = "centerLabelCell"
+    
+    let fullNumberOfCells = 6
+    
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadNibs()
         
-        giftNameDetail.text = gift.name
-        giftDescriptionDetail.text = gift.description
-        giftPriceDetail.text = "$" + String(format:"%.2f", gift.price)
-
+        let editButton = UIBarButtonItem(title: "Edit", style: .Plain, target: self, action: "editPressed:")
         
-//        giftNameDetail.text = giftName
-//        giftDescriptionDetail.text = giftDescription
-//        giftPriceDetail.text = "$" + String(format:"%.2f", giftPrice)
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        self.navigationItem.rightBarButtonItems?.append(editButton)
     }
     
+    
+    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func editPressed(sender: AnyObject) {
+        let viewController = self.storyboard?.instantiateViewControllerWithIdentifier("EditGiftViewController") as? EditGiftViewController
+        
+        if let vc = viewController {
+            vc.gift = self.gift
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
-    */
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        if gift.image != nil {
+            tableView.scrollToRowAtIndexPath(NSIndexPath(forRow: 1, inSection: 0), atScrollPosition: .Top, animated: true)
+        }
+    }
+    
+    func loadNibs() {
+        
+        let nib1 = UINib(nibName: "RightTextViewTableViewCell", bundle: nil)
+        self.tableView.registerNib(nib1, forCellReuseIdentifier: rightTextViewCellIndentifier)
+        
+        let nib3 = UINib(nibName: "LargeImageViewTableViewCell", bundle: nil)
+        self.tableView.registerNib(nib3, forCellReuseIdentifier: largeImageViewCellIdentifier)
+        
+        let nib4 = UINib(nibName: "RightBoxTableViewCell", bundle: nil)
+        self.tableView.registerNib(nib4, forCellReuseIdentifier: rightBoxCellIdentifier)
+        
+        let nib6 = UINib(nibName: "CenterLabelTableViewCell", bundle: nil)
+        self.tableView.registerNib(nib6, forCellReuseIdentifier: centerLabelCellIdentifier)
+        
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        var cell : UITableViewCell = tableView.dequeueReusableCellWithIdentifier(rightDetailCellIdentifier) as UITableViewCell
+        
+        if gift.image == nil {
+        
+            if indexPath.row == 0 {
+                cell = tableView.dequeueReusableCellWithIdentifier(centerLabelCellIdentifier) as UITableViewCell
+            } else if indexPath.row == 1 {
+                cell = tableView.dequeueReusableCellWithIdentifier(rightDetailCellIdentifier) as UITableViewCell
+            } else if indexPath.row == 2 {
+                cell = tableView.dequeueReusableCellWithIdentifier(rightTextViewCellIndentifier) as UITableViewCell
+            } else if indexPath.row == 3{
+                cell = tableView.dequeueReusableCellWithIdentifier(rightDetailCellIdentifier) as UITableViewCell
+            }
+            
+        } else {
+            
+            if indexPath.row == 0 {
+                cell = tableView.dequeueReusableCellWithIdentifier(centerLabelCellIdentifier) as UITableViewCell
+            } else if indexPath.row == 1 {
+                cell = tableView.dequeueReusableCellWithIdentifier(largeImageViewCellIdentifier) as UITableViewCell
+            } else if indexPath.row == 2 {
+                cell = tableView.dequeueReusableCellWithIdentifier(rightDetailCellIdentifier) as UITableViewCell
+            } else if indexPath.row == 3 {
+                cell = tableView.dequeueReusableCellWithIdentifier(rightTextViewCellIndentifier) as UITableViewCell
+            } else if indexPath.row == 4{
+                cell = tableView.dequeueReusableCellWithIdentifier(rightDetailCellIdentifier) as UITableViewCell
+            }
+        }
+    
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if gift.image != nil {
+            return fullNumberOfCells
+        } else {
+            return fullNumberOfCells - 1
+        }
+    }
+    
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        cell.selectionStyle = .None
+        
+        if cell.isKindOfClass(CenterLabelTableViewCell) {
+            var c = cell as CenterLabelTableViewCell
+            c.label?.text = gift.name
+        } else if cell.isKindOfClass(LargeImageViewTableViewCell) {
+            var c = cell as LargeImageViewTableViewCell
+            var imageView = UIImageView(image: UIImage(named: "IlliniPrideLogo.jpg"))
+            imageView.contentMode = UIViewContentMode.ScaleAspectFit
+            c.backgroundView = imageView
+        } else if cell.isKindOfClass(RightTextViewTableViewCell) {
+            var c = cell as RightTextViewTableViewCell
+            c.label?.text = "Gift Description"
+            c.textView?.text = gift.description
+        } else {
+            
+            if gift.image == nil {
+                
+                if indexPath.row == 1 {
+                    cell.textLabel?.text = "Price"
+                    cell.detailTextLabel?.text = "$" + String(format:"%d", gift.price)
+                } else if indexPath.row == 3 {
+                    cell.textLabel?.text = "Allow Gift Pooling"
+                    cell.detailTextLabel?.text = "On"
+                }
+                
+            } else {
+                
+                if indexPath.row == 2 {
+                    cell.textLabel?.text = "Price"
+                    cell.detailTextLabel?.text = "$" + String(format:"%d", gift.price)
+                } else if indexPath.row == 4 {
+                    cell.textLabel?.text = "Allow Gift Pooling"
+                    cell.detailTextLabel?.text = "On"
+                }
+            }
+        }
+    }
+    
+    @IBAction func trashPressed(sender: AnyObject) {
+        let alert = UIAlertView(title: "Remove Gift", message: "Are you sure you want to remove  \(gift.name) from this wishlist?", delegate: self, cancelButtonTitle: "No", otherButtonTitles: "Yes")
+        alert.show()
+    }
+    
+    func deleteGift() {
+        
+        DatabaseConnection.DeleteGift(gift.databaseID) { responseObject, error in
+            self.popViewController()
+        }
+    }
+    
+    func popViewController() {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        
+        if gift.image != nil {
+            if indexPath.row == 1 {
+                return 200
+            } else if indexPath.row == 3 {
+                return 80
+            } else {
+                return 60
+            }
+        } else {
+            if indexPath.row == 2 {
+                return 80
+            } else {
+                return 60
+            }
+        }
+    
+    }
+    
+    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+        if buttonIndex == 1 {
+            self.deleteGift()
+        }
+    }
 
 }
