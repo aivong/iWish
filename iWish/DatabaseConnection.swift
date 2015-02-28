@@ -40,6 +40,8 @@ class DatabaseConnection{
         
     }
     
+
+    
     //Functions to insert gifts
     class func InsertGift(query: String, completionHandler: (responseObject: Bool?, error: NSError?)->()){
         InsertGiftQuery(query, completionHandler: completionHandler)
