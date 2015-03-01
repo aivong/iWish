@@ -12,11 +12,27 @@ class FriendsTableViewController: UITableViewController {
 
     let headerNames = ["Friend Requests", "Friends"]
     let requests = ["jdog4", "yoohoo443", "yesss99"]
-    let friends = ["kbrenc2", "haha7", "justin1", "mitch5", "alex743", "astronaut567", "widewhite82"]
-    
+    var friends = [Users]()
+    var usersName: String!
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if let name = defaults.stringForKey("username")
+        {
+            usersName = name
+        }
         
+        DatabaseConnection.GetFriendsForUser(usersName){ responseObject, error in
+            if responseObject != nil {
+                self.friends = responseObject!
+                self.tableView.reloadData()
+            }
+            else {
+                //DATA NOT RETURNED
+            }
+            
+        }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -58,7 +74,7 @@ class FriendsTableViewController: UITableViewController {
         }
         else{
             let cell = tableView.dequeueReusableCellWithIdentifier("FriendCell", forIndexPath:indexPath) as UITableViewCell
-            cell.textLabel?.text = friends[indexPath.row]
+            cell.textLabel?.text = friends[indexPath.row].username
             return cell
         }
     }
@@ -164,7 +180,11 @@ class FriendsTableViewController: UITableViewController {
         
         if segue.destinationViewController.isKindOfClass(FriendsProfileViewController){
             let destVC = segue.destinationViewController as FriendsProfileViewController
-            destVC.name = friends[self.tableView.indexPathForSelectedRow()!.row]
+            destVC.name = friends[self.tableView.indexPathForSelectedRow()!.row].username
+        }
+        else if (segue.destinationViewController.isKindOfClass(SearchUsersTableViewController)){
+            let destVC = segue.destinationViewController as SearchUsersTableViewController
+            destVC.usersName = self.usersName
         }
     }
     

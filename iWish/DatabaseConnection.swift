@@ -75,4 +75,96 @@ class DatabaseConnection{
             
         }
     }
+    
+    //Functions to Create an account
+    class func InsertUser(query: String, completionHandler: (responseObject: Bool?, error: NSError?)->()){
+        InsertUserQuery(query, completionHandler: completionHandler)
+    }
+    
+    private class func InsertUserQuery(query: String, completionHandler: (responseObject: Bool?, error: NSError?)->()){
+        let password = "A7B129MNP"
+        Alamofire.request(.GET, "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php", parameters: ["password": password, "query":query]).responseJSON() {
+            (_, _, data, error) in
+            if error != nil{
+                completionHandler(responseObject: false, error: error)
+            }
+            else{
+                completionHandler(responseObject: true, error: error)
+            }
+            
+        }
+    }
+    
+    class func GetUser(query: String, completionHandler: (responseObject: [Users]?, error: NSError?) -> ()){
+        GetUsers(query, completionHandler: completionHandler)
+    }
+    
+    private class func GetUsers(query: String, completionHandler: (responseObject: [Users]?, error: NSError?)->()){
+        let password = "A7B129MNP"
+        Alamofire.request(.GET, "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php", parameters: ["password": password, "query":query]).responseJSON() {
+            (_, _, data, error) in
+            var users = Array<Users>()
+            if data != nil{
+                let json = JSON(data!)
+                for i in 0..<json.count{
+                    let username = (json[i]["username"]).stringValue
+                    let password = (json[i]["password"]).stringValue
+                    users.append(Users(username: username, password: password))
+                    
+                    completionHandler(responseObject: users, error: error)
+                }
+            }
+            else{
+                completionHandler(responseObject: nil, error: error)
+            }
+        }
+        
+    }
+    
+    class func GetFriendsForUser(username: String, completionHandler: (responseObject: [Users]?, error: NSError?) -> ()){
+        let query = "SELECT * FROM Friends WHERE username='\(username)' AND areFriendsYet=1"
+        GetFriendsForUserDB(query, completionHandler: completionHandler)
+    }
+    
+    private class func GetFriendsForUserDB(query: String, completionHandler: (responseObject: [Users]?, error: NSError?)->()){
+        let password = "A7B129MNP"
+        Alamofire.request(.GET, "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php", parameters: ["password": password, "query":query]).responseJSON() {
+            (_, _, data, error) in
+            var users = Array<Users>()
+            if data != nil{
+                let json = JSON(data!)
+                for i in 0..<json.count{
+                    let username = (json[i]["username"]).stringValue
+                    let password = (json[i]["password"]).stringValue
+                    users.append(Users(username: username, password: password))
+                    
+                    completionHandler(responseObject: users, error: error)
+                }
+            }
+            else{
+                completionHandler(responseObject: nil, error: error)
+            }
+        }
+        
+    }
+    
+    class func AddFriendRequest(requester: String, requestee: String, completionHandler: (responseObject: Bool?, error: NSError?) -> ()){
+        let query = "INSERT INTO Friends (requester, requestee, areFriendsYet) VALUES ('\(requester)', '\(requestee)', 0)"
+        AddFriendRequestDB(query, completionHandler: completionHandler)
+    }
+    
+    private class func AddFriendRequestDB(query: String, completionHandler: (responseObject: Bool?, error: NSError?)->()){
+        let password = "A7B129MNP"
+        Alamofire.request(.GET, "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php", parameters: ["password": password, "query":query]).responseJSON() {
+            (_, _, data, error) in
+            if data != nil{
+                completionHandler(responseObject: true, error: error)
+                
+            }
+            else{
+                completionHandler(responseObject: false, error: error)
+            }
+        }
+        
+    }
 }

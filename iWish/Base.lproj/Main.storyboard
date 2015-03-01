@@ -493,7 +493,11 @@
                         <searchBar key="tableHeaderView" contentMode="redraw" id="KH6-jS-RlA">
                             <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                            <scopeButtonTitles>
+                                <string>Title</string>
+                                <string>Title</string>
+                            </scopeButtonTitles>
                             <connections>
                                 <outlet property="delegate" destination="7e1-CJ-GTB" id="BkU-SB-9EH"/>
                             </connections>
@@ -539,6 +543,7 @@
                         <viewControllerLayoutGuide type="bottom" id="DfJ-s3-bp8"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="CFU-9F-hJI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RTt-2r-XWN">
