@@ -122,11 +122,47 @@ class DatabaseConnection{
     }
     
     class func GetFriendsForUser(username: String, completionHandler: (responseObject: [Users]?, error: NSError?) -> ()){
-        let query = "SELECT * FROM Friends WHERE username='\(username)' AND areFriendsYet=1"
-        GetFriendsForUserDB(query, completionHandler: completionHandler)
+
+        GetFriendsForUserDB(username, completionHandler: completionHandler)
     }
     
-    private class func GetFriendsForUserDB(query: String, completionHandler: (responseObject: [Users]?, error: NSError?)->()){
+    private class func GetFriendsForUserDB(username: String, completionHandler: (responseObject: [Users]?, error: NSError?)->()){
+        let password = "A7B129MNP"
+        let query = "SELECT * FROM Friends WHERE (requester='\(username)' OR requestee='\(username)') AND areFriendsYet=1"
+        
+        Alamofire.request(.GET, "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php", parameters: ["password": password, "query":query]).responseJSON() {
+            (_, _, data, error) in
+            var users = Array<Users>()
+            if data != nil{
+                let json = JSON(data!)
+                for i in 0..<json.count{
+                    let username1 = (json[i]["requestee"]).stringValue
+                    let username2 = (json[i]["requester"]).stringValue
+
+                    if username == username1{
+                        users.append(Users(username: username1, password: ""))
+                    }
+                    else{
+                        users.append(Users(username: username2, password: ""))
+                    }
+                    
+                    
+                    completionHandler(responseObject: users, error: error)
+                }
+            }
+            else{
+                completionHandler(responseObject: nil, error: error)
+            }
+        }
+        
+    }
+    
+    class func GetFriendRequestsForUser(username: String, completionHandler: (responseObject: [Users]?, error: NSError?) -> ()){
+        let query = "SELECT * FROM Friends WHERE requestee='\(username)' AND areFriendsYet=0"
+        GetFriendRequestsForUserDB(query, completionHandler: completionHandler)
+    }
+    
+    private class func GetFriendRequestsForUserDB(query: String, completionHandler: (responseObject: [Users]?, error: NSError?)->()){
         let password = "A7B129MNP"
         Alamofire.request(.GET, "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php", parameters: ["password": password, "query":query]).responseJSON() {
             (_, _, data, error) in
@@ -134,8 +170,7 @@ class DatabaseConnection{
             if data != nil{
                 let json = JSON(data!)
                 for i in 0..<json.count{
-                    let username = (json[i]["username"]).stringValue
-                    let password = (json[i]["password"]).stringValue
+                    let username = (json[i]["requester"]).stringValue
                     users.append(Users(username: username, password: password))
                     
                     completionHandler(responseObject: users, error: error)

@@ -11,7 +11,7 @@ import UIKit
 class FriendsTableViewController: UITableViewController {
 
     let headerNames = ["Friend Requests", "Friends"]
-    let requests = ["jdog4", "yoohoo443", "yesss99"]
+    var requests = [Users]()
     var friends = [Users]()
     var usersName: String!
     override func viewDidLoad() {
@@ -33,6 +33,16 @@ class FriendsTableViewController: UITableViewController {
             }
             
         }
+        DatabaseConnection.GetFriendRequestsForUser(usersName){responseObject, error in
+            
+            if responseObject != nil {
+                self.requests = responseObject!
+                self.tableView.reloadData()
+            }
+            
+        }
+        
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -69,7 +79,7 @@ class FriendsTableViewController: UITableViewController {
         
         if indexPath.section == 0{
             let cell = tableView.dequeueReusableCellWithIdentifier("RequestCell", forIndexPath:indexPath) as UITableViewCell
-            cell.textLabel?.text = requests[indexPath.row]
+            cell.textLabel?.text = requests[indexPath.row].username
             return cell
         }
         else{

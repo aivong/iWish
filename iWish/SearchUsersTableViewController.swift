@@ -24,6 +24,12 @@ class SearchUsersTableViewController: UITableViewController, UISearchBarDelegate
         self.tableView.reloadData()
     }
     
+    func alertUser(titleText: String, messageText: String, buttonText: String){
+        let alertController = UIAlertController(title: titleText, message: messageText, preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: buttonText, style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,7 +39,7 @@ class SearchUsersTableViewController: UITableViewController, UISearchBarDelegate
                 self.tableView.reloadData()
             }
             else {
-                //DO SOMETHING WHEN DATA CAN'T BE RETRIEVED
+                self.alertUser("Cannot retrieve data", messageText: "Data could not be loaded. Check connection to internet", buttonText: "OK")
             }
         }
         
