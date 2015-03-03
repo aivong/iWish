@@ -184,7 +184,8 @@ class DatabaseConnection{
     }
     
     class func AddFriendRequest(requester: String, requestee: String, completionHandler: (responseObject: Bool?, error: NSError?) -> ()){
-        let query = "INSERT INTO Friends (requester, requestee, areFriendsYet) VALUES ('\(requester)', '\(requestee)', 0)"
+        let query = "" +
+        "INSERT INTO Friends (requester, requestee, areFriendsYet) VALUES ('\(requester)', '\(requestee)', 0)"
         AddFriendRequestDB(query, completionHandler: completionHandler)
     }
     

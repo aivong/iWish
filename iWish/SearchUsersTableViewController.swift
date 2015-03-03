@@ -33,7 +33,8 @@ class SearchUsersTableViewController: UITableViewController, UISearchBarDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        DatabaseConnection.GetUser("SELECT * FROM Users ORDER BY username") { responseObject, error in
+        //Query will only return names of people user is not friends with
+        DatabaseConnection.GetUser("SELECT Users.username as username, Users.password as password FROM Users, Friends WHERE (username != '\(usersName)' AND ((Friends.requester = '\(usersName)' AND Friends.requestee != username) OR (Friends.requester != username AND Friends.requestee = '\(usersName)'))) ORDER BY username") { responseObject, error in
             if responseObject != nil {
                 self.allUsers = responseObject!
                 self.tableView.reloadData()

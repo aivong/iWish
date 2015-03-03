@@ -119,9 +119,10 @@ class FriendsTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]?  {
         // 1
+        let requestFrom = requests[indexPath.row].username
         var acceptAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Accept" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
             // 2
-            let acceptMenu = UIAlertController(title: nil, message: "Are you sure you want to accept?", preferredStyle: .ActionSheet)
+            let acceptMenu = UIAlertController(title: nil, message: "Are you sure you want to accept friend request from \"\(requestFrom)\"?", preferredStyle: .ActionSheet)
             
             let yesActionHandler = { (action:UIAlertAction!) -> Void in
                 let alertMessage = UIAlertController(title: "Accepted!", message: "Not fully implemented yet", preferredStyle: .Alert)
@@ -141,10 +142,10 @@ class FriendsTableViewController: UITableViewController {
         // 3
         var rejectAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Reject" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
             // 4
-            let rejectMenu = UIAlertController(title: nil, message: "Are you sure you want to reject?", preferredStyle: .ActionSheet)
+            let rejectMenu = UIAlertController(title: nil, message: "Are you sure you want to reject friend request from \"\(requestFrom)?\"", preferredStyle: .ActionSheet)
             
             let ryesActionHandler = { (action:UIAlertAction!) -> Void in
-                let alertMessage = UIAlertController(title: "Accepted!", message: "Not fully implemented yet", preferredStyle: .Alert)
+                let alertMessage = UIAlertController(title: "Rejected!", message: "Not fully implemented yet", preferredStyle: .Alert)
                 alertMessage.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
                 self.presentViewController(alertMessage, animated: true, completion: nil)
             }
