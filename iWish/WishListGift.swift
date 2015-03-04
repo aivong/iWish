@@ -14,19 +14,21 @@ class WishListGift{
     var databaseID:Int!
     var name:String!
     var description:String!
-    var price:Double!
+    var price:Int!
     var image:UIImage?
     var isPooling:Bool
     
-    init(giftID: Int, giftName:String, giftDescription:String, giftPrice:Double){
+    init(giftID: Int, giftName:String, giftDescription:String, giftPrice:Int, pooling:Bool){
         self.databaseID = giftID
         self.name = giftName
         self.description = giftDescription
         self.price = giftPrice
-        self.isPooling = false
+        self.isPooling = pooling
     }
     
     func descripe () -> String {
-        return "Name: \(name)\nDescription: \(description)\nPrice: \(price)\nDatabaseID: \(databaseID)"
+        return "Name: \(name)\nDescription: \(description)\nPrice: \(price)\nPooling: \(isPooling)\nDatabaseID: \(databaseID)"
     }
+    
+    
 }

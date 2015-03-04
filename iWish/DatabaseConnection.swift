@@ -28,8 +28,9 @@ class DatabaseConnection{
                 let id = (json[i]["id"]).intValue
                 let name = (json[i]["name"]).stringValue
                 let description = (json[i]["description"]).stringValue
-                let price = (json[i]["price"]).doubleValue
-                gifts.append(WishListGift(giftID: id, giftName: name, giftDescription: description, giftPrice: price))
+                let price = (json[i]["price"]).intValue
+                let pooling = (json[i]["pooling"]).boolValue
+                gifts.append(WishListGift(giftID: id, giftName: name, giftDescription: description, giftPrice: price, pooling:pooling))
             
                 completionHandler(responseObject: gifts, error: error)
             }
@@ -89,19 +90,11 @@ class DatabaseConnection{
         let url = "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php"
         let imageData = UIImagePNGRepresentation(gift.image)
   
-        let query = "UPDATE WishListGifts SET name='\(gift.name)', description='\(gift.description)', price=\(gift.price), WHERE id=\(gift.databaseID)"
-        
-//        var query = ""
-        
-//        if gift.image != nil {
-//            query = "UPDATE WishListGifts SET name='\(gift.name)', description='\(gift.description)', price=\(gift.price), image='\(imageData)' WHERE id=\(gift.databaseID)"
-//        } else {
-//            query = "UPDATE WishListGifts SET name='\(gift.name)', description='\(gift.description)', price=\(gift.price), WHERE id=\(gift.databaseID)"
-//        }
+        let query = "UPDATE WishListGifts SET name='\(gift.name)', description='\(gift.description)', price=\(gift.price), pooling=\(gift.isPooling) WHERE id=\(gift.databaseID)"
+        println(query)
         
 
         let parameters = ["password": password, "query":query]
-        println(query)
         
         Alamofire.request(.GET, url, parameters: parameters).responseJSON() {
             (_, _, data, error) in

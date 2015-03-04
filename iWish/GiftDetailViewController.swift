@@ -18,7 +18,7 @@ class GiftDetailViewController: UIViewController, UITableViewDataSource, UITable
     let rightDetailCellIdentifier: String = "rightDetailCell"
     let centerLabelCellIdentifier: String = "centerLabelCell"
     
-    let fullNumberOfCells = 6
+    let fullNumberOfCells = 5
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -111,10 +111,10 @@ class GiftDetailViewController: UIViewController, UITableViewDataSource, UITable
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if gift.image != nil {
-            return fullNumberOfCells
-        } else {
+        if gift.image == nil {
             return fullNumberOfCells - 1
+        } else {
+            return fullNumberOfCells
         }
     }
     
@@ -140,7 +140,7 @@ class GiftDetailViewController: UIViewController, UITableViewDataSource, UITable
                 
                 if indexPath.row == 1 {
                     cell.textLabel?.text = "Price"
-                    cell.detailTextLabel?.text = String(format:"$%.02f", gift.price)
+                    cell.detailTextLabel?.text = String(format:"$%.02f", Double(gift.price))
                 } else if indexPath.row == 3 {
                     cell.textLabel?.text = "Allow Gift Pooling"
                     
@@ -155,7 +155,7 @@ class GiftDetailViewController: UIViewController, UITableViewDataSource, UITable
                 
                 if indexPath.row == 2 {
                     cell.textLabel?.text = "Price"
-                    cell.detailTextLabel?.text = String(format:"$%.02f", gift.price)
+                    cell.detailTextLabel?.text = String(format:"$%.02f", Double(gift.price))
                 } else if indexPath.row == 4 {
                     cell.textLabel?.text = "Allow Gift Pooling"
                     if (gift.isPooling) {

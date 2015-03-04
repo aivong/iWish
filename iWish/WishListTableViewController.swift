@@ -9,8 +9,6 @@
 import UIKit
 
 class WishListTableViewController: UITableViewController {
-
-    let testData = [WishListGift(giftID: 0, giftName: "Hot Wheels", giftDescription: "Fun little car", giftPrice: 2.00), WishListGift(giftID: 1, giftName: "GI Joe", giftDescription: "Action Figure", giftPrice: 4.99)]
     
     var gifts = [WishListGift]()
     var selectedGift : WishListGift!
@@ -47,7 +45,7 @@ class WishListTableViewController: UITableViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-        selectedGift = WishListGift(giftID: 0, giftName: "None", giftDescription: "None", giftPrice: 0.00)
+        selectedGift = WishListGift(giftID: 0, giftName: "None", giftDescription: "None", giftPrice: 0, pooling:false)
         getUsersFeaturedGifts()
     }
     
