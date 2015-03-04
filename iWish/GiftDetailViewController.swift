@@ -48,6 +48,8 @@ class GiftDetailViewController: UIViewController, UITableViewDataSource, UITable
         if gift.image != nil {
             tableView.scrollToRowAtIndexPath(NSIndexPath(forRow: 1, inSection: 0), atScrollPosition: .Top, animated: true)
         }
+        
+        
     }
     
     func loadNibs() {
@@ -82,6 +84,8 @@ class GiftDetailViewController: UIViewController, UITableViewDataSource, UITable
                 cell = tableView.dequeueReusableCellWithIdentifier(rightDetailCellIdentifier) as UITableViewCell
             } else if indexPath.row == 2 {
                 cell = tableView.dequeueReusableCellWithIdentifier(rightTextViewCellIndentifier) as UITableViewCell
+                var c = cell as RightTextViewTableViewCell
+                c.textView.editable = false
             } else if indexPath.row == 3{
                 cell = tableView.dequeueReusableCellWithIdentifier(rightDetailCellIdentifier) as UITableViewCell
             }
@@ -101,6 +105,7 @@ class GiftDetailViewController: UIViewController, UITableViewDataSource, UITable
             }
         }
     
+        cell.selectionStyle = .None
         return cell
     }
     
@@ -122,7 +127,7 @@ class GiftDetailViewController: UIViewController, UITableViewDataSource, UITable
             c.label?.text = gift.name
         } else if cell.isKindOfClass(LargeImageViewTableViewCell) {
             var c = cell as LargeImageViewTableViewCell
-            var imageView = UIImageView(image: UIImage(named: "IlliniPrideLogo.jpg"))
+            var imageView = UIImageView(image: gift?.image)
             imageView.contentMode = UIViewContentMode.ScaleAspectFit
             c.backgroundView = imageView
         } else if cell.isKindOfClass(RightTextViewTableViewCell) {
@@ -135,20 +140,29 @@ class GiftDetailViewController: UIViewController, UITableViewDataSource, UITable
                 
                 if indexPath.row == 1 {
                     cell.textLabel?.text = "Price"
-                    cell.detailTextLabel?.text = "$" + String(format:"%d", gift.price)
+                    cell.detailTextLabel?.text = String(format:"$%.02f", gift.price)
                 } else if indexPath.row == 3 {
                     cell.textLabel?.text = "Allow Gift Pooling"
-                    cell.detailTextLabel?.text = "On"
+                    
+                    if (gift.isPooling) {
+                        cell.detailTextLabel?.text = "On"
+                    } else {
+                        cell.detailTextLabel?.text = "Off"
+                    }
                 }
                 
             } else {
                 
                 if indexPath.row == 2 {
                     cell.textLabel?.text = "Price"
-                    cell.detailTextLabel?.text = "$" + String(format:"%d", gift.price)
+                    cell.detailTextLabel?.text = String(format:"$%.02f", gift.price)
                 } else if indexPath.row == 4 {
                     cell.textLabel?.text = "Allow Gift Pooling"
-                    cell.detailTextLabel?.text = "On"
+                    if (gift.isPooling) {
+                        cell.detailTextLabel?.text = "On"
+                    } else {
+                        cell.detailTextLabel?.text = "Off"
+                    }
                 }
             }
         }
@@ -194,6 +208,12 @@ class GiftDetailViewController: UIViewController, UITableViewDataSource, UITable
         if buttonIndex == 1 {
             self.deleteGift()
         }
+    }
+    
+    @IBAction func unwindToThisViewController(segue: UIStoryboardSegue) {
+        let source = segue.sourceViewController as EditGiftViewController
+        gift = source.gift
+        tableView.reloadData()
     }
 
 }

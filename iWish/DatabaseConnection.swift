@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import UIKit
 
 class DatabaseConnection{
     
@@ -86,8 +87,21 @@ class DatabaseConnection{
         
         let password = "A7B129MNP"
         let url = "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php"
-        let query = "UPDATE WishListGifts SET name=\(gift.name), description=\(gift.description), price=\(gift.price) WHERE id=\(gift.databaseID)"
+        let imageData = UIImagePNGRepresentation(gift.image)
+  
+        let query = "UPDATE WishListGifts SET name='\(gift.name)', description='\(gift.description)', price=\(gift.price), WHERE id=\(gift.databaseID)"
+        
+//        var query = ""
+        
+//        if gift.image != nil {
+//            query = "UPDATE WishListGifts SET name='\(gift.name)', description='\(gift.description)', price=\(gift.price), image='\(imageData)' WHERE id=\(gift.databaseID)"
+//        } else {
+//            query = "UPDATE WishListGifts SET name='\(gift.name)', description='\(gift.description)', price=\(gift.price), WHERE id=\(gift.databaseID)"
+//        }
+        
+
         let parameters = ["password": password, "query":query]
+        println(query)
         
         Alamofire.request(.GET, url, parameters: parameters).responseJSON() {
             (_, _, data, error) in

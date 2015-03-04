@@ -24,6 +24,9 @@
 		8E97305B1A86BA2C006543B1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E9730591A86BA2C006543B1 /* LaunchScreen.xib */; };
 		8E9730671A86BA2C006543B1 /* iWishTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9730661A86BA2C006543B1 /* iWishTests.swift */; };
 		8EDE536E1A8920DC008B49A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDE536D1A8920DC008B49A0 /* ViewController.swift */; };
+		CD397E151AA5F8B4006469CA /* TwoButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD397E141AA5F8B4006469CA /* TwoButtonTableViewCell.swift */; };
+		CD397E171AA5FD13006469CA /* TwoButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD397E141AA5F8B4006469CA /* TwoButtonTableViewCell.swift */; };
+		CD397E191AA609F9006469CA /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD397E181AA609F9006469CA /* MobileCoreServices.framework */; };
 		CD4041501A967D5E00DB40D5 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446A9961A8D00F200D51024 /* Users.swift */; };
 		CD4041521A967D6800DB40D5 /* AddGiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849337B31A914F58003456B5 /* AddGiftViewController.swift */; };
 		CD4041531A967D6A00DB40D5 /* GiftDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849337B51A91AE63003456B5 /* GiftDetailViewController.swift */; };
@@ -136,6 +139,8 @@
 		8E9730651A86BA2C006543B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E9730661A86BA2C006543B1 /* iWishTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iWishTests.swift; sourceTree = "<group>"; };
 		8EDE536D1A8920DC008B49A0 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CD397E141AA5F8B4006469CA /* TwoButtonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoButtonTableViewCell.swift; sourceTree = "<group>"; };
+		CD397E181AA609F9006469CA /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		CD7C60701A9FC16E002FE39D /* EditGiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditGiftViewController.swift; sourceTree = "<group>"; };
 		CD7C60731A9FD08B002FE39D /* RightTextFieldTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RightTextFieldTableViewCell.xib; path = ../RightTextFieldTableViewCell.xib; sourceTree = "<group>"; };
 		CD7C60761A9FD1DD002FE39D /* RightTextFieldTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightTextFieldTableViewCell.swift; sourceTree = "<group>"; };
@@ -161,6 +166,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD397E191AA609F9006469CA /* MobileCoreServices.framework in Frameworks */,
 				849337AC1A8E6927003456B5 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -194,6 +200,7 @@
 		8E9730401A86BA2C006543B1 = {
 			isa = PBXGroup;
 			children = (
+				CD397E181AA609F9006469CA /* MobileCoreServices.framework */,
 				849337A31A8E6913003456B5 /* Alamofire.xcodeproj */,
 				8E97304B1A86BA2C006543B1 /* iWish */,
 				8E9730631A86BA2C006543B1 /* iWishTests */,
@@ -321,6 +328,7 @@
 		CD7C606E1A9FBB2C002FE39D /* TableCells */ = {
 			isa = PBXGroup;
 			children = (
+				CD397E141AA5F8B4006469CA /* TwoButtonTableViewCell.swift */,
 				CDE992CF1A9E5083000CBA1E /* SingleButtonTableViewCell.swift */,
 				CDE992CC1A9E4F1E000CBA1E /* LargeImageViewTableViewCell.swift */,
 				CDE992C91A9E4DA7000CBA1E /* RightTextViewTableViewCell.swift */,
@@ -481,6 +489,7 @@
 				CDE992CD1A9E4F1E000CBA1E /* LargeImageViewTableViewCell.swift in Sources */,
 				849337BA1A94137F003456B5 /* EventsTableViewController.swift in Sources */,
 				8433929B1A8D0B2500E5B01B /* WishListGift.swift in Sources */,
+				CD397E151AA5F8B4006469CA /* TwoButtonTableViewCell.swift in Sources */,
 				8433929D1A8D2C1A00E5B01B /* DatabaseConnection.swift in Sources */,
 				CD90A3CB1A9E8B4E00186C6F /* CenterLabelTableViewCell.swift in Sources */,
 				8446A9971A8D00F200D51024 /* Users.swift in Sources */,
@@ -521,6 +530,7 @@
 				CD4041581A967D7900DB40D5 /* WishListGift.swift in Sources */,
 				CD4041521A967D6800DB40D5 /* AddGiftViewController.swift in Sources */,
 				CDE992CB1A9E4DA7000CBA1E /* RightTextViewTableViewCell.swift in Sources */,
+				CD397E171AA5FD13006469CA /* TwoButtonTableViewCell.swift in Sources */,
 				CD4041531A967D6A00DB40D5 /* GiftDetailViewController.swift in Sources */,
 				CD4041591A967D7F00DB40D5 /* DatabaseConnection.swift in Sources */,
 				CDB49BDD1A9E453200291FFE /* SwitchTableViewCell.swift in Sources */,
