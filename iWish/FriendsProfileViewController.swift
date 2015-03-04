@@ -10,13 +10,19 @@ import UIKit
 
 class FriendsProfileViewController: UIViewController {
 
-    @IBOutlet weak var friendsName: UILabel!
     
-    var name: String!
-    
+    var friendsName: String!
+    var usersName: String!
+    var friendWasRemoved: Bool!
     override func viewDidLoad() {
         super.viewDidLoad()
-        friendsName.text = name
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if let name = defaults.stringForKey("username")
+        {
+            usersName = name
+        }
+        self.title = friendsName
+        friendWasRemoved = false
         // Do any additional setup after loading the view.
     }
 
@@ -25,15 +31,64 @@ class FriendsProfileViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func alertUser(titleText: String, messageText: String, buttonText: String){
+        let alertController = UIAlertController(title: titleText, message: messageText, preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: buttonText, style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    @IBAction func friendOptionsClicked(sender: AnyObject) {
+        let friendOptionsMenu = UIAlertController(title: nil, message: "Options for \"\(self.friendsName)\"", preferredStyle: .ActionSheet)
+        
+        let removeFriendActionHandler = { (action:UIAlertAction!) -> Void in
+            DatabaseConnection.RemoveFriend(self.usersName, friendBeingRemoved: self.friendsName){ responseObject, error in
+                self.friendWasRemoved = true
+                self.performSegueWithIdentifier("FriendsProfileUnwind", sender: self)
+            }
+        }
+        
+        let sendMessageActionHandler = {(action:UIAlertAction!) -> Void in
+            self.alertUser("Not Implemented", messageText: "This function not implemented yet, if ever", buttonText: "Fine")
+        }
+        
+        let sendMessageAction = UIAlertAction(title: "Send Message", style: UIAlertActionStyle.Default, handler: sendMessageActionHandler)
+        
+        let removeFriendAction = UIAlertAction(title: "Remove Friend", style: UIAlertActionStyle.Default, handler: removeFriendActionHandler)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
+        
+        friendOptionsMenu.addAction(sendMessageAction)
+        friendOptionsMenu.addAction(removeFriendAction)
+        friendOptionsMenu.addAction(cancelAction)
+            
+            
+        self.presentViewController(friendOptionsMenu, animated: true, completion: nil)
+    
+    }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        /*let vc = segue.destinationViewController
+        if vc.isKindOfClass(FriendsTableViewController){
+            let ftvc = vc as FriendsTableViewController
+            if (self.friendWasRemoved != nil){
+                let nu = Users(username: friendsName, password: "")
+                var index = -1
+                for i in 0..<ftvc.friends.count{
+                    if(ftvc.friends[i].username == friendsName){
+                        index = i
+                    }
+                }
+                if index >= 0{
+                    ftvc.friends.removeAtIndex(index)
+                }
+            }
+        }*/
     }
-    */
+    
 
 }

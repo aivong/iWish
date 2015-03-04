@@ -14,8 +14,13 @@ class AddGiftViewController: UIViewController {
     @IBOutlet weak var giftPrice: UITextField!
     @IBOutlet weak var giftDescription: UITextView!
     
+    var usersName: String!
     override func viewDidLoad() {
         super.viewDidLoad()
+        let defaults = NSUserDefaults()
+        if let name = defaults.stringForKey("username"){
+            usersName = name
+        }
         giftDescription.layer.borderWidth = 1
         giftDescription.layer.borderColor = UIColor.blackColor().CGColor
     }
@@ -29,7 +34,7 @@ class AddGiftViewController: UIViewController {
         
         if self.validInputs() {
             
-            let query = "INSERT INTO WishListGifts (user, name, description, price) VALUES ('bohlin2', '\(giftName.text)', '\(giftDescription.text)', \(giftPrice.text))"
+            let query = "INSERT INTO WishListGifts (user, name, description, price) VALUES ('\(usersName)', '\(giftName.text)', '\(giftDescription.text)', \(giftPrice.text))"
             
             DatabaseConnection.InsertGift(query){ responseObject, error in
                 //CHECK FOR ERRORS

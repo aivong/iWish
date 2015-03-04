@@ -52,7 +52,7 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func logInPushed(sender: AnyObject) {        
-        let testDataUsers = [Users(username: "bohlin2", password: "pw"), Users(username: "kbfrenc2", password: "pw")]
+        let testDataUsers = [Users(username: "bohlin2", password: "pw"), Users(username: "kbfrenc2", password: "pw"), Users(username: "aivong2", password: "pw")]
         for user in testDataUsers{
             if usernameTextField.text == user.username && passwordTextField.text == user.password{
                 let nsud = NSUserDefaults.standardUserDefaults()

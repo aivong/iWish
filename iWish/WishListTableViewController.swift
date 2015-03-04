@@ -14,9 +14,9 @@ class WishListTableViewController: UITableViewController {
     
     var gifts = [WishListGift]()
     var selectedGift : WishListGift!
-        
+    var usersName: String!
     func getUsersFeaturedGifts(){
-        DatabaseConnection.GetGifts("SELECT * FROM WishListGifts ORDER BY name") { responseObject, error in
+        DatabaseConnection.GetGifts("SELECT * FROM WishListGifts WHERE user = '\(usersName)' ORDER BY name") { responseObject, error in
             if responseObject != nil {
                 self.gifts = responseObject!
                 self.tableView.reloadData()
@@ -37,7 +37,11 @@ class WishListTableViewController: UITableViewController {
         super.viewDidLoad()
         getUsersFeaturedGifts()
         //self.navigationController?.setNavigationBarHidden(true, animated: false)
-    
+        let defaults = NSUserDefaults()
+        if let name = defaults.stringForKey("username"){
+            usersName = name
+        }
+        println(usersName)
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

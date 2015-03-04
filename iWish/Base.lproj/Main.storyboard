@@ -400,6 +400,7 @@
         <!--Profile-->
         <scene sceneID="HuG-5Z-4cp">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8ll-a4-6fD" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="I8w-1Y-92J" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AwE-Yf-jrN"/>
@@ -412,7 +413,6 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" id="aUS-gN-RNx"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8ll-a4-6fD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-193" y="-642"/>
         </scene>
@@ -482,10 +482,10 @@
             </objects>
             <point key="canvasLocation" x="792" y="139"/>
         </scene>
-        <!--All Users-->
+        <!--Search Users-->
         <scene sceneID="NyH-hf-a5V">
             <objects>
-                <tableViewController title="All Users" id="7e1-CJ-GTB" customClass="SearchUsersTableViewController" customModule="iWish" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Search Users" id="7e1-CJ-GTB" customClass="SearchUsersTableViewController" customModule="iWish" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Ug3-wc-6q7">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -545,34 +545,25 @@
                     <view key="view" contentMode="scaleToFill" id="CFU-9F-hJI">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RTt-2r-XWN">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="79" y="72" width="242" height="21"/>
-                                </variation>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="RTt-2r-XWN"/>
-                            </mask>
-                        </variation>
-                        <variation key="widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="RTt-2r-XWN"/>
-                            </mask>
-                        </variation>
                     </view>
-                    <connections>
-                        <outlet property="friendsName" destination="RTt-2r-XWN" id="cOi-ty-3Yt"/>
-                    </connections>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Profile" id="9Fk-L4-Fud">
+                        <barButtonItem key="leftBarButtonItem" title="&lt; Friends" id="3sr-tH-lef">
+                            <connections>
+                                <segue destination="bEL-M9-5Bi" kind="unwind" identifier="FriendsProfileUnwind" unwindAction="unwindFromProfile:" id="WCl-fC-mOg"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Options" id="em8-md-Z81">
+                            <connections>
+                                <action selector="friendOptionsClicked:" destination="LA5-ED-BCX" id="fPp-aH-Jd2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kJP-Tt-KZD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="bEL-M9-5Bi" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1315.5" y="888"/>
         </scene>

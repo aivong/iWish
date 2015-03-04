@@ -140,10 +140,10 @@ class DatabaseConnection{
                     let username2 = (json[i]["requester"]).stringValue
 
                     if username == username1{
-                        users.append(Users(username: username1, password: ""))
+                        users.append(Users(username: username2, password: ""))
                     }
                     else{
-                        users.append(Users(username: username2, password: ""))
+                        users.append(Users(username: username1, password: ""))
                     }
                     
                     
@@ -158,7 +158,7 @@ class DatabaseConnection{
     }
     
     class func GetFriendRequestsForUser(username: String, completionHandler: (responseObject: [Users]?, error: NSError?) -> ()){
-        let query = "SELECT * FROM Friends WHERE requestee='\(username)' AND areFriendsYet=0"
+        let query = "SELECT * FROM Friends WHERE requestee='\(username)' AND areFriendsYet=0 ORDER BY requester"
         GetFriendRequestsForUserDB(query, completionHandler: completionHandler)
     }
     
@@ -193,6 +193,54 @@ class DatabaseConnection{
         let password = "A7B129MNP"
         Alamofire.request(.GET, "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php", parameters: ["password": password, "query":query]).responseJSON() {
             (_, _, data, error) in
+            if data != nil{
+                completionHandler(responseObject: true, error: error)
+                
+            }
+            else{
+                completionHandler(responseObject: false, error: error)
+            }
+        }
+        
+    }
+    
+    class func AcceptOrRemoveFriendRequest(requester: String, requestee: String, accept: Bool, completionHandler: (responseObject: Bool?, error: NSError?) -> ()){
+        var query = ""
+        if accept{
+            query = "UPDATE Friends SET areFriendsYet = 1 WHERE requester = '\(requester)' AND requestee = '\(requestee)'"
+        }
+        else{
+            query = "DELETE FROM Friends WHERE requester = '\(requester)' AND requestee = '\(requestee)'"
+        }
+        AcceptOrRemoveFriendRequestDB(query, completionHandler: completionHandler)
+    }
+    
+    private class func AcceptOrRemoveFriendRequestDB(query: String, completionHandler: (responseObject: Bool?, error: NSError?)->()){
+        let password = "A7B129MNP"
+        Alamofire.request(.GET, "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php", parameters: ["password": password, "query":query]).responseJSON() {
+            (_, _, data, error) in
+            if data != nil{
+                completionHandler(responseObject: true, error: error)
+                
+            }
+            else{
+                completionHandler(responseObject: false, error: error)
+            }
+        }
+        
+    }
+    
+    class func RemoveFriend(username: String, friendBeingRemoved: String, completionHandler: (responseObject: Bool?, error: NSError?) -> ()){
+        let query = "DELETE FROM Friends WHERE (requester = '\(username)' AND requestee = '\(friendBeingRemoved)') OR (requester = '\(friendBeingRemoved)' AND requestee = '\(username)')"
+        RemoveFriendDB(query, completionHandler: completionHandler)
+    }
+    
+    private class func RemoveFriendDB(query: String, completionHandler: (responseObject: Bool?, error: NSError?)->()){
+        let password = "A7B129MNP"
+        Alamofire.request(.GET, "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php", parameters: ["password": password, "query":query]).responseJSON() {
+            (_, _, data, error) in
+            println(data)
+            println(error?.description)
             if data != nil{
                 completionHandler(responseObject: true, error: error)
                 
