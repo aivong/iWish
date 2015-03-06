@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
-        <!--Login View Controller-->
+        <!--loginViewController-->
         <scene sceneID="5sG-W2-Mc9">
             <objects>
-                <viewController id="lUF-FK-sLw" customClass="LoginViewController" customModule="iWish" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="loginViewController" id="lUF-FK-sLw" customClass="LoginViewController" customModule="iWish" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MWh-Ft-okk"/>
                         <viewControllerLayoutGuide type="bottom" id="q2n-Kl-SbP"/>
@@ -62,7 +62,6 @@
                                         </state>
                                         <connections>
                                             <action selector="logInPushed:" destination="lUF-FK-sLw" eventType="touchUpInside" id="VWh-Is-DE5"/>
-                                            <segue destination="vBT-5C-EOt" kind="show" id="6FO-1l-Cpk"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -87,11 +86,12 @@
                         <outlet property="usernameImage" destination="J3y-Gm-NtL" id="ua2-6T-reX"/>
                         <outlet property="usernamePasswordView" destination="Gv9-UI-MId" id="VlX-0w-GVb"/>
                         <outlet property="usernameTextField" destination="pWa-gM-3ND" id="Dg8-EJ-qLj"/>
+                        <segue destination="vBT-5C-EOt" kind="show" identifier="loginSuccess" id="TPS-S4-D9B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ViW-4A-3K6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2053.5" y="-636"/>
+            <point key="canvasLocation" x="-2074.5" y="-631"/>
         </scene>
         <!--Events-->
         <scene sceneID="0ot-SZ-gBw">
