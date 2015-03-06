@@ -143,12 +143,6 @@
 		8E9730651A86BA2C006543B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E9730661A86BA2C006543B1 /* iWishTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iWishTests.swift; sourceTree = "<group>"; };
 		8EDE536D1A8920DC008B49A0 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-<<<<<<< HEAD
-		8EE8E70C1A9A8AA0000F6076 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
-		8EFEFCDC1A9AA460004EC929 /* user168.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user168.png; sourceTree = "<group>"; };
-		8EFEFCDF1A9AA496004EC929 /* door24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = door24.png; sourceTree = "<group>"; };
-		8EFEFCE11A9AA4D8004EC929 /* unicorn.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = unicorn.jpg; sourceTree = "<group>"; };
-||||||| merged common ancestors
 
 		CDA585BF1A980C9E009842E9 /* AddRemoveGiftTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddRemoveGiftTests.swift; sourceTree = "<group>"; };
 
@@ -157,7 +151,6 @@
 		8EFEFCDF1A9AA496004EC929 /* door24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = door24.png; sourceTree = "<group>"; };
 		8EFEFCE11A9AA4D8004EC929 /* unicorn.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = unicorn.jpg; sourceTree = "<group>"; };
 
-=======
 		CD7C60701A9FC16E002FE39D /* EditGiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditGiftViewController.swift; sourceTree = "<group>"; };
 		CD7C60731A9FD08B002FE39D /* RightTextFieldTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RightTextFieldTableViewCell.xib; path = ../RightTextFieldTableViewCell.xib; sourceTree = "<group>"; };
 		CD7C60761A9FD1DD002FE39D /* RightTextFieldTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightTextFieldTableViewCell.swift; sourceTree = "<group>"; };
@@ -176,7 +169,6 @@
 		CDE992DB1A9E5609000CBA1E /* RightBoxTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RightBoxTableViewCell.xib; sourceTree = "<group>"; };
 		CDE992DE1A9E5A43000CBA1E /* PaddedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddedLabel.swift; sourceTree = "<group>"; };
 		CDE992E11A9E5D94000CBA1E /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
->>>>>>> origin/master
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,17 +242,11 @@
 		8E97304C1A86BA2C006543B1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
-				8EFEFCE11A9AA4D8004EC929 /* unicorn.jpg */,
-				8EFEFCDF1A9AA496004EC929 /* door24.png */,
-				8EFEFCDC1A9AA460004EC929 /* user168.png */,
-||||||| merged common ancestors
+
 				8EFEFCE11A9AA4D8004EC929 /* unicorn.jpg */,
 				8EFEFCDF1A9AA496004EC929 /* door24.png */,
 				8EFEFCDC1A9AA460004EC929 /* user168.png */,
 
-=======
->>>>>>> origin/master
 				8446A9931A8BCD6600D51024 /* iWishImages */,
 				8E9730571A86BA2C006543B1 /* Images.xcassets */,
 				8E9730591A86BA2C006543B1 /* LaunchScreen.xib */,
@@ -480,33 +466,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
-				8EFEFCDD1A9AA460004EC929 /* user168.png in Resources */,
-||||||| merged common ancestors
 
 				8EFEFCDD1A9AA460004EC929 /* user168.png in Resources */,
 
-=======
 				CDE992D61A9E55BB000CBA1E /* LargeImageViewTableViewCell.xib in Resources */,
 				CDE992D31A9E5575000CBA1E /* SingleButtonTableViewCell.xib in Resources */,
 				CD7C60741A9FD08B002FE39D /* RightTextFieldTableViewCell.xib in Resources */,
->>>>>>> origin/master
+
 				8E9730561A86BA2C006543B1 /* Main.storyboard in Resources */,
 				CDE992D91A9E55E0000CBA1E /* SwitchTableViewCell.xib in Resources */,
 				CD90A3CE1A9E8B7400186C6F /* CenterLabelTableViewCell.xib in Resources */,
 				CDE992DC1A9E5609000CBA1E /* RightBoxTableViewCell.xib in Resources */,
 				8E97305B1A86BA2C006543B1 /* LaunchScreen.xib in Resources */,
 				8E9730581A86BA2C006543B1 /* Images.xcassets in Resources */,
-<<<<<<< HEAD
-				8EFEFCE21A9AA4D8004EC929 /* unicorn.jpg in Resources */,
-				8EFEFCE01A9AA496004EC929 /* door24.png in Resources */,
-||||||| merged common ancestors
+
 
 				8EFEFCE21A9AA4D8004EC929 /* unicorn.jpg in Resources */,
 				8EFEFCE01A9AA496004EC929 /* door24.png in Resources */,
-=======
+
 				CDB49BD51A9E31A800291FFE /* RightTextViewTableViewCell.xib in Resources */,
->>>>>>> origin/master
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,13 +524,11 @@
 				CDE992D01A9E5083000CBA1E /* SingleButtonTableViewCell.swift in Sources */,
 				CD7C60711A9FC16E002FE39D /* EditGiftViewController.swift in Sources */,
 				8E97304F1A86BA2C006543B1 /* AppDelegate.swift in Sources */,
-<<<<<<< HEAD
-				8E6EB2401AAA58CE00D158A2 /* VerifyState.swift in Sources */,
-||||||| merged common ancestors
+
 				8E0A55871AA11A82000B89ED /* VerifyState.swift in Sources */,
-=======
+
 				CDE992DF1A9E5A43000CBA1E /* PaddedLabel.swift in Sources */,
->>>>>>> origin/master
+
 				8446A9991A8D055000D51024 /* WishListTableViewController.swift in Sources */,
 				849337B61A91AE63003456B5 /* GiftDetailViewController.swift in Sources */,
 				CDE992C61A9E4BD6000CBA1E /* RightBoxTableViewCell.swift in Sources */,
