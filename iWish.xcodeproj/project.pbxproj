@@ -18,8 +18,11 @@
 		849337B41A914F58003456B5 /* AddGiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849337B31A914F58003456B5 /* AddGiftViewController.swift */; };
 		849337B61A91AE63003456B5 /* GiftDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849337B51A91AE63003456B5 /* GiftDetailViewController.swift */; };
 		849337BA1A94137F003456B5 /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849337B91A94137F003456B5 /* EventsTableViewController.swift */; };
+
+
+		
 		8E0A55891AA11A85000B89ED /* VerifyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0A55861AA11A82000B89ED /* VerifyState.swift */; };
-		8E6EB2401AAA58CE00D158A2 /* VerifyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0A55861AA11A82000B89ED /* VerifyState.swift */; };
+
 		8E97304F1A86BA2C006543B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E97304E1A86BA2C006543B1 /* AppDelegate.swift */; };
 		8E9730561A86BA2C006543B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E9730541A86BA2C006543B1 /* Main.storyboard */; };
 		8E9730581A86BA2C006543B1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E9730571A86BA2C006543B1 /* Images.xcassets */; };
@@ -41,39 +44,6 @@
 		CD4041591A967D7F00DB40D5 /* DatabaseConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433929C1A8D2C1A00E5B01B /* DatabaseConnection.swift */; };
 		CD40415A1A967D8800DB40D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E97304E1A86BA2C006543B1 /* AppDelegate.swift */; };
 		CD40415B1A967D8C00DB40D5 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849337B11A905551003456B5 /* SwiftyJSON.swift */; };
-		CD7C60711A9FC16E002FE39D /* EditGiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7C60701A9FC16E002FE39D /* EditGiftViewController.swift */; };
-		CD7C60721A9FC28F002FE39D /* EditGiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7C60701A9FC16E002FE39D /* EditGiftViewController.swift */; };
-		CD7C60741A9FD08B002FE39D /* RightTextFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD7C60731A9FD08B002FE39D /* RightTextFieldTableViewCell.xib */; };
-		CD7C60751A9FD135002FE39D /* RightTextFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD7C60731A9FD08B002FE39D /* RightTextFieldTableViewCell.xib */; };
-		CD7C60771A9FD1DD002FE39D /* RightTextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7C60761A9FD1DD002FE39D /* RightTextFieldTableViewCell.swift */; };
-		CD7C60781A9FD1DD002FE39D /* RightTextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7C60761A9FD1DD002FE39D /* RightTextFieldTableViewCell.swift */; };
-		CD90A3CB1A9E8B4E00186C6F /* CenterLabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD90A3CA1A9E8B4E00186C6F /* CenterLabelTableViewCell.swift */; };
-		CD90A3CE1A9E8B7400186C6F /* CenterLabelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD90A3CD1A9E8B7400186C6F /* CenterLabelTableViewCell.xib */; };
-		CD90A3CF1A9E8C6F00186C6F /* CenterLabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD90A3CA1A9E8B4E00186C6F /* CenterLabelTableViewCell.swift */; };
-		CDA585C01A980C9E009842E9 /* AddRemoveGiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA585BF1A980C9E009842E9 /* AddRemoveGiftTests.swift */; };
-		CDB49BD51A9E31A800291FFE /* RightTextViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDB49BD41A9E31A800291FFE /* RightTextViewTableViewCell.xib */; };
-		CDB49BDC1A9E392400291FFE /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB49BDB1A9E392400291FFE /* SwitchTableViewCell.swift */; };
-		CDB49BDD1A9E453200291FFE /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB49BDB1A9E392400291FFE /* SwitchTableViewCell.swift */; };
-		CDE992C61A9E4BD6000CBA1E /* RightBoxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE992C51A9E4BD6000CBA1E /* RightBoxTableViewCell.swift */; };
-		CDE992C71A9E4BD6000CBA1E /* RightBoxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE992C51A9E4BD6000CBA1E /* RightBoxTableViewCell.swift */; };
-		CDE992CA1A9E4DA7000CBA1E /* RightTextViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE992C91A9E4DA7000CBA1E /* RightTextViewTableViewCell.swift */; };
-		CDE992CB1A9E4DA7000CBA1E /* RightTextViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE992C91A9E4DA7000CBA1E /* RightTextViewTableViewCell.swift */; };
-		CDE992CD1A9E4F1E000CBA1E /* LargeImageViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE992CC1A9E4F1E000CBA1E /* LargeImageViewTableViewCell.swift */; };
-		CDE992CE1A9E4F1E000CBA1E /* LargeImageViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE992CC1A9E4F1E000CBA1E /* LargeImageViewTableViewCell.swift */; };
-		CDE992D01A9E5083000CBA1E /* SingleButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE992CF1A9E5083000CBA1E /* SingleButtonTableViewCell.swift */; };
-		CDE992D11A9E5083000CBA1E /* SingleButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE992CF1A9E5083000CBA1E /* SingleButtonTableViewCell.swift */; };
-		CDE992D31A9E5575000CBA1E /* SingleButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDE992D21A9E5575000CBA1E /* SingleButtonTableViewCell.xib */; };
-		CDE992D41A9E5575000CBA1E /* SingleButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDE992D21A9E5575000CBA1E /* SingleButtonTableViewCell.xib */; };
-		CDE992D61A9E55BB000CBA1E /* LargeImageViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDE992D51A9E55BB000CBA1E /* LargeImageViewTableViewCell.xib */; };
-		CDE992D71A9E55BB000CBA1E /* LargeImageViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDE992D51A9E55BB000CBA1E /* LargeImageViewTableViewCell.xib */; };
-		CDE992D91A9E55E0000CBA1E /* SwitchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDE992D81A9E55E0000CBA1E /* SwitchTableViewCell.xib */; };
-		CDE992DA1A9E55E0000CBA1E /* SwitchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDE992D81A9E55E0000CBA1E /* SwitchTableViewCell.xib */; };
-		CDE992DC1A9E5609000CBA1E /* RightBoxTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDE992DB1A9E5609000CBA1E /* RightBoxTableViewCell.xib */; };
-		CDE992DD1A9E5609000CBA1E /* RightBoxTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDE992DB1A9E5609000CBA1E /* RightBoxTableViewCell.xib */; };
-		CDE992DF1A9E5A43000CBA1E /* PaddedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE992DE1A9E5A43000CBA1E /* PaddedLabel.swift */; };
-		CDE992E01A9E5A43000CBA1E /* PaddedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE992DE1A9E5A43000CBA1E /* PaddedLabel.swift */; };
-		CDE992E21A9E5D94000CBA1E /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE992E11A9E5D94000CBA1E /* CustomTableViewCell.swift */; };
-		CDE992E31A9E5D94000CBA1E /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE992E11A9E5D94000CBA1E /* CustomTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,7 +102,10 @@
 		849337B31A914F58003456B5 /* AddGiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGiftViewController.swift; sourceTree = "<group>"; };
 		849337B51A91AE63003456B5 /* GiftDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftDetailViewController.swift; sourceTree = "<group>"; };
 		849337B91A94137F003456B5 /* EventsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewController.swift; sourceTree = "<group>"; };
+
+
 		8E0A55861AA11A82000B89ED /* VerifyState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyState.swift; sourceTree = "<group>"; };
+
 		8E9730491A86BA2C006543B1 /* iWish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iWish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E97304D1A86BA2C006543B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E97304E1A86BA2C006543B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -151,24 +124,6 @@
 		8EFEFCDF1A9AA496004EC929 /* door24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = door24.png; sourceTree = "<group>"; };
 		8EFEFCE11A9AA4D8004EC929 /* unicorn.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = unicorn.jpg; sourceTree = "<group>"; };
 
-		CD7C60701A9FC16E002FE39D /* EditGiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditGiftViewController.swift; sourceTree = "<group>"; };
-		CD7C60731A9FD08B002FE39D /* RightTextFieldTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RightTextFieldTableViewCell.xib; path = ../RightTextFieldTableViewCell.xib; sourceTree = "<group>"; };
-		CD7C60761A9FD1DD002FE39D /* RightTextFieldTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightTextFieldTableViewCell.swift; sourceTree = "<group>"; };
-		CD90A3CA1A9E8B4E00186C6F /* CenterLabelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenterLabelTableViewCell.swift; sourceTree = "<group>"; };
-		CD90A3CD1A9E8B7400186C6F /* CenterLabelTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CenterLabelTableViewCell.xib; path = ../CenterLabelTableViewCell.xib; sourceTree = "<group>"; };
-		CDA585BF1A980C9E009842E9 /* AddRemoveGiftTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddRemoveGiftTests.swift; sourceTree = "<group>"; };
-		CDB49BD41A9E31A800291FFE /* RightTextViewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RightTextViewTableViewCell.xib; sourceTree = "<group>"; };
-		CDB49BDB1A9E392400291FFE /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
-		CDE992C51A9E4BD6000CBA1E /* RightBoxTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightBoxTableViewCell.swift; sourceTree = "<group>"; };
-		CDE992C91A9E4DA7000CBA1E /* RightTextViewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightTextViewTableViewCell.swift; sourceTree = "<group>"; };
-		CDE992CC1A9E4F1E000CBA1E /* LargeImageViewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LargeImageViewTableViewCell.swift; sourceTree = "<group>"; };
-		CDE992CF1A9E5083000CBA1E /* SingleButtonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleButtonTableViewCell.swift; sourceTree = "<group>"; };
-		CDE992D21A9E5575000CBA1E /* SingleButtonTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SingleButtonTableViewCell.xib; sourceTree = "<group>"; };
-		CDE992D51A9E55BB000CBA1E /* LargeImageViewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LargeImageViewTableViewCell.xib; sourceTree = "<group>"; };
-		CDE992D81A9E55E0000CBA1E /* SwitchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwitchTableViewCell.xib; sourceTree = "<group>"; };
-		CDE992DB1A9E5609000CBA1E /* RightBoxTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RightBoxTableViewCell.xib; sourceTree = "<group>"; };
-		CDE992DE1A9E5A43000CBA1E /* PaddedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddedLabel.swift; sourceTree = "<group>"; };
-		CDE992E11A9E5D94000CBA1E /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,8 +187,6 @@
 				CD40414B1A967A8800DB40D5 /* View Controllers */,
 				CD40414D1A967AB200DB40D5 /* Models */,
 				8433929C1A8D2C1A00E5B01B /* DatabaseConnection.swift */,
-				CDE992DE1A9E5A43000CBA1E /* PaddedLabel.swift */,
-				CD7C606E1A9FBB2C002FE39D /* TableCells */,
 				8E97304C1A86BA2C006543B1 /* Supporting Files */,
 			);
 			path = iWish;
@@ -242,7 +195,6 @@
 		8E97304C1A86BA2C006543B1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-
 				8EFEFCE11A9AA4D8004EC929 /* unicorn.jpg */,
 				8EFEFCDF1A9AA496004EC929 /* door24.png */,
 				8EFEFCDC1A9AA460004EC929 /* user168.png */,
@@ -285,7 +237,6 @@
 		CD4041471A967A4700DB40D5 /* Wish List ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				CD7C60701A9FC16E002FE39D /* EditGiftViewController.swift */,
 				849337B51A91AE63003456B5 /* GiftDetailViewController.swift */,
 				849337B31A914F58003456B5 /* AddGiftViewController.swift */,
 				8446A9981A8D055000D51024 /* WishListTableViewController.swift */,
@@ -337,28 +288,6 @@
 				8E0A55861AA11A82000B89ED /* VerifyState.swift */,
 			);
 			name = Models;
-			sourceTree = "<group>";
-		};
-		CD7C606E1A9FBB2C002FE39D /* TableCells */ = {
-			isa = PBXGroup;
-			children = (
-				CDE992CF1A9E5083000CBA1E /* SingleButtonTableViewCell.swift */,
-				CDE992CC1A9E4F1E000CBA1E /* LargeImageViewTableViewCell.swift */,
-				CDE992C91A9E4DA7000CBA1E /* RightTextViewTableViewCell.swift */,
-				CDE992C51A9E4BD6000CBA1E /* RightBoxTableViewCell.swift */,
-				CDB49BDB1A9E392400291FFE /* SwitchTableViewCell.swift */,
-				CDE992E11A9E5D94000CBA1E /* CustomTableViewCell.swift */,
-				CD90A3CA1A9E8B4E00186C6F /* CenterLabelTableViewCell.swift */,
-				CDB49BD41A9E31A800291FFE /* RightTextViewTableViewCell.xib */,
-				CD90A3CD1A9E8B7400186C6F /* CenterLabelTableViewCell.xib */,
-				CDE992DB1A9E5609000CBA1E /* RightBoxTableViewCell.xib */,
-				CDE992D81A9E55E0000CBA1E /* SwitchTableViewCell.xib */,
-				CDE992D51A9E55BB000CBA1E /* LargeImageViewTableViewCell.xib */,
-				CDE992D21A9E5575000CBA1E /* SingleButtonTableViewCell.xib */,
-				CD7C60731A9FD08B002FE39D /* RightTextFieldTableViewCell.xib */,
-				CD7C60761A9FD1DD002FE39D /* RightTextFieldTableViewCell.swift */,
-			);
-			name = TableCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -469,22 +398,12 @@
 
 				8EFEFCDD1A9AA460004EC929 /* user168.png in Resources */,
 
-				CDE992D61A9E55BB000CBA1E /* LargeImageViewTableViewCell.xib in Resources */,
-				CDE992D31A9E5575000CBA1E /* SingleButtonTableViewCell.xib in Resources */,
-				CD7C60741A9FD08B002FE39D /* RightTextFieldTableViewCell.xib in Resources */,
-
 				8E9730561A86BA2C006543B1 /* Main.storyboard in Resources */,
-				CDE992D91A9E55E0000CBA1E /* SwitchTableViewCell.xib in Resources */,
-				CD90A3CE1A9E8B7400186C6F /* CenterLabelTableViewCell.xib in Resources */,
-				CDE992DC1A9E5609000CBA1E /* RightBoxTableViewCell.xib in Resources */,
 				8E97305B1A86BA2C006543B1 /* LaunchScreen.xib in Resources */,
 				8E9730581A86BA2C006543B1 /* Images.xcassets in Resources */,
 
-
 				8EFEFCE21A9AA4D8004EC929 /* unicorn.jpg in Resources */,
 				8EFEFCE01A9AA496004EC929 /* door24.png in Resources */,
-
-				CDB49BD51A9E31A800291FFE /* RightTextViewTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,11 +411,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDE992DD1A9E5609000CBA1E /* RightBoxTableViewCell.xib in Resources */,
-				CDE992DA1A9E55E0000CBA1E /* SwitchTableViewCell.xib in Resources */,
-				CD7C60751A9FD135002FE39D /* RightTextFieldTableViewCell.xib in Resources */,
-				CDE992D71A9E55BB000CBA1E /* LargeImageViewTableViewCell.xib in Resources */,
-				CDE992D41A9E5575000CBA1E /* SingleButtonTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,31 +421,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDE992E21A9E5D94000CBA1E /* CustomTableViewCell.swift in Sources */,
-				CDE992CD1A9E4F1E000CBA1E /* LargeImageViewTableViewCell.swift in Sources */,
+				8EE8E70D1A9A8AA0000F6076 /* CreateAccountViewController.swift in Sources */,
 				849337BA1A94137F003456B5 /* EventsTableViewController.swift in Sources */,
 				8433929B1A8D0B2500E5B01B /* WishListGift.swift in Sources */,
 				8433929D1A8D2C1A00E5B01B /* DatabaseConnection.swift in Sources */,
-				CD90A3CB1A9E8B4E00186C6F /* CenterLabelTableViewCell.swift in Sources */,
 				8446A9971A8D00F200D51024 /* Users.swift in Sources */,
 				849337B21A905551003456B5 /* SwiftyJSON.swift in Sources */,
-				CDB49BDC1A9E392400291FFE /* SwitchTableViewCell.swift in Sources */,
 				8446A9901A8BC07800D51024 /* LoginViewController.swift in Sources */,
 				8EDE536E1A8920DC008B49A0 /* ViewController.swift in Sources */,
-				CD7C60771A9FD1DD002FE39D /* RightTextFieldTableViewCell.swift in Sources */,
-				CDE992CA1A9E4DA7000CBA1E /* RightTextViewTableViewCell.swift in Sources */,
 				849337B41A914F58003456B5 /* AddGiftViewController.swift in Sources */,
-				CDE992D01A9E5083000CBA1E /* SingleButtonTableViewCell.swift in Sources */,
-				CD7C60711A9FC16E002FE39D /* EditGiftViewController.swift in Sources */,
 				8E97304F1A86BA2C006543B1 /* AppDelegate.swift in Sources */,
-
 				8E0A55871AA11A82000B89ED /* VerifyState.swift in Sources */,
-
-				CDE992DF1A9E5A43000CBA1E /* PaddedLabel.swift in Sources */,
-
 				8446A9991A8D055000D51024 /* WishListTableViewController.swift in Sources */,
 				849337B61A91AE63003456B5 /* GiftDetailViewController.swift in Sources */,
-				CDE992C61A9E4BD6000CBA1E /* RightBoxTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,22 +444,12 @@
 				CD40415A1A967D8800DB40D5 /* AppDelegate.swift in Sources */,
 				CD4041551A967D6F00DB40D5 /* LoginViewController.swift in Sources */,
 				CD4041561A967D7100DB40D5 /* WishListTableViewController.swift in Sources */,
-				CDE992E01A9E5A43000CBA1E /* PaddedLabel.swift in Sources */,
-				CDE992C71A9E4BD6000CBA1E /* RightBoxTableViewCell.swift in Sources */,
-				CDE992CE1A9E4F1E000CBA1E /* LargeImageViewTableViewCell.swift in Sources */,
-				CD7C60781A9FD1DD002FE39D /* RightTextFieldTableViewCell.swift in Sources */,
-				CD7C60721A9FC28F002FE39D /* EditGiftViewController.swift in Sources */,
-				CDE992E31A9E5D94000CBA1E /* CustomTableViewCell.swift in Sources */,
-				CDE992D11A9E5083000CBA1E /* SingleButtonTableViewCell.swift in Sources */,
 				CD40415B1A967D8C00DB40D5 /* SwiftyJSON.swift in Sources */,
 				CD4041541A967D6D00DB40D5 /* ViewController.swift in Sources */,
-				CD90A3CF1A9E8C6F00186C6F /* CenterLabelTableViewCell.swift in Sources */,
 				CD4041581A967D7900DB40D5 /* WishListGift.swift in Sources */,
 				CD4041521A967D6800DB40D5 /* AddGiftViewController.swift in Sources */,
-				CDE992CB1A9E4DA7000CBA1E /* RightTextViewTableViewCell.swift in Sources */,
 				CD4041531A967D6A00DB40D5 /* GiftDetailViewController.swift in Sources */,
 				CD4041591A967D7F00DB40D5 /* DatabaseConnection.swift in Sources */,
-				CDB49BDD1A9E453200291FFE /* SwitchTableViewCell.swift in Sources */,
 				CD4041501A967D5E00DB40D5 /* Users.swift in Sources */,
 				8E0A55891AA11A85000B89ED /* VerifyState.swift in Sources */,
 				CD4041571A967D7400DB40D5 /* EventsTableViewController.swift in Sources */,

@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import UIKit
 
 class WishListGift{
     
@@ -15,15 +14,12 @@ class WishListGift{
     var name:String!
     var description:String!
     var price:Double!
-    var image:UIImage?
-    var isPooling:Bool
     
     init(giftID: Int, giftName:String, giftDescription:String, giftPrice:Double){
         self.databaseID = giftID
         self.name = giftName
         self.description = giftDescription
         self.price = giftPrice
-        self.isPooling = false
     }
     
     func descripe () -> String {
