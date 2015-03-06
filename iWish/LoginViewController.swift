@@ -73,46 +73,40 @@ class LoginViewController: UIViewController {
             let query = "SELECT * FROM Users WHERE username = '\(usernameTextField.text)'"
             
             println(query)
-
+            
             DatabaseConnection.GetUser(query) { responseObject, error in
                 //CHECK FOR ERRORS
                 if responseObject != nil {
                     self.users = responseObject!
-
-                   
+                    println("NEVER NIL NEVER NIL")
+                    if self.users[0].password == nil {
+                        println("FAIL")
+                    }
+                    else {
                         VerifyState.userVerified = true
                         VerifyState.username = self.users[0].username
                         println(self.users[0].username)
                         println(self.users[0].password)
                         if(self.users[0].username == self.usernameTextField.text && self.users[0].password == self.passwordTextField.text) {
-                           // println("SUCCESS")
-                            println(self.users[0].email)
+                            //println("SUCCESS")
                         }
                         if VerifyState.userVerified && VerifyState.username == self.users[0].username {
-                           // println("SUCCESS")
-                          self.performSegueWithIdentifier("loginSuccess", sender: self)
+                            println("SUCCESS")
+                           // self.performSegueWithIdentifier("LoggedSegue", sender: self)
                             
                         }
-                    
+                    }
                 }
-               if self.users.count == 0 {
-                 var alertTitle = ""
-                 var alertBody = ""
-                
-                 alertTitle = "Incorrect Credentials"
-                 alertBody = "Please enter the correct username/password combination"
-                 self.usernameTextField.text = ""
-                 self.passwordTextField.text = ""
-                
-                let alertView = UIAlertView(title: alertTitle, message: alertBody, delegate: nil, cancelButtonTitle: "OK")
-                alertView.show()
-                
+                else {
+                    //self.alertUser("No Data", messageText: "Could not retrieve data", buttonText: "OK")
+                    if VerifyState.userVerified {
+                        println("FAIL")
+                    }
+                }
             }
-          
         }
-    }
         
-}
+    }
     
     private func validInputs() -> Bool {
         var alertTitle = ""
@@ -140,7 +134,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         //performSegueWithIdentifier("LoginSegue", sender: self)
-        //usernameTextField.becomeFirstResponder()
+        usernameTextField.becomeFirstResponder()
     }
     
     override func didReceiveMemoryWarning() {
@@ -158,5 +152,4 @@ class LoginViewController: UIViewController {
     }
     */
     
-
 }
