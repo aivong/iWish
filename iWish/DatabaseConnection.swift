@@ -10,6 +10,7 @@ import Foundation
 import Alamofire
 
 class DatabaseConnection{
+    
     //Funcitons to return gifts
     class func GetGifts(query: String, completionHandler: (responseObject: [WishListGift]?, error: NSError?) -> ()){
         GetWishListGifts(query, completionHandler: completionHandler)
@@ -78,14 +79,19 @@ class DatabaseConnection{
         }
     }
     
-    //Functions to Create an account
-    class func InsertUser(query: String, completionHandler: (responseObject: Bool?, error: NSError?)->()){
-        InsertUserQuery(query, completionHandler: completionHandler)
+    //Functions to update gifts
+    class func UpdateGift(gift: WishListGift, completionHandler: (responseObject: Bool?, error: NSError?)->()){
+        UpdateGiftQuery(gift, completionHandler: completionHandler)
     }
     
-    private class func InsertUserQuery(query: String, completionHandler: (responseObject: Bool?, error: NSError?)->()){
+    private class func UpdateGiftQuery(gift: WishListGift, completionHandler: (responseObject: Bool?, error: NSError?)->()){
+        
         let password = "A7B129MNP"
-        Alamofire.request(.GET, "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php", parameters: ["password": password, "query":query]).responseJSON() {
+        let url = "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php"
+        let query = "UPDATE WishListGifts SET name=\(gift.name), description=\(gift.description), price=\(gift.price) WHERE id=\(gift.databaseID)"
+        let parameters = ["password": password, "query":query]
+        
+        Alamofire.request(.GET, url, parameters: parameters).responseJSON() {
             (_, _, data, error) in
             if error != nil{
                 completionHandler(responseObject: false, error: error)
@@ -96,6 +102,7 @@ class DatabaseConnection{
             
         }
     }
+<<<<<<< HEAD
     
 //    class func CheckUser(query: String, completionHandler: (responseObject: Bool?, error: NSError?)->()){
 //        InsertUserQuery(query, completionHandler: completionHandler)
@@ -148,4 +155,53 @@ class DatabaseConnection{
         
     }
 
+||||||| merged common ancestors
+    
+//    class func CheckUser(query: String, completionHandler: (responseObject: Bool?, error: NSError?)->()){
+//        InsertUserQuery(query, completionHandler: completionHandler)
+//    }
+//    
+//    private class func CheckUserQuery(query: String, completionHandler: (responseObject: Bool?, error: NSError?)->()){
+//        let password = "A7B129MNP"
+//        Alamofire.request(.GET, "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php", parameters: ["password": password, "query":query]).responseJSON() {
+//            (_, _, data, error) in
+//            if data != nil{
+//                let json = JSON(data!)
+//                if json.count > 0 {
+//                    completionHandler(responseObject: true, error: error)
+//                }
+//            }
+//            else{
+//                completionHandler(responseObject: false, error: error)
+//            }
+//        }
+//    }
+    class func GetUser(query: String, completionHandler: (responseObject: [Users]?, error: NSError?) -> ()){
+        GetUsers(query, completionHandler: completionHandler)
+    }
+    
+    private class func GetUsers(query: String, completionHandler: (responseObject: [Users]?, error: NSError?)->()){
+        let password = "A7B129MNP"
+        Alamofire.request(.GET, "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php", parameters: ["password": password, "query":query]).responseJSON() {
+            (_, _, data, error) in
+            var users = Array<Users>()
+            if data != nil{
+                let json = JSON(data!)
+                for i in 0..<json.count{
+                    let username = (json[i]["username"]).stringValue
+                    let password = (json[i]["password"]).stringValue
+                    users.append(Users(username: username, password: password))
+                    
+                    completionHandler(responseObject: users, error: error)
+                }
+            }
+            else{
+                completionHandler(responseObject: nil, error: error)
+            }
+        }
+        
+    }
+
+=======
+>>>>>>> origin/master
 }
