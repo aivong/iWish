@@ -62,7 +62,6 @@
                                         </state>
                                         <connections>
                                             <action selector="logInPushed:" destination="lUF-FK-sLw" eventType="touchUpInside" id="VWh-Is-DE5"/>
-                                            <segue destination="vBT-5C-EOt" kind="show" id="6FO-1l-Cpk"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -87,6 +86,7 @@
                         <outlet property="usernameImage" destination="J3y-Gm-NtL" id="ua2-6T-reX"/>
                         <outlet property="usernamePasswordView" destination="Gv9-UI-MId" id="VlX-0w-GVb"/>
                         <outlet property="usernameTextField" destination="pWa-gM-3ND" id="Dg8-EJ-qLj"/>
+                        <segue destination="vBT-5C-EOt" kind="show" identifier="loginSuccess" id="57v-c6-aSr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ViW-4A-3K6" userLabel="First Responder" sceneMemberID="firstResponder"/>

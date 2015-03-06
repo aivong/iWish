@@ -124,19 +124,23 @@ class DatabaseConnection{
         let password = "A7B129MNP"
         Alamofire.request(.GET, "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php", parameters: ["password": password, "query":query]).responseJSON() {
             (_, _, data, error) in
-            var users = Array<Users>()
+
             if data != nil{
+                var users = Array<Users>()
                 let json = JSON(data!)
-                for i in 0..<json.count{
-                    let username = (json[i]["username"]).stringValue
-                    let password = (json[i]["password"]).stringValue
-                    users.append(Users(username: username, password: password))
-                    
-                    completionHandler(responseObject: users, error: error)
+                if json == [] {
+                    completionHandler(responseObject: nil, error: error)
                 }
-            }
-            else{
-                completionHandler(responseObject: nil, error: error)
+                else {
+                    for i in 0..<json.count{
+                        let username = (json[i]["username"]).stringValue
+                        let password = (json[i]["password"]).stringValue
+                        users.append(Users(username: username, password: password))
+                        
+                        completionHandler(responseObject: users, error: error)
+                    }
+                }
+
             }
         }
         
