@@ -118,6 +118,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="tZm-XE-q5I" kind="show" id="ZGD-98-MaH"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -126,12 +129,52 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Events" id="Xdp-SU-z6l">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="SaM-wX-Flf"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="SaM-wX-Flf">
+                            <connections>
+                                <segue destination="4YK-ia-bw5" kind="show" id="hbp-sk-Ngd"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JGH-vF-CvA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="480" y="-2745"/>
+            <point key="canvasLocation" x="562" y="-3097"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="R1q-dH-C8n">
+            <objects>
+                <viewController id="4YK-ia-bw5" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2DA-CC-9vD"/>
+                        <viewControllerLayoutGuide type="bottom" id="2XM-dU-oTb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1KZ-DN-yna">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DKg-hp-vI8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1258" y="-3441"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="orY-Gf-Y9a">
+            <objects>
+                <viewController id="tZm-XE-q5I" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1Eg-Nh-cWX"/>
+                        <viewControllerLayoutGuide type="bottom" id="rNm-Gd-402"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="l72-7S-RwS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cOM-TH-OBq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1258" y="-2759"/>
         </scene>
         <!--Wish List-->
         <scene sceneID="pyw-gb-nrv">
