@@ -14,6 +14,10 @@
 		555FE4081AABB9E600EE8C1E /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555FE4061AABB9E600EE8C1E /* EventDetailViewController.swift */; };
 		555FE40A1AABB9F000EE8C1E /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555FE4091AABB9F000EE8C1E /* AddEventViewController.swift */; };
 		555FE40B1AABB9F000EE8C1E /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555FE4091AABB9F000EE8C1E /* AddEventViewController.swift */; };
+		555FE4141AABC4F800EE8C1E /* SearchUsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555FE4131AABC4F800EE8C1E /* SearchUsersTableViewController.swift */; };
+		555FE4151AABC4F800EE8C1E /* SearchUsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555FE4131AABC4F800EE8C1E /* SearchUsersTableViewController.swift */; };
+		555FE4181AABC51200EE8C1E /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555FE4171AABC51200EE8C1E /* FriendsTableViewController.swift */; };
+		555FE4191AABC51200EE8C1E /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555FE4171AABC51200EE8C1E /* FriendsTableViewController.swift */; };
 		8433929B1A8D0B2500E5B01B /* WishListGift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433929A1A8D0B2500E5B01B /* WishListGift.swift */; };
 		8433929D1A8D2C1A00E5B01B /* DatabaseConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433929C1A8D2C1A00E5B01B /* DatabaseConnection.swift */; };
 		8446A9901A8BC07800D51024 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446A98F1A8BC07800D51024 /* LoginViewController.swift */; };
@@ -98,6 +102,8 @@
 		555FE4031AABB9A400EE8C1E /* UserEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserEvent.swift; sourceTree = "<group>"; };
 		555FE4061AABB9E600EE8C1E /* EventDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 		555FE4091AABB9F000EE8C1E /* AddEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
+		555FE4131AABC4F800EE8C1E /* SearchUsersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchUsersTableViewController.swift; sourceTree = "<group>"; };
+		555FE4171AABC51200EE8C1E /* FriendsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
 		8433929A1A8D0B2500E5B01B /* WishListGift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishListGift.swift; sourceTree = "<group>"; };
 		8433929C1A8D2C1A00E5B01B /* DatabaseConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseConnection.swift; sourceTree = "<group>"; };
 		8446A98F1A8BC07800D51024 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -254,6 +260,8 @@
 		CD4041491A967A5B00DB40D5 /* Friends ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				555FE4131AABC4F800EE8C1E /* SearchUsersTableViewController.swift */,
+				555FE4171AABC51200EE8C1E /* FriendsTableViewController.swift */,
 			);
 			name = "Friends ViewControllers";
 			sourceTree = "<group>";
@@ -421,6 +429,8 @@
 			files = (
 				8EE8E70D1A9A8AA0000F6076 /* CreateAccountViewController.swift in Sources */,
 				849337BA1A94137F003456B5 /* EventsTableViewController.swift in Sources */,
+				555FE4181AABC51200EE8C1E /* FriendsTableViewController.swift in Sources */,
+				555FE4141AABC4F800EE8C1E /* SearchUsersTableViewController.swift in Sources */,
 				8433929B1A8D0B2500E5B01B /* WishListGift.swift in Sources */,
 				8433929D1A8D2C1A00E5B01B /* DatabaseConnection.swift in Sources */,
 				555FE40A1AABB9F000EE8C1E /* AddEventViewController.swift in Sources */,
@@ -444,6 +454,8 @@
 			files = (
 				CD40415A1A967D8800DB40D5 /* AppDelegate.swift in Sources */,
 				CD4041551A967D6F00DB40D5 /* LoginViewController.swift in Sources */,
+				555FE4191AABC51200EE8C1E /* FriendsTableViewController.swift in Sources */,
+				555FE4151AABC4F800EE8C1E /* SearchUsersTableViewController.swift in Sources */,
 				CD4041561A967D7100DB40D5 /* WishListTableViewController.swift in Sources */,
 				CD40415B1A967D8C00DB40D5 /* SwiftyJSON.swift in Sources */,
 				555FE40B1AABB9F000EE8C1E /* AddEventViewController.swift in Sources */,
