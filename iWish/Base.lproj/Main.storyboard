@@ -545,6 +545,18 @@
                                     <rect key="frame" x="183" y="276" width="188" height="30"/>
                                 </variation>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pO0-kx-1r7">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="22" y="15" width="72" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="cancelRegistration:" destination="KY6-MU-aXO" eventType="touchUpInside" id="mhW-09-Cq8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -571,6 +583,7 @@
                                 <exclude reference="FwQ-5R-ifO"/>
                                 <exclude reference="a2e-1X-uES"/>
                                 <exclude reference="c6a-ua-lCX"/>
+                                <exclude reference="pO0-kx-1r7"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="0MR-f1-3nE"/>
@@ -597,6 +610,7 @@
                                 <include reference="FwQ-5R-ifO"/>
                                 <include reference="a2e-1X-uES"/>
                                 <include reference="c6a-ua-lCX"/>
+                                <include reference="pO0-kx-1r7"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="0MR-f1-3nE"/>
