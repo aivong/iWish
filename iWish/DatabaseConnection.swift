@@ -154,10 +154,11 @@ class DatabaseConnection{
             if data != nil{
                 let json = JSON(data!)
                 for i in 0..<json.count{
-                    let id = (json[i]["id"]).intValue
+                    let id = (json[i]["eventID"]).intValue
                     let name = (json[i]["name"]).stringValue
                     let date = (json[i]["date"]).stringValue
                     let description = (json[i]["description"]).stringValue
+                    print(name)
                     events.append(UserEvent(eventID: id, eventName: name, eventDate: date, eventDescription: description))
                     
                     completionHandler(responseObject: events, error: error)
@@ -175,6 +176,24 @@ class DatabaseConnection{
         InsertEventsQuery(query, completionHandler: completionHandler)
     }
     private class func InsertEventsQuery(query: String, completionHandler: (responseObject: Bool?, error: NSError?)->()){
+        let password = "A7B129MNP"
+        Alamofire.request(.GET, "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php", parameters: ["password": password, "query":query]).responseJSON() {
+            (_, _, data, error) in
+            if error != nil{
+                completionHandler(responseObject: false, error: error)
+            }
+            else{
+                completionHandler(responseObject: true, error: error)
+            }
+            
+        }
+    }
+    
+    //Functions to insert events
+    class func UpdateEvent(query: String, completionHandler: (responseObject: Bool?, error: NSError?)->()){
+        UpdateEventsQuery(query, completionHandler: completionHandler)
+    }
+    private class func UpdateEventsQuery(query: String, completionHandler: (responseObject: Bool?, error: NSError?)->()){
         let password = "A7B129MNP"
         Alamofire.request(.GET, "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php", parameters: ["password": password, "query":query]).responseJSON() {
             (_, _, data, error) in

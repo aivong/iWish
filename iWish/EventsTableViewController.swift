@@ -25,31 +25,31 @@ class EventsTableViewController: UITableViewController {
     
     @IBAction func saveEvent(segue: UIStoryboardSegue){
         let addEventVC = segue.sourceViewController as AddEventViewController
-        let newGiftName = addEventVC.eventName.text
-        let newGiftDate = addEventVC.eventDate.text
-        let newGiftDesc = addEventVC.eventDescription.text
+        let newEventName = addEventVC.eventName.text
+        let newEventDate = addEventVC.eventDate.text
+        let newEventDesc = addEventVC.eventDescription.text
         
-        if newGiftName == "" || newGiftDate == "" || newGiftDesc == ""{
+        if newEventName == "" || newEventDate == "" || newEventDesc == ""{
             alertUser("Not Saved",  messageText: "Please fill in all fields", buttonText: "OK")
         }
-        else if countElements(newGiftName) > 20{
+        else if countElements(newEventName) > 20{
             alertUser("Warning!",  messageText: "Name must be no more than 20 characters", buttonText: "OK")
         }
-        else if countElements(newGiftDesc) > 500{
+        else if countElements(newEventDesc) > 500{
             alertUser("Warning!",  messageText: "Description is too long! 500 characters max", buttonText: "OK")
         }
         else{
-            upcomingEvents.append(UserEvent(eventID: 1,eventName: newGiftName,eventDate: newGiftDate,eventDescription: newGiftDesc));
-            let query = "INSERT INTO Events (eventID, userID, name, date, description, guestListID) VALUES (NULL,'bohlin2', '\(newGiftName)', '\(newGiftDate)', '\(newGiftDesc)', NULL)"
-            DatabaseConnection.InsertGift(query){ responseObject, error in
-                self.getUsersFeaturedGifts()
+            upcomingEvents.append(UserEvent(eventID: 1,eventName: newEventName,eventDate: newEventDate,eventDescription: newEventDesc));
+            let query = "INSERT INTO Events (eventID, userID, name, date, description, guestListID) VALUES (NULL,'bohlin2', '\(newEventName)', '\(newEventDate)', '\(newEventDesc)', NULL)"
+            DatabaseConnection.InsertEvent(query){ responseObject, error in
+                self.getUsersFeaturedEvents()
             }
         }
         
     }
     
-    func getUsersFeaturedGifts(){
-        DatabaseConnection.GetEvents("SELECT * FROM Events ORDER BY name") { responseObject, error in
+    func getUsersFeaturedEvents(){
+        DatabaseConnection.GetEvents("SELECT * FROM Events ORDER BY name") { responseObject, error in print(error?.localizedDescription)
             if responseObject != nil {
                 self.upcomingEvents = responseObject!
                 self.tableView.reloadData()
@@ -73,7 +73,7 @@ class EventsTableViewController: UITableViewController {
             // Delete the row from the data source
             var wlg = upcomingEvents[indexPath.row]
             DatabaseConnection.DeleteEvent(wlg.name){ responseObject, error in
-                //Do something when gift finishes being deleted
+                //Do something when Event finishes being deleted
             }
             upcomingEvents.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
@@ -84,7 +84,7 @@ class EventsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getUsersFeaturedGifts()
+        getUsersFeaturedEvents()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
@@ -198,9 +198,9 @@ class EventsTableViewController: UITableViewController {
             let path = self.tableView.indexPathForSelectedRow()!
             vc.event = upcomingEvents[path.row]
             
-            //            vc.giftName = selectedGift.name
-            //            vc.giftDescription = selectedGift.description
-            //            vc.giftPrice = selectedGift.price
+            //            vc.EventName = selectedEvent.name
+            //            vc.EventDescription = selectedEvent.description
+            //            vc.EventPrice = selectedEvent.price
             
         }
     }

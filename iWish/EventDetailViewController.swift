@@ -23,7 +23,7 @@ class EventDetailViewController: UIViewController {
         eventDescriptionDetail.text = event.description
         eventDateDetail.text = event.date
         
-        // Do any additional setup after loading the view.
+        // Do any edititional setup after loading the view.
     }
     
     override func didReceiveMemoryWarning() {
@@ -31,6 +31,50 @@ class EventDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func cancelEditEvent(segue: UIStoryboardSegue){
+        
+    }
+    
+    @IBAction func updateEvent(segue: UIStoryboardSegue){
+        let editEventVC = segue.sourceViewController as EditEventViewController
+        let newEventName = editEventVC.eventName.text
+        let newEventDate = editEventVC.eventDate.text
+        let newEventDesc = editEventVC.eventDescription.text
+        let oldEventName = eventNameDetail.text
+        let oledEventDescription = eventDescriptionDetail.text
+        let oldEventDate = eventDateDetail.text
+        
+        //alertUser(newEventName, messageText: "", buttonText: "")
+        
+        if newEventName == "" || newEventDate == "" || newEventDesc == ""{
+            alertUser("Not Saved",  messageText: "Please fill in all fields", buttonText: "OK")
+        }
+        else if countElements(newEventName) > 20{
+            alertUser("Warning!",  messageText: "Name must be no more than 20 characters", buttonText: "OK")
+        }
+        else if countElements(newEventDesc) > 500{
+            alertUser("Warning!",  messageText: "Description is too long! 500 characters max", buttonText: "OK")
+        }
+        else{
+            super.viewDidLoad()
+            
+            eventNameDetail.text = newEventName
+            eventDescriptionDetail.text = newEventDate
+            eventDateDetail.text = newEventDesc
+            let query = "UPDATE Events SET name = '\(newEventName)', date = '\(newEventDate)', description = '\(newEventDesc)' WHERE name =  '\(oldEventName)' "
+            print(query)
+            DatabaseConnection.UpdateEvent(query){ responseObject, error in
+                print(error?.localizedDescription)
+            }
+        }
+        
+    }
+    
+    func alertUser(titleText: String, messageText: String, buttonText: String){
+        let alertController = UIAlertController(title: titleText, message: messageText, preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: buttonText, style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
     
     /*
     // MARK: - Navigation

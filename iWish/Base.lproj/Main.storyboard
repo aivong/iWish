@@ -295,7 +295,7 @@
         <!--Edit Event-->
         <scene sceneID="zjd-02-ftn">
             <objects>
-                <viewController title="Edit Event" id="rit-TC-5bO" userLabel="Edit Event" sceneMemberID="viewController">
+                <viewController title="Edit Event" id="rit-TC-5bO" userLabel="Edit Event" customClass="EditEventViewController" customModule="iWish" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9pZ-DV-mDs"/>
                         <viewControllerLayoutGuide type="bottom" id="HsR-IK-YpT"/>
@@ -333,7 +333,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UlQ-FD-HUI">
-                                <rect key="frame" x="142" y="206" width="175" height="168"/>
+                                <rect key="frame" x="142" y="197" width="163" height="170"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -341,11 +341,32 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Edit Event" id="Awb-35-w4p"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Edit Event" id="11j-AE-TGA">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="GXp-qe-vT3">
+                            <connections>
+                                <action selector="cancelPressed:" destination="k3N-Eb-YaZ" id="8yN-te-hK6"/>
+                                <segue destination="Gdi-zA-jXi" kind="unwind" unwindAction="cancelEditEvent:" id="SXp-m9-wf8"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="b6a-ia-KiT">
+                            <connections>
+                                <action selector="savePressed:" destination="k3N-Eb-YaZ" id="5oW-zk-DGr"/>
+                                <segue destination="Gdi-zA-jXi" kind="unwind" unwindAction="updateEvent:" id="p1r-P8-RWo"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="eventDate" destination="HyJ-B4-Ip4" id="Us0-C9-Dd9"/>
+                        <outlet property="eventDescription" destination="UlQ-FD-HUI" id="8TR-7G-qsR"/>
+                        <outlet property="eventName" destination="7vt-j1-P52" id="014-ls-c1U"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qvF-Mm-0kd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Gdi-zA-jXi" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1976" y="-2759"/>
+            <point key="canvasLocation" x="2136" y="-2759"/>
         </scene>
         <!--Wish List-->
         <scene sceneID="pyw-gb-nrv">
