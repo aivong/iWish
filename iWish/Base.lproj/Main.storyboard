@@ -765,6 +765,7 @@
                         <outlet property="email" destination="aW1-cv-r6l" id="x9J-s1-pLw"/>
                         <outlet property="fullName" destination="1hD-QX-xY8" id="QaB-LD-vgz"/>
                         <outlet property="gender" destination="dmB-7M-chM" id="Nhn-UE-XrD"/>
+                        <outlet property="image" destination="iuR-e0-kgJ" id="ThM-Fg-scy"/>
                         <outlet property="mailingAddress" destination="qQa-jX-G6a" id="AYi-lw-UcB"/>
                     </connections>
                 </viewController>

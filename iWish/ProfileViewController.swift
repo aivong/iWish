@@ -14,6 +14,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var gender: UILabel!
     @IBOutlet weak var email: UILabel!
     @IBOutlet weak var mailingAddress: UILabel!
+    @IBOutlet weak var image: UIImageView!
     
     var users = [Users]()
 
