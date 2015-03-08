@@ -716,6 +716,15 @@
                                     <rect key="frame" x="218" y="157" width="166" height="62"/>
                                 </variation>
                             </label>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g5H-g1-BhO">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="28" y="275" width="344" height="268"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="D0a-Ct-0PS" kind="embed" id="c0E-Eq-WYG"/>
+                                </connections>
+                            </containerView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="f44-cO-K09">
                                 <rect key="frame" x="-61" y="-14" width="123" height="29"/>
                                 <segments>
@@ -725,13 +734,10 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="28" y="239" width="344" height="29"/>
                                 </variation>
+                                <connections>
+                                    <action selector="indexChanged:" destination="I8w-1Y-92J" eventType="valueChanged" id="WHv-mF-Puo"/>
+                                </connections>
                             </segmentedControl>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JEc-Ov-cTq">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="28" y="275" width="344" height="268"/>
-                                </variation>
-                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
@@ -742,8 +748,8 @@
                                 <exclude reference="dmB-7M-chM"/>
                                 <exclude reference="aW1-cv-r6l"/>
                                 <exclude reference="qQa-jX-G6a"/>
+                                <exclude reference="g5H-g1-BhO"/>
                                 <exclude reference="f44-cO-K09"/>
-                                <exclude reference="JEc-Ov-cTq"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -754,8 +760,8 @@
                                 <include reference="dmB-7M-chM"/>
                                 <include reference="aW1-cv-r6l"/>
                                 <include reference="qQa-jX-G6a"/>
+                                <include reference="g5H-g1-BhO"/>
                                 <include reference="f44-cO-K09"/>
-                                <include reference="JEc-Ov-cTq"/>
                             </mask>
                         </variation>
                     </view>
@@ -767,6 +773,7 @@
                         <outlet property="gender" destination="dmB-7M-chM" id="Nhn-UE-XrD"/>
                         <outlet property="image" destination="iuR-e0-kgJ" id="ThM-Fg-scy"/>
                         <outlet property="mailingAddress" destination="qQa-jX-G6a" id="AYi-lw-UcB"/>
+                        <outlet property="segmentedControl" destination="f44-cO-K09" id="OKx-vB-MmY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ll-a4-6fD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -851,6 +858,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gg2-en-NEn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-193" y="-1733"/>
+        </scene>
+        <!--Profile Gifts-->
+        <scene sceneID="xKY-gN-LuF">
+            <objects>
+                <tableViewController id="uXD-1P-hTS" customClass="profileGifts" customModule="iWish" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="47" sectionHeaderHeight="22" sectionFooterHeight="22" id="qnC-g1-CAg">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WishListGift" rowHeight="47" id="1Bd-ph-fgG">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1Bd-ph-fgG" id="vql-al-S5J">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="uXD-1P-hTS" id="pas-Gl-7En"/>
+                            <outlet property="delegate" destination="uXD-1P-hTS" id="WXq-jh-5vt"/>
+                        </connections>
+                    </tableView>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <navigationItem key="navigationItem" id="Rgw-7k-ahx"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xo5-yg-56r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1396.5" y="-684"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ts5-X7-BSG">
+            <objects>
+                <navigationController id="D0a-Ct-0PS" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sRn-du-2ER">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="uXD-1P-hTS" kind="relationship" relationship="rootViewController" id="Oct-mM-4KP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OdS-BS-clp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="654" y="-830"/>
         </scene>
     </scenes>
     <resources>

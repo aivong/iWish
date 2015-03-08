@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import UIKit
 
 class DatabaseConnection{
     //Funcitons to return gifts
@@ -146,6 +147,30 @@ class DatabaseConnection{
                     }
                 }
 
+            }
+        }
+        
+    }
+
+    class func GetImage(query: String, completionHandler: (responseObject: UIImage?, error: NSError?)->()){
+        let password = "A7B129MNP"
+        Alamofire.request(.GET, "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php", parameters: ["password": password, "query":query]).responseJSON() {
+            (_, _, data, error) in
+            
+            if data != nil{
+                let json = JSON(data!)
+                if json == [] {
+                    completionHandler(responseObject: nil, error: error)
+                }
+                else {
+                    for i in 0..<json.count{
+                        let image: UIImage = (json[i]["image"]).rawValue as UIImage
+                        
+                        
+                        completionHandler(responseObject: image, error: error)
+                    }
+                }
+                
             }
         }
         

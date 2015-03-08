@@ -15,16 +15,31 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var email: UILabel!
     @IBOutlet weak var mailingAddress: UILabel!
     @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBAction func indexChanged(sender: UISegmentedControl) {
+        switch segmentedControl.selectedSegmentIndex
+        {
+        case 0:
+            println("First selected")
+        case 1:
+            println("Second Segment selected")
+        default:
+            break; 
+        }
+    }
     
+   
     var users = [Users]()
+    var profileImage: UIImage!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let query = "SELECT * FROM Users WHERE username = '\(VerifyState.selectedUser)'"
-        
-        DatabaseConnection.GetUser(query) { responseObject, error in
+        let queryProfile = "SELECT * FROM Users WHERE username = '\(VerifyState.selectedUser)'"
+        let queryImage = "SELECT image FROM pictures WHERE username = '\(VerifyState.selectedUser)'"
+                
+        DatabaseConnection.GetUser(queryProfile) { responseObject, error in
             //CHECK FOR ERRORS
             if responseObject != nil {
                 self.users = responseObject!
@@ -36,8 +51,23 @@ class ProfileViewController: UIViewController {
                 
             }
         }
+    
+
+        
+//        DatabaseConnection.GetImage(queryImage) { responseObject, error in
+//            //CHECK FOR ERRORS
+//            if responseObject != nil {
+//                self.profileImage = responseObject!
+//                
+//                println(self.profileImage)
+//                
+//            }
+//        }
 
     }
+    
+
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
