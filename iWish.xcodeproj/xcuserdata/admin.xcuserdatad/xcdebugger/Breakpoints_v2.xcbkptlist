@@ -42,12 +42,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iWishTests/DatabaseTests.swift"
-            timestampString = "447282213.401676"
+            timestampString = "447543728.161212"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "testExample()"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "testFriendRequestSentAndGetFriendRequest()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
