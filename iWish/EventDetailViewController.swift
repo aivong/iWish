@@ -40,11 +40,9 @@ class EventDetailViewController: UIViewController {
         let newEventName = editEventVC.eventName.text
         let newEventDate = editEventVC.eventDate.text
         let newEventDesc = editEventVC.eventDescription.text
-        let oldEventName = eventNameDetail.text
-        let oledEventDescription = eventDescriptionDetail.text
-        let oldEventDate = eventDateDetail.text
-        
-        //alertUser(newEventName, messageText: "", buttonText: "")
+        let oldEventName = eventNameDetail.text!
+        let oledEventDescription = eventDescriptionDetail.text!
+        let oldEventDate = eventDateDetail.text!
         
         if newEventName == "" || newEventDate == "" || newEventDesc == ""{
             alertUser("Not Saved",  messageText: "Please fill in all fields", buttonText: "OK")
@@ -59,8 +57,8 @@ class EventDetailViewController: UIViewController {
             super.viewDidLoad()
             
             eventNameDetail.text = newEventName
-            eventDescriptionDetail.text = newEventDate
-            eventDateDetail.text = newEventDesc
+            eventDescriptionDetail.text = newEventDesc
+            eventDateDetail.text = newEventDate
             let query = "UPDATE Events SET name = '\(newEventName)', date = '\(newEventDate)', description = '\(newEventDesc)' WHERE name =  '\(oldEventName)' "
             print(query)
             DatabaseConnection.UpdateEvent(query){ responseObject, error in
