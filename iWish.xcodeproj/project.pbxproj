@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		841887EF1AA8FB4C00B69533 /* DatabaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841887EE1AA8FB4C00B69533 /* DatabaseTests.swift */; };
 		8433929B1A8D0B2500E5B01B /* WishListGift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433929A1A8D0B2500E5B01B /* WishListGift.swift */; };
 		8433929D1A8D2C1A00E5B01B /* DatabaseConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433929C1A8D2C1A00E5B01B /* DatabaseConnection.swift */; };
 		843773BB1A9D8EF900DE9D09 /* SearchUsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843773BA1A9D8EF900DE9D09 /* SearchUsersTableViewController.swift */; };
@@ -87,6 +88,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		841887EE1AA8FB4C00B69533 /* DatabaseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseTests.swift; sourceTree = "<group>"; };
 		8433929A1A8D0B2500E5B01B /* WishListGift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishListGift.swift; sourceTree = "<group>"; };
 		8433929C1A8D2C1A00E5B01B /* DatabaseConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseConnection.swift; sourceTree = "<group>"; };
 		843773BA1A9D8EF900DE9D09 /* SearchUsersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchUsersTableViewController.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 			children = (
 				8E9730661A86BA2C006543B1 /* iWishTests.swift */,
 				8E9730641A86BA2C006543B1 /* Supporting Files */,
+				841887EE1AA8FB4C00B69533 /* DatabaseTests.swift */,
 			);
 			path = iWishTests;
 			sourceTree = "<group>";
@@ -423,6 +426,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD40415A1A967D8800DB40D5 /* AppDelegate.swift in Sources */,
+				841887EF1AA8FB4C00B69533 /* DatabaseTests.swift in Sources */,
 				CD4041551A967D6F00DB40D5 /* LoginViewController.swift in Sources */,
 				CD4041561A967D7100DB40D5 /* WishListTableViewController.swift in Sources */,
 				CD40415B1A967D8C00DB40D5 /* SwiftyJSON.swift in Sources */,

@@ -400,7 +400,6 @@
         <!--Profile-->
         <scene sceneID="HuG-5Z-4cp">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8ll-a4-6fD" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="I8w-1Y-92J" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AwE-Yf-jrN"/>
@@ -413,6 +412,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" id="aUS-gN-RNx"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8ll-a4-6fD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-193" y="-642"/>
         </scene>

@@ -26,13 +26,75 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iWish/SearchUsersTableViewController.swift"
-            timestampString = "447181445.751615"
+            timestampString = "447534034.010031"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "37"
             endingLineNumber = "37"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iWishTests/DatabaseTests.swift"
+            timestampString = "447282213.401676"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "testExample()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iWish/SearchUsersTableViewController.swift"
+            timestampString = "447535065.491519"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "tableView(_:editActionsForRowAtIndexPath:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iWish.SearchUsersTableViewController.(tableView (iWish.SearchUsersTableViewController) -&gt; (ObjectiveC.UITableView, editActionsForRowAtIndexPath : ObjectiveC.NSIndexPath) -&gt; Swift.Optional&lt;Swift.Array&lt;Swift.AnyObject&gt;&gt;).(closure #1).(closure #1)"
+                  moduleName = "iWish"
+                  urlString = "file:///Users/admin/iWish/iWish/SearchUsersTableViewController.swift"
+                  timestampString = "447534491.172947"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "92"
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "57">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iWish.SearchUsersTableViewController.(tableView (iWish.SearchUsersTableViewController) -&gt; (ObjectiveC.UITableView, editActionsForRowAtIndexPath : ObjectiveC.NSIndexPath) -&gt; Swift.Optional&lt;Swift.Array&lt;Swift.AnyObject&gt;&gt;).(closure #1).(closure #1).(closure #1)"
+                  moduleName = "iWish"
+                  urlString = "file:///Users/admin/iWish/iWish/SearchUsersTableViewController.swift"
+                  timestampString = "447534491.238812"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "92"
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "40">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

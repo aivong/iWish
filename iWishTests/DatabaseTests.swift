@@ -1,8 +1,8 @@
 //
-//  iWishTests.swift
-//  iWishTests
+//  DatabaseTests.swift
+//  iWish
 //
-//  Created by Ai Vong on 2/7/15.
+//  Created by Zachary Bohlin on 3/5/15.
 //  Copyright (c) 2015 WIS CS428. All rights reserved.
 //
 
@@ -11,8 +11,8 @@ import XCTest
 import iWish
 import AlamoFire
 
-class iWishTests: XCTestCase {
-    
+class DatabaseTests: XCTestCase {
+
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -22,19 +22,21 @@ class iWishTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-    
-    func testExample() {
-        
-        let testUser = Users(username: "John Doe", password: "pw")
-        
+
+    func testFriendRequestSentAndGetFriendRequest() {
+        DatabaseConnection.AddFriendRequest("testuserrequester", requestee: "testuserrequestee"){ responseObject, error in
+            DatabaseConnection.GetFriendRequestsForUser("testuserrequester"){responseObject, error in
+                XCTAssertTrue(responseObject?.count == 1, "Passed friend request")
+            }
+        }
         XCTAssert(true, "Pass")
     }
-    
+
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measureBlock() {
             // Put the code you want to measure the time of here.
         }
     }
-    
+
 }

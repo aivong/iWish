@@ -103,6 +103,8 @@ class DatabaseConnection{
         let password = "A7B129MNP"
         Alamofire.request(.GET, "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php", parameters: ["password": password, "query":query]).responseJSON() {
             (_, _, data, error) in
+            println(data)
+            println(error?.description)
             var users = Array<Users>()
             if data != nil{
                 let json = JSON(data!)

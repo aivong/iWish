@@ -32,6 +32,7 @@ class SearchUsersTableViewController: UITableViewController, UISearchBarDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         //Query will only return names of people user is not friends with
         DatabaseConnection.GetUser("SELECT Users.username as username, Users.password as password FROM Users, Friends WHERE (username != '\(usersName)' AND ((Friends.requester = '\(usersName)' AND Friends.requestee != username) OR (Friends.requester != username AND Friends.requestee = '\(usersName)') OR (Friends.requester != '\(usersName)' AND Friends.requestee != '\(usersName)'))) ORDER BY username") { responseObject, error in
             
@@ -88,6 +89,8 @@ class SearchUsersTableViewController: UITableViewController, UISearchBarDelegate
             let acceptMenu = UIAlertController(title: nil, message: "Send friend request?", preferredStyle: .ActionSheet)
             
             let yesActionHandler = { (action:UIAlertAction!) -> Void in
+                self.filteredUsers.removeAtIndex(indexPath.row)
+                self.tableView.reloadData()
                 DatabaseConnection.AddFriendRequest(self.usersName, requestee: friendName) { responseObject, error in
                     println("Done")
                 }
