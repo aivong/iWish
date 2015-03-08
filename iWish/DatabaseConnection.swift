@@ -183,23 +183,32 @@ class DatabaseConnection{
         
     }
 
-//    class func GetImage(query: String, completionHandler: (responseObject: [JSON]?, error: NSError?)->()){
-//        let password = "A7B129MNP"
-//        Alamofire.request(.GET, "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php", parameters: ["password": password, "query":query]).responseJSON() {
-//            (_, _, data, error) in
-//            
-//            if data != nil{
-//                var json = JSON(data!)
-//
-//                if json == [] {
-//                    completionHandler(responseObject: nil, error: error)
-//                }
-//                if let data = json["image"].arrayValue as [JSON]? {
-//                    completionHandler(responseObject: data, error: error)
-//                }
-//            }
-//        }
-//        
-//    }
+    class func GetImage(query: String, completionHandler: (responseObject: String?, error: NSError?)->()){
+        let password = "A7B129MNP"
+        Alamofire.request(.GET, "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php", parameters: ["password": password, "query":query]).responseJSON() {
+            (_, _, data, error) in
+            
+            if data != nil{
+                var json = JSON(data!)
+                println(json)
+
+                if json == [] {
+                    completionHandler(responseObject: nil, error: error)
+                }
+                else {
+                    for i in 0..<json.count{
+                        var filename = (json[i]["image"]).stringValue
+                    //    println(filename)
+                        VerifyState.DBFinished = true
+                        VerifyState.selectedPic = filename
+                        completionHandler(responseObject: filename, error: error)
+                    }
+                }
+                
+            }
+        }
+          //println(VerifyState.selectedPic)
+       
+        }
 
 }

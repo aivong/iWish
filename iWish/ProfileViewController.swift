@@ -18,11 +18,11 @@ class ProfileViewController: UIViewController {
     
     var profileImage: UIImage!
     var users = [Users]()
-    var json = [JSON]()
-   
+    var file: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let queryImage = "SELECT image FROM pictures WHERE username = '\(VerifyState.selectedUser)'"
+        let queryImage = "SELECT * FROM pictures WHERE username = '\(VerifyState.selectedUser)'"
         // Do any additional setup after loading the view.
         
         
@@ -43,16 +43,23 @@ class ProfileViewController: UIViewController {
             }
         }
     
+        println(queryImage)
+        DatabaseConnection.GetImage(queryImage) { responseObject, error in
+            //CHECK FOR ERRORS
+            if responseObject != nil {
+                
+                let profileImage : UIImage = UIImage(named: "/Users/aivong/Desktop/iWishimage/" + VerifyState.selectedPic)!
+                let imageview = UIImageView(image: profileImage)
+                imageview.frame = CGRectMake(31, 26, 172, 191)
+                self.view.addSubview(imageview)
+                
+                self.file = responseObject!
+            }
+        }
         
-//        DatabaseConnection.GetImage(queryImage) { responseObject, error in
-//            //CHECK FOR ERRORS
-//            if responseObject != nil {
-//                self.json = responseObject!
-//                
-//                imageView.
-//                
-//            }
-//        }
+        if VerifyState.DBFinished {
+          //  println(VerifyState.selectedPic)
+        }
 
 //        let profileImage : UIImage = UIImage(named : "default.jpeg")!
 //        var imageV : UIImageView = UIImageView(image: profileImage)
@@ -60,10 +67,10 @@ class ProfileViewController: UIViewController {
 //        imageV.center = self.view.center
 //        self.view.addSubview(imageV)
         
-        let profileImage : UIImage = UIImage(named: "default.jpeg")!
-        let imageview = UIImageView(image: profileImage)
-        imageview.frame = CGRectMake(31, 26, 172, 191)
-        self.view.addSubview(imageview)
+        //let profileImage : UIImage = UIImage(named: "/Users/aivong/Desktop/iWishimage/" + self.file)!
+        //let imageview = UIImageView(image: profileImage)
+        //imageview.frame = CGRectMake(31, 26, 172, 191)
+        //self.view.addSubview(imageview)
     }
     
 
