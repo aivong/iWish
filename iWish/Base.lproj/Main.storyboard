@@ -668,12 +668,12 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iuR-e0-kgJ">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="28" y="28" width="167" height="191"/>
+                                    <rect key="frame" x="31" y="26" width="172" height="191"/>
                                 </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NAME" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1hD-QX-xY8">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
@@ -756,7 +756,6 @@
                         <outlet property="email" destination="aW1-cv-r6l" id="x9J-s1-pLw"/>
                         <outlet property="fullName" destination="1hD-QX-xY8" id="QaB-LD-vgz"/>
                         <outlet property="gender" destination="dmB-7M-chM" id="Nhn-UE-XrD"/>
-                        <outlet property="image" destination="iuR-e0-kgJ" id="ThM-Fg-scy"/>
                         <outlet property="mailingAddress" destination="qQa-jX-G6a" id="AYi-lw-UcB"/>
                     </connections>
                 </viewController>

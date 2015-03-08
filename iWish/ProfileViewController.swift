@@ -14,10 +14,11 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var gender: UILabel!
     @IBOutlet weak var email: UILabel!
     @IBOutlet weak var mailingAddress: UILabel!
-    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var imageview: UIImageView!
     
     var profileImage: UIImage!
     var users = [Users]()
+    var json = [JSON]()
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,18 +43,27 @@ class ProfileViewController: UIViewController {
             }
         }
     
-
         
 //        DatabaseConnection.GetImage(queryImage) { responseObject, error in
 //            //CHECK FOR ERRORS
 //            if responseObject != nil {
-//                self.profileImage = responseObject!
+//                self.json = responseObject!
 //                
-//                println(self.profileImage)
+//                imageView.
 //                
 //            }
 //        }
 
+//        let profileImage : UIImage = UIImage(named : "default.jpeg")!
+//        var imageV : UIImageView = UIImageView(image: profileImage)
+//        imageV.frame = CGRectMake(0, 0, profileImage.size.width, profileImage.size.height)
+//        imageV.center = self.view.center
+//        self.view.addSubview(imageV)
+        
+        let profileImage : UIImage = UIImage(named: "default.jpeg")!
+        let imageview = UIImageView(image: profileImage)
+        imageview.frame = CGRectMake(31, 26, 172, 191)
+        self.view.addSubview(imageview)
     }
     
 
