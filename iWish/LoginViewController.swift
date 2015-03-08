@@ -92,6 +92,8 @@ class LoginViewController: UIViewController {
                         }
                         if VerifyState.userVerified && VerifyState.username == self.users[0].username {
                             println("SUCCESS")
+                            let nsud = NSUserDefaults.standardUserDefaults()
+                            nsud.setObject(self.users[0].username, forKey: "username")
                            // self.performSegueWithIdentifier("LoggedSegue", sender: self)
                             
                         }

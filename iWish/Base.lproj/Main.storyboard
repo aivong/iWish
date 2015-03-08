@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lUF-FK-sLw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lUF-FK-sLw">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
@@ -917,6 +917,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="EFo-dF-eH2" kind="showDetail" id="UbS-dV-XZW"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -937,6 +940,56 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Y0-mI-gUp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="834" y="375"/>
+        </scene>
+        <!--Friends Profile-->
+        <scene sceneID="alG-GE-jqx">
+            <objects>
+                <viewController title="Friends Profile" id="EFo-dF-eH2" customClass="FriendsProfileViewController" customModule="iWish" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Mcj-YQ-BYD"/>
+                        <viewControllerLayoutGuide type="bottom" id="nZ8-8N-Dw8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SL8-zR-f7V">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NvF-Pc-6bi">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="6P9-mG-w5V">
+                                        <barButtonItem key="leftBarButtonItem" title="&lt; Friends" id="y4n-S1-4bT">
+                                            <connections>
+                                                <segue destination="OUI-DK-Mw4" kind="unwind" unwindAction="unwindFromProfile:" id="VdA-ty-fMD"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Options" id="P49-Fo-lOO">
+                                            <connections>
+                                                <action selector="friendsProfileOptionsClicked:" destination="EFo-dF-eH2" id="S5y-OK-DZw"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="28" width="400" height="44"/>
+                                </variation>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="NvF-Pc-6bi"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="NvF-Pc-6bi"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SfZ-Rc-GYw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="OUI-DK-Mw4" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1186.5" y="1059"/>
         </scene>
         <!--All Users-->
         <scene sceneID="OUQ-iW-P4G">
