@@ -18,6 +18,7 @@
 		555FE4151AABC4F800EE8C1E /* SearchUsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555FE4131AABC4F800EE8C1E /* SearchUsersTableViewController.swift */; };
 		555FE4181AABC51200EE8C1E /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555FE4171AABC51200EE8C1E /* FriendsTableViewController.swift */; };
 		555FE4191AABC51200EE8C1E /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555FE4171AABC51200EE8C1E /* FriendsTableViewController.swift */; };
+		555FE42D1AABD0BC00EE8C1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E9730541A86BA2C006543B1 /* Main.storyboard */; };
 		8433929B1A8D0B2500E5B01B /* WishListGift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433929A1A8D0B2500E5B01B /* WishListGift.swift */; };
 		8433929D1A8D2C1A00E5B01B /* DatabaseConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433929C1A8D2C1A00E5B01B /* DatabaseConnection.swift */; };
 		8446A9901A8BC07800D51024 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446A98F1A8BC07800D51024 /* LoginViewController.swift */; };
@@ -417,6 +418,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				555FE42D1AABD0BC00EE8C1E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
