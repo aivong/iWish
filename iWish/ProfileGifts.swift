@@ -9,13 +9,12 @@
 import UIKit
 
 class profileGifts: UITableViewController {
-    
     var gifts = [WishListGift]()
+    var events = [UserEvent]()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    @IBAction func featuredPressed(sender: UIBarButtonItem) {
+        VerifyState.selectedGifts = true
         let queryGifts = "SELECT name from WishListGifts where user = '\(VerifyState.selectedUser)'"
-        println(self.gifts.count)
         
         DatabaseConnection.GetGifts(queryGifts) { responseObject, error in
             if responseObject != nil {
@@ -26,8 +25,30 @@ class profileGifts: UITableViewController {
                 self.alertUser("No Data", messageText: "Could not retrieve data", buttonText: "OK")
             }
         }
+
+    }
+    
+    @IBAction func socialPressed(sender: UIBarButtonItem) {
+        VerifyState.selectedGifts = false
+        let queryEvents = "SELECT * from Events where userID = '\(VerifyState.selectedUser)'"
+        //println(queryEvents)
         
-        println(self.gifts.count)
+        DatabaseConnection.GetEvents(queryEvents) { responseObject, error in
+            if responseObject != nil {
+                self.events = responseObject!
+                //        println(self.events.count)
+                self.tableView.reloadData()
+            }
+            else {
+                self.alertUser("No Data", messageText: "Could not retrieve data", buttonText: "OK")
+            }
+        }
+
+    }
+
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -36,26 +57,19 @@ class profileGifts: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
-    override func viewWillAppear(animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
-    }
     override func viewDidAppear(animated: Bool) {
+        VerifyState.selectedGifts = true
         let queryGifts = "SELECT name from WishListGifts where user = '\(VerifyState.selectedUser)'"
-        
         
         DatabaseConnection.GetGifts(queryGifts) { responseObject, error in
             if responseObject != nil {
                 self.gifts = responseObject!
                 self.tableView.reloadData()
-                println(self.gifts.count)
             }
             else {
                 self.alertUser("No Data", messageText: "Could not retrieve data", buttonText: "OK")
             }
         }
-        
-        println(self.gifts.count)
-        
     }
     
     
@@ -78,7 +92,10 @@ class profileGifts: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return gifts.count
+        if VerifyState.selectedGifts {
+            return gifts.count
+        }
+        return events.count
     }
     
     func alertUser(titleText: String, messageText: String, buttonText: String){
@@ -90,9 +107,17 @@ class profileGifts: UITableViewController {
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        
         let cell = tableView.dequeueReusableCellWithIdentifier("WishListGift", forIndexPath: indexPath) as UITableViewCell
         
-        let data = gifts[indexPath.row]
+        if VerifyState.selectedGifts {
+            let data = gifts[indexPath.row]
+            cell.textLabel?.text = data.name
+            
+            return cell
+        }
+        let data = events[indexPath.row]
         cell.textLabel?.text = data.name
         
         return cell

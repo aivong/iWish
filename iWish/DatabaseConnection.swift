@@ -79,6 +79,37 @@ class DatabaseConnection{
         }
     }
     
+    //Functions to return events
+    class func GetEvents(query: String, completionHandler: (responseObject: [UserEvent]?, error: NSError?) -> ()){
+        GetEventsList(query, completionHandler: completionHandler)
+    }
+    private class func GetEventsList(query: String, completionHandler: (responseObject: [UserEvent]?, error: NSError?)->()){
+        let password = "A7B129MNP"
+        Alamofire.request(.GET, "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php", parameters: ["password": password, "query":query]).responseJSON() {
+            (_, _, data, error) in
+            var events = Array<UserEvent>()
+            if data != nil{
+                let json = JSON(data!)
+                //println(json)
+                for i in 0..<json.count{
+                    let id = (json[i]["eventID"]).intValue
+                    let name = (json[i]["name"]).stringValue
+                    let date = (json[i]["date"]).stringValue
+                    let description = (json[i]["description"]).stringValue
+                    events.append(UserEvent(eventID: id, eventName: name, eventDate: date, eventDescription: description))
+                    
+                   
+                }
+              //  println(events.count)
+                 completionHandler(responseObject: events, error: error)
+            }
+            else{
+                completionHandler(responseObject: nil, error: error)
+            }
+        }
+        
+    }
+    
     //Functions to Create an account
     class func InsertUser(query: String, completionHandler: (responseObject: Bool?, error: NSError?)->()){
         InsertUserQuery(query, completionHandler: completionHandler)

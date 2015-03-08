@@ -719,25 +719,12 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g5H-g1-BhO">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="28" y="275" width="344" height="268"/>
+                                    <rect key="frame" x="28" y="227" width="344" height="316"/>
                                 </variation>
                                 <connections>
                                     <segue destination="D0a-Ct-0PS" kind="embed" id="c0E-Eq-WYG"/>
                                 </connections>
                             </containerView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="f44-cO-K09">
-                                <rect key="frame" x="-61" y="-14" width="123" height="29"/>
-                                <segments>
-                                    <segment title="Featured Wishlist"/>
-                                    <segment title="Social Calendar"/>
-                                </segments>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="28" y="239" width="344" height="29"/>
-                                </variation>
-                                <connections>
-                                    <action selector="indexChanged:" destination="I8w-1Y-92J" eventType="valueChanged" id="WHv-mF-Puo"/>
-                                </connections>
-                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
@@ -749,7 +736,6 @@
                                 <exclude reference="aW1-cv-r6l"/>
                                 <exclude reference="qQa-jX-G6a"/>
                                 <exclude reference="g5H-g1-BhO"/>
-                                <exclude reference="f44-cO-K09"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -761,7 +747,6 @@
                                 <include reference="aW1-cv-r6l"/>
                                 <include reference="qQa-jX-G6a"/>
                                 <include reference="g5H-g1-BhO"/>
-                                <include reference="f44-cO-K09"/>
                             </mask>
                         </variation>
                     </view>
@@ -773,7 +758,6 @@
                         <outlet property="gender" destination="dmB-7M-chM" id="Nhn-UE-XrD"/>
                         <outlet property="image" destination="iuR-e0-kgJ" id="ThM-Fg-scy"/>
                         <outlet property="mailingAddress" destination="qQa-jX-G6a" id="AYi-lw-UcB"/>
-                        <outlet property="segmentedControl" destination="f44-cO-K09" id="OKx-vB-MmY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ll-a4-6fD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -880,8 +864,20 @@
                         </connections>
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" id="Rgw-7k-ahx"/>
-                    <nil key="simulatedTopBarMetrics"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Rgw-7k-ahx">
+                        <barButtonItem key="leftBarButtonItem" title="Featured Wishlist" id="kli-zU-tvC">
+                            <connections>
+                                <action selector="featuredPressed:" destination="uXD-1P-hTS" id="OUi-FJ-FfG"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Social Calendar" id="Byx-fY-wuM">
+                            <connections>
+                                <action selector="socialPressed:" destination="uXD-1P-hTS" id="Af8-kU-BME"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xo5-yg-56r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
