@@ -20,6 +20,7 @@
 		849337BA1A94137F003456B5 /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849337B91A94137F003456B5 /* EventsTableViewController.swift */; };
 		8E0A55871AA11A82000B89ED /* VerifyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0A55861AA11A82000B89ED /* VerifyState.swift */; };
 		8E0A55891AA11A85000B89ED /* VerifyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0A55861AA11A82000B89ED /* VerifyState.swift */; };
+		8E72208D1AABC51900275D25 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E72208C1AABC51900275D25 /* ProfileViewController.swift */; };
 		8E97304F1A86BA2C006543B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E97304E1A86BA2C006543B1 /* AppDelegate.swift */; };
 		8E9730561A86BA2C006543B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E9730541A86BA2C006543B1 /* Main.storyboard */; };
 		8E9730581A86BA2C006543B1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E9730571A86BA2C006543B1 /* Images.xcassets */; };
@@ -100,6 +101,7 @@
 		849337B51A91AE63003456B5 /* GiftDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftDetailViewController.swift; sourceTree = "<group>"; };
 		849337B91A94137F003456B5 /* EventsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewController.swift; sourceTree = "<group>"; };
 		8E0A55861AA11A82000B89ED /* VerifyState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyState.swift; sourceTree = "<group>"; };
+		8E72208C1AABC51900275D25 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		8E9730491A86BA2C006543B1 /* iWish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iWish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E97304D1A86BA2C006543B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E97304E1A86BA2C006543B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 		CD4041481A967A5100DB40D5 /* Profile ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				8E72208C1AABC51900275D25 /* ProfileViewController.swift */,
 			);
 			name = "Profile ViewControllers";
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 				849337BA1A94137F003456B5 /* EventsTableViewController.swift in Sources */,
 				8433929B1A8D0B2500E5B01B /* WishListGift.swift in Sources */,
 				8433929D1A8D2C1A00E5B01B /* DatabaseConnection.swift in Sources */,
+				8E72208D1AABC51900275D25 /* ProfileViewController.swift in Sources */,
 				8446A9971A8D00F200D51024 /* Users.swift in Sources */,
 				849337B21A905551003456B5 /* SwiftyJSON.swift in Sources */,
 				8446A9901A8BC07800D51024 /* LoginViewController.swift in Sources */,

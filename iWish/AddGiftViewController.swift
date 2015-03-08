@@ -29,7 +29,7 @@ class AddGiftViewController: UIViewController {
         
         if self.validInputs() {
             
-            let query = "INSERT INTO WishListGifts (user, name, description, price) VALUES ('bohlin2', '\(giftName.text)', '\(giftDescription.text)', \(giftPrice.text))"
+            let query = "INSERT INTO WishListGifts (user, name, description, price) VALUES ('gemma', '\(giftName.text)', '\(giftDescription.text)', \(giftPrice.text))"
             
             DatabaseConnection.InsertGift(query){ responseObject, error in
                 //CHECK FOR ERRORS

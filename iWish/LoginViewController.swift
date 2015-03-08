@@ -80,6 +80,7 @@ class LoginViewController: UIViewController {
                         if(self.users[0].username == self.usernameTextField.text && self.users[0].password == self.passwordTextField.text) {
                             VerifyState.userVerified = true
                             VerifyState.username = self.users[0].username
+                            VerifyState.selectedUser = self.users[0].username
                         }
                         if VerifyState.userVerified && VerifyState.username == self.users[0].username {
                             self.performSegueWithIdentifier("loginSuccess", sender: self)

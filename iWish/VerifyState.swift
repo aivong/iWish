@@ -12,5 +12,6 @@ public struct VerifyState
 {
     public static var userVerified: Bool = false
     public static var username: String!
+    public static var selectedUser: String!
 }
 

@@ -135,7 +135,12 @@ class DatabaseConnection{
                     for i in 0..<json.count{
                         let username = (json[i]["username"]).stringValue
                         let password = (json[i]["password"]).stringValue
-                        users.append(Users(username: username, password: password))
+                        let fullname = (json[i]["fullname"]).stringValue
+                        let email =  (json[i]["email"]).stringValue
+                        let gender =  (json[i]["gender"]).stringValue
+                        let mailingaddress =  (json[i]["mailaddress"]).stringValue
+                        let birthday =  (json[i]["birthday"]).stringValue
+                        users.append(Users(username: username, password: password, fullname: fullname, email: email, gender: gender, mailingaddress: mailingaddress, birthday: birthday))
                         
                         completionHandler(responseObject: users, error: error)
                     }
