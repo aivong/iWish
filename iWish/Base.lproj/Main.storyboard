@@ -895,7 +895,7 @@
         <scene sceneID="1Rn-cZ-prh">
             <objects>
                 <navigationController id="D3c-2g-vHg" userLabel="Friends Nav" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="YH1-LW-kcJ"/>
+                    <tabBarItem key="tabBarItem" title="Friends" id="YH1-LW-kcJ" userLabel="Friends"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kWq-VM-zd2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -922,8 +922,8 @@
                         <segue destination="nUu-xB-O8v" kind="relationship" relationship="viewControllers" id="TJV-h5-659"/>
                         <segue destination="P7X-2a-AYj" kind="relationship" relationship="viewControllers" id="xyA-Lr-f6r"/>
                         <segue destination="I8w-1Y-92J" kind="relationship" relationship="viewControllers" id="vW4-Tl-7UO"/>
-                        <segue destination="Yt2-QK-YJN" kind="relationship" relationship="viewControllers" id="hul-rV-7Vz"/>
                         <segue destination="D3c-2g-vHg" kind="relationship" relationship="viewControllers" id="BWh-g1-z5q"/>
+                        <segue destination="Yt2-QK-YJN" kind="relationship" relationship="viewControllers" id="NMQ-NV-l2o"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aXo-t7-Icd" userLabel="First Responder" sceneMemberID="firstResponder"/>
