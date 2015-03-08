@@ -796,13 +796,37 @@
                     <view key="view" contentMode="scaleToFill" id="Xh2-kI-8dZ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RA0-oI-Y4Y">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="160" y="201" width="49" height="30"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="lUF-FK-sLw" kind="show" id="Krz-Ql-x8u"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="RA0-oI-Y4Y"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="RA0-oI-Y4Y"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" id="a4H-SQ-aJN"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lKi-xI-HaR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-193" y="1609"/>
+            <point key="canvasLocation" x="-1324.5" y="119"/>
         </scene>
         <!--Events-->
         <scene sceneID="xgr-NQ-NyL">
@@ -847,6 +871,7 @@
             <objects>
                 <tableViewController id="uXD-1P-hTS" customClass="profileGifts" customModule="iWish" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="47" sectionHeaderHeight="22" sectionFooterHeight="22" id="qnC-g1-CAg">
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="84"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -903,4 +928,7 @@
         <image name="door24.png" width="81" height="81"/>
         <image name="user168.png" width="128" height="128"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Krz-Ql-x8u"/>
+    </inferredMetricsTieBreakers>
 </document>
