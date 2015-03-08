@@ -899,6 +899,9 @@
                             <outlet property="delegate" destination="5W1-h6-qGo" id="qcH-lp-awc"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="searchAllUsers" destination="gDo-Kh-UVr" id="f22-SR-x5w"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w6a-q7-7YI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
