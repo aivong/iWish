@@ -918,7 +918,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="EFo-dF-eH2" kind="showDetail" id="UbS-dV-XZW"/>
+                                    <segue destination="Qvl-dy-RIv" kind="show" id="Qz0-If-toK"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -942,54 +942,23 @@
             <point key="canvasLocation" x="834" y="375"/>
         </scene>
         <!--Friends Profile-->
-        <scene sceneID="alG-GE-jqx">
+        <scene sceneID="fsE-Me-rmU">
             <objects>
-                <viewController title="Friends Profile" id="EFo-dF-eH2" customClass="FriendsProfileViewController" customModule="iWish" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Friends Profile" id="Qvl-dy-RIv" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Mcj-YQ-BYD"/>
-                        <viewControllerLayoutGuide type="bottom" id="nZ8-8N-Dw8"/>
+                        <viewControllerLayoutGuide type="top" id="ttK-oZ-sqq"/>
+                        <viewControllerLayoutGuide type="bottom" id="IwF-lB-RYv"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="SL8-zR-f7V">
+                    <view key="view" contentMode="scaleToFill" id="2nd-SY-edH">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NvF-Pc-6bi">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <items>
-                                    <navigationItem title="Title" id="6P9-mG-w5V">
-                                        <barButtonItem key="leftBarButtonItem" title="&lt; Friends" id="y4n-S1-4bT">
-                                            <connections>
-                                                <segue destination="OUI-DK-Mw4" kind="unwind" unwindAction="unwindFromProfile:" id="VdA-ty-fMD"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Options" id="P49-Fo-lOO">
-                                            <connections>
-                                                <action selector="friendsProfileOptionsClicked:" destination="EFo-dF-eH2" id="S5y-OK-DZw"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="28" width="400" height="44"/>
-                                </variation>
-                            </navigationBar>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="NvF-Pc-6bi"/>
-                            </mask>
-                        </variation>
-                        <variation key="widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="NvF-Pc-6bi"/>
-                            </mask>
-                        </variation>
                     </view>
+                    <toolbarItems/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SfZ-Rc-GYw" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="OUI-DK-Mw4" userLabel="Exit" sceneMemberID="exit"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zut-CP-3m6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1186.5" y="1059"/>
+            <point key="canvasLocation" x="1257" y="1121"/>
         </scene>
         <!--All Users-->
         <scene sceneID="OUQ-iW-P4G">
