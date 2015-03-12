@@ -57,6 +57,8 @@
 		CD4041591A967D7F00DB40D5 /* DatabaseConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433929C1A8D2C1A00E5B01B /* DatabaseConnection.swift */; };
 		CD40415A1A967D8800DB40D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E97304E1A86BA2C006543B1 /* AppDelegate.swift */; };
 		CD40415B1A967D8C00DB40D5 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849337B11A905551003456B5 /* SwiftyJSON.swift */; };
+		CDBEAC221AB1C61E002F8888 /* EditGiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBEAC211AB1C61E002F8888 /* EditGiftViewController.swift */; };
+		CDBEAC231AB1C61E002F8888 /* EditGiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBEAC211AB1C61E002F8888 /* EditGiftViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +140,7 @@
 		8EFEFCDC1A9AA460004EC929 /* user168.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user168.png; sourceTree = "<group>"; };
 		8EFEFCDF1A9AA496004EC929 /* door24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = door24.png; sourceTree = "<group>"; };
 		8EFEFCE11A9AA4D8004EC929 /* unicorn.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = unicorn.jpg; sourceTree = "<group>"; };
+		CDBEAC211AB1C61E002F8888 /* EditGiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditGiftViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,6 +257,7 @@
 		CD4041471A967A4700DB40D5 /* Wish List ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				CDBEAC211AB1C61E002F8888 /* EditGiftViewController.swift */,
 				849337B51A91AE63003456B5 /* GiftDetailViewController.swift */,
 				849337B31A914F58003456B5 /* AddGiftViewController.swift */,
 				8446A9981A8D055000D51024 /* WishListTableViewController.swift */,
@@ -442,6 +446,7 @@
 			files = (
 				8EE8E70D1A9A8AA0000F6076 /* CreateAccountViewController.swift in Sources */,
 				849337BA1A94137F003456B5 /* EventsTableViewController.swift in Sources */,
+				CDBEAC221AB1C61E002F8888 /* EditGiftViewController.swift in Sources */,
 				555FE4181AABC51200EE8C1E /* FriendsTableViewController.swift in Sources */,
 				555FE4141AABC4F800EE8C1E /* SearchUsersTableViewController.swift in Sources */,
 				8433929B1A8D0B2500E5B01B /* WishListGift.swift in Sources */,
@@ -473,6 +478,7 @@
 				555FE4151AABC4F800EE8C1E /* SearchUsersTableViewController.swift in Sources */,
 				CD4041561A967D7100DB40D5 /* WishListTableViewController.swift in Sources */,
 				CD40415B1A967D8C00DB40D5 /* SwiftyJSON.swift in Sources */,
+				CDBEAC231AB1C61E002F8888 /* EditGiftViewController.swift in Sources */,
 				555FE40B1AABB9F000EE8C1E /* AddEventViewController.swift in Sources */,
 				CD4041541A967D6D00DB40D5 /* ViewController.swift in Sources */,
 				841887F51AACEAD100B69533 /* FriendsProfileViewController.swift in Sources */,

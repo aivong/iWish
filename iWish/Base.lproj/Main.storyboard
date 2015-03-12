@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lUF-FK-sLw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vBT-5C-EOt">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
@@ -273,11 +273,112 @@
                         <outlet property="giftDescriptionDetail" destination="Tcf-iz-JIO" id="uAJ-9H-B0Y"/>
                         <outlet property="giftNameDetail" destination="AlC-C7-agU" id="JMH-pm-Lcf"/>
                         <outlet property="giftPriceDetail" destination="Zju-aS-Kng" id="jIY-Ic-0yq"/>
+                        <segue destination="5N0-of-FdA" kind="show" identifier="EditGiftSegue" id="Wy6-21-rvG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iVM-mf-Nd3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1187" y="-2069"/>
+        </scene>
+        <!--Edit Gift View Controller-->
+        <scene sceneID="6lN-n7-52z">
+            <objects>
+                <viewController id="5N0-of-FdA" customClass="EditGiftViewController" customModule="iWish" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9q9-u9-ngq"/>
+                        <viewControllerLayoutGuide type="bottom" id="rnu-As-L1i"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hrT-Of-b88">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="100" translatesAutoresizingMaskIntoConstraints="NO" id="gGn-SK-y9K">
+                                <rect key="frame" x="167" y="96" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="KVb-Vu-6u5"/>
+                                    <constraint firstAttribute="width" constant="100" id="fNG-Ld-aVp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="42" translatesAutoresizingMaskIntoConstraints="NO" id="Roq-GZ-Vg8">
+                                <rect key="frame" x="167" y="134" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="fnz-au-23K"/>
+                                    <constraint firstAttribute="height" constant="30" id="gkY-q9-2Fg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="42" translatesAutoresizingMaskIntoConstraints="NO" id="RYJ-dg-OWm">
+                                <rect key="frame" x="250" y="172" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="IfB-gE-CRO"/>
+                                    <constraint firstAttribute="height" constant="30" id="InJ-uw-5mp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="  Ex: 7.50" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cVp-9v-pfd">
+                                <rect key="frame" x="275" y="134" width="158" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="158" id="F1V-je-5tt"/>
+                                    <constraint firstAttribute="height" constant="30" id="ai8-Dz-DSt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CFK-GV-Bti">
+                                <rect key="frame" x="167" y="210" width="266" height="103"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="266" id="eYp-dL-fIe"/>
+                                    <constraint firstAttribute="height" constant="103" id="t8e-0U-Zbi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="alert"/>
+                            </textView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="  Max of 20 characters" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aHZ-2x-8k0">
+                                <rect key="frame" x="275" y="96" width="158" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="158" id="JWp-BU-LBt"/>
+                                    <constraint firstAttribute="height" constant="30" id="eP2-DZ-qM1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Roq-GZ-Vg8" firstAttribute="top" secondItem="gGn-SK-y9K" secondAttribute="bottom" constant="8" id="0Uh-W1-mv8"/>
+                            <constraint firstItem="cVp-9v-pfd" firstAttribute="top" secondItem="aHZ-2x-8k0" secondAttribute="bottom" constant="8" id="2t0-an-z6K"/>
+                            <constraint firstItem="RYJ-dg-OWm" firstAttribute="top" secondItem="cVp-9v-pfd" secondAttribute="bottom" constant="8" id="3G6-5W-eJs"/>
+                            <constraint firstItem="cVp-9v-pfd" firstAttribute="leading" secondItem="Roq-GZ-Vg8" secondAttribute="trailing" constant="8" id="Bsv-5b-TPd"/>
+                            <constraint firstAttribute="centerX" secondItem="gGn-SK-y9K" secondAttribute="centerX" constant="83" id="Cdh-Xr-lAb"/>
+                            <constraint firstItem="aHZ-2x-8k0" firstAttribute="leading" secondItem="gGn-SK-y9K" secondAttribute="trailing" constant="8" id="KDd-pd-szd"/>
+                            <constraint firstAttribute="centerX" secondItem="RYJ-dg-OWm" secondAttribute="centerX" id="Mdy-eH-STM"/>
+                            <constraint firstItem="aHZ-2x-8k0" firstAttribute="top" secondItem="9q9-u9-ngq" secondAttribute="bottom" constant="32" id="V8h-j2-4KV"/>
+                            <constraint firstAttribute="centerX" secondItem="aHZ-2x-8k0" secondAttribute="centerX" constant="-54" id="eeP-K6-uVB"/>
+                            <constraint firstAttribute="centerX" secondItem="Roq-GZ-Vg8" secondAttribute="centerX" constant="83" id="gao-Mp-OD5"/>
+                            <constraint firstAttribute="centerX" secondItem="cVp-9v-pfd" secondAttribute="centerX" constant="-54" id="hgo-iQ-8DU"/>
+                            <constraint firstItem="CFK-GV-Bti" firstAttribute="top" secondItem="RYJ-dg-OWm" secondAttribute="bottom" constant="8" id="kfW-kf-32q"/>
+                            <constraint firstItem="gGn-SK-y9K" firstAttribute="top" secondItem="9q9-u9-ngq" secondAttribute="bottom" constant="32" id="lQ3-Si-Ic4"/>
+                            <constraint firstAttribute="centerX" secondItem="CFK-GV-Bti" secondAttribute="centerX" id="rhy-5K-9H0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionTextView" destination="CFK-GV-Bti" id="LIe-P7-p3s"/>
+                        <outlet property="nameLabel" destination="aHZ-2x-8k0" id="tdI-JN-EP5"/>
+                        <outlet property="priceLabel" destination="cVp-9v-pfd" id="lHU-Hr-CbN"/>
+                        <segue destination="A6Q-UE-Nj6" kind="unwind" identifier="GiftEditSavedSegue" unwindAction="giftEditSaved:" id="zs8-uF-G9T"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E1U-v0-0vc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="A6Q-UE-Nj6" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1839" y="-2069"/>
         </scene>
         <!--Add Gift-->
         <scene sceneID="WHT-dR-laA">
