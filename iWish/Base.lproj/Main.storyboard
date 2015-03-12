@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d37-CZ-J8h">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d37-CZ-J8h">
                                 <rect key="frame" x="10" y="115" width="300" height="180"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gv9-UI-MId">
@@ -77,6 +77,7 @@
                             <constraint firstAttribute="centerX" secondItem="d37-CZ-J8h" secondAttribute="centerX" id="rfM-S2-88u"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="tQ9-Gw-FRd"/>
                     <connections>
                         <outlet property="logInButton" destination="PeB-Wf-ORd" id="piK-sg-9TA"/>
                         <outlet property="logInContainerView" destination="d37-CZ-J8h" id="wE6-Cr-Mdv"/>
@@ -217,19 +218,48 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection id="hhc-Su-emK">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Pzo-To-aRd">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Pzo-To-aRd" id="RUx-iH-2vb">
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cHX-fz-qBn">
+                                                    <rect key="frame" x="113" y="7" width="95" height="30"/>
+                                                    <state key="normal" title="Save Settings">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="saveSettings:" destination="3E1-vp-F8l" eventType="touchUpInside" id="9O9-Me-8UJ"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="3E1-vp-F8l" id="fAc-B1-IhR"/>
                             <outlet property="delegate" destination="3E1-vp-F8l" id="1fj-kL-FCb"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="DtD-um-NVq"/>
+                    <navigationItem key="navigationItem" title="Settings" id="DtD-um-NVq">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="r4P-a7-Hp6">
+                            <connections>
+                                <action selector="logout:" destination="3E1-vp-F8l" id="qVu-GM-cXU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="allowSearchSwitch" destination="iwm-i7-ECl" id="QmF-Z3-Rxz"/>
                         <outlet property="notificationSwitch" destination="Yfx-pX-z4A" id="GOg-uB-LhT"/>
                         <outlet property="showBirthdaySwitch" destination="6fZ-4J-xmY" id="ddS-gA-ld9"/>
                         <outlet property="showEmailSwitch" destination="SpX-Bx-99m" id="pwQ-2z-CpF"/>
                         <outlet property="systemEmailSwitch" destination="za7-rN-6jX" id="fld-Xz-o4A"/>
+                        <segue destination="lUF-FK-sLw" kind="modal" identifier="LogoutSegue" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="TNG-Qc-1mG"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="az5-dx-0Ah" userLabel="First Responder" sceneMemberID="firstResponder"/>
