@@ -23,6 +23,7 @@
 		849337B61A91AE63003456B5 /* GiftDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849337B51A91AE63003456B5 /* GiftDetailViewController.swift */; };
 		849337BA1A94137F003456B5 /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849337B91A94137F003456B5 /* EventsTableViewController.swift */; };
 		849337D01A9B8DD6003456B5 /* EasyDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849337CF1A9B8DD6003456B5 /* EasyDate.swift */; };
+		84B3651B1AAF7CE600193E3D /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B3651A1AAF7CE600193E3D /* SettingsTableViewController.swift */; };
 		8E97304F1A86BA2C006543B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E97304E1A86BA2C006543B1 /* AppDelegate.swift */; };
 		8E9730561A86BA2C006543B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E9730541A86BA2C006543B1 /* Main.storyboard */; };
 		8E9730581A86BA2C006543B1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E9730571A86BA2C006543B1 /* Images.xcassets */; };
@@ -103,6 +104,7 @@
 		849337B51A91AE63003456B5 /* GiftDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftDetailViewController.swift; sourceTree = "<group>"; };
 		849337B91A94137F003456B5 /* EventsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewController.swift; sourceTree = "<group>"; };
 		849337CF1A9B8DD6003456B5 /* EasyDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasyDate.swift; sourceTree = "<group>"; };
+		84B3651A1AAF7CE600193E3D /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		8E9730491A86BA2C006543B1 /* iWish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iWish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E97304D1A86BA2C006543B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E97304E1A86BA2C006543B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 		CD40414A1A967A6500DB40D5 /* Settings ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				84B3651A1AAF7CE600193E3D /* SettingsTableViewController.swift */,
 			);
 			name = "Settings ViewControllers";
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				849337B41A914F58003456B5 /* AddGiftViewController.swift in Sources */,
 				8E97304F1A86BA2C006543B1 /* AppDelegate.swift in Sources */,
 				849337D01A9B8DD6003456B5 /* EasyDate.swift in Sources */,
+				84B3651B1AAF7CE600193E3D /* SettingsTableViewController.swift in Sources */,
 				8446A9991A8D055000D51024 /* WishListTableViewController.swift in Sources */,
 				843773BD1A9F783600DE9D09 /* FriendsTableViewController.swift in Sources */,
 				849337B61A91AE63003456B5 /* GiftDetailViewController.swift in Sources */,
