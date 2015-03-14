@@ -253,4 +253,55 @@ class DatabaseConnection{
         }
         
     }
+    
+    class func GetUserSettings(username: String, completionHandler: (responseObject: UserSettings?, error: NSError?) -> ()){
+        let query = "SELECT * FROM UserSettings WHERE username='\(username)'"
+        GetUserSettingsDB(query, completionHandler: completionHandler)
+    }
+    
+    private class func GetUserSettingsDB(query: String, completionHandler: (responseObject: UserSettings?, error: NSError?)->()){
+        let password = "A7B129MNP"
+        Alamofire.request(.GET, "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php", parameters: ["password": password, "query":query]).responseJSON() {
+            (_, _, data, error) in
+            println("Get: \(data)")
+            if data != nil{
+                let json = JSON(data!)
+                let usern = json["username"].stringValue
+                let not = json["notifications"].boolValue
+                let showE = json["showEmailAddress"].boolValue
+                let sysE = json["allowSystemEmails"].boolValue
+                let showB = json["showBirthday"].boolValue
+                let allowSBU = json["allowSearchByUsername"].boolValue
+                let usersettings = UserSettings(user: usern, notifications: not, allowSystemEmails: sysE, showEmailAddress: showE, allowSearchByUsername: allowSBU, showBirthday: showB)
+                completionHandler(responseObject: usersettings, error: error)
+                
+            }
+            else{
+                completionHandler(responseObject: nil, error: error)
+            }
+        }
+        
+    }
+    
+    class func SetUserSettings(userSettings: UserSettings, completionHandler: (responseObject: Bool?, error: NSError?) -> ()){
+        let query = "UPDATE UserSettings SET (notifications, showEmailAddress, allowSystemEmails, showBirthday, allowSearchByUsername) VALUES (\(userSettings.notifications), \(userSettings.showEmailAddress), \(userSettings.allowSystemEmails), \(userSettings.showBirthday), \(userSettings.allowSearchByUsername)) WHERE username='\(userSettings.user)'"
+        SetUserSettingsDB(query, completionHandler: completionHandler)
+    }
+    
+    private class func SetUserSettingsDB(query: String, completionHandler: (responseObject: Bool?, error: NSError?)->()){
+        let password = "A7B129MNP"
+        Alamofire.request(.GET, "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php", parameters: ["password": password, "query":query]).responseJSON() {
+            (_, _, data, error) in
+            println("Set: \(data)")
+            if data != nil{
+
+                completionHandler(responseObject: true, error: error)
+                
+            }
+            else{
+                completionHandler(responseObject: false, error: error)
+            }
+        }
+        
+    }
 }

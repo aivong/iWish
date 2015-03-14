@@ -42,11 +42,32 @@ class SettingsTableViewController: UITableViewController {
     }
     
     @IBAction func saveSettings(sender: AnyObject) {
-
+        let nsud = NSUserDefaults.standardUserDefaults()
+        let usern = nsud.stringForKey("username")
+        let ns = notificationSwitch.on
+        let sea = systemEmailSwitch.on
+        let showea = showEmailSwitch.on
+        let sba = showBirthdaySwitch.on
+        let sua = allowSearchSwitch.on
+        let us = UserSettings(user: usern!, notifications: ns, allowSystemEmails: sea, showEmailAddress: showea, allowSearchByUsername: sua, showBirthday: sba)
+        
+        DatabaseConnection.SetUserSettings(us){ responseObject, error in
+            nsud.setObject(ns, forKey: "notificationsAllowed")
+            nsud.setObject(sea, forKey: "systemEmailsAllowed")
+            nsud.setObject(showea, forKey: "showEmailAllowed")
+            nsud.setObject(sba, forKey: "showBirthdayAllowed")
+            nsud.setObject(sua, forKey: "searchUsernameAllowed")
+        }
     }
     
     @IBAction func logout(sender: AnyObject) {
         self.performSegueWithIdentifier("LogoutSegue", sender: self)
+    }
+    
+    func alertUser(titleText: String, messageText: String, buttonText: String){
+        let alertController = UIAlertController(title: titleText, message: messageText, preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: buttonText, style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
@@ -65,8 +86,6 @@ class SettingsTableViewController: UITableViewController {
         showBirthdaySwitch.on = sba
         allowSearchSwitch.on = sua
         
-        
-        println(na)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -82,8 +101,5 @@ class SettingsTableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        println("Leaving Settings")
     }
-
-    
 }

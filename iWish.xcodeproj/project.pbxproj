@@ -24,6 +24,8 @@
 		849337BA1A94137F003456B5 /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849337B91A94137F003456B5 /* EventsTableViewController.swift */; };
 		849337D01A9B8DD6003456B5 /* EasyDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849337CF1A9B8DD6003456B5 /* EasyDate.swift */; };
 		84B3651B1AAF7CE600193E3D /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B3651A1AAF7CE600193E3D /* SettingsTableViewController.swift */; };
+		84B365201AB376AB00193E3D /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B3651F1AB376AB00193E3D /* UserSettings.swift */; };
+		84B365211AB3797B00193E3D /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B3651F1AB376AB00193E3D /* UserSettings.swift */; };
 		8E97304F1A86BA2C006543B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E97304E1A86BA2C006543B1 /* AppDelegate.swift */; };
 		8E9730561A86BA2C006543B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E9730541A86BA2C006543B1 /* Main.storyboard */; };
 		8E9730581A86BA2C006543B1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E9730571A86BA2C006543B1 /* Images.xcassets */; };
@@ -105,6 +107,7 @@
 		849337B91A94137F003456B5 /* EventsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewController.swift; sourceTree = "<group>"; };
 		849337CF1A9B8DD6003456B5 /* EasyDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasyDate.swift; sourceTree = "<group>"; };
 		84B3651A1AAF7CE600193E3D /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		84B3651F1AB376AB00193E3D /* UserSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		8E9730491A86BA2C006543B1 /* iWish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iWish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E97304D1A86BA2C006543B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E97304E1A86BA2C006543B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -277,6 +280,7 @@
 			children = (
 				8446A9961A8D00F200D51024 /* Users.swift */,
 				8433929A1A8D0B2500E5B01B /* WishListGift.swift */,
+				84B3651F1AB376AB00193E3D /* UserSettings.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -422,6 +426,7 @@
 				8446A9991A8D055000D51024 /* WishListTableViewController.swift in Sources */,
 				843773BD1A9F783600DE9D09 /* FriendsTableViewController.swift in Sources */,
 				849337B61A91AE63003456B5 /* GiftDetailViewController.swift in Sources */,
+				84B365201AB376AB00193E3D /* UserSettings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,6 +445,7 @@
 				CD4041531A967D6A00DB40D5 /* GiftDetailViewController.swift in Sources */,
 				CD4041591A967D7F00DB40D5 /* DatabaseConnection.swift in Sources */,
 				CD4041501A967D5E00DB40D5 /* Users.swift in Sources */,
+				84B365211AB3797B00193E3D /* UserSettings.swift in Sources */,
 				CD4041571A967D7400DB40D5 /* EventsTableViewController.swift in Sources */,
 				8E9730671A86BA2C006543B1 /* iWishTests.swift in Sources */,
 			);
