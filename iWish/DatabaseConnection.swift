@@ -266,12 +266,12 @@ class DatabaseConnection{
             println("Get: \(data)")
             if data != nil{
                 let json = JSON(data!)
-                let usern = json["username"].stringValue
-                let not = json["notifications"].boolValue
-                let showE = json["showEmailAddress"].boolValue
-                let sysE = json["allowSystemEmails"].boolValue
-                let showB = json["showBirthday"].boolValue
-                let allowSBU = json["allowSearchByUsername"].boolValue
+                let usern = json[0]["username"].stringValue
+                let not = json[0]["notifications"].boolValue
+                let showE = json[0]["showEmailAddress"].boolValue
+                let sysE = json[0]["allowSystemEmails"].boolValue
+                let showB = json[0]["showBirthday"].boolValue
+                let allowSBU = json[0]["allowSearchByUsername"].boolValue
                 let usersettings = UserSettings(user: usern, notifications: not, allowSystemEmails: sysE, showEmailAddress: showE, allowSearchByUsername: allowSBU, showBirthday: showB)
                 completionHandler(responseObject: usersettings, error: error)
                 
@@ -283,8 +283,17 @@ class DatabaseConnection{
         
     }
     
+    private class func numToBool(num: NSNumber) -> Bool{
+        if num.intValue == 0{
+            return false
+        }
+        else{
+            return true
+        }
+    }
+    
     class func SetUserSettings(userSettings: UserSettings, completionHandler: (responseObject: Bool?, error: NSError?) -> ()){
-        let query = "UPDATE UserSettings SET (notifications, showEmailAddress, allowSystemEmails, showBirthday, allowSearchByUsername) VALUES (\(userSettings.notifications), \(userSettings.showEmailAddress), \(userSettings.allowSystemEmails), \(userSettings.showBirthday), \(userSettings.allowSearchByUsername)) WHERE username='\(userSettings.user)'"
+        let query = "UPDATE UserSettings SET notifications = \(userSettings.notifications), showEmailAddress = \(userSettings.showEmailAddress), allowSystemEmails = \(userSettings.allowSystemEmails), showBirthday = \(userSettings.showBirthday), allowSearchByUsername = \(userSettings.allowSearchByUsername)) WHERE username='\(userSettings.user)'"
         SetUserSettingsDB(query, completionHandler: completionHandler)
     }
     

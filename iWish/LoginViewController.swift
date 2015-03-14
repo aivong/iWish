@@ -61,11 +61,6 @@ class LoginViewController: UIViewController {
                 DatabaseConnection.GetUserSettings(user.username){ responseObject, error in
                     if responseObject != nil{
                         let us = responseObject!
-                        println(us.notifications)
-                        println(us.allowSystemEmails)
-                        println(us.showEmailAddress)
-                        println(us.showBirthday)
-                        println(us.allowSearchByUsername)
                         nsud.setObject(us.notifications, forKey: "notificationsAllowed")
                         nsud.setObject(us.allowSystemEmails, forKey: "systemEmailsAllowed")
                         nsud.setObject(us.showEmailAddress, forKey: "showEmailAllowed")
