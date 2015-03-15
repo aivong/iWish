@@ -16,6 +16,7 @@ class EventsTableViewController: UITableViewController {
     //    let upcomingEvents = ["My Birthday", "Fathers Day", "Columbus Day", "Presidents Day", "Labor Day", "Mothers Day"]
     let myEvents = ["Party"]
     let requests = ["Bulls Game"]
+    var usersName: String!
     
     var upcomingEvents = [UserEvent]()
     
@@ -40,7 +41,7 @@ class EventsTableViewController: UITableViewController {
         }
         else{
             upcomingEvents.append(UserEvent(eventID: 1,eventName: newEventName,eventDate: newEventDate,eventDescription: newEventDesc));
-            let query = "INSERT INTO Events (eventID, userID, name, date, description, guestListID) VALUES (NULL,'bohlin2', '\(newEventName)', '\(newEventDate)', '\(newEventDesc)', NULL)"
+            let query = "INSERT INTO Events (eventID, userID, name, date, description, guestListID) VALUES (NULL,'\(usersName)', '\(newEventName)', '\(newEventDate)', '\(newEventDesc)', NULL)"
             DatabaseConnection.InsertEvent(query){ responseObject, error in
                 self.getUsersFeaturedEvents()
             }
@@ -49,7 +50,8 @@ class EventsTableViewController: UITableViewController {
     }
     
     func getUsersFeaturedEvents(){
-        DatabaseConnection.GetEvents("SELECT * FROM Events ORDER BY name") { responseObject, error in print(error?.localizedDescription)
+        println("SELECT * FROM Events WHERE userID='\(usersName)' ORDER BY name")
+        DatabaseConnection.GetEvents("SELECT * FROM Events WHERE userID='\(usersName)' ORDER BY name") { responseObject, error in print(error?.localizedDescription)
             if responseObject != nil {
                 self.upcomingEvents = responseObject!
                 self.tableView.reloadData()
@@ -84,7 +86,13 @@ class EventsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if let name = defaults.stringForKey("username")
+        {
+            usersName = name
+        }
         getUsersFeaturedEvents()
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
@@ -197,7 +205,7 @@ class EventsTableViewController: UITableViewController {
             
             let path = self.tableView.indexPathForSelectedRow()!
             vc.event = upcomingEvents[path.row]
-            
+            vc.usersName = usersName
             //            vc.giftName = selectedGift.name
             //            vc.giftDescription = selectedGift.description
             //            vc.giftPrice = selectedGift.price

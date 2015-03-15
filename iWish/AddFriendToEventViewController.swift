@@ -1,8 +1,8 @@
 //
-//  AddGiftToEventViewController.swift
+//  AddFriendToEventViewController.swift
 //  iWish
 //
-//  Created by chutipo2 on 3/7/15.
+//  Created by chutipo2 on 3/15/15.
 //  Copyright (c) 2015 WIS CS428. All rights reserved.
 //
 
@@ -10,22 +10,16 @@ import Foundation
 import UIKit
 
 
-class AddGiftToEventViewController: UITableViewController {
-    
-    var gifts = [WishListGift]()
-    var selectedGift : WishListGift!
+class AddFriendToEventViewController: UITableViewController {
+
     var eventID : Int!
+    var usersName: String!
+    var friends = [Users]()
+    var selectedFriend: Users!
     
-    func getUsersFeaturedGifts(){
-        DatabaseConnection.GetGifts("SELECT * FROM WishListGifts WHERE eventID=99999 ORDER BY name") { responseObject, error in
-            if responseObject != nil {
-                self.gifts = responseObject!
-                self.tableView.reloadData()
-            }
-            else {
-                self.alertUser("No Data", messageText: "Could not retrieve data", buttonText: "OK")
-            }
-        }
+    
+    func refresh(){
+        self.tableView.reloadData()
     }
     
     func alertUser(titleText: String, messageText: String, buttonText: String){
@@ -36,12 +30,12 @@ class AddGiftToEventViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getUsersFeaturedGifts()
+        refresh()
     }
     
     override func viewDidAppear(animated: Bool) {
-        selectedGift = WishListGift(giftID: 0, giftName: "None", giftDescription: "None", giftPrice: 0.00, giftEvent: 99999)
-        getUsersFeaturedGifts()
+        selectedFriend = Users(username: "", password: "")
+        refresh()
     }
     
     override func didReceiveMemoryWarning() {
@@ -60,29 +54,30 @@ class AddGiftToEventViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return gifts.count
+        return friends.count
     }
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("WishListGift", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Friends", forIndexPath: indexPath) as UITableViewCell
         
-        let data = gifts[indexPath.row]
-        cell.textLabel?.text = data.name
+        let data = friends[indexPath.row]
+        cell.textLabel?.text = data.username
         
         return cell
     }
     
     //UPDATE  `cs429iwi_databases`.`WishListGifts` SET  `eventID` =  '5' WHERE  `WishListGifts`.`id` =21;
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        selectedGift = gifts[indexPath.row]
-        let query = "UPDATE WishListGifts SET eventID=\(eventID) WHERE id=\(selectedGift.databaseID)"
-        
-        DatabaseConnection.HandleGift(query){ responseObject, error in
-            //CHECK FOR ERRORS
+        selectedFriend = friends[indexPath.row]
+        let query = "INSERT INTO Invites(inviter,invitee,eventID,status) VALUES ('\(usersName)', '\(selectedFriend.username)', \(eventID), 'pending')"
+        println(query)
+        DatabaseConnection.InviteFriend(query){ responseObject, error in
+        //CHECK FOR ERRORS
         }
-        getUsersFeaturedGifts()
+        self.friends.removeAtIndex(indexPath.row)
         self.tableView.reloadData()
+       
     }
     
     
@@ -92,8 +87,6 @@ class AddGiftToEventViewController: UITableViewController {
         // Return NO if you do not want the specified item to be editable.
         return true
     }
-    
-    
-    
-    
+
+
 }

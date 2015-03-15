@@ -376,4 +376,56 @@ class DatabaseConnection{
         }
         
     }
+    
+    class func GetGuestsForEvent(eventID: Int, status: String, completionHandler: (responseObject: [Invite]?, error: NSError?) -> ()){
+        let query = "SELECT * FROM Invites WHERE eventID=\(eventID) AND status='\(status)'"
+        GetEventGuests(query, completionHandler: completionHandler)
+    }
+    
+    private class func GetEventGuests(query: String, completionHandler: (responseObject: [Invite]?, error: NSError?)->()){
+        let password = "A7B129MNP"
+            Alamofire.request(.GET, "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php", parameters: ["password": password, "query":query]).responseJSON() {
+            (_, _, data, error) in
+            var guests = Array<Invite>()
+            if data != nil{
+                let json = JSON(data!)
+                for i in 0..<json.count{
+                    let inviter = (json[i]["inviter"]).stringValue
+                    let invitee = (json[i]["invitee"]).stringValue
+                    let eventID = (json[i]["eventID"]).intValue
+                    let status = (json[i]["status"]).stringValue
+                    guests.append(Invite(inviter: inviter, invitee: invitee, eventID: eventID, status: status))
+                    
+                    completionHandler(responseObject: guests, error: error)
+                }
+            }
+            else{
+                completionHandler(responseObject: nil, error: error)
+            }
+        }
+        
+    }
+    
+    class func InviteFriend(query: String, completionHandler: (responseObject: Bool?, error: NSError?) -> ()){
+               InviteFriendDB(query, completionHandler: completionHandler)
+    }
+    
+    private class func InviteFriendDB(query: String, completionHandler: (responseObject: Bool?, error: NSError?)->()){
+        let password = "A7B129MNP"
+        Alamofire.request(.GET, "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php", parameters: ["password": password, "query":query]).responseJSON() {
+            (_, _, data, error) in
+            println(data)
+            println(error?.description)
+            if data != nil{
+                completionHandler(responseObject: true, error: error)
+                
+            }
+            else{
+                completionHandler(responseObject: false, error: error)
+            }
+        }
+        
+    }
+    
+   
 }

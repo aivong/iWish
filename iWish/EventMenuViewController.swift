@@ -16,6 +16,7 @@ class EventMenuViewController: UITableViewController {
     
     var upcomingEvents = [UserEvent]()
     var event: UserEvent!
+    var usersName: String!
     
     @IBAction func returnViewEvent(segue: UIStoryboardSegue){
         viewDidLoad()
@@ -119,9 +120,9 @@ class EventMenuViewController: UITableViewController {
         else if(segue.destinationViewController.isKindOfClass(ViewEventGuestsTableViewController)) {
             let vc = segue.destinationViewController as ViewEventGuestsTableViewController
             vc.eventID = event.eventID
+            vc.usersName = usersName
         }
         else {
-            println("Noting")
         }
         
     }
