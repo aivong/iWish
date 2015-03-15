@@ -22,22 +22,42 @@ class DatabaseConnection{
             (_, _, data, error) in
             var gifts = Array<WishListGift>()
             if data != nil{
-            let json = JSON(data!)
-            for i in 0..<json.count{
-                let id = (json[i]["id"]).intValue
-                let name = (json[i]["name"]).stringValue
-                let description = (json[i]["description"]).stringValue
-                let price = (json[i]["price"]).doubleValue
-                gifts.append(WishListGift(giftID: id, giftName: name, giftDescription: description, giftPrice: price))
-            
-                completionHandler(responseObject: gifts, error: error)
-            }
+                let json = JSON(data!)
+                for i in 0..<json.count{
+                    let id = (json[i]["id"]).intValue
+                    let name = (json[i]["name"]).stringValue
+                    let description = (json[i]["description"]).stringValue
+                    let price = (json[i]["price"]).doubleValue
+                    let eventID = (json[i]["eventID"]).intValue
+                    gifts.append(WishListGift(giftID: id, giftName: name, giftDescription: description, giftPrice: price, giftEvent: eventID))
+                    
+                    completionHandler(responseObject: gifts, error: error)
+                }
             }
             else{
                 completionHandler(responseObject: nil, error: error)
             }
         }
         
+    }
+    //UPDATE  `cs429iwi_databases`.`WishListGifts` SET  `eventID` =  '5' WHERE  `WishListGifts`.`id` =21;
+    //Functions to handle gifts
+    class func HandleGift(query: String, completionHandler: (responseObject: Bool?, error: NSError?)->()){
+        HandleGiftQuery(query, completionHandler: completionHandler)
+    }
+    
+    private class func HandleGiftQuery(query: String, completionHandler: (responseObject: Bool?, error: NSError?)->()){
+        let password = "A7B129MNP"
+        Alamofire.request(.GET, "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php", parameters: ["password": password, "query":query]).responseJSON() {
+            (_, _, data, error) in
+            if error != nil{
+                completionHandler(responseObject: false, error: error)
+            }
+            else{
+                completionHandler(responseObject: true, error: error)
+            }
+            
+        }
     }
     
 

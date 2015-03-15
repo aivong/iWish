@@ -22,6 +22,16 @@
 		555FE43C1AABF86F00EE8C1E /* EditEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555FE43B1AABF86F00EE8C1E /* EditEventViewController.swift */; };
 		555FE43D1AABF86F00EE8C1E /* EditEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555FE43B1AABF86F00EE8C1E /* EditEventViewController.swift */; };
 		555FE4401AAC068F00EE8C1E /* TestEditEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555FE43F1AAC068F00EE8C1E /* TestEditEvent.swift */; };
+		55D888981AB4FAE200FF8A72 /* AddGiftToEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D888971AB4FAE200FF8A72 /* AddGiftToEventViewController.swift */; };
+		55D888991AB4FAE200FF8A72 /* AddGiftToEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D888971AB4FAE200FF8A72 /* AddGiftToEventViewController.swift */; };
+		55D8889C1AB4FB1700FF8A72 /* ViewEventGiftsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8889B1AB4FB1700FF8A72 /* ViewEventGiftsViewController.swift */; };
+		55D8889D1AB4FB1700FF8A72 /* ViewEventGiftsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8889B1AB4FB1700FF8A72 /* ViewEventGiftsViewController.swift */; };
+		55D8889F1AB4FB3500FF8A72 /* ViewEventGiftDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8889E1AB4FB3500FF8A72 /* ViewEventGiftDetailViewController.swift */; };
+		55D888A01AB4FB3500FF8A72 /* ViewEventGiftDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8889E1AB4FB3500FF8A72 /* ViewEventGiftDetailViewController.swift */; };
+		55D888A21AB4FB5500FF8A72 /* EventMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D888A11AB4FB5500FF8A72 /* EventMenuViewController.swift */; };
+		55D888A31AB4FB5500FF8A72 /* EventMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D888A11AB4FB5500FF8A72 /* EventMenuViewController.swift */; };
+		55D888B51AB5310400FF8A72 /* ViewEventGuestsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D888B41AB5310400FF8A72 /* ViewEventGuestsTableViewController.swift */; };
+		55D888B61AB5310400FF8A72 /* ViewEventGuestsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D888B41AB5310400FF8A72 /* ViewEventGuestsTableViewController.swift */; };
 		841887F31AACE8CA00B69533 /* FriendsProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841887F21AACE8CA00B69533 /* FriendsProfileViewController.swift */; };
 		841887F51AACEAD100B69533 /* FriendsProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841887F21AACE8CA00B69533 /* FriendsProfileViewController.swift */; };
 		8433929B1A8D0B2500E5B01B /* WishListGift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433929A1A8D0B2500E5B01B /* WishListGift.swift */; };
@@ -37,12 +47,11 @@
 		849337BA1A94137F003456B5 /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849337B91A94137F003456B5 /* EventsTableViewController.swift */; };
 		8E0A55871AA11A82000B89ED /* VerifyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0A55861AA11A82000B89ED /* VerifyState.swift */; };
 		8E0A55891AA11A85000B89ED /* VerifyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0A55861AA11A82000B89ED /* VerifyState.swift */; };
-<<<<<<< HEAD
-||||||| merged common ancestors
+
 		8E6EB2401AAA58CE00D158A2 /* VerifyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0A55861AA11A82000B89ED /* VerifyState.swift */; };
-=======
+
 		8E72208D1AABC51900275D25 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E72208C1AABC51900275D25 /* ProfileViewController.swift */; };
->>>>>>> Ai
+
 		8E97304F1A86BA2C006543B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E97304E1A86BA2C006543B1 /* AppDelegate.swift */; };
 		8E9730581A86BA2C006543B1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E9730571A86BA2C006543B1 /* Images.xcassets */; };
 		8E97305B1A86BA2C006543B1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E9730591A86BA2C006543B1 /* LaunchScreen.xib */; };
@@ -126,6 +135,11 @@
 		555FE4171AABC51200EE8C1E /* FriendsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
 		555FE43B1AABF86F00EE8C1E /* EditEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditEventViewController.swift; sourceTree = "<group>"; };
 		555FE43F1AAC068F00EE8C1E /* TestEditEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestEditEvent.swift; sourceTree = "<group>"; };
+		55D888971AB4FAE200FF8A72 /* AddGiftToEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGiftToEventViewController.swift; sourceTree = "<group>"; };
+		55D8889B1AB4FB1700FF8A72 /* ViewEventGiftsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewEventGiftsViewController.swift; sourceTree = "<group>"; };
+		55D8889E1AB4FB3500FF8A72 /* ViewEventGiftDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewEventGiftDetailViewController.swift; sourceTree = "<group>"; };
+		55D888A11AB4FB5500FF8A72 /* EventMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMenuViewController.swift; sourceTree = "<group>"; };
+		55D888B41AB5310400FF8A72 /* ViewEventGuestsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewEventGuestsTableViewController.swift; sourceTree = "<group>"; };
 		841887F21AACE8CA00B69533 /* FriendsProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsProfileViewController.swift; sourceTree = "<group>"; };
 		8433929A1A8D0B2500E5B01B /* WishListGift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishListGift.swift; sourceTree = "<group>"; };
 		8433929C1A8D2C1A00E5B01B /* DatabaseConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseConnection.swift; sourceTree = "<group>"; };
@@ -227,12 +241,9 @@
 		8E97304C1A86BA2C006543B1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
-||||||| merged common ancestors
-<<<<<<< HEAD
-=======
+
 				8ED72CF81AAC5682002428CF /* default.jpeg */,
->>>>>>> Ai
+
 				8EFEFCE11A9AA4D8004EC929 /* unicorn.jpg */,
 				8EFEFCDF1A9AA496004EC929 /* door24.png */,
 				8EFEFCDC1A9AA460004EC929 /* user168.png */,
@@ -271,6 +282,11 @@
 				555FE4061AABB9E600EE8C1E /* EventDetailViewController.swift */,
 				555FE4091AABB9F000EE8C1E /* AddEventViewController.swift */,
 				555FE43B1AABF86F00EE8C1E /* EditEventViewController.swift */,
+				55D888971AB4FAE200FF8A72 /* AddGiftToEventViewController.swift */,
+				55D8889B1AB4FB1700FF8A72 /* ViewEventGiftsViewController.swift */,
+				55D8889E1AB4FB3500FF8A72 /* ViewEventGiftDetailViewController.swift */,
+				55D888A11AB4FB5500FF8A72 /* EventMenuViewController.swift */,
+				55D888B41AB5310400FF8A72 /* ViewEventGuestsTableViewController.swift */,
 			);
 			name = "Events ViewControllers";
 			sourceTree = "<group>";
@@ -332,12 +348,8 @@
 				8446A9961A8D00F200D51024 /* Users.swift */,
 				8433929A1A8D0B2500E5B01B /* WishListGift.swift */,
 				8E0A55861AA11A82000B89ED /* VerifyState.swift */,
-<<<<<<< HEAD
-				555FE4031AABB9A400EE8C1E /* UserEvent.swift */,
-||||||| merged common ancestors
-=======
+
 				8ED72CF51AAC33B4002428CF /* UserEvent.swift */,
->>>>>>> Ai
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -447,50 +459,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
-				8EFEFCDD1A9AA460004EC929 /* user168.png in Resources */,
-				8E9730561A86BA2C006543B1 /* Main.storyboard in Resources */,
-||||||| merged common ancestors
-<<<<<<< HEAD
-				8EFEFCDD1A9AA460004EC929 /* user168.png in Resources */,
-||||||| merged common ancestors
+
 
 				8EFEFCDD1A9AA460004EC929 /* user168.png in Resources */,
 
-=======
 				CDE992D61A9E55BB000CBA1E /* LargeImageViewTableViewCell.xib in Resources */,
 				CDE992D31A9E5575000CBA1E /* SingleButtonTableViewCell.xib in Resources */,
 				CD7C60741A9FD08B002FE39D /* RightTextFieldTableViewCell.xib in Resources */,
->>>>>>> origin/master
-				8E9730561A86BA2C006543B1 /* Main.storyboard in Resources */,
+
 				CDE992D91A9E55E0000CBA1E /* SwitchTableViewCell.xib in Resources */,
 				CD90A3CE1A9E8B7400186C6F /* CenterLabelTableViewCell.xib in Resources */,
 				CDE992DC1A9E5609000CBA1E /* RightBoxTableViewCell.xib in Resources */,
-=======
-				8EFEFCDD1A9AA460004EC929 /* user168.png in Resources */,
->>>>>>> Ai
+
 				8E97305B1A86BA2C006543B1 /* LaunchScreen.xib in Resources */,
 				8E9730581A86BA2C006543B1 /* Images.xcassets in Resources */,
-<<<<<<< HEAD
-				8EFEFCE21A9AA4D8004EC929 /* unicorn.jpg in Resources */,
-				8EFEFCE01A9AA496004EC929 /* door24.png in Resources */,
-||||||| merged common ancestors
-<<<<<<< HEAD
-				8EFEFCE21A9AA4D8004EC929 /* unicorn.jpg in Resources */,
-				8EFEFCE01A9AA496004EC929 /* door24.png in Resources */,
-||||||| merged common ancestors
 
 				8EFEFCE21A9AA4D8004EC929 /* unicorn.jpg in Resources */,
 				8EFEFCE01A9AA496004EC929 /* door24.png in Resources */,
-=======
+
 				CDB49BD51A9E31A800291FFE /* RightTextViewTableViewCell.xib in Resources */,
->>>>>>> origin/master
-=======
+
 				8ED72CED1AAC20FF002428CF /* Main.storyboard in Resources */,
-				8EFEFCE21A9AA4D8004EC929 /* unicorn.jpg in Resources */,
-				8ED72CF91AAC5682002428CF /* default.jpeg in Resources */,
-				8EFEFCE01A9AA496004EC929 /* door24.png in Resources */,
->>>>>>> Ai
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,18 +488,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
-				555FE42D1AABD0BC00EE8C1E /* Main.storyboard in Resources */,
-||||||| merged common ancestors
 				CDE992DD1A9E5609000CBA1E /* RightBoxTableViewCell.xib in Resources */,
 				CDE992DA1A9E55E0000CBA1E /* SwitchTableViewCell.xib in Resources */,
 				CD7C60751A9FD135002FE39D /* RightTextFieldTableViewCell.xib in Resources */,
 				CDE992D71A9E55BB000CBA1E /* LargeImageViewTableViewCell.xib in Resources */,
 				CDE992D41A9E5575000CBA1E /* SingleButtonTableViewCell.xib in Resources */,
-=======
+
 				8ED72CEE1AAC20FF002428CF /* Main.storyboard in Resources */,
 				8ED72CFA1AAC5682002428CF /* default.jpeg in Resources */,
->>>>>>> Ai
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,58 +509,53 @@
 			files = (
 				8EE8E70D1A9A8AA0000F6076 /* CreateAccountViewController.swift in Sources */,
 				849337BA1A94137F003456B5 /* EventsTableViewController.swift in Sources */,
-<<<<<<< HEAD
+
 				555FE4181AABC51200EE8C1E /* FriendsTableViewController.swift in Sources */,
 				555FE4141AABC4F800EE8C1E /* SearchUsersTableViewController.swift in Sources */,
-||||||| merged common ancestors
-=======
+
 				8ED72CE61AAC14BC002428CF /* profileGifts.swift in Sources */,
->>>>>>> Ai
+
 				8433929B1A8D0B2500E5B01B /* WishListGift.swift in Sources */,
 				8433929D1A8D2C1A00E5B01B /* DatabaseConnection.swift in Sources */,
-<<<<<<< HEAD
+
 				555FE40A1AABB9F000EE8C1E /* AddEventViewController.swift in Sources */,
-||||||| merged common ancestors
+
 				CD90A3CB1A9E8B4E00186C6F /* CenterLabelTableViewCell.swift in Sources */,
-=======
+
 				8E72208D1AABC51900275D25 /* ProfileViewController.swift in Sources */,
->>>>>>> Ai
+
 				8446A9971A8D00F200D51024 /* Users.swift in Sources */,
-<<<<<<< HEAD
-				555FE4041AABB9A400EE8C1E /* UserEvent.swift in Sources */,
-||||||| merged common ancestors
-=======
+
 				8ED72CF61AAC33B4002428CF /* UserEvent.swift in Sources */,
->>>>>>> Ai
+
 				849337B21A905551003456B5 /* SwiftyJSON.swift in Sources */,
 				8446A9901A8BC07800D51024 /* LoginViewController.swift in Sources */,
+				55D8889F1AB4FB3500FF8A72 /* ViewEventGiftDetailViewController.swift in Sources */,
 				555FE4071AABB9E600EE8C1E /* EventDetailViewController.swift in Sources */,
 				841887F31AACE8CA00B69533 /* FriendsProfileViewController.swift in Sources */,
 				8EDE536E1A8920DC008B49A0 /* ViewController.swift in Sources */,
 				849337B41A914F58003456B5 /* AddGiftViewController.swift in Sources */,
-<<<<<<< HEAD
+
 				555FE43C1AABF86F00EE8C1E /* EditEventViewController.swift in Sources */,
-||||||| merged common ancestors
+
 				CDE992D01A9E5083000CBA1E /* SingleButtonTableViewCell.swift in Sources */,
 				CD7C60711A9FC16E002FE39D /* EditGiftViewController.swift in Sources */,
-=======
->>>>>>> Ai
+
+				55D888B51AB5310400FF8A72 /* ViewEventGuestsTableViewController.swift in Sources */,
+
 				8E97304F1A86BA2C006543B1 /* AppDelegate.swift in Sources */,
-<<<<<<< HEAD
-				5505D5EF1AABB15D002C7FB0 /* VerifyState.swift in Sources */,
-||||||| merged common ancestors
-<<<<<<< HEAD
-				8E6EB2401AAA58CE00D158A2 /* VerifyState.swift in Sources */,
-||||||| merged common ancestors
-				8E0A55871AA11A82000B89ED /* VerifyState.swift in Sources */,
-=======
+
+
 				CDE992DF1A9E5A43000CBA1E /* PaddedLabel.swift in Sources */,
->>>>>>> origin/master
-=======
+
 				8E0A55871AA11A82000B89ED /* VerifyState.swift in Sources */,
->>>>>>> Ai
+
+				55D8889C1AB4FB1700FF8A72 /* ViewEventGiftsViewController.swift in Sources */,
+
 				8446A9991A8D055000D51024 /* WishListTableViewController.swift in Sources */,
 				849337B61A91AE63003456B5 /* GiftDetailViewController.swift in Sources */,
+				55D888A21AB4FB5500FF8A72 /* EventMenuViewController.swift in Sources */,
+				55D888981AB4FAE200FF8A72 /* AddGiftToEventViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,9 +567,9 @@
 				CD4041551A967D6F00DB40D5 /* LoginViewController.swift in Sources */,
 				555FE4191AABC51200EE8C1E /* FriendsTableViewController.swift in Sources */,
 				555FE4151AABC4F800EE8C1E /* SearchUsersTableViewController.swift in Sources */,
+				55D888991AB4FAE200FF8A72 /* AddGiftToEventViewController.swift in Sources */,
 				CD4041561A967D7100DB40D5 /* WishListTableViewController.swift in Sources */,
-<<<<<<< HEAD
-||||||| merged common ancestors
+
 				CDE992E01A9E5A43000CBA1E /* PaddedLabel.swift in Sources */,
 				CDE992C71A9E4BD6000CBA1E /* RightBoxTableViewCell.swift in Sources */,
 				CDE992CE1A9E4F1E000CBA1E /* LargeImageViewTableViewCell.swift in Sources */,
@@ -595,39 +577,42 @@
 				CD7C60721A9FC28F002FE39D /* EditGiftViewController.swift in Sources */,
 				CDE992E31A9E5D94000CBA1E /* CustomTableViewCell.swift in Sources */,
 				CDE992D11A9E5083000CBA1E /* SingleButtonTableViewCell.swift in Sources */,
-=======
+
 				8ED72CE71AAC14BC002428CF /* profileGifts.swift in Sources */,
->>>>>>> Ai
+
 				CD40415B1A967D8C00DB40D5 /* SwiftyJSON.swift in Sources */,
+				55D8889D1AB4FB1700FF8A72 /* ViewEventGiftsViewController.swift in Sources */,
 				555FE40B1AABB9F000EE8C1E /* AddEventViewController.swift in Sources */,
 				CD4041541A967D6D00DB40D5 /* ViewController.swift in Sources */,
-<<<<<<< HEAD
+
 				841887F51AACEAD100B69533 /* FriendsProfileViewController.swift in Sources */,
+				55D888A01AB4FB3500FF8A72 /* ViewEventGiftDetailViewController.swift in Sources */,
 				555FE4051AABB9A400EE8C1E /* UserEvent.swift in Sources */,
-||||||| merged common ancestors
+
 				CD90A3CF1A9E8C6F00186C6F /* CenterLabelTableViewCell.swift in Sources */,
-=======
->>>>>>> Ai
+
 				CD4041581A967D7900DB40D5 /* WishListGift.swift in Sources */,
 				555FE4401AAC068F00EE8C1E /* TestEditEvent.swift in Sources */,
 				CD4041521A967D6800DB40D5 /* AddGiftViewController.swift in Sources */,
-<<<<<<< HEAD
+
+				55D888B61AB5310400FF8A72 /* ViewEventGuestsTableViewController.swift in Sources */,
+
 				555FE4081AABB9E600EE8C1E /* EventDetailViewController.swift in Sources */,
-||||||| merged common ancestors
+
 				CDE992CB1A9E4DA7000CBA1E /* RightTextViewTableViewCell.swift in Sources */,
-=======
->>>>>>> Ai
+
 				CD4041531A967D6A00DB40D5 /* GiftDetailViewController.swift in Sources */,
 				CD4041591A967D7F00DB40D5 /* DatabaseConnection.swift in Sources */,
-<<<<<<< HEAD
+
 				555FE43D1AABF86F00EE8C1E /* EditEventViewController.swift in Sources */,
-||||||| merged common ancestors
+
 				CDB49BDD1A9E453200291FFE /* SwitchTableViewCell.swift in Sources */,
-=======
+
 				8ED72CF71AAC33B4002428CF /* UserEvent.swift in Sources */,
->>>>>>> Ai
+
 				CD4041501A967D5E00DB40D5 /* Users.swift in Sources */,
 				8E0A55891AA11A85000B89ED /* VerifyState.swift in Sources */,
+				55D888A31AB4FB5500FF8A72 /* EventMenuViewController.swift in Sources */,
 				CD4041571A967D7400DB40D5 /* EventsTableViewController.swift in Sources */,
 				8E9730671A86BA2C006543B1 /* iWishTests.swift in Sources */,
 			);

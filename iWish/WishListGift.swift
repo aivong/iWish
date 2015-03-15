@@ -14,12 +14,14 @@ class WishListGift{
     var name:String!
     var description:String!
     var price:Double!
+    var eventID:Int!
     
-    init(giftID: Int, giftName:String, giftDescription:String, giftPrice:Double){
+    init(giftID: Int, giftName:String, giftDescription:String, giftPrice:Double, giftEvent:Int){
         self.databaseID = giftID
         self.name = giftName
         self.description = giftDescription
         self.price = giftPrice
+        self.eventID = giftEvent
     }
     
     func descripe () -> String {

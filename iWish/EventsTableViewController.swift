@@ -23,10 +23,6 @@ class EventsTableViewController: UITableViewController {
         
     }
     
-    @IBAction func returnViewEvent(segue: UIStoryboardSegue){
-        viewDidLoad()
-    }
-    
     @IBAction func saveEvent(segue: UIStoryboardSegue){
         let addEventVC = segue.sourceViewController as AddEventViewController
         let newEventName = addEventVC.eventName.text
@@ -195,16 +191,16 @@ class EventsTableViewController: UITableViewController {
         
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
-        if(segue.destinationViewController.isKindOfClass(EventDetailViewController)){
+        if(segue.destinationViewController.isKindOfClass(EventMenuViewController)){
             
-            let vc = segue.destinationViewController as EventDetailViewController
+            let vc = segue.destinationViewController as EventMenuViewController
             
             let path = self.tableView.indexPathForSelectedRow()!
             vc.event = upcomingEvents[path.row]
             
-            //            vc.EventName = selectedEvent.name
-            //            vc.EventDescription = selectedEvent.description
-            //            vc.EventPrice = selectedEvent.price
+            //            vc.giftName = selectedGift.name
+            //            vc.giftDescription = selectedGift.description
+            //            vc.giftPrice = selectedGift.price
             
         }
     }
