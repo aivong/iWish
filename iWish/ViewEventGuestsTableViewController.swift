@@ -35,6 +35,7 @@ class ViewEventGuestsTableViewController: UITableViewController {
             }
             
         }
+        println("Event GUEST: \(eventID) ID and \(guests.count) number")
     }
     
     func getPendingGuests(){
@@ -48,6 +49,7 @@ class ViewEventGuestsTableViewController: UITableViewController {
             }
             
         }
+        println("Pending GUEST: \(eventID) ID and \(invited.count) number")
     }
     
     func getUserFriends(){
@@ -62,6 +64,7 @@ class ViewEventGuestsTableViewController: UITableViewController {
             }
             
         }
+        println("FRIENDS: \(friends.count)")
         getPendingGuests()
         getUninvitedFriends()
     }
@@ -75,11 +78,13 @@ class ViewEventGuestsTableViewController: UITableViewController {
             let Friend = self.friends[i]
             flag = false
             for j in 0..<self.guests.count{
+                println("COMPARING \(self.guests[j].invitee) and \(Friend.username)")
                 if self.guests[j].invitee == Friend.username{
                     flag = true
                 }
             }
             for k in 0..<self.invited.count{
+                println("COMPARING \(self.invited[k].invitee) and \(Friend.username)")
                 if self.invited[k].invitee == Friend.username{
                     flag = true
                 }
