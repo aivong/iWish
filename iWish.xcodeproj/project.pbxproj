@@ -30,6 +30,8 @@
 		55D888A01AB4FB3500FF8A72 /* ViewEventGiftDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8889E1AB4FB3500FF8A72 /* ViewEventGiftDetailViewController.swift */; };
 		55D888A21AB4FB5500FF8A72 /* EventMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D888A11AB4FB5500FF8A72 /* EventMenuViewController.swift */; };
 		55D888A31AB4FB5500FF8A72 /* EventMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D888A11AB4FB5500FF8A72 /* EventMenuViewController.swift */; };
+		55D888B51AB5310400FF8A72 /* ViewEventGuestsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D888B41AB5310400FF8A72 /* ViewEventGuestsTableViewController.swift */; };
+		55D888B61AB5310400FF8A72 /* ViewEventGuestsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D888B41AB5310400FF8A72 /* ViewEventGuestsTableViewController.swift */; };
 		841887F31AACE8CA00B69533 /* FriendsProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841887F21AACE8CA00B69533 /* FriendsProfileViewController.swift */; };
 		841887F51AACEAD100B69533 /* FriendsProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841887F21AACE8CA00B69533 /* FriendsProfileViewController.swift */; };
 		8433929B1A8D0B2500E5B01B /* WishListGift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433929A1A8D0B2500E5B01B /* WishListGift.swift */; };
@@ -124,6 +126,7 @@
 		55D8889B1AB4FB1700FF8A72 /* ViewEventGiftsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewEventGiftsViewController.swift; sourceTree = "<group>"; };
 		55D8889E1AB4FB3500FF8A72 /* ViewEventGiftDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewEventGiftDetailViewController.swift; sourceTree = "<group>"; };
 		55D888A11AB4FB5500FF8A72 /* EventMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMenuViewController.swift; sourceTree = "<group>"; };
+		55D888B41AB5310400FF8A72 /* ViewEventGuestsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewEventGuestsTableViewController.swift; sourceTree = "<group>"; };
 		841887F21AACE8CA00B69533 /* FriendsProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsProfileViewController.swift; sourceTree = "<group>"; };
 		8433929A1A8D0B2500E5B01B /* WishListGift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishListGift.swift; sourceTree = "<group>"; };
 		8433929C1A8D2C1A00E5B01B /* DatabaseConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseConnection.swift; sourceTree = "<group>"; };
@@ -263,6 +266,7 @@
 				55D8889B1AB4FB1700FF8A72 /* ViewEventGiftsViewController.swift */,
 				55D8889E1AB4FB3500FF8A72 /* ViewEventGiftDetailViewController.swift */,
 				55D888A11AB4FB5500FF8A72 /* EventMenuViewController.swift */,
+				55D888B41AB5310400FF8A72 /* ViewEventGuestsTableViewController.swift */,
 			);
 			name = "Events ViewControllers";
 			sourceTree = "<group>";
@@ -473,6 +477,7 @@
 				8EDE536E1A8920DC008B49A0 /* ViewController.swift in Sources */,
 				849337B41A914F58003456B5 /* AddGiftViewController.swift in Sources */,
 				555FE43C1AABF86F00EE8C1E /* EditEventViewController.swift in Sources */,
+				55D888B51AB5310400FF8A72 /* ViewEventGuestsTableViewController.swift in Sources */,
 				8E97304F1A86BA2C006543B1 /* AppDelegate.swift in Sources */,
 				5505D5EF1AABB15D002C7FB0 /* VerifyState.swift in Sources */,
 				55D8889C1AB4FB1700FF8A72 /* ViewEventGiftsViewController.swift in Sources */,
@@ -503,6 +508,7 @@
 				CD4041581A967D7900DB40D5 /* WishListGift.swift in Sources */,
 				555FE4401AAC068F00EE8C1E /* TestEditEvent.swift in Sources */,
 				CD4041521A967D6800DB40D5 /* AddGiftViewController.swift in Sources */,
+				55D888B61AB5310400FF8A72 /* ViewEventGuestsTableViewController.swift in Sources */,
 				555FE4081AABB9E600EE8C1E /* EventDetailViewController.swift in Sources */,
 				CD4041531A967D6A00DB40D5 /* GiftDetailViewController.swift in Sources */,
 				CD4041591A967D7F00DB40D5 /* DatabaseConnection.swift in Sources */,

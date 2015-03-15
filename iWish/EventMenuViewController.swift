@@ -17,6 +17,9 @@ class EventMenuViewController: UITableViewController {
     var upcomingEvents = [UserEvent]()
     var event: UserEvent!
     
+    @IBAction func returnViewEvent(segue: UIStoryboardSegue){
+        viewDidLoad()
+    }
     
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -56,8 +59,11 @@ class EventMenuViewController: UITableViewController {
         if indexPath.row == 0{
             cell = tableView.dequeueReusableCellWithIdentifier("EventCell", forIndexPath: indexPath) as UITableViewCell
         }
-        else {
+        else if indexPath.row == 1 {
             cell = tableView.dequeueReusableCellWithIdentifier("WishlistCell", forIndexPath: indexPath) as UITableViewCell
+        }
+        else {
+            cell = tableView.dequeueReusableCellWithIdentifier("GuestListCell", forIndexPath: indexPath) as UITableViewCell
         }
         switch(indexPath.section){
         case 0:
@@ -108,6 +114,10 @@ class EventMenuViewController: UITableViewController {
         }
         else if(segue.destinationViewController.isKindOfClass(ViewEventGiftsViewController)) {
             let vc = segue.destinationViewController as ViewEventGiftsViewController
+            vc.eventID = event.eventID
+        }
+        else if(segue.destinationViewController.isKindOfClass(ViewEventGuestsTableViewController)) {
+            let vc = segue.destinationViewController as ViewEventGuestsTableViewController
             vc.eventID = event.eventID
         }
         else {

@@ -23,10 +23,6 @@ class EventsTableViewController: UITableViewController {
         
     }
     
-    @IBAction func returnViewEvent(segue: UIStoryboardSegue){
-        viewDidLoad()
-    }
-    
     @IBAction func saveEvent(segue: UIStoryboardSegue){
         let addEventVC = segue.sourceViewController as AddEventViewController
         let newEventName = addEventVC.eventName.text
