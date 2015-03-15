@@ -83,5 +83,22 @@ class EventDetailViewController: UIViewController {
     // Pass the selected object to the new view controller.
     }
     */
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        // Get the new view controller using [segue destinationViewController].
+        // Pass the selected object to the new view controller.
+        if(segue.destinationViewController.isKindOfClass(ViewEventGiftsViewController)){
+            
+            let vc = segue.destinationViewController as ViewEventGiftsViewController
+            
+            vc.eventID = event.eventID
+        }
+        if(segue.destinationViewController.isKindOfClass(EventMenuViewController)){
+            
+            let vc = segue.destinationViewController as EventMenuViewController
+            
+            vc.event = event
+        }
+    }
     
 }
