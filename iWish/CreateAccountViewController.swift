@@ -39,10 +39,6 @@ class CreateAccountViewController: UIViewController {
     }
     */
 
-    @IBAction func cancelRegistration(sender: UIButton) {
-        performSegueWithIdentifier("LoginSegue2", sender: self)
-    }
-    
     @IBAction func registerAccount(sender: UIButton) {
         if self.validInputs() {
             let query = "INSERT INTO Users (username, password, gender, birthday, fullname, email, mailaddress) VALUES ('\(username.text)', '\(password.text)', '\(gender.text)', '\(birthday.text)', '\(fullname.text)', '\(email.text)', '\(mailingaddress.text)')"

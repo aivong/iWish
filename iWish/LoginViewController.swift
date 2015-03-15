@@ -72,19 +72,12 @@ class LoginViewController: UIViewController {
             //let query = "SELECT * FROM Users WHERE username = '\(usernameTextField.text)' AND password = '\(passwordTextField.text)')"
             let query = "SELECT * FROM Users WHERE username = '\(usernameTextField.text)'"
             
-<<<<<<< HEAD
             println(query)
             
-||||||| merged common ancestors
-            println(query)
-
-=======
->>>>>>> Ai
             DatabaseConnection.GetUser(query) { responseObject, error in
                 //CHECK FOR ERRORS
                 if responseObject != nil {
                     self.users = responseObject!
-<<<<<<< HEAD
                     println("NEVER NIL NEVER NIL")
                     if self.users[0].password == nil {
                         println("FAIL")
@@ -94,44 +87,16 @@ class LoginViewController: UIViewController {
                         VerifyState.username = self.users[0].username
                         println(self.users[0].username)
                         println(self.users[0].password)
-||||||| merged common ancestors
-
-                   
-                        VerifyState.userVerified = true
-                        VerifyState.username = self.users[0].username
-                        println(self.users[0].username)
-                        println(self.users[0].password)
-=======
-
->>>>>>> Ai
                         if(self.users[0].username == self.usernameTextField.text && self.users[0].password == self.passwordTextField.text) {
-<<<<<<< HEAD
                             //println("SUCCESS")
-||||||| merged common ancestors
-                           // println("SUCCESS")
-                            println(self.users[0].email)
-=======
-                            VerifyState.userVerified = true
-                            VerifyState.username = self.users[0].username
-                            VerifyState.selectedUser = self.users[0].username
->>>>>>> Ai
                         }
                         if VerifyState.userVerified && VerifyState.username == self.users[0].username {
-<<<<<<< HEAD
                             println("SUCCESS")
                             let nsud = NSUserDefaults.standardUserDefaults()
                             nsud.setObject(self.users[0].username, forKey: "username")
                            // self.performSegueWithIdentifier("LoggedSegue", sender: self)
                             
-||||||| merged common ancestors
-                           // println("SUCCESS")
-                          self.performSegueWithIdentifier("loginSuccess", sender: self)
-                            
-=======
-                            self.performSegueWithIdentifier("loginSuccess", sender: self)
->>>>>>> Ai
                         }
-<<<<<<< HEAD
                     }
                 }
                 else {
@@ -139,23 +104,6 @@ class LoginViewController: UIViewController {
                     if VerifyState.userVerified {
                         println("FAIL")
                     }
-||||||| merged common ancestors
-                    
-=======
-                }
-                if self.users.count == 0 {
-                    var alertTitle = ""
-                    var alertBody = ""
-                    
-                    alertTitle = "Incorrect Credentials"
-                    alertBody = "Please enter the correct username/password combination"
-                    self.usernameTextField.text = ""
-                    self.passwordTextField.text = ""
-                    
-                    let alertView = UIAlertView(title: alertTitle, message: alertBody, delegate: nil, cancelButtonTitle: "OK")
-                    alertView.show()
-                    
->>>>>>> Ai
                 }
             }
         }
