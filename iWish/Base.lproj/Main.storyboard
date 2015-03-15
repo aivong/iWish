@@ -87,6 +87,12 @@
                         <outlet property="usernameImage" destination="J3y-Gm-NtL" id="ua2-6T-reX"/>
                         <outlet property="usernamePasswordView" destination="Gv9-UI-MId" id="VlX-0w-GVb"/>
                         <outlet property="usernameTextField" destination="pWa-gM-3ND" id="Dg8-EJ-qLj"/>
+<<<<<<< HEAD
+||||||| merged common ancestors
+                        <segue destination="vBT-5C-EOt" kind="show" identifier="loginSuccess" id="TPS-S4-D9B"/>
+=======
+                        <segue destination="vBT-5C-EOt" kind="show" identifier="loginSuccess" id="57v-c6-aSr"/>
+>>>>>>> Ai
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ViW-4A-3K6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -786,6 +792,18 @@
                                     <rect key="frame" x="183" y="276" width="188" height="30"/>
                                 </variation>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pO0-kx-1r7">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="22" y="15" width="72" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="cancelRegistration:" destination="KY6-MU-aXO" eventType="touchUpInside" id="mhW-09-Cq8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -812,6 +830,7 @@
                                 <exclude reference="FwQ-5R-ifO"/>
                                 <exclude reference="a2e-1X-uES"/>
                                 <exclude reference="c6a-ua-lCX"/>
+                                <exclude reference="pO0-kx-1r7"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="0MR-f1-3nE"/>
@@ -838,6 +857,7 @@
                                 <include reference="FwQ-5R-ifO"/>
                                 <include reference="a2e-1X-uES"/>
                                 <include reference="c6a-ua-lCX"/>
+                                <include reference="pO0-kx-1r7"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="0MR-f1-3nE"/>
@@ -864,7 +884,7 @@
         <!--Profile-->
         <scene sceneID="HuG-5Z-4cp">
             <objects>
-                <viewController id="I8w-1Y-92J" sceneMemberID="viewController">
+                <viewController id="I8w-1Y-92J" customClass="ProfileViewController" customModule="iWish" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AwE-Yf-jrN"/>
                         <viewControllerLayoutGuide type="bottom" id="qen-Lg-H6U"/>
@@ -872,13 +892,104 @@
                     <view key="view" contentMode="scaleToFill" id="0pe-C3-czz">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iuR-e0-kgJ">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="31" y="26" width="172" height="191"/>
+                                </variation>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NAME" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1hD-QX-xY8">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="218" y="28" width="182" height="34"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MM-DD-YYYY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bel-cr-YEr">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="218" y="70" width="112" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dmB-7M-chM">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="218" y="99" width="154" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aW1-cv-r6l">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="218" y="128" width="166" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mailing Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qQa-jX-G6a">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="218" y="157" width="166" height="62"/>
+                                </variation>
+                            </label>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g5H-g1-BhO">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="28" y="227" width="344" height="316"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="D0a-Ct-0PS" kind="embed" id="c0E-Eq-WYG"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="iuR-e0-kgJ"/>
+                                <exclude reference="1hD-QX-xY8"/>
+                                <exclude reference="Bel-cr-YEr"/>
+                                <exclude reference="dmB-7M-chM"/>
+                                <exclude reference="aW1-cv-r6l"/>
+                                <exclude reference="qQa-jX-G6a"/>
+                                <exclude reference="g5H-g1-BhO"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="iuR-e0-kgJ"/>
+                                <include reference="1hD-QX-xY8"/>
+                                <include reference="Bel-cr-YEr"/>
+                                <include reference="dmB-7M-chM"/>
+                                <include reference="aW1-cv-r6l"/>
+                                <include reference="qQa-jX-G6a"/>
+                                <include reference="g5H-g1-BhO"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" id="aUS-gN-RNx"/>
+                    <connections>
+                        <outlet property="birthday" destination="Bel-cr-YEr" id="zgn-pD-6GV"/>
+                        <outlet property="email" destination="aW1-cv-r6l" id="x9J-s1-pLw"/>
+                        <outlet property="fullName" destination="1hD-QX-xY8" id="QaB-LD-vgz"/>
+                        <outlet property="gender" destination="dmB-7M-chM" id="Nhn-UE-XrD"/>
+                        <outlet property="mailingAddress" destination="qQa-jX-G6a" id="AYi-lw-UcB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ll-a4-6fD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-193" y="-642"/>
+            <point key="canvasLocation" x="-193.5" y="-642"/>
         </scene>
         <!--Friends-->
         <scene sceneID="obq-K6-cLH">
@@ -1086,13 +1197,37 @@
                     <view key="view" contentMode="scaleToFill" id="Xh2-kI-8dZ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RA0-oI-Y4Y">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="160" y="201" width="49" height="30"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="lUF-FK-sLw" kind="show" id="Krz-Ql-x8u"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="RA0-oI-Y4Y"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="RA0-oI-Y4Y"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" id="a4H-SQ-aJN"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lKi-xI-HaR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-193" y="1609"/>
+            <point key="canvasLocation" x="-1324.5" y="119"/>
         </scene>
         <!--Events-->
         <scene sceneID="xgr-NQ-NyL">
@@ -1132,9 +1267,69 @@
             </objects>
             <point key="canvasLocation" x="-193" y="-1733"/>
         </scene>
+        <!--Profile Gifts-->
+        <scene sceneID="xKY-gN-LuF">
+            <objects>
+                <tableViewController id="uXD-1P-hTS" customClass="profileGifts" customModule="iWish" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="47" sectionHeaderHeight="22" sectionFooterHeight="22" id="qnC-g1-CAg">
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="84"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WishListGift" rowHeight="47" id="1Bd-ph-fgG">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1Bd-ph-fgG" id="vql-al-S5J">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="uXD-1P-hTS" id="pas-Gl-7En"/>
+                            <outlet property="delegate" destination="uXD-1P-hTS" id="WXq-jh-5vt"/>
+                        </connections>
+                    </tableView>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Rgw-7k-ahx">
+                        <barButtonItem key="leftBarButtonItem" title="Featured Wishlist" id="kli-zU-tvC">
+                            <connections>
+                                <action selector="featuredPressed:" destination="uXD-1P-hTS" id="OUi-FJ-FfG"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Social Calendar" id="Byx-fY-wuM">
+                            <connections>
+                                <action selector="socialPressed:" destination="uXD-1P-hTS" id="Af8-kU-BME"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xo5-yg-56r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1396.5" y="-684"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ts5-X7-BSG">
+            <objects>
+                <navigationController id="D0a-Ct-0PS" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sRn-du-2ER">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="uXD-1P-hTS" kind="relationship" relationship="rootViewController" id="Oct-mM-4KP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OdS-BS-clp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="654" y="-830"/>
+        </scene>
     </scenes>
     <resources>
         <image name="door24.png" width="81" height="81"/>
         <image name="user168.png" width="128" height="128"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Krz-Ql-x8u"/>
+    </inferredMetricsTieBreakers>
 </document>
