@@ -74,10 +74,11 @@ class AddFriendToEventViewController: UITableViewController {
         println(query)
         DatabaseConnection.InviteFriend(query){ responseObject, error in
         //CHECK FOR ERRORS
+            if responseObject != nil {
+                self.friends.removeAtIndex(indexPath.row)
+                self.tableView.reloadData()
+            }
         }
-        self.friends.removeAtIndex(indexPath.row)
-        self.tableView.reloadData()
-       
     }
     
     

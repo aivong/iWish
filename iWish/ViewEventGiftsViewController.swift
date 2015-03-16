@@ -92,9 +92,11 @@ class ViewEventGiftsViewController: UITableViewController {
             DatabaseConnection.HandleGift(query){ responseObject, error in
                 //CHECK FOR ERRORS
                 // println("GIFT REMOVED FROM EVENT")
+                if responseObject != nil {
+                    self.getUsersFeaturedGifts()
+                    self.tableView.reloadData()
+                }
             }
-            getUsersFeaturedGifts()
-            self.tableView.reloadData()
         }
     }
     

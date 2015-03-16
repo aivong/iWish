@@ -80,9 +80,11 @@ class AddGiftToEventViewController: UITableViewController {
         
         DatabaseConnection.HandleGift(query){ responseObject, error in
             //CHECK FOR ERRORS
-        }
-        getUsersFeaturedGifts()
-        self.tableView.reloadData()
+            if responseObject != nil {
+                self.getUsersFeaturedGifts()
+                self.tableView.reloadData()
+            }
+        }        
     }
     
     
