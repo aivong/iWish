@@ -25,7 +25,7 @@ class iWishTests: XCTestCase {
     
     func testExample() {
         
-        let testUser = Users(username: "John Doe", password: "pw")
+       // let testUser = Users(username: "John Doe", password: "pw")
         
         XCTAssert(true, "Pass")
     }

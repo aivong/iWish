@@ -29,6 +29,9 @@
 		8E97305B1A86BA2C006543B1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E9730591A86BA2C006543B1 /* LaunchScreen.xib */; };
 		8E9730671A86BA2C006543B1 /* iWishTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9730661A86BA2C006543B1 /* iWishTests.swift */; };
 		8EDE536E1A8920DC008B49A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDE536D1A8920DC008B49A0 /* ViewController.swift */; };
+		8EFCA4271AB6318F00D9F965 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8EFCA4261AB6318F00D9F965 /* Entitlements.plist */; };
+		8EFCA42B1AB6400100D9F965 /* VerifyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFCA42A1AB6400100D9F965 /* VerifyState.swift */; };
+		8EFCA42C1AB6400100D9F965 /* VerifyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFCA42A1AB6400100D9F965 /* VerifyState.swift */; };
 		CD4041501A967D5E00DB40D5 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446A9961A8D00F200D51024 /* Users.swift */; };
 		CD4041521A967D6800DB40D5 /* AddGiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849337B31A914F58003456B5 /* AddGiftViewController.swift */; };
 		CD4041531A967D6A00DB40D5 /* GiftDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849337B51A91AE63003456B5 /* GiftDetailViewController.swift */; };
@@ -113,6 +116,8 @@
 		8E9730651A86BA2C006543B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E9730661A86BA2C006543B1 /* iWishTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iWishTests.swift; sourceTree = "<group>"; };
 		8EDE536D1A8920DC008B49A0 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8EFCA4261AB6318F00D9F965 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
+		8EFCA42A1AB6400100D9F965 /* VerifyState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +158,7 @@
 		8E9730401A86BA2C006543B1 = {
 			isa = PBXGroup;
 			children = (
+				8EFCA4261AB6318F00D9F965 /* Entitlements.plist */,
 				849337A31A8E6913003456B5 /* Alamofire.xcodeproj */,
 				8E97304B1A86BA2C006543B1 /* iWish */,
 				8E9730631A86BA2C006543B1 /* iWishTests */,
@@ -274,6 +280,7 @@
 			children = (
 				8446A9961A8D00F200D51024 /* Users.swift */,
 				8433929A1A8D0B2500E5B01B /* WishListGift.swift */,
+				8EFCA42A1AB6400100D9F965 /* VerifyState.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -383,6 +390,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EFCA4271AB6318F00D9F965 /* Entitlements.plist in Resources */,
 				8E9730561A86BA2C006543B1 /* Main.storyboard in Resources */,
 				8E97305B1A86BA2C006543B1 /* LaunchScreen.xib in Resources */,
 				8E9730581A86BA2C006543B1 /* Images.xcassets in Resources */,
@@ -405,6 +413,7 @@
 			files = (
 				843773BB1A9D8EF900DE9D09 /* SearchUsersTableViewController.swift in Sources */,
 				849337BA1A94137F003456B5 /* EventsTableViewController.swift in Sources */,
+				8EFCA42B1AB6400100D9F965 /* VerifyState.swift in Sources */,
 				843773C71A9FBF7A00DE9D09 /* FriendsProfileViewController.swift in Sources */,
 				8433929B1A8D0B2500E5B01B /* WishListGift.swift in Sources */,
 				8433929D1A8D2C1A00E5B01B /* DatabaseConnection.swift in Sources */,
@@ -431,6 +440,7 @@
 				CD4041561A967D7100DB40D5 /* WishListTableViewController.swift in Sources */,
 				CD40415B1A967D8C00DB40D5 /* SwiftyJSON.swift in Sources */,
 				CD4041541A967D6D00DB40D5 /* ViewController.swift in Sources */,
+				8EFCA42C1AB6400100D9F965 /* VerifyState.swift in Sources */,
 				CD4041581A967D7900DB40D5 /* WishListGift.swift in Sources */,
 				CD4041521A967D6800DB40D5 /* AddGiftViewController.swift in Sources */,
 				CD4041531A967D6A00DB40D5 /* GiftDetailViewController.swift in Sources */,
@@ -493,7 +503,9 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "-";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -535,7 +547,9 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "-";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;

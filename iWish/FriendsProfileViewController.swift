@@ -9,8 +9,15 @@
 import UIKit
 
 class FriendsProfileViewController: UIViewController {
-
-    
+    @IBOutlet weak var fullName: UILabel!
+    @IBOutlet weak var birthday: UILabel!
+    @IBOutlet weak var gender: UILabel!
+    @IBOutlet weak var email: UILabel!
+    @IBOutlet weak var mailingAddress: UILabel!
+    @IBOutlet weak var imageview: UIImageView!
+    var file: String!
+    var profileImage: UIImage!
+    var users =  [Users]()
     var friendsName: String!
     var usersName: String!
     var friendWasRemoved: Bool!
@@ -23,6 +30,46 @@ class FriendsProfileViewController: UIViewController {
         }
         self.title = friendsName
         friendWasRemoved = false
+        
+        let queryImage = "SELECT * FROM pictures WHERE username = '\(self.friendsName)'"
+        // Do any additional setup after loading the view.
+        
+        
+        let queryProfile = "SELECT * FROM Users WHERE username = '\(self.friendsName)'"
+        
+        
+        
+        DatabaseConnection.GetUser(queryProfile) { responseObject, error in
+            //CHECK FOR ERRORS
+            if responseObject != nil {
+                self.users = responseObject!
+                self.fullName.text = self.users[0].fullname
+                self.birthday.text = self.users[0].birthday
+                self.gender.text = self.users[0].gender
+                self.email.text = self.users[0].email
+                self.mailingAddress.text = self.users[0].mailingaddress
+                
+            }
+        }
+        
+        println(queryImage)
+        DatabaseConnection.GetImage(queryImage) { responseObject, error in
+            //CHECK FOR ERRORS
+            if responseObject != nil {
+                
+                let profileImage : UIImage = UIImage(named: "/Users/aivong/Desktop/iWishimage/" + VerifyState.selectedPic)!
+                let imageview = UIImageView(image: profileImage)
+                imageview.frame = CGRectMake(75, 77, 245, 191)
+                self.view.addSubview(imageview)
+                
+                self.file = responseObject!
+            }
+        }
+        
+        
+        
+        
+        
         // Do any additional setup after loading the view.
     }
 

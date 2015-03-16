@@ -103,24 +103,30 @@ class DatabaseConnection{
         let password = "A7B129MNP"
         Alamofire.request(.GET, "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php", parameters: ["password": password, "query":query]).responseJSON() {
             (_, _, data, error) in
-            println(data)
-            println(error?.description)
-            var users = Array<Users>()
+            
             if data != nil{
+                var users = Array<Users>()
                 let json = JSON(data!)
-                for i in 0..<json.count{
-                    let username = (json[i]["username"]).stringValue
-                    let password = (json[i]["password"]).stringValue
-                    users.append(Users(username: username, password: password))
-                    
-                    completionHandler(responseObject: users, error: error)
+                if json == [] {
+                    completionHandler(responseObject: nil, error: error)
                 }
-            }
-            else{
-                completionHandler(responseObject: nil, error: error)
+                else {
+                    for i in 0..<json.count{
+                        let username = (json[i]["username"]).stringValue
+                        let password = (json[i]["password"]).stringValue
+                        let fullname = (json[i]["fullname"]).stringValue
+                        let email =  (json[i]["email"]).stringValue
+                        let gender =  (json[i]["gender"]).stringValue
+                        let mailingaddress =  (json[i]["mailaddress"]).stringValue
+                        let birthday =  (json[i]["birthday"]).stringValue
+                        users.append(Users(username: username, password: password, fullname: fullname, email: email, gender: gender, mailingaddress: mailingaddress, birthday: birthday))
+                        
+                        completionHandler(responseObject: users, error: error)
+                    }
+                }
+                
             }
         }
-        
     }
     
     class func GetFriendsForUser(username: String, completionHandler: (responseObject: [Users]?, error: NSError?) -> ()){
@@ -140,12 +146,17 @@ class DatabaseConnection{
                 for i in 0..<json.count{
                     let username1 = (json[i]["requestee"]).stringValue
                     let username2 = (json[i]["requester"]).stringValue
+                    let fullname = (json[i]["fullname"]).stringValue
+                    let email =  (json[i]["email"]).stringValue
+                    let gender =  (json[i]["gender"]).stringValue
+                    let mailingaddress =  (json[i]["mailaddress"]).stringValue
+                    let birthday =  (json[i]["birthday"]).stringValue
 
                     if username == username1{
-                        users.append(Users(username: username2, password: ""))
+                        users.append(Users(username: username1, password: password, fullname: fullname, email: email, gender: gender, mailingaddress: mailingaddress, birthday: birthday))
                     }
                     else{
-                        users.append(Users(username: username1, password: ""))
+                        users.append(Users(username: username1, password: password, fullname: fullname, email: email, gender: gender, mailingaddress: mailingaddress, birthday: birthday))
                     }
                     
                     
@@ -171,9 +182,15 @@ class DatabaseConnection{
             var users = Array<Users>()
             if data != nil{
                 let json = JSON(data!)
+                
                 for i in 0..<json.count{
                     let username = (json[i]["requester"]).stringValue
-                    users.append(Users(username: username, password: password))
+                    let fullname = (json[i]["fullname"]).stringValue
+                    let email =  (json[i]["email"]).stringValue
+                    let gender =  (json[i]["gender"]).stringValue
+                    let mailingaddress =  (json[i]["mailaddress"]).stringValue
+                    let birthday =  (json[i]["birthday"]).stringValue
+                    users.append(Users(username: username, password: password, fullname: fullname, email: email, gender: gender, mailingaddress: mailingaddress, birthday: birthday))
                     
                     completionHandler(responseObject: users, error: error)
                 }
@@ -251,6 +268,34 @@ class DatabaseConnection{
                 completionHandler(responseObject: false, error: error)
             }
         }
+        
+    }
+    
+    class func GetImage(query: String, completionHandler: (responseObject: String?, error: NSError?)->()){
+        let password = "A7B129MNP"
+        Alamofire.request(.GET, "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php", parameters: ["password": password, "query":query]).responseJSON() {
+            (_, _, data, error) in
+            
+            if data != nil{
+                var json = JSON(data!)
+                println(json)
+                
+                if json == [] {
+                    completionHandler(responseObject: nil, error: error)
+                }
+                else {
+                    for i in 0..<json.count{
+                        var filename = (json[i]["image"]).stringValue
+                        //    println(filename)
+                        VerifyState.DBFinished = true
+                        VerifyState.selectedPic = filename
+                        completionHandler(responseObject: filename, error: error)
+                    }
+                }
+                
+            }
+        }
+        //println(VerifyState.selectedPic)
         
     }
 }

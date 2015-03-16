@@ -52,7 +52,7 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func logInPushed(sender: AnyObject) {        
-        let testDataUsers = [Users(username: "bohlin2", password: "pw"), Users(username: "kbfrenc2", password: "pw"), Users(username: "aivong2", password: "pw")]
+        let testDataUsers = [Users(username: "bohlin2", password: "pw", fullname: "Zachary Bohlin", email: "bohlin2@illinois.edu", gender: "Male", mailingaddress: "Need to know basis", birthday: "1993-04-23"), Users(username: "kbfrenc2", password: "pw", fullname: "", email: "", gender: "", mailingaddress: "", birthday: ""), Users(username: "aivong2", password: "pw", fullname: "", email: "", gender: "", mailingaddress: "", birthday: ""), Users(username: "gemma", password: "gemma", fullname: "", email: "", gender: "", mailingaddress: "", birthday: ""), Users(username: "chutipo2", password: "pw", fullname: "", email: "", gender: "", mailingaddress: "", birthday: "")]
         for user in testDataUsers{
             if usernameTextField.text == user.username && passwordTextField.text == user.password{
                 let nsud = NSUserDefaults.standardUserDefaults()
@@ -73,7 +73,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         //performSegueWithIdentifier("LoginSegue", sender: self)
-        usernameTextField.becomeFirstResponder()
+        //usernameTextField.becomeFirstResponder()
     }
 
     override func didReceiveMemoryWarning() {
