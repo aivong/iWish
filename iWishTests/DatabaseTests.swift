@@ -27,12 +27,9 @@ class DatabaseTests: XCTestCase {
         DatabaseConnection.AddFriendRequest("testuserrequester", requestee: "testuserrequestee"){ responseObject, error in
             DatabaseConnection.GetFriendRequestsForUser("testuserrequester"){responseObject, error in
                 XCTAssertTrue(responseObject?.count == 1, "Passed friend request")
-                DatabaseConnection.AcceptOrRemoveFriendRequest("testuserrequester", requestee: "testuserrequestee", accept: false){responseObject, error in
-                    println("Done")
-                }
             }
         }
-
+        XCTAssert(true, "Pass")
     }
 
     func testPerformanceExample() {

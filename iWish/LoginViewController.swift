@@ -57,22 +57,6 @@ class LoginViewController: UIViewController {
             if usernameTextField.text == user.username && passwordTextField.text == user.password{
                 let nsud = NSUserDefaults.standardUserDefaults()
                 nsud.setObject(user.username, forKey: "username")
-                
-                DatabaseConnection.GetUserSettings(user.username){ responseObject, error in
-                    if responseObject != nil{
-                        let us = responseObject!
-                        nsud.setObject(us.notifications, forKey: "notificationsAllowed")
-                        nsud.setObject(us.allowSystemEmails, forKey: "systemEmailsAllowed")
-                        nsud.setObject(us.showEmailAddress, forKey: "showEmailAllowed")
-                        nsud.setObject(us.showBirthday, forKey: "showBirthdayAllowed")
-                        nsud.setObject(us.allowSearchByUsername, forKey: "searchUsernameAllowed")
-                    }
-                    else{
-                        
-                    }
-                }
-
-                
                 performSegueWithIdentifier("LoginSegue", sender: self)
             }
         }
