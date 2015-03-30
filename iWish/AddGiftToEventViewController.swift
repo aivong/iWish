@@ -17,7 +17,7 @@ class AddGiftToEventViewController: UITableViewController {
     var eventID : Int!
     
     func getUsersFeaturedGifts(){
-        DatabaseConnection.GetGifts("SELECT * FROM WishListGifts WHERE eventID='\(eventID)' AND user = '\(VerifyState.username)' ORDER BY name") { responseObject, error in
+        DatabaseConnection.GetGifts("SELECT * FROM WishListGifts WHERE eventID=99999 AND user = '\(VerifyState.username)' ORDER BY name") { responseObject, error in
             if responseObject != nil {
                 self.gifts = responseObject!
                 self.tableView.reloadData()
