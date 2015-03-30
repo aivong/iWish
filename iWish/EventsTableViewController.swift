@@ -86,11 +86,13 @@ class EventsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let defaults = NSUserDefaults.standardUserDefaults()
-        if let name = defaults.stringForKey("username")
-        {
-            usersName = name
-        }
+        usersName = VerifyState.username
+//        let defaults = NSUserDefaults.standardUserDefaults()
+//        if let name = defaults.stringForKey("username")
+//        {
+//            usersName = name
+//            //usersName = VerifyState.username
+//        }
         getUsersFeaturedEvents()
         
         // Uncomment the following line to preserve selection between presentations
@@ -205,7 +207,7 @@ class EventsTableViewController: UITableViewController {
             
             let path = self.tableView.indexPathForSelectedRow()!
             vc.event = upcomingEvents[path.row]
-            vc.usersName = usersName
+            vc.usersName = VerifyState.username
             //            vc.giftName = selectedGift.name
             //            vc.giftDescription = selectedGift.description
             //            vc.giftPrice = selectedGift.price

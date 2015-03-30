@@ -46,6 +46,7 @@
 		849337B61A91AE63003456B5 /* GiftDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849337B51A91AE63003456B5 /* GiftDetailViewController.swift */; };
 		849337BA1A94137F003456B5 /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849337B91A94137F003456B5 /* EventsTableViewController.swift */; };
 		8E0A55891AA11A85000B89ED /* VerifyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0A55861AA11A82000B89ED /* VerifyState.swift */; };
+		8E799F2A1AC9C49700C66F4C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E799F291AC9C49700C66F4C /* SettingsViewController.swift */; };
 		8E97304F1A86BA2C006543B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E97304E1A86BA2C006543B1 /* AppDelegate.swift */; };
 		8E9730561A86BA2C006543B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E9730541A86BA2C006543B1 /* Main.storyboard */; };
 		8E9730581A86BA2C006543B1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E9730571A86BA2C006543B1 /* Images.xcassets */; };
@@ -143,6 +144,7 @@
 		849337B51A91AE63003456B5 /* GiftDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftDetailViewController.swift; sourceTree = "<group>"; };
 		849337B91A94137F003456B5 /* EventsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewController.swift; sourceTree = "<group>"; };
 		8E0A55861AA11A82000B89ED /* VerifyState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyState.swift; sourceTree = "<group>"; };
+		8E799F291AC9C49700C66F4C /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		8E9730491A86BA2C006543B1 /* iWish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iWish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E97304D1A86BA2C006543B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E97304E1A86BA2C006543B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -308,6 +310,7 @@
 		CD40414A1A967A6500DB40D5 /* Settings ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				8E799F291AC9C49700C66F4C /* SettingsViewController.swift */,
 			);
 			name = "Settings ViewControllers";
 			sourceTree = "<group>";
@@ -491,6 +494,7 @@
 				C66DE61B1AB623A600BAF9A2 /* AddFriendToEventViewController.swift in Sources */,
 				5505D5EF1AABB15D002C7FB0 /* VerifyState.swift in Sources */,
 				55D8889C1AB4FB1700FF8A72 /* ViewEventGiftsViewController.swift in Sources */,
+				8E799F2A1AC9C49700C66F4C /* SettingsViewController.swift in Sources */,
 				8446A9991A8D055000D51024 /* WishListTableViewController.swift in Sources */,
 				849337B61A91AE63003456B5 /* GiftDetailViewController.swift in Sources */,
 				55D888A21AB4FB5500FF8A72 /* EventMenuViewController.swift in Sources */,

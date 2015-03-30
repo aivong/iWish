@@ -10,27 +10,17 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
-    //var userVerified : Bool = false
-    
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    
     @IBOutlet weak var logInButton: UIButton!
     @IBOutlet weak var registerButton: UIView!
-    
     @IBOutlet weak var usernamePasswordView: UIView!
-    
-    
     @IBOutlet weak var logInContainerView: UIView!
-    
     @IBOutlet weak var passwordImage: UIImageView!
-    
     @IBOutlet weak var usernameImage: UIImageView!
-    
     var blurEffect: UIBlurEffect!
     var blurView: UIVisualEffectView!
     let cornerRadius : CGFloat = 10
-    
     var users = [Users]()
     
     override func viewDidLoad() {
@@ -69,43 +59,34 @@ class LoginViewController: UIViewController {
         //
         //performSegueWithIdentifier("LoginSegue", sender: self)
         if self.validInputs() {
-            //let query = "SELECT * FROM Users WHERE username = '\(usernameTextField.text)' AND password = '\(passwordTextField.text)')"
-            let query = "SELECT * FROM Users WHERE username = '\(usernameTextField.text)'"
-            
-            println(query)
-            
-            DatabaseConnection.GetUser(query) { responseObject, error in
-                //CHECK FOR ERRORS
-                if responseObject != nil {
-                    self.users = responseObject!
-                    println("NEVER NIL NEVER NIL")
-                    if self.users[0].password == nil {
-                        println("FAIL")
-                    }
-                    else {
-                        VerifyState.userVerified = true
-                        VerifyState.username = self.users[0].username
-                        println(self.users[0].username)
-                        println(self.users[0].password)
+                //let query = "SELECT * FROM Users WHERE username = '\(usernameTextField.text)' AND password = '\(passwordTextField.text)')"
+                let query = "SELECT * FROM Users WHERE username = '\(usernameTextField.text)'"
+                DatabaseConnection.GetUser(query) { responseObject, error in
+                    //CHECK FOR ERRORS
+                    if responseObject != nil {
+                        self.users = responseObject!
                         if(self.users[0].username == self.usernameTextField.text && self.users[0].password == self.passwordTextField.text) {
-                            //println("SUCCESS")
-                        }
-                        if VerifyState.userVerified && VerifyState.username == self.users[0].username {
-                            println("SUCCESS")
+                            VerifyState.userVerified = true
+                            VerifyState.username = self.users[0].username
+                            VerifyState.selectedUser = self.users[0].username
                             let nsud = NSUserDefaults.standardUserDefaults()
                             nsud.setObject(self.users[0].username, forKey: "username")
-                           // self.performSegueWithIdentifier("LoggedSegue", sender: self)
-                            
+                        }
+                        if VerifyState.userVerified && VerifyState.username == self.users[0].username {
+                            self.performSegueWithIdentifier("loginSuccess", sender: self)
                         }
                     }
-                }
-                else {
-                    //self.alertUser("No Data", messageText: "Could not retrieve data", buttonText: "OK")
-                    if VerifyState.userVerified {
-                        println("FAIL")
+                    if self.users.count == 0 {
+                        var alertTitle = ""
+                        var alertBody = ""
+                        alertTitle = "Incorrect Credentials"
+                        alertBody = "Please enter the correct username/password combination"
+                        self.usernameTextField.text = ""
+                        self.passwordTextField.text = ""
+                        let alertView = UIAlertView(title: alertTitle, message: alertBody, delegate: nil, cancelButtonTitle: "OK")
+                        alertView.show()
                     }
                 }
-            }
         }
         
     }
@@ -113,12 +94,10 @@ class LoginViewController: UIViewController {
     private func validInputs() -> Bool {
         var alertTitle = ""
         var alertBody = ""
-        
         if (usernameTextField.text == "" || passwordTextField.text == "") {
             alertTitle = "Empty Fields"
             alertBody = "Please fill in all fields"
         }
-        
         if alertTitle == "" {
             return true
         } else {
@@ -126,7 +105,6 @@ class LoginViewController: UIViewController {
             alertView.show()
             return false
         }
-        
     }
     
     
