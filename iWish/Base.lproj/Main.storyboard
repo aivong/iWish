@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lUF-FK-sLw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lUF-FK-sLw">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
@@ -869,7 +869,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Y0-mI-gUp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="834" y="375"/>
+            <point key="canvasLocation" x="2458" y="375"/>
         </scene>
         <!--Guests List-->
         <scene sceneID="qNR-d3-MbN">
@@ -1023,7 +1023,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w6a-q7-7YI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1632" y="375"/>
+            <point key="canvasLocation" x="3256" y="375"/>
         </scene>
         <!--Friends Nav-->
         <scene sceneID="1Rn-cZ-prh">
@@ -1040,7 +1040,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k1g-uo-QfJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="62" y="375"/>
+            <point key="canvasLocation" x="1686" y="375"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Cq2-j7-bHU">
@@ -1057,7 +1057,7 @@
                         <segue destination="P7X-2a-AYj" kind="relationship" relationship="viewControllers" id="xyA-Lr-f6r"/>
                         <segue destination="I8w-1Y-92J" kind="relationship" relationship="viewControllers" id="vW4-Tl-7UO"/>
                         <segue destination="D3c-2g-vHg" kind="relationship" relationship="viewControllers" id="BWh-g1-z5q"/>
-                        <segue destination="Yt2-QK-YJN" kind="relationship" relationship="viewControllers" id="NMQ-NV-l2o"/>
+                        <segue destination="Fvr-mJ-Y3a" kind="relationship" relationship="viewControllers" id="OOj-7A-iau"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aXo-t7-Icd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1065,48 +1065,172 @@
             <point key="canvasLocation" x="-1074" y="-631"/>
         </scene>
         <!--Settings-->
-        <scene sceneID="dxW-sl-0d6">
+        <scene sceneID="qBh-EY-qxP">
             <objects>
-                <viewController id="Yt2-QK-YJN" customClass="SettingsViewController" customModule="iWish" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jr3-Up-ZX9"/>
-                        <viewControllerLayoutGuide type="bottom" id="Ckv-qD-ciN"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Xh2-kI-8dZ">
+                <tableViewController title="Settings" id="7hn-d1-wfF" customClass="SettingsTableViewController" customModule="iWish" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="jfM-ve-bTU">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wy7-BN-VRx">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Logout">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="152" y="251" width="49" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="LogoutPressed:" destination="Yt2-QK-YJN" eventType="touchUpInside" id="R8f-8e-C8F"/>
-                                    <segue destination="lUF-FK-sLw" kind="show" id="q7U-1C-n7S"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="Wy7-BN-VRx"/>
-                            </mask>
-                        </variation>
-                        <variation key="widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="Wy7-BN-VRx"/>
-                            </mask>
-                        </variation>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Settings" id="a4H-SQ-aJN"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lKi-xI-HaR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="rth-aM-Gd1">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="fsC-zm-2xo">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fsC-zm-2xo" id="7nY-fd-GiR">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Notifications" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cyW-Of-qo4">
+                                                    <rect key="frame" x="8" y="11" width="96" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iRe-bs-G4k">
+                                                    <rect key="frame" x="297" y="6" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="notificationSwitchChanged:" destination="7hn-d1-wfF" eventType="valueChanged" id="Zq1-o5-eln"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Email Preferences" id="KbY-F3-xWy">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="OMS-Kn-3SI">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OMS-Kn-3SI" id="WB5-9A-rH0">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Show Email Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZGM-gF-rm6">
+                                                    <rect key="frame" x="8" y="11" width="159" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ItD-ee-YFT">
+                                                    <rect key="frame" x="298" y="6" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="showEmailSwitchChanged:" destination="7hn-d1-wfF" eventType="valueChanged" id="CLL-AB-5d1"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="4u3-mU-5Oj">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4u3-mU-5Oj" id="Ggz-O4-vSq">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Allow System Emails" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="75G-Bg-64s">
+                                                    <rect key="frame" x="8" y="11" width="160" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pUX-eW-rH2">
+                                                    <rect key="frame" x="298" y="6" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="systemEmailSwitchChanged:" destination="7hn-d1-wfF" eventType="valueChanged" id="OQo-QP-zOI"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Privacy" id="0dq-Za-jx3">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="CYP-xl-y1W">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CYP-xl-y1W" id="wfx-RN-XOI">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Show Birthday" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cj8-Yn-vok">
+                                                    <rect key="frame" x="8" y="11" width="113" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JFr-da-8oa">
+                                                    <rect key="frame" x="299" y="6" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="showBirthdayChanged:" destination="7hn-d1-wfF" eventType="valueChanged" id="qzq-Yg-Roc"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="sJz-8e-PZB">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sJz-8e-PZB" id="xCX-9A-9WQ">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Allow Search By Username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="123-JR-Ysi">
+                                                    <rect key="frame" x="8" y="11" width="209" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rqN-CJ-gUA">
+                                                    <rect key="frame" x="299" y="6" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="allowSearchByUsernameChanged:" destination="7hn-d1-wfF" eventType="valueChanged" id="2at-0s-9u0"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="koH-H8-OjS">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="sQm-m1-exp">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sQm-m1-exp" id="CWo-af-vnS">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9yh-dY-iTy">
+                                                    <rect key="frame" x="127" y="7" width="95" height="30"/>
+                                                    <state key="normal" title="Save Settings">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="saveSettings:" destination="7hn-d1-wfF" eventType="touchUpInside" id="qoU-e7-ZHz"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="7hn-d1-wfF" id="mfY-sc-L4s"/>
+                            <outlet property="delegate" destination="7hn-d1-wfF" id="hzN-M1-F9B"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Settings" id="Lw7-VD-GWz">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="2bd-Ly-8tq">
+                            <connections>
+                                <action selector="logout:" destination="7hn-d1-wfF" id="pHV-Ei-0aC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="allowSearchSwitch" destination="rqN-CJ-gUA" id="EPw-NE-ebU"/>
+                        <outlet property="notificationSwitch" destination="iRe-bs-G4k" id="7mq-fX-2JE"/>
+                        <outlet property="showBirthdaySwitch" destination="JFr-da-8oa" id="era-cd-0vV"/>
+                        <outlet property="showEmailSwitch" destination="ItD-ee-YFT" id="clg-sl-1ac"/>
+                        <outlet property="systemEmailSwitch" destination="pUX-eW-rH2" id="d0G-kQ-YeS"/>
+                        <segue destination="lUF-FK-sLw" kind="showDetail" identifier="LogoutSegue" id="JNv-2U-zfr"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0nv-TW-MEI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1323" y="187"/>
+            <point key="canvasLocation" x="-268" y="303"/>
         </scene>
         <!--Events-->
         <scene sceneID="xgr-NQ-NyL">
@@ -1498,12 +1622,31 @@
             </objects>
             <point key="canvasLocation" x="2654" y="-2069"/>
         </scene>
+        <!--Settings-->
+        <scene sceneID="Ydf-6P-VyC">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Fvr-mJ-Y3a" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" id="zji-Vj-1JR"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tXA-WC-zTb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7hn-d1-wfF" kind="relationship" relationship="rootViewController" id="HYA-Lk-IA5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LW5-wS-ere" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1080" y="303"/>
+        </scene>
     </scenes>
     <resources>
         <image name="door24.png" width="81" height="81"/>
         <image name="user168.png" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="2Vo-h8-JFe"/>
+        <segue reference="JNv-2U-zfr"/>
     </inferredMetricsTieBreakers>
 </document>

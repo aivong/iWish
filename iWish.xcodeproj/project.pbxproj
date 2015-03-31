@@ -32,6 +32,10 @@
 		55D888A31AB4FB5500FF8A72 /* EventMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D888A11AB4FB5500FF8A72 /* EventMenuViewController.swift */; };
 		55D888B51AB5310400FF8A72 /* ViewEventGuestsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D888B41AB5310400FF8A72 /* ViewEventGuestsTableViewController.swift */; };
 		55D888B61AB5310400FF8A72 /* ViewEventGuestsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D888B41AB5310400FF8A72 /* ViewEventGuestsTableViewController.swift */; };
+		84072B171ACAE88F004F51B4 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84072B161ACAE88F004F51B4 /* UserSettings.swift */; };
+		84072B191ACAE897004F51B4 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84072B161ACAE88F004F51B4 /* UserSettings.swift */; };
+		84072B1B1ACAECDD004F51B4 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84072B1A1ACAECDD004F51B4 /* SettingsTableViewController.swift */; };
+		84072B1C1ACAECDD004F51B4 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84072B1A1ACAECDD004F51B4 /* SettingsTableViewController.swift */; };
 		841887F31AACE8CA00B69533 /* FriendsProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841887F21AACE8CA00B69533 /* FriendsProfileViewController.swift */; };
 		841887F51AACEAD100B69533 /* FriendsProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841887F21AACE8CA00B69533 /* FriendsProfileViewController.swift */; };
 		8433929B1A8D0B2500E5B01B /* WishListGift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433929A1A8D0B2500E5B01B /* WishListGift.swift */; };
@@ -46,7 +50,6 @@
 		849337B61A91AE63003456B5 /* GiftDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849337B51A91AE63003456B5 /* GiftDetailViewController.swift */; };
 		849337BA1A94137F003456B5 /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849337B91A94137F003456B5 /* EventsTableViewController.swift */; };
 		8E0A55891AA11A85000B89ED /* VerifyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0A55861AA11A82000B89ED /* VerifyState.swift */; };
-		8E799F2A1AC9C49700C66F4C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E799F291AC9C49700C66F4C /* SettingsViewController.swift */; };
 		8E97304F1A86BA2C006543B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E97304E1A86BA2C006543B1 /* AppDelegate.swift */; };
 		8E9730561A86BA2C006543B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E9730541A86BA2C006543B1 /* Main.storyboard */; };
 		8E9730581A86BA2C006543B1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E9730571A86BA2C006543B1 /* Images.xcassets */; };
@@ -132,6 +135,8 @@
 		55D8889E1AB4FB3500FF8A72 /* ViewEventGiftDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewEventGiftDetailViewController.swift; sourceTree = "<group>"; };
 		55D888A11AB4FB5500FF8A72 /* EventMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMenuViewController.swift; sourceTree = "<group>"; };
 		55D888B41AB5310400FF8A72 /* ViewEventGuestsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewEventGuestsTableViewController.swift; sourceTree = "<group>"; };
+		84072B161ACAE88F004F51B4 /* UserSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		84072B1A1ACAECDD004F51B4 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		841887F21AACE8CA00B69533 /* FriendsProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsProfileViewController.swift; sourceTree = "<group>"; };
 		8433929A1A8D0B2500E5B01B /* WishListGift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishListGift.swift; sourceTree = "<group>"; };
 		8433929C1A8D2C1A00E5B01B /* DatabaseConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseConnection.swift; sourceTree = "<group>"; };
@@ -144,7 +149,6 @@
 		849337B51A91AE63003456B5 /* GiftDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftDetailViewController.swift; sourceTree = "<group>"; };
 		849337B91A94137F003456B5 /* EventsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewController.swift; sourceTree = "<group>"; };
 		8E0A55861AA11A82000B89ED /* VerifyState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyState.swift; sourceTree = "<group>"; };
-		8E799F291AC9C49700C66F4C /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		8E9730491A86BA2C006543B1 /* iWish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iWish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E97304D1A86BA2C006543B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E97304E1A86BA2C006543B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -310,7 +314,7 @@
 		CD40414A1A967A6500DB40D5 /* Settings ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				8E799F291AC9C49700C66F4C /* SettingsViewController.swift */,
+				84072B1A1ACAECDD004F51B4 /* SettingsTableViewController.swift */,
 			);
 			name = "Settings ViewControllers";
 			sourceTree = "<group>";
@@ -338,6 +342,7 @@
 				8E0A55861AA11A82000B89ED /* VerifyState.swift */,
 				555FE4031AABB9A400EE8C1E /* UserEvent.swift */,
 				C66DE6131AB6113500BAF9A2 /* Invite.swift */,
+				84072B161ACAE88F004F51B4 /* UserSettings.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -481,7 +486,9 @@
 				555FE40A1AABB9F000EE8C1E /* AddEventViewController.swift in Sources */,
 				8446A9971A8D00F200D51024 /* Users.swift in Sources */,
 				555FE4041AABB9A400EE8C1E /* UserEvent.swift in Sources */,
+				84072B171ACAE88F004F51B4 /* UserSettings.swift in Sources */,
 				849337B21A905551003456B5 /* SwiftyJSON.swift in Sources */,
+				84072B1B1ACAECDD004F51B4 /* SettingsTableViewController.swift in Sources */,
 				8446A9901A8BC07800D51024 /* LoginViewController.swift in Sources */,
 				55D8889F1AB4FB3500FF8A72 /* ViewEventGiftDetailViewController.swift in Sources */,
 				555FE4071AABB9E600EE8C1E /* EventDetailViewController.swift in Sources */,
@@ -494,7 +501,6 @@
 				C66DE61B1AB623A600BAF9A2 /* AddFriendToEventViewController.swift in Sources */,
 				5505D5EF1AABB15D002C7FB0 /* VerifyState.swift in Sources */,
 				55D8889C1AB4FB1700FF8A72 /* ViewEventGiftsViewController.swift in Sources */,
-				8E799F2A1AC9C49700C66F4C /* SettingsViewController.swift in Sources */,
 				8446A9991A8D055000D51024 /* WishListTableViewController.swift in Sources */,
 				849337B61A91AE63003456B5 /* GiftDetailViewController.swift in Sources */,
 				55D888A21AB4FB5500FF8A72 /* EventMenuViewController.swift in Sources */,
@@ -516,6 +522,7 @@
 				CD40415B1A967D8C00DB40D5 /* SwiftyJSON.swift in Sources */,
 				55D8889D1AB4FB1700FF8A72 /* ViewEventGiftsViewController.swift in Sources */,
 				555FE40B1AABB9F000EE8C1E /* AddEventViewController.swift in Sources */,
+				84072B191ACAE897004F51B4 /* UserSettings.swift in Sources */,
 				CD4041541A967D6D00DB40D5 /* ViewController.swift in Sources */,
 				841887F51AACEAD100B69533 /* FriendsProfileViewController.swift in Sources */,
 				55D888A01AB4FB3500FF8A72 /* ViewEventGiftDetailViewController.swift in Sources */,
@@ -531,6 +538,7 @@
 				555FE43D1AABF86F00EE8C1E /* EditEventViewController.swift in Sources */,
 				CD4041501A967D5E00DB40D5 /* Users.swift in Sources */,
 				8E0A55891AA11A85000B89ED /* VerifyState.swift in Sources */,
+				84072B1C1ACAECDD004F51B4 /* SettingsTableViewController.swift in Sources */,
 				55D888A31AB4FB5500FF8A72 /* EventMenuViewController.swift in Sources */,
 				CD4041571A967D7400DB40D5 /* EventsTableViewController.swift in Sources */,
 				8E9730671A86BA2C006543B1 /* iWishTests.swift in Sources */,

@@ -71,6 +71,7 @@ class LoginViewController: UIViewController {
                             VerifyState.selectedUser = self.users[0].username
                             let nsud = NSUserDefaults.standardUserDefaults()
                             nsud.setObject(self.users[0].username, forKey: "username")
+  
                         }
                         if VerifyState.userVerified && VerifyState.username == self.users[0].username {
                             self.performSegueWithIdentifier("loginSuccess", sender: self)
@@ -122,14 +123,22 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    /*
+    
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     // Get the new view controller using segue.destinationViewController.
     // Pass the selected object to the new view controller.
+        DatabaseConnection.GetUserSettings(usernameTextField.text){responseObject, error in
+            let nsud = NSUserDefaults.standardUserDefaults()
+            nsud.setObject(responseObject?.notifications, forKey: "notificationsAllowed")
+            nsud.setObject(responseObject?.allowSystemEmails, forKey: "systemEmailsAllowed")
+            nsud.setObject(responseObject?.showEmailAddress, forKey: "showEmailAllowed")
+            nsud.setObject(responseObject?.showBirthday, forKey: "showBirthdayAllowed")
+            nsud.setObject(responseObject?.allowSearchByUsername, forKey: "searchUsernameAllowed")
+        }
     }
-    */
+
     
 }
