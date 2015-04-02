@@ -34,7 +34,7 @@ class AddFriendToEventViewController: UITableViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-        selectedFriend = Users(username: "", password: "")
+        selectedFriend = Users(username: "", password: "", fullname: "", email: "", gender: "", mailingaddress: "", birthday: "")
         refresh()
     }
     

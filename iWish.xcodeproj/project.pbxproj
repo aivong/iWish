@@ -55,6 +55,10 @@
 		8E9730581A86BA2C006543B1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E9730571A86BA2C006543B1 /* Images.xcassets */; };
 		8E97305B1A86BA2C006543B1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E9730591A86BA2C006543B1 /* LaunchScreen.xib */; };
 		8E9730671A86BA2C006543B1 /* iWishTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9730661A86BA2C006543B1 /* iWishTests.swift */; };
+		8EADEE2D1ACE0DC00038C498 /* profileGifts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EADEE2C1ACE0DC00038C498 /* profileGifts.swift */; };
+		8EADEE2E1ACE0DC00038C498 /* profileGifts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EADEE2C1ACE0DC00038C498 /* profileGifts.swift */; };
+		8ED35F0C1ACE061C00F6E9A6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED35F0B1ACE061B00F6E9A6 /* ProfileViewController.swift */; };
+		8ED35F0D1ACE061C00F6E9A6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED35F0B1ACE061B00F6E9A6 /* ProfileViewController.swift */; };
 		8EDE536E1A8920DC008B49A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDE536D1A8920DC008B49A0 /* ViewController.swift */; };
 		8EE8E70D1A9A8AA0000F6076 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE8E70C1A9A8AA0000F6076 /* CreateAccountViewController.swift */; };
 		8EFEFCDD1A9AA460004EC929 /* user168.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EFEFCDC1A9AA460004EC929 /* user168.png */; };
@@ -158,6 +162,8 @@
 		8E9730601A86BA2C006543B1 /* iWishTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iWishTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E9730651A86BA2C006543B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E9730661A86BA2C006543B1 /* iWishTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iWishTests.swift; sourceTree = "<group>"; };
+		8EADEE2C1ACE0DC00038C498 /* profileGifts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = profileGifts.swift; path = ../profileGifts.swift; sourceTree = "<group>"; };
+		8ED35F0B1ACE061B00F6E9A6 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		8EDE536D1A8920DC008B49A0 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8EE8E70C1A9A8AA0000F6076 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		8EFEFCDC1A9AA460004EC929 /* user168.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user168.png; sourceTree = "<group>"; };
@@ -297,6 +303,8 @@
 		CD4041481A967A5100DB40D5 /* Profile ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				8EADEE2C1ACE0DC00038C498 /* profileGifts.swift */,
+				8ED35F0B1ACE061B00F6E9A6 /* ProfileViewController.swift */,
 			);
 			name = "Profile ViewControllers";
 			sourceTree = "<group>";
@@ -482,12 +490,14 @@
 				555FE4141AABC4F800EE8C1E /* SearchUsersTableViewController.swift in Sources */,
 				C66DE6141AB6113500BAF9A2 /* Invite.swift in Sources */,
 				8433929B1A8D0B2500E5B01B /* WishListGift.swift in Sources */,
+				8EADEE2D1ACE0DC00038C498 /* profileGifts.swift in Sources */,
 				8433929D1A8D2C1A00E5B01B /* DatabaseConnection.swift in Sources */,
 				555FE40A1AABB9F000EE8C1E /* AddEventViewController.swift in Sources */,
 				8446A9971A8D00F200D51024 /* Users.swift in Sources */,
 				555FE4041AABB9A400EE8C1E /* UserEvent.swift in Sources */,
 				84072B171ACAE88F004F51B4 /* UserSettings.swift in Sources */,
 				849337B21A905551003456B5 /* SwiftyJSON.swift in Sources */,
+				8ED35F0C1ACE061C00F6E9A6 /* ProfileViewController.swift in Sources */,
 				84072B1B1ACAECDD004F51B4 /* SettingsTableViewController.swift in Sources */,
 				8446A9901A8BC07800D51024 /* LoginViewController.swift in Sources */,
 				55D8889F1AB4FB3500FF8A72 /* ViewEventGiftDetailViewController.swift in Sources */,
@@ -524,6 +534,7 @@
 				555FE40B1AABB9F000EE8C1E /* AddEventViewController.swift in Sources */,
 				84072B191ACAE897004F51B4 /* UserSettings.swift in Sources */,
 				CD4041541A967D6D00DB40D5 /* ViewController.swift in Sources */,
+				8ED35F0D1ACE061C00F6E9A6 /* ProfileViewController.swift in Sources */,
 				841887F51AACEAD100B69533 /* FriendsProfileViewController.swift in Sources */,
 				55D888A01AB4FB3500FF8A72 /* ViewEventGiftDetailViewController.swift in Sources */,
 				555FE4051AABB9A400EE8C1E /* UserEvent.swift in Sources */,
@@ -538,6 +549,7 @@
 				555FE43D1AABF86F00EE8C1E /* EditEventViewController.swift in Sources */,
 				CD4041501A967D5E00DB40D5 /* Users.swift in Sources */,
 				8E0A55891AA11A85000B89ED /* VerifyState.swift in Sources */,
+				8EADEE2E1ACE0DC00038C498 /* profileGifts.swift in Sources */,
 				84072B1C1ACAECDD004F51B4 /* SettingsTableViewController.swift in Sources */,
 				55D888A31AB4FB5500FF8A72 /* EventMenuViewController.swift in Sources */,
 				CD4041571A967D7400DB40D5 /* EventsTableViewController.swift in Sources */,

@@ -151,7 +151,12 @@ class DatabaseConnection{
                 for i in 0..<json.count{
                     let username = (json[i]["username"]).stringValue
                     let password = (json[i]["password"]).stringValue
-                    users.append(Users(username: username, password: password))
+                    let fullname = (json[i]["fullname"]).stringValue
+                    let email =  (json[i]["email"]).stringValue
+                    let gender =  (json[i]["gender"]).stringValue
+                    let mailingaddress =  (json[i]["mailaddress"]).stringValue
+                    let birthday =  (json[i]["birthday"]).stringValue
+                    users.append(Users(username: username, password: password, fullname: fullname, email: email, gender: gender, mailingaddress: mailingaddress, birthday: birthday))
                     
                     completionHandler(responseObject: users, error: error)
                 }
@@ -265,10 +270,10 @@ class DatabaseConnection{
                     let username2 = (json[i]["requester"]).stringValue
                     
                     if username == username1{
-                        users.append(Users(username: username2, password: ""))
+                        users.append(Users(username: username2, password: "",fullname: "", email: "", gender: "", mailingaddress: "", birthday: ""))
                     }
                     else{
-                        users.append(Users(username: username1, password: ""))
+                        users.append(Users(username: username1, password: "", fullname: "", email: "", gender: "", mailingaddress: "", birthday: ""))
                     }
                     
                     
@@ -296,7 +301,7 @@ class DatabaseConnection{
                 let json = JSON(data!)
                 for i in 0..<json.count{
                     let username = (json[i]["requester"]).stringValue
-                    users.append(Users(username: username, password: password))
+                    users.append(Users(username: username, password: password, fullname: "", email: "", gender: "", mailingaddress: "", birthday: ""))
                     
                     completionHandler(responseObject: users, error: error)
                 }
@@ -519,6 +524,35 @@ class DatabaseConnection{
         }
         
         
+        
+    }
+    
+
+    class func GetImage(query: String, completionHandler: (responseObject: String?, error: NSError?)->()){
+        let password = "A7B129MNP"
+        Alamofire.request(.GET, "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php", parameters: ["password": password, "query":query]).responseJSON() {
+            (_, _, data, error) in
+            
+            if data != nil{
+                var json = JSON(data!)
+                println(json)
+                
+                if json == [] {
+                    completionHandler(responseObject: nil, error: error)
+                }
+                else {
+                    for i in 0..<json.count{
+                        var filename = (json[i]["image"]).stringValue
+                        //    println(filename)
+                        VerifyState.DBFinished = true
+                        VerifyState.selectedPic = filename
+                        completionHandler(responseObject: filename, error: error)
+                    }
+                }
+                
+            }
+        }
+        //println(VerifyState.selectedPic)
         
     }
     
