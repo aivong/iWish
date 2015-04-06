@@ -829,7 +829,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="EFo-dF-eH2" kind="showDetail" id="UbS-dV-XZW"/>
+                                    <segue destination="EFo-dF-eH2" kind="push" id="UbS-dV-XZW"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -921,40 +921,20 @@
                     <view key="view" contentMode="scaleToFill" id="SL8-zR-f7V">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NvF-Pc-6bi">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <items>
-                                    <navigationItem title="Title" id="6P9-mG-w5V">
-                                        <barButtonItem key="leftBarButtonItem" title="&lt; Friends" id="y4n-S1-4bT">
-                                            <connections>
-                                                <segue destination="OUI-DK-Mw4" kind="unwind" unwindAction="unwindFromProfile:" id="VdA-ty-fMD"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Options" id="P49-Fo-lOO">
-                                            <connections>
-                                                <action selector="friendsProfileOptionsClicked:" destination="EFo-dF-eH2" id="S5y-OK-DZw"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="28" width="400" height="44"/>
-                                </variation>
-                            </navigationBar>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="NvF-Pc-6bi"/>
-                            </mask>
-                        </variation>
-                        <variation key="widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="NvF-Pc-6bi"/>
-                            </mask>
-                        </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="EK7-Hi-TjM">
+                        <barButtonItem key="leftBarButtonItem" title="&lt; Friends" id="fBh-Fm-ofI">
+                            <connections>
+                                <segue destination="OUI-DK-Mw4" kind="unwind" identifier="FriendsProfileUnwind" unwindAction="unwindFromProfile:" id="cxb-XJ-acT"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Options" id="gPz-J6-dg6">
+                            <connections>
+                                <action selector="friendsProfileOptionsClicked:" destination="EFo-dF-eH2" id="Mio-wO-GyJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SfZ-Rc-GYw" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="OUI-DK-Mw4" userLabel="Exit" sceneMemberID="exit"/>

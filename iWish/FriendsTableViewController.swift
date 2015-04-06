@@ -44,6 +44,7 @@ class FriendsTableViewController: UITableViewController {
             else {
                 //DATA NOT RETURNED
             }
+            println(self.friends.count)
             
         }
         DatabaseConnection.GetFriendRequestsForUser(usersName){responseObject, error in
