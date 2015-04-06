@@ -15,10 +15,11 @@ class EventsTableViewController: UITableViewController {
     let pastEvents = ["Luncheon"]
     //    let upcomingEvents = ["My Birthday", "Fathers Day", "Columbus Day", "Presidents Day", "Labor Day", "Mothers Day"]
     let myEvents = ["Party"]
-    let requests = ["Bulls Game"]
+    //let requests = ["Bulls Game"]
     var usersName: String!
     
     var upcomingEvents = [UserEvent]()
+    var eventRequests = [UserEvent]()
     
     @IBAction func cancelAddEvent(segue: UIStoryboardSegue){
         
@@ -50,7 +51,7 @@ class EventsTableViewController: UITableViewController {
     }
     
     func getUsersFeaturedEvents(){
-        println("SELECT * FROM Events WHERE userID='\(usersName)' ORDER BY name")
+ //       println("SELECT * FROM Events WHERE userID='\(usersName)' ORDER BY name")
         DatabaseConnection.GetEvents("SELECT * FROM Events WHERE userID='\(usersName)' ORDER BY name") { responseObject, error in print(error?.localizedDescription)
             if responseObject != nil {
                 self.upcomingEvents = responseObject!
@@ -61,6 +62,21 @@ class EventsTableViewController: UITableViewController {
             }
         }
         
+    }
+    
+    func getUsersEventRequests(){
+        //println("SELECT Events.eventID AS eventID, Events.date AS date, Events.name AS name, Events.description AS description FROM Events INNER JOIN Invites ON Events.eventID=Invites.eventID WHERE Invites.status='pending' AND Invites.invitee='\(usersName)' ORDER BY Events.name")
+        DatabaseConnection.GetEventRequests("SELECT Events.eventID AS eventID, Events.date AS date, Events.name AS name, Events.description AS description FROM Events INNER JOIN Invites ON Events.eventID=Invites.eventID WHERE Invites.status='pending' AND Invites.invitee='\(usersName)' ORDER BY Events.name") { responseObject, error in print(error?.localizedDescription)
+            if responseObject != nil {
+                self.eventRequests = responseObject!
+                self.tableView.reloadData()
+            }
+            else{
+                self.alertUser("No Data", messageText: "Could not retrieve data", buttonText: "OK")
+            }
+            //println(">>>>>>>>>>>>>>>")
+            //println(self.eventRequests.count)
+        }
     }
     
     func alertUser(titleText: String, messageText: String, buttonText: String){
@@ -94,6 +110,7 @@ class EventsTableViewController: UITableViewController {
 //            //usersName = VerifyState.username
 //        }
         getUsersFeaturedEvents()
+        getUsersEventRequests()
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -120,13 +137,13 @@ class EventsTableViewController: UITableViewController {
         // Return the number of rows in the section.
         switch(section){
         case 0:
-            return requests.count
+            return eventRequests.count
         case 1:
-            return myEvents.count
+            return upcomingEvents.count
         case 2:
             return pastEvents.count
         case 3:
-            return upcomingEvents.count
+            return myEvents.count
         default:
             return 0
         }
@@ -139,13 +156,13 @@ class EventsTableViewController: UITableViewController {
         
         switch(indexPath.section){
         case 0:
-            cell.textLabel?.text = requests[indexPath.row]
+            cell.textLabel?.text = eventRequests[indexPath.row].name
         case 1:
-            cell.textLabel?.text = myEvents[indexPath.row]
+            cell.textLabel?.text = upcomingEvents[indexPath.row].name
         case 2:
             cell.textLabel?.text = pastEvents[indexPath.row]
         case 3:
-            cell.textLabel?.text = upcomingEvents[indexPath.row].name
+            cell.textLabel?.text = myEvents[indexPath.row]
         default:
             cell.textLabel?.text = ""
         }

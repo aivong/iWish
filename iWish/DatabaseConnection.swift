@@ -144,7 +144,7 @@ class DatabaseConnection{
         let password = "A7B129MNP"
         Alamofire.request(.GET, "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php", parameters: ["password": password, "query":query]).responseJSON() {
             (_, _, data, error) in
-            println(data)
+            //println(data)
             var users = Array<Users>()
             if data != nil{
                 let json = JSON(data!)
@@ -184,7 +184,38 @@ class DatabaseConnection{
                     let name = (json[i]["name"]).stringValue
                     let date = (json[i]["date"]).stringValue
                     let description = (json[i]["description"]).stringValue
-                    print(name)
+                    //print(name)
+                    events.append(UserEvent(eventID: id, eventName: name, eventDate: date, eventDescription: description))
+                    
+                    completionHandler(responseObject: events, error: error)
+                }
+            }
+            else{
+                completionHandler(responseObject: nil, error: error)
+            }
+        }
+        
+    }
+    
+    //Functions to return events
+    class func GetEventRequests(query: String, completionHandler: (responseObject: [UserEvent]?, error: NSError?) -> ()){
+        GetEventRequestsList(query, completionHandler: completionHandler)
+    }
+    private class func GetEventRequestsList(query: String, completionHandler: (responseObject: [UserEvent]?, error: NSError?)->()){
+        let password = "A7B129MNP"
+        Alamofire.request(.GET, "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php",
+            parameters: ["password": password, "query":query]).responseJSON() {
+            (_, _, data, error) in
+            var events = Array<UserEvent>()
+            if data != nil{
+                let json = JSON(data!)
+                for i in 0..<json.count{
+                    //println("Data is not nil")
+                    //println((json[i]["name"]).stringValue)
+                    let id = (json[i]["eventID"]).intValue
+                    let name = (json[i]["name"]).stringValue
+                    let date = (json[i]["date"]).stringValue
+                    let description = (json[i]["description"]).stringValue
                     events.append(UserEvent(eventID: id, eventName: name, eventDate: date, eventDescription: description))
                     
                     completionHandler(responseObject: events, error: error)
@@ -369,8 +400,8 @@ class DatabaseConnection{
         let password = "A7B129MNP"
         Alamofire.request(.GET, "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php", parameters: ["password": password, "query":query]).responseJSON() {
             (_, _, data, error) in
-            println(data)
-            println(error?.description)
+            //println(data)
+            //println(error?.description)
             if data != nil{
                 completionHandler(responseObject: true, error: error)
                 
@@ -419,8 +450,8 @@ class DatabaseConnection{
         let password = "A7B129MNP"
         Alamofire.request(.GET, "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php", parameters: ["password": password, "query":query]).responseJSON() {
             (_, _, data, error) in
-            println(data)
-            println(error?.description)
+            //println(data)
+            //println(error?.description)
             if data != nil{
                 completionHandler(responseObject: true, error: error)
                 
@@ -450,7 +481,7 @@ class DatabaseConnection{
             
             (_, _, data, error) in
             
-            println("Get: \(data)")
+            //println("Get: \(data)")
             
             if data != nil{
                 
@@ -492,7 +523,7 @@ class DatabaseConnection{
     class func SetUserSettings(userSettings: UserSettings, completionHandler: (responseObject: Bool?, error: NSError?) -> ()){
         
         let query = "UPDATE UserSettings SET notifications = \(userSettings.notifications), showEmailAddress = \(userSettings.showEmailAddress), allowSystemEmails = \(userSettings.allowSystemEmails), showBirthday = \(userSettings.showBirthday), allowSearchByUsername = \(userSettings.allowSearchByUsername) WHERE username='\(userSettings.user)'"
-        println(query)
+        //println(query)
         SetUserSettingsDB(query, completionHandler: completionHandler)
         
     }
@@ -507,7 +538,7 @@ class DatabaseConnection{
             
             (_, _, data, error) in
             
-            println("Set: \(data)")
+            //println("Set: \(data)")
             
             if data != nil{
                 
