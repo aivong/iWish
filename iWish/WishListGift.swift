@@ -28,3 +28,4 @@ class WishListGift{
         return "Name: \(name)\nDescription: \(description)\nPrice: \(price)\nDatabaseID: \(databaseID)"
     }
 }
+

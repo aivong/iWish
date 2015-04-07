@@ -10,6 +10,32 @@ import Foundation
 import Alamofire
 
 class DatabaseConnection{
+    
+    //Functions to update gifts
+    class func UpdateGift(query: String, completionHandler: (responseObject: Bool?, error: NSError?)->()){
+        InsertGiftQuery(query, completionHandler: completionHandler)
+    }
+    
+    private class func UpdateGiftQuery(query: String, completionHandler: (responseObject: Bool?, error: NSError?)->()){
+
+        let password = "A7B129MNP"
+        let url = "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php"
+        let parameters = ["password": password, "query":query]
+        
+        Alamofire.request(.GET, url, parameters: parameters).responseJSON() {
+            (_, _, data, error) in
+            
+            if error != nil{
+                completionHandler(responseObject: false, error: error)
+            }
+            else{
+                completionHandler(responseObject: true, error: error)
+            }
+            
+        }
+    }
+
+    
     //Funcitons to return gifts
     class func GetGifts(query: String, completionHandler: (responseObject: [WishListGift]?, error: NSError?) -> ()){
         GetWishListGifts(query, completionHandler: completionHandler)

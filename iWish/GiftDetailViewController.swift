@@ -9,45 +9,53 @@
 import UIKit
 
 class GiftDetailViewController: UIViewController {
-
+    
     @IBOutlet weak var giftNameDetail: UILabel!
     @IBOutlet weak var giftPriceDetail: UILabel!
     @IBOutlet weak var giftDescriptionDetail: UILabel!
     
-    var gift : WishListGift!
+    let editGiftSegueIdentifier = "EditGiftSegue"
     
-//    var giftName: String!
-//    var giftDescription: String!
-//    var giftPrice: Double!
+    var gift : WishListGift!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.updateViewWithGiftInformation()
+        
+        let editButton = UIBarButtonItem(title: "Edit", style: .Plain, target: self, action: "editPressed:")
+        
+        self.navigationItem.rightBarButtonItem = editButton
+    }
+    
+    func updateViewWithGiftInformation() {
         giftNameDetail.text = gift.name
         giftDescriptionDetail.text = gift.description
         giftPriceDetail.text = "$" + String(format:"%.2f", gift.price)
-
-        
-//        giftNameDetail.text = giftName
-//        giftDescriptionDetail.text = giftDescription
-//        giftPriceDetail.text = "$" + String(format:"%.2f", giftPrice)
-        // Do any additional setup after loading the view.
     }
-
+    
+    func editPressed(sender: AnyObject) {
+        self.performSegueWithIdentifier(editGiftSegueIdentifier, sender: nil)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == editGiftSegueIdentifier {
+            let editGiftViewController = segue.destinationViewController as EditGiftViewController
+            editGiftViewController.gift = self.gift
+        }
     }
-    */
-
+    
+    @IBAction func giftEditSaved(segue: UIStoryboardSegue) {
+        let editGiftViewController = segue.sourceViewController as EditGiftViewController
+        
+        self.gift = editGiftViewController.gift
+        
+        self.updateViewWithGiftInformation()
+    }
 }
