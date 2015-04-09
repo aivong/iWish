@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class UserEvent{
     
@@ -25,5 +26,70 @@ class UserEvent{
     func descripe () -> String {
         //        return "Name: \(name)\nDescription: \(description)\nPrice: \(price)\nDatabaseID: \(databaseID)"
         return "";
+    }
+    
+    func getEventDateFromString() -> NSDate? {
+        
+        var dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "MM-dd-yyyy"
+        return dateFormatter.dateFromString(self.date)
+    }
+    
+    func weekEventNotification() -> UILocalNotification? {
+        
+        var weekNotification = UILocalNotification()
+        weekNotification.timeZone = NSTimeZone.defaultTimeZone()
+        weekNotification.alertBody = self.name + " is one week away!"
+        
+        var date = self.getEventDateFromString()
+        
+        if let eventDate = date {
+            
+            let calendar = NSCalendar.currentCalendar()
+            let components = calendar.components(.MonthCalendarUnit | .DayCalendarUnit | .YearCalendarUnit, fromDate: eventDate)
+            components.hour = 10
+            components.minute = 0
+            components.second = 0
+            
+            let c = NSCalendar(identifier: NSGregorianCalendar)
+            var fireDate = calendar.dateFromComponents(components)
+            fireDate?.dateByAddingTimeInterval(-60*60*24*7)
+            
+            weekNotification.fireDate = fireDate
+            
+            return weekNotification
+            
+        } else {
+            return nil
+        }
+    }
+    
+    func dayEventNotification() -> UILocalNotification? {
+    
+        var dayNotification = UILocalNotification()
+        dayNotification.timeZone = NSTimeZone.defaultTimeZone()
+        dayNotification.alertBody = self.name + " is tomorrow!"
+        
+        var date = self.getEventDateFromString()
+        
+        if let eventDate = date {
+
+            let calendar = NSCalendar.currentCalendar()
+            let components = calendar.components(.MonthCalendarUnit | .DayCalendarUnit | .YearCalendarUnit, fromDate: eventDate)
+            components.hour = 10
+            components.minute = 0
+            components.second = 0
+            
+            let c = NSCalendar(identifier: NSGregorianCalendar)
+            var fireDate = calendar.dateFromComponents(components)
+            fireDate?.dateByAddingTimeInterval(-60*60*24)
+            
+            dayNotification.fireDate = fireDate
+            
+            return dayNotification
+            
+        } else {
+            return nil
+        }
     }
 }

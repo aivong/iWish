@@ -55,6 +55,7 @@ class EventsTableViewController: UITableViewController {
         DatabaseConnection.GetEvents("SELECT * FROM Events WHERE userID='\(usersName)' ORDER BY name") { responseObject, error in print(error?.localizedDescription)
             if responseObject != nil {
                 self.upcomingEvents = responseObject!
+                self.addUpcomingEventNotifications()
                 self.tableView.reloadData()
             }
             else{
@@ -77,6 +78,40 @@ class EventsTableViewController: UITableViewController {
             //println(">>>>>>>>>>>>>>>")
             //println(self.eventRequests.count)
         }
+    }
+    
+    func addUpcomingEventNotifications() {
+        
+        for event in self.upcomingEvents {
+        
+            let dayNotification = event.dayEventNotification()
+            let weekNotifcation = event.weekEventNotification()
+            
+            if let goodDayNotification = dayNotification {
+                self.scheduleNotificationIfNotAlreadyScheduled(goodDayNotification)
+            }
+            
+            if let goodWeekNotification = weekNotifcation {
+                self.scheduleNotificationIfNotAlreadyScheduled(goodWeekNotification)
+            }
+        }
+    }
+    
+    func scheduleNotificationIfNotAlreadyScheduled(newNotification: UILocalNotification) {
+        
+        let scheduledLocalNotifications =  UIApplication.sharedApplication().scheduledLocalNotifications
+    
+        for scheduledLocalNotification in scheduledLocalNotifications {
+            
+            let sameText = (newNotification.alertBody == scheduledLocalNotification.alertBody)
+            let sameDate = (newNotification.fireDate == scheduledLocalNotification.fireDate)
+            
+            if sameText && sameDate {
+                return
+            }
+        }
+        
+        UIApplication.sharedApplication().scheduleLocalNotification(newNotification)
     }
     
     func alertUser(titleText: String, messageText: String, buttonText: String){
@@ -103,6 +138,14 @@ class EventsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         usersName = VerifyState.username
+        
+        println("\(UIApplication.sharedApplication().scheduledLocalNotifications.count)")
+        
+        for notifcation in UIApplication.sharedApplication().scheduledLocalNotifications {
+            println("\(notifcation.alertBody)")
+            println("\(notifcation.fireDate)")
+        }
+    
 //        let defaults = NSUserDefaults.standardUserDefaults()
 //        if let name = defaults.stringForKey("username")
 //        {

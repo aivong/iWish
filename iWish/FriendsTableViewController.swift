@@ -51,6 +51,9 @@ class FriendsTableViewController: UITableViewController {
             
             if responseObject != nil {
                 self.requests = responseObject!
+                
+                print("\(self.requests)")
+                
                 self.tableView.reloadData()
             }
             
