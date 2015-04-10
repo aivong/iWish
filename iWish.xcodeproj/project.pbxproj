@@ -79,6 +79,7 @@
 		CD4041591A967D7F00DB40D5 /* DatabaseConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433929C1A8D2C1A00E5B01B /* DatabaseConnection.swift */; };
 		CD40415A1A967D8800DB40D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E97304E1A86BA2C006543B1 /* AppDelegate.swift */; };
 		CD40415B1A967D8C00DB40D5 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849337B11A905551003456B5 /* SwiftyJSON.swift */; };
+		CD7FBB021AD748220039C35B /* EventTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7FBB011AD748220039C35B /* EventTests.swift */; };
 		CD9935EB1AD3140000B47654 /* EditGiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9935EA1AD3140000B47654 /* EditGiftViewController.swift */; };
 		CD9935ED1AD3182000B47654 /* EditGiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9935EA1AD3140000B47654 /* EditGiftViewController.swift */; };
 /* End PBXBuildFile section */
@@ -173,6 +174,7 @@
 		8EFEFCE11A9AA4D8004EC929 /* unicorn.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = unicorn.jpg; sourceTree = "<group>"; };
 		C66DE6131AB6113500BAF9A2 /* Invite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Invite.swift; sourceTree = "<group>"; };
 		C66DE61A1AB623A600BAF9A2 /* AddFriendToEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendToEventViewController.swift; sourceTree = "<group>"; };
+		CD7FBB011AD748220039C35B /* EventTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTests.swift; sourceTree = "<group>"; };
 		CD9935EA1AD3140000B47654 /* EditGiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditGiftViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -264,6 +266,7 @@
 				8E9730661A86BA2C006543B1 /* iWishTests.swift */,
 				8E9730641A86BA2C006543B1 /* Supporting Files */,
 				555FE43F1AAC068F00EE8C1E /* TestEditEvent.swift */,
+				CD7FBB011AD748220039C35B /* EventTests.swift */,
 			);
 			path = iWishTests;
 			sourceTree = "<group>";
@@ -545,6 +548,7 @@
 				555FE4051AABB9A400EE8C1E /* UserEvent.swift in Sources */,
 				CD4041581A967D7900DB40D5 /* WishListGift.swift in Sources */,
 				CD9935ED1AD3182000B47654 /* EditGiftViewController.swift in Sources */,
+				CD7FBB021AD748220039C35B /* EventTests.swift in Sources */,
 				C66DE6151AB6113500BAF9A2 /* Invite.swift in Sources */,
 				555FE4401AAC068F00EE8C1E /* TestEditEvent.swift in Sources */,
 				CD4041521A967D6800DB40D5 /* AddGiftViewController.swift in Sources */,

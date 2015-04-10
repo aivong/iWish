@@ -53,7 +53,7 @@ class UserEvent{
             
             let c = NSCalendar(identifier: NSGregorianCalendar)
             var fireDate = calendar.dateFromComponents(components)
-            fireDate?.dateByAddingTimeInterval(-60*60*24*7)
+            fireDate = fireDate?.dateByAddingTimeInterval(-60*60*24*7)
             
             weekNotification.fireDate = fireDate
             
@@ -82,7 +82,7 @@ class UserEvent{
             
             let c = NSCalendar(identifier: NSGregorianCalendar)
             var fireDate = calendar.dateFromComponents(components)
-            fireDate?.dateByAddingTimeInterval(-60*60*24)
+            fireDate = fireDate?.dateByAddingTimeInterval(-60*60*24)
             
             dayNotification.fireDate = fireDate
             
