@@ -32,6 +32,10 @@
 		55D888A31AB4FB5500FF8A72 /* EventMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D888A11AB4FB5500FF8A72 /* EventMenuViewController.swift */; };
 		55D888B51AB5310400FF8A72 /* ViewEventGuestsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D888B41AB5310400FF8A72 /* ViewEventGuestsTableViewController.swift */; };
 		55D888B61AB5310400FF8A72 /* ViewEventGuestsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D888B41AB5310400FF8A72 /* ViewEventGuestsTableViewController.swift */; };
+		674A23381ADAF4A600452C02 /* RequestDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674A23371ADAF4A600452C02 /* RequestDetailViewController.swift */; };
+		674A23391ADAF4A600452C02 /* RequestDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674A23371ADAF4A600452C02 /* RequestDetailViewController.swift */; };
+		674A233C1ADB076700452C02 /* BuyGiftListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674A233B1ADB076700452C02 /* BuyGiftListTableViewController.swift */; };
+		674A233D1ADB076700452C02 /* BuyGiftListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674A233B1ADB076700452C02 /* BuyGiftListTableViewController.swift */; };
 		84072B171ACAE88F004F51B4 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84072B161ACAE88F004F51B4 /* UserSettings.swift */; };
 		84072B191ACAE897004F51B4 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84072B161ACAE88F004F51B4 /* UserSettings.swift */; };
 		84072B1B1ACAECDD004F51B4 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84072B1A1ACAECDD004F51B4 /* SettingsTableViewController.swift */; };
@@ -141,6 +145,8 @@
 		55D8889E1AB4FB3500FF8A72 /* ViewEventGiftDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewEventGiftDetailViewController.swift; sourceTree = "<group>"; };
 		55D888A11AB4FB5500FF8A72 /* EventMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMenuViewController.swift; sourceTree = "<group>"; };
 		55D888B41AB5310400FF8A72 /* ViewEventGuestsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewEventGuestsTableViewController.swift; sourceTree = "<group>"; };
+		674A23371ADAF4A600452C02 /* RequestDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestDetailViewController.swift; sourceTree = "<group>"; };
+		674A233B1ADB076700452C02 /* BuyGiftListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyGiftListTableViewController.swift; sourceTree = "<group>"; };
 		84072B161ACAE88F004F51B4 /* UserSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		84072B1A1ACAECDD004F51B4 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		841887F21AACE8CA00B69533 /* FriendsProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsProfileViewController.swift; sourceTree = "<group>"; };
@@ -289,6 +295,8 @@
 				55D888A11AB4FB5500FF8A72 /* EventMenuViewController.swift */,
 				55D888B41AB5310400FF8A72 /* ViewEventGuestsTableViewController.swift */,
 				C66DE61A1AB623A600BAF9A2 /* AddFriendToEventViewController.swift */,
+				674A23371ADAF4A600452C02 /* RequestDetailViewController.swift */,
+				674A233B1ADB076700452C02 /* BuyGiftListTableViewController.swift */,
 			);
 			name = "Events ViewControllers";
 			sourceTree = "<group>";
@@ -489,6 +497,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EE8E70D1A9A8AA0000F6076 /* CreateAccountViewController.swift in Sources */,
+				674A23381ADAF4A600452C02 /* RequestDetailViewController.swift in Sources */,
 				849337BA1A94137F003456B5 /* EventsTableViewController.swift in Sources */,
 				555FE4181AABC51200EE8C1E /* FriendsTableViewController.swift in Sources */,
 				555FE4141AABC4F800EE8C1E /* SearchUsersTableViewController.swift in Sources */,
@@ -499,6 +508,7 @@
 				8433929D1A8D2C1A00E5B01B /* DatabaseConnection.swift in Sources */,
 				555FE40A1AABB9F000EE8C1E /* AddEventViewController.swift in Sources */,
 				8446A9971A8D00F200D51024 /* Users.swift in Sources */,
+				674A233C1ADB076700452C02 /* BuyGiftListTableViewController.swift in Sources */,
 				555FE4041AABB9A400EE8C1E /* UserEvent.swift in Sources */,
 				84072B171ACAE88F004F51B4 /* UserSettings.swift in Sources */,
 				849337B21A905551003456B5 /* SwiftyJSON.swift in Sources */,
@@ -532,6 +542,7 @@
 				555FE4191AABC51200EE8C1E /* FriendsTableViewController.swift in Sources */,
 				555FE4151AABC4F800EE8C1E /* SearchUsersTableViewController.swift in Sources */,
 				C66DE61C1AB623A600BAF9A2 /* AddFriendToEventViewController.swift in Sources */,
+				674A23391ADAF4A600452C02 /* RequestDetailViewController.swift in Sources */,
 				55D888991AB4FAE200FF8A72 /* AddGiftToEventViewController.swift in Sources */,
 				CD4041561A967D7100DB40D5 /* WishListTableViewController.swift in Sources */,
 				CD40415B1A967D8C00DB40D5 /* SwiftyJSON.swift in Sources */,
@@ -559,6 +570,7 @@
 				84072B1C1ACAECDD004F51B4 /* SettingsTableViewController.swift in Sources */,
 				55D888A31AB4FB5500FF8A72 /* EventMenuViewController.swift in Sources */,
 				CD4041571A967D7400DB40D5 /* EventsTableViewController.swift in Sources */,
+				674A233D1ADB076700452C02 /* BuyGiftListTableViewController.swift in Sources */,
 				8E9730671A86BA2C006543B1 /* iWishTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

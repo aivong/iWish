@@ -20,7 +20,7 @@ class ViewEventGiftsViewController: UITableViewController {
     var selectedGift : WishListGift!
     var eventID : Int!
     
-    func getUsersFeaturedGifts(){
+    func getEventFeaturedGifts(){
         DatabaseConnection.GetGifts("SELECT * FROM WishListGifts WHERE eventID=\(eventID) ORDER BY name") { responseObject, error in
             if responseObject != nil {
                 self.gifts = responseObject!
@@ -40,12 +40,12 @@ class ViewEventGiftsViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getUsersFeaturedGifts()
+        getEventFeaturedGifts()
     }
     
     override func viewDidAppear(animated: Bool) {
         selectedGift = WishListGift(giftID: 0, giftName: "None", giftDescription: "None", giftPrice: 0.00, giftEvent: 99999)
-        getUsersFeaturedGifts()
+        getEventFeaturedGifts()
     }
     
     override func didReceiveMemoryWarning() {
@@ -93,7 +93,7 @@ class ViewEventGiftsViewController: UITableViewController {
                 //CHECK FOR ERRORS
                 // println("GIFT REMOVED FROM EVENT")
                 if responseObject != nil {
-                    self.getUsersFeaturedGifts()
+                    self.getEventFeaturedGifts()
                     self.tableView.reloadData()
                 }
             }
