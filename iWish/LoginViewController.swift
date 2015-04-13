@@ -69,6 +69,7 @@ class LoginViewController: UIViewController {
                             VerifyState.userVerified = true
                             VerifyState.username = self.users[0].username
                             VerifyState.selectedUser = self.users[0].username
+                            VerifyState.email = self.users[0].email
                             let nsud = NSUserDefaults.standardUserDefaults()
                             nsud.setObject(self.users[0].username, forKey: "username")
   

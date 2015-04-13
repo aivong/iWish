@@ -16,5 +16,6 @@ public struct VerifyState
     public static var selectedGifts: Bool = true
     public static var selectedPic: String!
     public static var DBFinished: Bool = false
+    public static var email: String!
 }
 
