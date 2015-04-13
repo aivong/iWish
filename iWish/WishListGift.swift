@@ -24,7 +24,7 @@ class WishListGift{
         self.eventID = giftEvent
     }
     
-    func descripe () -> String {
+    func describe () -> String {
         return "Name: \(name)\nDescription: \(description)\nPrice: \(price)\nDatabaseID: \(databaseID)"
     }
 }

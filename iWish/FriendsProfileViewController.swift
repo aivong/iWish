@@ -36,25 +36,42 @@ class FriendsProfileViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         
-        let queryProfile = "SELECT * FROM Users WHERE username = '\(VerifyState.selectedUser)'"
+        let queryProfile = "SELECT * FROM Users WHERE username = '\(friendsName)'"
         
         
-        
-        DatabaseConnection.GetUser(queryProfile) { responseObject, error in
-            //CHECK FOR ERRORS
-            if responseObject != nil {
-                self.users = responseObject!
-                self.fullName.text = self.users[0].fullname
-                self.birthday.text = self.users[0].birthday
-                self.gender.text = self.users[0].gender
-                self.email.text = self.users[0].email
-                self.mailingAddress.text = self.users[0].mailingaddress
-                
+        DatabaseConnection.GetUserSettings(friendsName){ro, er in
+            let us = ro!
+
+
+            DatabaseConnection.GetUser(queryProfile) { responseObject, error in
+                //CHECK FOR ERRORS
+                if responseObject != nil {
+                    println("SEA: \(us.showEmailAddress.boolValue)")
+                    println("SB: \(us.showBirthday.boolValue)")
+                    self.users = responseObject!
+                    self.fullName.text = self.users[0].fullname
+                    
+                    if us.showBirthday.boolValue{
+                        self.birthday.text = self.users[0].birthday
+                    }
+                    else{
+                        self.birthday.text = "PRIVATE"
+                    }
+                    self.gender.text = self.users[0].gender
+                    if us.showEmailAddress.boolValue{
+                        self.email.text = self.users[0].email
+                    }
+                    else{
+                        self.email.text = "PRIVATE"
+                    }
+                    self.mailingAddress.text = self.users[0].mailingaddress
+                    
+                }
             }
         }
         
         println(queryImage)
-        DatabaseConnection.GetImage(queryImage) { responseObject, error in
+        /*DatabaseConnection.GetImage(queryImage) { responseObject, error in
             //CHECK FOR ERRORS
             if responseObject != nil {
                 
@@ -65,7 +82,7 @@ class FriendsProfileViewController: UIViewController {
                 
                 self.file = responseObject!
             }
-        }
+        }*/
 
         
     }

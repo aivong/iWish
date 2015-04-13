@@ -40,6 +40,7 @@
 		84072B191ACAE897004F51B4 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84072B161ACAE88F004F51B4 /* UserSettings.swift */; };
 		84072B1B1ACAECDD004F51B4 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84072B1A1ACAECDD004F51B4 /* SettingsTableViewController.swift */; };
 		84072B1C1ACAECDD004F51B4 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84072B1A1ACAECDD004F51B4 /* SettingsTableViewController.swift */; };
+		84072B2E1ADC4426004F51B4 /* WishListGiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84072B2D1ADC4425004F51B4 /* WishListGiftTests.swift */; };
 		841887F31AACE8CA00B69533 /* FriendsProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841887F21AACE8CA00B69533 /* FriendsProfileViewController.swift */; };
 		841887F51AACEAD100B69533 /* FriendsProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841887F21AACE8CA00B69533 /* FriendsProfileViewController.swift */; };
 		8433929B1A8D0B2500E5B01B /* WishListGift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433929A1A8D0B2500E5B01B /* WishListGift.swift */; };
@@ -150,6 +151,7 @@
 		67C8B5231ADC396B00701C13 /* BuyGiftListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyGiftListTableViewController.swift; sourceTree = "<group>"; };
 		84072B161ACAE88F004F51B4 /* UserSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		84072B1A1ACAECDD004F51B4 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		84072B2D1ADC4425004F51B4 /* WishListGiftTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishListGiftTests.swift; sourceTree = "<group>"; };
 		841887F21AACE8CA00B69533 /* FriendsProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsProfileViewController.swift; sourceTree = "<group>"; };
 		8433929A1A8D0B2500E5B01B /* WishListGift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishListGift.swift; sourceTree = "<group>"; };
 		8433929C1A8D2C1A00E5B01B /* DatabaseConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseConnection.swift; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 				8E9730641A86BA2C006543B1 /* Supporting Files */,
 				555FE43F1AAC068F00EE8C1E /* TestEditEvent.swift */,
 				CD7FBB011AD748220039C35B /* EventTests.swift */,
+				84072B2D1ADC4425004F51B4 /* WishListGiftTests.swift */,
 			);
 			path = iWishTests;
 			sourceTree = "<group>";
@@ -568,6 +571,7 @@
 				555FE4081AABB9E600EE8C1E /* EventDetailViewController.swift in Sources */,
 				CD4041531A967D6A00DB40D5 /* GiftDetailViewController.swift in Sources */,
 				CD4041591A967D7F00DB40D5 /* DatabaseConnection.swift in Sources */,
+				84072B2E1ADC4426004F51B4 /* WishListGiftTests.swift in Sources */,
 				555FE43D1AABF86F00EE8C1E /* EditEventViewController.swift in Sources */,
 				CD4041501A967D5E00DB40D5 /* Users.swift in Sources */,
 				8E0A55891AA11A85000B89ED /* VerifyState.swift in Sources */,
