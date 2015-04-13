@@ -138,13 +138,6 @@ class EventsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         usersName = VerifyState.username
-        
-        println("\(UIApplication.sharedApplication().scheduledLocalNotifications.count)")
-        
-        for notifcation in UIApplication.sharedApplication().scheduledLocalNotifications {
-            println("\(notifcation.alertBody)")
-            println("\(notifcation.fireDate)")
-        }
     
 //        let defaults = NSUserDefaults.standardUserDefaults()
 //        if let name = defaults.stringForKey("username")
@@ -160,6 +153,36 @@ class EventsTableViewController: UITableViewController {
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+
+        println("\n\n\n\n\n\n\n\n--- NOTIFICATIONS ---")
+        
+        for notifcation in UIApplication.sharedApplication().scheduledLocalNotifications {
+            
+            var a = "Message: "
+            
+            if let alert = notifcation.alertBody {
+                a += alert!
+            } else {
+                a += "-"
+            }
+            
+            a += "\nDate: "
+            
+            if let date = notifcation.fireDate {
+                a += date.description
+            } else {
+                a += "-"
+            }
+            
+
+            println("\(a)")
+        }
+        
+        println("\n\n\n\n\n\n\n\n")
     }
     
     override func didReceiveMemoryWarning() {
