@@ -72,7 +72,7 @@ class WishListTableViewController: UITableViewController {
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("WishListGift", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("WishListGift", forIndexPath: indexPath) as! UITableViewCell
         
         let data = gifts[indexPath.row]
         cell.textLabel?.text = data.name
@@ -136,7 +136,7 @@ class WishListTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
         if(segue.destinationViewController.isKindOfClass(GiftDetailViewController)){
             
-            let vc = segue.destinationViewController as GiftDetailViewController
+            let vc = segue.destinationViewController as! GiftDetailViewController
             
             let path = self.tableView.indexPathForSelectedRow()!
             vc.gift = gifts[path.row]

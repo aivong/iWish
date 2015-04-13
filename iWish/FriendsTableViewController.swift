@@ -16,7 +16,7 @@ class FriendsTableViewController: UITableViewController {
     var usersName: String!
     
     @IBAction func unwindFromProfile(segue: UIStoryboardSegue){
-        let svc = segue.sourceViewController as FriendsProfileViewController
+        let svc = segue.sourceViewController as! FriendsProfileViewController
         for i in 0..<friends.count{
             if(friends[i].username == svc.friendsName && svc.friendWasRemoved){
                 friends.removeAtIndex(i)
@@ -95,12 +95,12 @@ class FriendsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         if indexPath.section == 0{
-            let cell = tableView.dequeueReusableCellWithIdentifier("RequestCell", forIndexPath:indexPath) as UITableViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier("RequestCell", forIndexPath:indexPath) as! UITableViewCell
             cell.textLabel?.text = requests[indexPath.row].username
             return cell
         }
         else{
-            let cell = tableView.dequeueReusableCellWithIdentifier("FriendCell", forIndexPath:indexPath) as UITableViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier("FriendCell", forIndexPath:indexPath) as! UITableViewCell
             cell.textLabel?.text = friends[indexPath.row].username
             return cell
         }
@@ -234,11 +234,11 @@ class FriendsTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
         
         if segue.destinationViewController.isKindOfClass(FriendsProfileViewController){
-            let destVC = segue.destinationViewController as FriendsProfileViewController
+            let destVC = segue.destinationViewController as! FriendsProfileViewController
             destVC.friendsName = friends[self.tableView.indexPathForSelectedRow()!.row].username
         }
         else if (segue.destinationViewController.isKindOfClass(SearchUsersTableViewController)){
-            let destVC = segue.destinationViewController as SearchUsersTableViewController
+            let destVC = segue.destinationViewController as! SearchUsersTableViewController
             destVC.usersName = self.usersName
         }
     }

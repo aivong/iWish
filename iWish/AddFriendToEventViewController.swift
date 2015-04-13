@@ -59,7 +59,7 @@ class AddFriendToEventViewController: UITableViewController {
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Friends", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Friends", forIndexPath: indexPath) as! UITableViewCell
         
         let data = friends[indexPath.row]
         cell.textLabel?.text = data.username

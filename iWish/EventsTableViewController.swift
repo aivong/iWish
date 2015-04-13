@@ -26,7 +26,7 @@ class EventsTableViewController: UITableViewController {
     }
     
     @IBAction func saveEvent(segue: UIStoryboardSegue){
-        let addEventVC = segue.sourceViewController as AddEventViewController
+        let addEventVC = segue.sourceViewController as! AddEventViewController
         let newEventName = addEventVC.eventName.text
         let newEventDate = addEventVC.eventDate.text
         let newEventDesc = addEventVC.eventDescription.text
@@ -34,10 +34,10 @@ class EventsTableViewController: UITableViewController {
         if newEventName == "" || newEventDate == "" || newEventDesc == ""{
             alertUser("Not Saved",  messageText: "Please fill in all fields", buttonText: "OK")
         }
-        else if countElements(newEventName) > 20{
+        else if count(newEventName) > 20{
             alertUser("Warning!",  messageText: "Name must be no more than 20 characters", buttonText: "OK")
         }
-        else if countElements(newEventDesc) > 500{
+        else if count(newEventDesc) > 500{
             alertUser("Warning!",  messageText: "Description is too long! 500 characters max", buttonText: "OK")
         }
         else{
@@ -195,7 +195,7 @@ class EventsTableViewController: UITableViewController {
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("EventCell", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("EventCell", forIndexPath: indexPath)as! UITableViewCell
         
         switch(indexPath.section){
         case 0:
@@ -263,7 +263,7 @@ class EventsTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
         if(segue.destinationViewController.isKindOfClass(EventMenuViewController)){
             
-            let vc = segue.destinationViewController as EventMenuViewController
+            let vc = segue.destinationViewController as! EventMenuViewController
             
             let path = self.tableView.indexPathForSelectedRow()!
             vc.event = upcomingEvents[path.row]

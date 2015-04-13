@@ -50,10 +50,10 @@ class AddGiftViewController: UIViewController {
         if (giftName.text == "" || giftPrice.text == "" || giftDescription.text == "") {
             alertTitle = "Empty Fields"
             alertBody = "Please fill in all fields"
-        } else if countElements(giftName.text) > 20 {
+        } else if count(giftName.text) > 20 {
             alertTitle = "Invalid Name"
             alertBody = "Name must be 20 or fewer characters"
-        } else if countElements(giftDescription.text) > 500 {
+        } else if count(giftDescription.text) > 500 {
             alertTitle = "Invalid Description"
             alertBody = "Description must be 500 or fewer characters"
         }

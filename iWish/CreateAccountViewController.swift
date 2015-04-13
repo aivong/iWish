@@ -64,10 +64,10 @@ class CreateAccountViewController: UIViewController {
         if (fullname.text == "" || username.text == "" || password.text == "" || email.text == "" || gender.text == "" || birthday.text == "" || mailingaddress.text == "") {
             alertTitle = "Empty Fields"
             alertBody = "Please fill in all fields"
-        } else if countElements(birthday.text) != 10 {
+        } else if count(birthday.text) != 10 {
             alertTitle = "Invalid Birthday"
             alertBody = "Please enter birthday in the format YYYY-MM-DD"
-        } else if countElements(username.text) > 255 {
+        } else if count(username.text) > 255 {
             alertTitle = "Invalid Username"
             alertBody = "Description must be 255 or fewer characters"
         }

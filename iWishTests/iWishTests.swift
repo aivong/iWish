@@ -9,7 +9,6 @@
 import UIKit
 import XCTest
 import iWish
-import AlamoFire
 
 class iWishTests: XCTestCase {
     

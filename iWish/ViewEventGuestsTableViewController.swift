@@ -147,12 +147,12 @@ class ViewEventGuestsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         if indexPath.section == 0{
-            let cell = tableView.dequeueReusableCellWithIdentifier("Pending", forIndexPath:indexPath) as UITableViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier("Pending", forIndexPath:indexPath) as! UITableViewCell
             cell.textLabel?.text = invited[indexPath.row].invitee
             return cell
         }
         else{
-            let cell = tableView.dequeueReusableCellWithIdentifier("Confirmed", forIndexPath:indexPath) as UITableViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier("Confirmed", forIndexPath:indexPath) as! UITableViewCell
             cell.textLabel?.text = guests[indexPath.row].invitee
             return cell
         }
@@ -178,7 +178,7 @@ class ViewEventGuestsTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
         if(segue.destinationViewController.isKindOfClass(AddFriendToEventViewController)){
             
-            let vc = segue.destinationViewController as AddFriendToEventViewController
+            let vc = segue.destinationViewController as! AddFriendToEventViewController
             
             vc.eventID = eventID
             vc.usersName = usersName

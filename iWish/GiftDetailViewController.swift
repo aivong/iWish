@@ -46,13 +46,13 @@ class GiftDetailViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if segue.identifier == editGiftSegueIdentifier {
-            let editGiftViewController = segue.destinationViewController as EditGiftViewController
+            let editGiftViewController = segue.destinationViewController as! EditGiftViewController
             editGiftViewController.gift = self.gift
         }
     }
     
     @IBAction func giftEditSaved(segue: UIStoryboardSegue) {
-        let editGiftViewController = segue.sourceViewController as EditGiftViewController
+        let editGiftViewController = segue.sourceViewController as! EditGiftViewController
         
         self.gift = editGiftViewController.gift
         

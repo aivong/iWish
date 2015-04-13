@@ -58,13 +58,13 @@ class EventMenuViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell: UITableViewCell!
         if indexPath.row == 0{
-            cell = tableView.dequeueReusableCellWithIdentifier("EventCell", forIndexPath: indexPath) as UITableViewCell
+            cell = tableView.dequeueReusableCellWithIdentifier("EventCell", forIndexPath: indexPath) as! UITableViewCell
         }
         else if indexPath.row == 1 {
-            cell = tableView.dequeueReusableCellWithIdentifier("WishlistCell", forIndexPath: indexPath) as UITableViewCell
+            cell = tableView.dequeueReusableCellWithIdentifier("WishlistCell", forIndexPath: indexPath) as! UITableViewCell
         }
         else {
-            cell = tableView.dequeueReusableCellWithIdentifier("GuestListCell", forIndexPath: indexPath) as UITableViewCell
+            cell = tableView.dequeueReusableCellWithIdentifier("GuestListCell", forIndexPath: indexPath) as! UITableViewCell
         }
         switch(indexPath.section){
         case 0:
@@ -110,15 +110,15 @@ class EventMenuViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if (segue.destinationViewController.isKindOfClass(EventDetailViewController)) {
-            let vc = segue.destinationViewController as EventDetailViewController
+            let vc = segue.destinationViewController as! EventDetailViewController
             vc.event = event
         }
         else if(segue.destinationViewController.isKindOfClass(ViewEventGiftsViewController)) {
-            let vc = segue.destinationViewController as ViewEventGiftsViewController
+            let vc = segue.destinationViewController as! ViewEventGiftsViewController
             vc.eventID = event.eventID
         }
         else if(segue.destinationViewController.isKindOfClass(ViewEventGuestsTableViewController)) {
-            let vc = segue.destinationViewController as ViewEventGuestsTableViewController
+            let vc = segue.destinationViewController as! ViewEventGuestsTableViewController
             vc.eventID = event.eventID
             vc.usersName = usersName
         }

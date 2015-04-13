@@ -66,10 +66,10 @@ class EditGiftViewController: UIViewController {
         if (nameLabel.text == "" || priceLabel.text == "" || descriptionTextView.text == "") {
             alertTitle = "Empty Fields"
             alertBody = "Please fill in all fields"
-        } else if countElements(nameLabel.text) > 20 {
+        } else if count(nameLabel.text) > 20 {
             alertTitle = "Invalid Name"
             alertBody = "Name must be 20 or fewer characters"
-        } else if countElements(descriptionTextView.text) > 500 {
+        } else if count(descriptionTextView.text) > 500 {
             alertTitle = "Invalid Description"
             alertBody = "Description must be 500 or fewer characters"
         }

@@ -7,44 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22F21B9E376F04851629AC2F /* Pods_iWish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8AD01EC84DB701BA1DBB5E5 /* Pods_iWish.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		5505D5EF1AABB15D002C7FB0 /* VerifyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0A55861AA11A82000B89ED /* VerifyState.swift */; };
 		555FE4041AABB9A400EE8C1E /* UserEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555FE4031AABB9A400EE8C1E /* UserEvent.swift */; };
 		555FE4051AABB9A400EE8C1E /* UserEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555FE4031AABB9A400EE8C1E /* UserEvent.swift */; };
 		555FE4071AABB9E600EE8C1E /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555FE4061AABB9E600EE8C1E /* EventDetailViewController.swift */; };
-		555FE4081AABB9E600EE8C1E /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555FE4061AABB9E600EE8C1E /* EventDetailViewController.swift */; };
 		555FE40A1AABB9F000EE8C1E /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555FE4091AABB9F000EE8C1E /* AddEventViewController.swift */; };
 		555FE40B1AABB9F000EE8C1E /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555FE4091AABB9F000EE8C1E /* AddEventViewController.swift */; };
 		555FE4141AABC4F800EE8C1E /* SearchUsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555FE4131AABC4F800EE8C1E /* SearchUsersTableViewController.swift */; };
-		555FE4151AABC4F800EE8C1E /* SearchUsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555FE4131AABC4F800EE8C1E /* SearchUsersTableViewController.swift */; };
 		555FE4181AABC51200EE8C1E /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555FE4171AABC51200EE8C1E /* FriendsTableViewController.swift */; };
-		555FE4191AABC51200EE8C1E /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555FE4171AABC51200EE8C1E /* FriendsTableViewController.swift */; };
 		555FE42D1AABD0BC00EE8C1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E9730541A86BA2C006543B1 /* Main.storyboard */; };
 		555FE43C1AABF86F00EE8C1E /* EditEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555FE43B1AABF86F00EE8C1E /* EditEventViewController.swift */; };
 		555FE43D1AABF86F00EE8C1E /* EditEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555FE43B1AABF86F00EE8C1E /* EditEventViewController.swift */; };
 		555FE4401AAC068F00EE8C1E /* TestEditEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555FE43F1AAC068F00EE8C1E /* TestEditEvent.swift */; };
 		55D888981AB4FAE200FF8A72 /* AddGiftToEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D888971AB4FAE200FF8A72 /* AddGiftToEventViewController.swift */; };
-		55D888991AB4FAE200FF8A72 /* AddGiftToEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D888971AB4FAE200FF8A72 /* AddGiftToEventViewController.swift */; };
 		55D8889C1AB4FB1700FF8A72 /* ViewEventGiftsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8889B1AB4FB1700FF8A72 /* ViewEventGiftsViewController.swift */; };
-		55D8889D1AB4FB1700FF8A72 /* ViewEventGiftsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8889B1AB4FB1700FF8A72 /* ViewEventGiftsViewController.swift */; };
 		55D8889F1AB4FB3500FF8A72 /* ViewEventGiftDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8889E1AB4FB3500FF8A72 /* ViewEventGiftDetailViewController.swift */; };
 		55D888A01AB4FB3500FF8A72 /* ViewEventGiftDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8889E1AB4FB3500FF8A72 /* ViewEventGiftDetailViewController.swift */; };
 		55D888A21AB4FB5500FF8A72 /* EventMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D888A11AB4FB5500FF8A72 /* EventMenuViewController.swift */; };
-		55D888A31AB4FB5500FF8A72 /* EventMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D888A11AB4FB5500FF8A72 /* EventMenuViewController.swift */; };
 		55D888B51AB5310400FF8A72 /* ViewEventGuestsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D888B41AB5310400FF8A72 /* ViewEventGuestsTableViewController.swift */; };
-		55D888B61AB5310400FF8A72 /* ViewEventGuestsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D888B41AB5310400FF8A72 /* ViewEventGuestsTableViewController.swift */; };
 		84072B171ACAE88F004F51B4 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84072B161ACAE88F004F51B4 /* UserSettings.swift */; };
 		84072B191ACAE897004F51B4 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84072B161ACAE88F004F51B4 /* UserSettings.swift */; };
 		84072B1B1ACAECDD004F51B4 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84072B1A1ACAECDD004F51B4 /* SettingsTableViewController.swift */; };
-		84072B1C1ACAECDD004F51B4 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84072B1A1ACAECDD004F51B4 /* SettingsTableViewController.swift */; };
 		841887F31AACE8CA00B69533 /* FriendsProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841887F21AACE8CA00B69533 /* FriendsProfileViewController.swift */; };
-		841887F51AACEAD100B69533 /* FriendsProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841887F21AACE8CA00B69533 /* FriendsProfileViewController.swift */; };
 		8433929B1A8D0B2500E5B01B /* WishListGift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433929A1A8D0B2500E5B01B /* WishListGift.swift */; };
 		8433929D1A8D2C1A00E5B01B /* DatabaseConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433929C1A8D2C1A00E5B01B /* DatabaseConnection.swift */; };
 		8446A9901A8BC07800D51024 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446A98F1A8BC07800D51024 /* LoginViewController.swift */; };
 		8446A9971A8D00F200D51024 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446A9961A8D00F200D51024 /* Users.swift */; };
 		8446A9991A8D055000D51024 /* WishListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446A9981A8D055000D51024 /* WishListTableViewController.swift */; };
-		849337AC1A8E6927003456B5 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849337A91A8E6913003456B5 /* Alamofire.framework */; };
-		849337AD1A8E6927003456B5 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 849337A91A8E6913003456B5 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		849337B21A905551003456B5 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849337B11A905551003456B5 /* SwiftyJSON.swift */; };
 		849337B41A914F58003456B5 /* AddGiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849337B31A914F58003456B5 /* AddGiftViewController.swift */; };
 		849337B61A91AE63003456B5 /* GiftDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849337B51A91AE63003456B5 /* GiftDetailViewController.swift */; };
@@ -56,9 +46,7 @@
 		8E97305B1A86BA2C006543B1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E9730591A86BA2C006543B1 /* LaunchScreen.xib */; };
 		8E9730671A86BA2C006543B1 /* iWishTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9730661A86BA2C006543B1 /* iWishTests.swift */; };
 		8EADEE2D1ACE0DC00038C498 /* profileGifts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EADEE2C1ACE0DC00038C498 /* profileGifts.swift */; };
-		8EADEE2E1ACE0DC00038C498 /* profileGifts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EADEE2C1ACE0DC00038C498 /* profileGifts.swift */; };
 		8ED35F0C1ACE061C00F6E9A6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED35F0B1ACE061B00F6E9A6 /* ProfileViewController.swift */; };
-		8ED35F0D1ACE061C00F6E9A6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED35F0B1ACE061B00F6E9A6 /* ProfileViewController.swift */; };
 		8EDE536E1A8920DC008B49A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDE536D1A8920DC008B49A0 /* ViewController.swift */; };
 		8EE8E70D1A9A8AA0000F6076 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE8E70C1A9A8AA0000F6076 /* CreateAccountViewController.swift */; };
 		8EFEFCDD1A9AA460004EC929 /* user168.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EFEFCDC1A9AA460004EC929 /* user168.png */; };
@@ -67,45 +55,17 @@
 		C66DE6141AB6113500BAF9A2 /* Invite.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66DE6131AB6113500BAF9A2 /* Invite.swift */; };
 		C66DE6151AB6113500BAF9A2 /* Invite.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66DE6131AB6113500BAF9A2 /* Invite.swift */; };
 		C66DE61B1AB623A600BAF9A2 /* AddFriendToEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66DE61A1AB623A600BAF9A2 /* AddFriendToEventViewController.swift */; };
-		C66DE61C1AB623A600BAF9A2 /* AddFriendToEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66DE61A1AB623A600BAF9A2 /* AddFriendToEventViewController.swift */; };
 		CD4041501A967D5E00DB40D5 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446A9961A8D00F200D51024 /* Users.swift */; };
-		CD4041521A967D6800DB40D5 /* AddGiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849337B31A914F58003456B5 /* AddGiftViewController.swift */; };
-		CD4041531A967D6A00DB40D5 /* GiftDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849337B51A91AE63003456B5 /* GiftDetailViewController.swift */; };
 		CD4041541A967D6D00DB40D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDE536D1A8920DC008B49A0 /* ViewController.swift */; };
-		CD4041551A967D6F00DB40D5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446A98F1A8BC07800D51024 /* LoginViewController.swift */; };
-		CD4041561A967D7100DB40D5 /* WishListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446A9981A8D055000D51024 /* WishListTableViewController.swift */; };
-		CD4041571A967D7400DB40D5 /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849337B91A94137F003456B5 /* EventsTableViewController.swift */; };
 		CD4041581A967D7900DB40D5 /* WishListGift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433929A1A8D0B2500E5B01B /* WishListGift.swift */; };
-		CD4041591A967D7F00DB40D5 /* DatabaseConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433929C1A8D2C1A00E5B01B /* DatabaseConnection.swift */; };
 		CD40415A1A967D8800DB40D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E97304E1A86BA2C006543B1 /* AppDelegate.swift */; };
 		CD40415B1A967D8C00DB40D5 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849337B11A905551003456B5 /* SwiftyJSON.swift */; };
 		CD7FBB021AD748220039C35B /* EventTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7FBB011AD748220039C35B /* EventTests.swift */; };
 		CD9935EB1AD3140000B47654 /* EditGiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9935EA1AD3140000B47654 /* EditGiftViewController.swift */; };
-		CD9935ED1AD3182000B47654 /* EditGiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9935EA1AD3140000B47654 /* EditGiftViewController.swift */; };
+		FE37C09FFD0583E16F1A66C7 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37E27FB9C3FA22115D0EA60A /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		849337A81A8E6913003456B5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 849337A31A8E6913003456B5 /* Alamofire.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 27AB60071A7FAFBF0069F786;
-			remoteInfo = Alamofire;
-		};
-		849337AA1A8E6913003456B5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 849337A31A8E6913003456B5 /* Alamofire.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 27AB60121A7FAFBF0069F786;
-			remoteInfo = AlamofireTests;
-		};
-		849337AE1A8E6927003456B5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 849337A31A8E6913003456B5 /* Alamofire.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 27AB60061A7FAFBF0069F786;
-			remoteInfo = Alamofire;
-		};
 		8E9730611A86BA2C006543B1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8E9730411A86BA2C006543B1 /* Project object */;
@@ -122,7 +82,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				849337AD1A8E6927003456B5 /* Alamofire.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -130,6 +89,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		37E27FB9C3FA22115D0EA60A /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		555FE4031AABB9A400EE8C1E /* UserEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserEvent.swift; sourceTree = "<group>"; };
 		555FE4061AABB9E600EE8C1E /* EventDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 		555FE4091AABB9F000EE8C1E /* AddEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
@@ -150,7 +110,6 @@
 		8446A98F1A8BC07800D51024 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8446A9961A8D00F200D51024 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Users.swift; path = ../Users.swift; sourceTree = "<group>"; };
 		8446A9981A8D055000D51024 /* WishListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishListTableViewController.swift; sourceTree = "<group>"; };
-		849337A31A8E6913003456B5 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		849337B11A905551003456B5 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		849337B31A914F58003456B5 /* AddGiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGiftViewController.swift; sourceTree = "<group>"; };
 		849337B51A91AE63003456B5 /* GiftDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftDetailViewController.swift; sourceTree = "<group>"; };
@@ -172,10 +131,13 @@
 		8EFEFCDC1A9AA460004EC929 /* user168.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user168.png; sourceTree = "<group>"; };
 		8EFEFCDF1A9AA496004EC929 /* door24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = door24.png; sourceTree = "<group>"; };
 		8EFEFCE11A9AA4D8004EC929 /* unicorn.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = unicorn.jpg; sourceTree = "<group>"; };
+		A0F28DCB4973B13F5B239FB1 /* Pods-iWish.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iWish.release.xcconfig"; path = "Pods/Target Support Files/Pods-iWish/Pods-iWish.release.xcconfig"; sourceTree = "<group>"; };
+		A8AD01EC84DB701BA1DBB5E5 /* Pods_iWish.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iWish.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C66DE6131AB6113500BAF9A2 /* Invite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Invite.swift; sourceTree = "<group>"; };
 		C66DE61A1AB623A600BAF9A2 /* AddFriendToEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendToEventViewController.swift; sourceTree = "<group>"; };
 		CD7FBB011AD748220039C35B /* EventTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTests.swift; sourceTree = "<group>"; };
 		CD9935EA1AD3140000B47654 /* EditGiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditGiftViewController.swift; sourceTree = "<group>"; };
+		F0A1826BAC1A72BBFE9B456B /* Pods-iWish.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iWish.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iWish/Pods-iWish.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,7 +145,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				849337AC1A8E6927003456B5 /* Alamofire.framework in Frameworks */,
+				22F21B9E376F04851629AC2F /* Pods_iWish.framework in Frameworks */,
+				FE37C09FFD0583E16F1A66C7 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,6 +160,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		28FA8B9816B291F976D59AD1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F0A1826BAC1A72BBFE9B456B /* Pods-iWish.debug.xcconfig */,
+				A0F28DCB4973B13F5B239FB1 /* Pods-iWish.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		722CBB0C85CA2028A0464E48 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A8AD01EC84DB701BA1DBB5E5 /* Pods_iWish.framework */,
+				37E27FB9C3FA22115D0EA60A /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8446A9931A8BCD6600D51024 /* iWishImages */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,22 +185,14 @@
 			path = iWishImages;
 			sourceTree = "<group>";
 		};
-		849337A41A8E6913003456B5 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				849337A91A8E6913003456B5 /* Alamofire.framework */,
-				849337AB1A8E6913003456B5 /* AlamofireTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		8E9730401A86BA2C006543B1 = {
 			isa = PBXGroup;
 			children = (
-				849337A31A8E6913003456B5 /* Alamofire.xcodeproj */,
 				8E97304B1A86BA2C006543B1 /* iWish */,
 				8E9730631A86BA2C006543B1 /* iWishTests */,
 				8E97304A1A86BA2C006543B1 /* Products */,
+				28FA8B9816B291F976D59AD1 /* Pods */,
+				722CBB0C85CA2028A0464E48 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -369,15 +342,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8E97306A1A86BA2D006543B1 /* Build configuration list for PBXNativeTarget "iWish" */;
 			buildPhases = (
+				AA643C563DE9006FC543C1CB /* Check Pods Manifest.lock */,
 				8E9730451A86BA2C006543B1 /* Sources */,
 				8E9730461A86BA2C006543B1 /* Frameworks */,
 				8E9730471A86BA2C006543B1 /* Resources */,
 				849337B01A8E6927003456B5 /* Embed Frameworks */,
+				B972C161495AD3747C645D9A /* Embed Pods Frameworks */,
+				24FE4D5D58F5C9E44FE6B1E6 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				849337AF1A8E6927003456B5 /* PBXTargetDependency */,
 			);
 			name = iWish;
 			productName = iWish;
@@ -431,12 +406,6 @@
 			mainGroup = 8E9730401A86BA2C006543B1;
 			productRefGroup = 8E97304A1A86BA2C006543B1 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 849337A41A8E6913003456B5 /* Products */;
-					ProjectRef = 849337A31A8E6913003456B5 /* Alamofire.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				8E9730481A86BA2C006543B1 /* iWish */,
@@ -444,23 +413,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		849337A91A8E6913003456B5 /* Alamofire.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Alamofire.framework;
-			remoteRef = 849337A81A8E6913003456B5 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		849337AB1A8E6913003456B5 /* AlamofireTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = AlamofireTests.xctest;
-			remoteRef = 849337AA1A8E6913003456B5 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		8E9730471A86BA2C006543B1 /* Resources */ = {
@@ -485,6 +437,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		24FE4D5D58F5C9E44FE6B1E6 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA643C563DE9006FC543C1CB /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B972C161495AD3747C645D9A /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8E9730451A86BA2C006543B1 /* Sources */ = {
@@ -531,38 +531,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD40415A1A967D8800DB40D5 /* AppDelegate.swift in Sources */,
-				CD4041551A967D6F00DB40D5 /* LoginViewController.swift in Sources */,
-				555FE4191AABC51200EE8C1E /* FriendsTableViewController.swift in Sources */,
-				555FE4151AABC4F800EE8C1E /* SearchUsersTableViewController.swift in Sources */,
-				C66DE61C1AB623A600BAF9A2 /* AddFriendToEventViewController.swift in Sources */,
-				55D888991AB4FAE200FF8A72 /* AddGiftToEventViewController.swift in Sources */,
-				CD4041561A967D7100DB40D5 /* WishListTableViewController.swift in Sources */,
 				CD40415B1A967D8C00DB40D5 /* SwiftyJSON.swift in Sources */,
-				55D8889D1AB4FB1700FF8A72 /* ViewEventGiftsViewController.swift in Sources */,
 				555FE40B1AABB9F000EE8C1E /* AddEventViewController.swift in Sources */,
 				84072B191ACAE897004F51B4 /* UserSettings.swift in Sources */,
 				CD4041541A967D6D00DB40D5 /* ViewController.swift in Sources */,
-				8ED35F0D1ACE061C00F6E9A6 /* ProfileViewController.swift in Sources */,
-				841887F51AACEAD100B69533 /* FriendsProfileViewController.swift in Sources */,
 				55D888A01AB4FB3500FF8A72 /* ViewEventGiftDetailViewController.swift in Sources */,
 				555FE4051AABB9A400EE8C1E /* UserEvent.swift in Sources */,
 				CD4041581A967D7900DB40D5 /* WishListGift.swift in Sources */,
-				CD9935ED1AD3182000B47654 /* EditGiftViewController.swift in Sources */,
 				CD7FBB021AD748220039C35B /* EventTests.swift in Sources */,
 				C66DE6151AB6113500BAF9A2 /* Invite.swift in Sources */,
 				555FE4401AAC068F00EE8C1E /* TestEditEvent.swift in Sources */,
-				CD4041521A967D6800DB40D5 /* AddGiftViewController.swift in Sources */,
-				55D888B61AB5310400FF8A72 /* ViewEventGuestsTableViewController.swift in Sources */,
-				555FE4081AABB9E600EE8C1E /* EventDetailViewController.swift in Sources */,
-				CD4041531A967D6A00DB40D5 /* GiftDetailViewController.swift in Sources */,
-				CD4041591A967D7F00DB40D5 /* DatabaseConnection.swift in Sources */,
 				555FE43D1AABF86F00EE8C1E /* EditEventViewController.swift in Sources */,
 				CD4041501A967D5E00DB40D5 /* Users.swift in Sources */,
 				8E0A55891AA11A85000B89ED /* VerifyState.swift in Sources */,
-				8EADEE2E1ACE0DC00038C498 /* profileGifts.swift in Sources */,
-				84072B1C1ACAECDD004F51B4 /* SettingsTableViewController.swift in Sources */,
-				55D888A31AB4FB5500FF8A72 /* EventMenuViewController.swift in Sources */,
-				CD4041571A967D7400DB40D5 /* EventsTableViewController.swift in Sources */,
 				8E9730671A86BA2C006543B1 /* iWishTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -570,11 +551,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		849337AF1A8E6927003456B5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Alamofire;
-			targetProxy = 849337AE1A8E6927003456B5 /* PBXContainerItemProxy */;
-		};
 		8E9730621A86BA2C006543B1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8E9730481A86BA2C006543B1 /* iWish */;
@@ -681,6 +657,7 @@
 		};
 		8E97306B1A86BA2D006543B1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0A1826BAC1A72BBFE9B456B /* Pods-iWish.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
@@ -692,6 +669,7 @@
 		};
 		8E97306C1A86BA2D006543B1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0F28DCB4973B13F5B239FB1 /* Pods-iWish.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;

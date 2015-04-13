@@ -36,7 +36,7 @@ class EventDetailViewController: UIViewController {
     }
     
     @IBAction func updateEvent(segue: UIStoryboardSegue){
-        let editEventVC = segue.sourceViewController as EditEventViewController
+        let editEventVC = segue.sourceViewController as! EditEventViewController
         let newEventName = editEventVC.eventName.text
         let newEventDate = editEventVC.eventDate.text
         let newEventDesc = editEventVC.eventDescription.text
@@ -47,10 +47,10 @@ class EventDetailViewController: UIViewController {
         if newEventName == "" || newEventDate == "" || newEventDesc == ""{
             alertUser("Not Saved",  messageText: "Please fill in all fields", buttonText: "OK")
         }
-        else if countElements(newEventName) > 20{
+        else if count(newEventName) > 20{
             alertUser("Warning!",  messageText: "Name must be no more than 20 characters", buttonText: "OK")
         }
-        else if countElements(newEventDesc) > 500{
+        else if count(newEventDesc) > 500{
             alertUser("Warning!",  messageText: "Description is too long! 500 characters max", buttonText: "OK")
         }
         else{
@@ -89,13 +89,13 @@ class EventDetailViewController: UIViewController {
         // Pass the selected object to the new view controller.
         if(segue.destinationViewController.isKindOfClass(ViewEventGiftsViewController)){
             
-            let vc = segue.destinationViewController as ViewEventGiftsViewController
+            let vc = segue.destinationViewController as! ViewEventGiftsViewController
             
             vc.eventID = event.eventID
         }
         if(segue.destinationViewController.isKindOfClass(EventMenuViewController)){
             
-            let vc = segue.destinationViewController as EventMenuViewController
+            let vc = segue.destinationViewController as! EventMenuViewController
             
             vc.event = event
         }

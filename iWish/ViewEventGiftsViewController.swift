@@ -69,7 +69,7 @@ class ViewEventGiftsViewController: UITableViewController {
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("WishListGift", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("WishListGift", forIndexPath: indexPath) as! UITableViewCell
         
         let data = gifts[indexPath.row]
         cell.textLabel?.text = data.name
@@ -107,7 +107,7 @@ class ViewEventGiftsViewController: UITableViewController {
         // Pass the selected object to the new view controller.
         if(segue.destinationViewController.isKindOfClass(ViewEventGiftDetailViewController)){
             
-            let vc = segue.destinationViewController as ViewEventGiftDetailViewController
+            let vc = segue.destinationViewController as! ViewEventGiftDetailViewController
             
             let path = self.tableView.indexPathForSelectedRow()!
             vc.gift = gifts[path.row]
@@ -119,7 +119,7 @@ class ViewEventGiftsViewController: UITableViewController {
         }
         if(segue.destinationViewController.isKindOfClass(AddGiftToEventViewController)){
             
-            let vc = segue.destinationViewController as AddGiftToEventViewController
+            let vc = segue.destinationViewController as! AddGiftToEventViewController
             
             vc.eventID = eventID
         }
