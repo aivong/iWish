@@ -320,12 +320,12 @@ class DatabaseConnection{
     }
     
     //Functions to delete events
-    class func DeleteEvent(name: String, completionHandler: (responseObject: Bool?, error: NSError?)->()){
-        DeleteEventsQuery(name, completionHandler: completionHandler)
+    class func DeleteEvent(eventID: Int, completionHandler: (responseObject: Bool?, error: NSError?)->()){
+        DeleteEventsQuery(eventID, completionHandler: completionHandler)
     }
-    private class func DeleteEventsQuery(name: String, completionHandler: (responseObject: Bool?, error: NSError?)->()){
+    private class func DeleteEventsQuery(eventID: Int, completionHandler: (responseObject: Bool?, error: NSError?)->()){
         let password = "A7B129MNP"
-        Alamofire.request(.GET, "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php", parameters: ["password": password, "query":"DELETE FROM Events WHERE name=\(name)"]).responseJSON() {
+        Alamofire.request(.GET, "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php", parameters: ["password": password, "query":"DELETE FROM Events WHERE eventID=\(eventID)"]).responseJSON() {
             (_, _, data, error) in
             if error != nil{
                 completionHandler(responseObject: false, error: error)
