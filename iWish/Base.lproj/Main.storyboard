@@ -1022,7 +1022,89 @@
                     <view key="view" contentMode="scaleToFill" id="SL8-zR-f7V">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NAME" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IfG-YJ-EnF">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="182" y="326" width="182" height="34"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MM-DD-YYYY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pqg-Ip-A2j">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="151" y="361" width="112" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iLf-hY-I6c">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="178" y="390" width="154" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYf-L1-xq5">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="182" y="419" width="166" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mailing Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pZE-K6-wLa">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="144" y="429" width="166" height="62"/>
+                                </variation>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Ot-IF-uCX">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="76" y="81" width="249" height="227"/>
+                                </variation>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="9Ot-IF-uCX" secondAttribute="centerX" constant="-0.5" id="Hx3-gK-xSh"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="IfG-YJ-EnF"/>
+                                <exclude reference="Pqg-Ip-A2j"/>
+                                <exclude reference="iLf-hY-I6c"/>
+                                <exclude reference="bYf-L1-xq5"/>
+                                <exclude reference="pZE-K6-wLa"/>
+                                <exclude reference="9Ot-IF-uCX"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="Hx3-gK-xSh"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="IfG-YJ-EnF"/>
+                                <include reference="Pqg-Ip-A2j"/>
+                                <include reference="iLf-hY-I6c"/>
+                                <include reference="bYf-L1-xq5"/>
+                                <include reference="pZE-K6-wLa"/>
+                                <include reference="9Ot-IF-uCX"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="Hx3-gK-xSh"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="EK7-Hi-TjM">
                         <barButtonItem key="leftBarButtonItem" title="&lt; Friends" id="fBh-Fm-ofI">
@@ -1036,11 +1118,18 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="birthday" destination="Pqg-Ip-A2j" id="Vim-CH-ZGv"/>
+                        <outlet property="email" destination="pZE-K6-wLa" id="VPV-c7-r0L"/>
+                        <outlet property="fullName" destination="IfG-YJ-EnF" id="vwm-Up-VcG"/>
+                        <outlet property="gender" destination="iLf-hY-I6c" id="hvz-xl-YWd"/>
+                        <outlet property="mailingAddress" destination="pZE-K6-wLa" id="k1w-lu-eBk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SfZ-Rc-GYw" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="OUI-DK-Mw4" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1186.5" y="1059"/>
+            <point key="canvasLocation" x="466.5" y="1238"/>
         </scene>
         <!--All Users-->
         <scene sceneID="OUQ-iW-P4G">
@@ -1852,7 +1941,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PvJ-QS-mWh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1905" y="-675"/>
+            <point key="canvasLocation" x="2037" y="-597"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1Gf-Sq-sbM">
@@ -1868,7 +1957,48 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eHD-9J-Kdv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1197" y="-675"/>
+            <point key="canvasLocation" x="1186.5" y="-501"/>
+        </scene>
+        <!--Profile Gifts-->
+        <scene sceneID="4Rf-wx-Ovf">
+            <objects>
+                <tableViewController id="tVT-XK-lfK" customClass="profileGifts" customModule="iWish" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="47" sectionHeaderHeight="22" sectionFooterHeight="22" id="cbz-Md-HXu">
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="84"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WishListGift" rowHeight="47" id="UW0-ux-mOm">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UW0-ux-mOm" id="lRe-77-nix">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="tVT-XK-lfK" id="5jJ-tJ-mjK"/>
+                            <outlet property="delegate" destination="tVT-XK-lfK" id="6xG-4a-RwD"/>
+                        </connections>
+                    </tableView>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="kVQ-9s-NoZ">
+                        <barButtonItem key="leftBarButtonItem" title="Featured Wishlist" id="3Td-EO-ql3">
+                            <connections>
+                                <action selector="featurePressed:" destination="tVT-XK-lfK" id="RH8-ac-Z8u"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Social Calendar" id="dIk-fa-ZeT">
+                            <connections>
+                                <action selector="socialPressed:" destination="tVT-XK-lfK" id="0hK-3Q-y5i"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rqA-6F-Tcp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2817" y="1079"/>
         </scene>
     </scenes>
     <resources>

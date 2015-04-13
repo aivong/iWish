@@ -57,20 +57,6 @@ class ProfileViewController: UIViewController {
             }
         }
         
-        if VerifyState.DBFinished {
-            //  println(VerifyState.selectedPic)
-        }
-        
-        //        let profileImage : UIImage = UIImage(named : "default.jpeg")!
-        //        var imageV : UIImageView = UIImageView(image: profileImage)
-        //        imageV.frame = CGRectMake(0, 0, profileImage.size.width, profileImage.size.height)
-        //        imageV.center = self.view.center
-        //        self.view.addSubview(imageV)
-        
-        //let profileImage : UIImage = UIImage(named: "/Users/aivong/Desktop/iWishimage/" + self.file)!
-        //let imageview = UIImageView(image: profileImage)
-        //imageview.frame = CGRectMake(31, 26, 172, 191)
-        //self.view.addSubview(imageview)
     }
     
     
