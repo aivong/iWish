@@ -489,6 +489,42 @@ class DatabaseConnection{
         
     }
     
+    class func InsertUserSettings(username: String, completionHandler: (responseObject: Bool?, error: NSError?) -> ()){
+        
+        let query = "INSERT INTO UserSettings (username, notifications, allowSystemEmails, showEmailAddress, showBirthday, allowSearchByUsername) VALUES ('\(username)',1,1,1,1,1)"
+        
+        InsertUserSettingsDB(query, completionHandler: completionHandler)
+        
+    }
+    
+    
+    
+    private class func InsertUserSettingsDB(query: String, completionHandler: (responseObject: Bool?, error: NSError?)->()){
+        
+        let password = "A7B129MNP"
+        
+        Alamofire.request(.GET, "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php", parameters: ["password": password, "query":query]).responseJSON() {
+            
+            (_, _, data, error) in
+            
+            //println("Get: \(data)")
+            
+            if data != nil{
+                
+                completionHandler(responseObject: true, error: error)
+                
+                
+                
+            }
+                
+            else{
+                
+                completionHandler(responseObject: false, error: error)
+                
+            }
+            
+        }
+    }
     class func GetUserSettings(username: String, completionHandler: (responseObject: UserSettings?, error: NSError?) -> ()){
         
         let query = "SELECT * FROM UserSettings WHERE username='\(username)'"
@@ -507,9 +543,9 @@ class DatabaseConnection{
             
             (_, _, data, error) in
             
-            //println("Get: \(data)")
+            //println("Get: \(JSON(data!)[0])")
             
-            if data != nil{
+            if data != nil && JSON(data!)[0] != nil{
                 
                 let json = JSON(data!)
                 
@@ -584,6 +620,49 @@ class DatabaseConnection{
         
     }
     
+    //GetUsersUserSettingsSearchOff
+    class func GetProperUsers(usersName: String, completionHandler: (responseObject: [String]?, error: NSError?) -> ()){
+        
+        let query = "SELECT username FROM UserSettings WHERE allowSearchByUsername = 1 AND username != '\(usersName)'"
+        //println(query)
+        GetProperUsersDB(query, completionHandler: completionHandler)
+        
+    }
+    
+    
+    
+    private class func GetProperUsersDB(query: String, completionHandler: (responseObject: [String]?, error: NSError?)->()){
+        
+        let password = "A7B129MNP"
+        
+        Alamofire.request(.GET, "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php", parameters: ["password": password, "query":query]).responseJSON() {
+            
+            (_, _, data, error) in
+            
+            //println("Set: \(data)")
+            
+            if data != nil{
+                var ret = [String]()
+                let json = JSON(data!)
+                for i in 0..<json.count{
+                    let u = (json[i]["username"]).stringValue
+                    ret.append(u)
+                }
+                completionHandler(responseObject: ret, error: error)
+                
+            }
+                
+            else{
+                
+                completionHandler(responseObject: nil, error: error)
+                
+            }
+            
+        }
+        
+        
+        
+    }
 
     class func GetImage(query: String, completionHandler: (responseObject: String?, error: NSError?)->()){
         let password = "A7B129MNP"

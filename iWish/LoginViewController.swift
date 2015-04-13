@@ -130,13 +130,32 @@ class LoginViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     // Get the new view controller using segue.destinationViewController.
     // Pass the selected object to the new view controller.
-        DatabaseConnection.GetUserSettings(usernameTextField.text){responseObject, error in
-            let nsud = NSUserDefaults.standardUserDefaults()
-            nsud.setObject(responseObject?.notifications, forKey: "notificationsAllowed")
-            nsud.setObject(responseObject?.allowSystemEmails, forKey: "systemEmailsAllowed")
-            nsud.setObject(responseObject?.showEmailAddress, forKey: "showEmailAllowed")
-            nsud.setObject(responseObject?.showBirthday, forKey: "showBirthdayAllowed")
-            nsud.setObject(responseObject?.allowSearchByUsername, forKey: "searchUsernameAllowed")
+        if segue.identifier == "loginSuccess"{
+            println("here")
+            DatabaseConnection.GetUserSettings(usernameTextField.text){responseObject, error in
+                println(responseObject)
+                if responseObject != nil {
+                    let nsud = NSUserDefaults.standardUserDefaults()
+                    nsud.setObject(responseObject?.notifications, forKey: "notificationsAllowed")
+                    nsud.setObject(responseObject?.allowSystemEmails, forKey: "systemEmailsAllowed")
+                    nsud.setObject(responseObject?.showEmailAddress, forKey: "showEmailAllowed")
+                    nsud.setObject(responseObject?.showBirthday, forKey: "showBirthdayAllowed")
+                    nsud.setObject(responseObject?.allowSearchByUsername, forKey: "searchUsernameAllowed")
+                }
+                else{
+                    println("else")
+                    DatabaseConnection.InsertUserSettings(self.usernameTextField.text){responseObject, error in
+                        DatabaseConnection.GetUserSettings(self.usernameTextField.text){responseObject, error in
+                            let nsud = NSUserDefaults.standardUserDefaults()
+                            nsud.setObject(responseObject?.notifications, forKey: "notificationsAllowed")
+                            nsud.setObject(responseObject?.allowSystemEmails, forKey: "systemEmailsAllowed")
+                            nsud.setObject(responseObject?.showEmailAddress, forKey: "showEmailAllowed")
+                            nsud.setObject(responseObject?.showBirthday, forKey: "showBirthdayAllowed")
+                            nsud.setObject(responseObject?.allowSearchByUsername, forKey: "searchUsernameAllowed")
+                        }
+                    }
+                }
+            }
         }
     }
 

@@ -33,21 +33,38 @@ class SearchUsersTableViewController: UITableViewController, UISearchBarDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        DatabaseConnection.GetProperUsers(self.usersName){responseObject, error in
+            let ps = self.properStringSQL(responseObject!)
         //Query will only return names of people user is not friends with
-        DatabaseConnection.GetUser("SELECT DISTINCT Users.username as username, Users.password as password FROM Users, Friends WHERE (username != '\(usersName)' AND ((Friends.requester = '\(usersName)' AND Friends.requestee != username) OR (Friends.requester != username AND Friends.requestee = '\(usersName)') OR (Friends.requester != '\(usersName)' AND Friends.requestee != '\(usersName)'))) ORDER BY username") { responseObject, error in
-            
-            if responseObject != nil {
-                println(responseObject)
-                self.allUsers = responseObject!
-                self.tableView.reloadData()
-            }
-            else {
-                self.alertUser("Cannot retrieve data", messageText: "Data could not be loaded. Check connection to internet", buttonText: "OK")
+            DatabaseConnection.GetUser("SELECT DISTINCT Users.username as username, Users.password as password FROM Users, Friends WHERE (username != '\(self.usersName)' AND ((Friends.requester = '\(self.usersName)' AND Friends.requestee != username) OR (Friends.requester != username AND Friends.requestee = '\(self.usersName)') OR (Friends.requester != '\(self.usersName)' AND Friends.requestee != '\(self.usersName)'))) AND username IN \(ps) ORDER BY username") { responseObject, error in
+                
+                if responseObject != nil {
+                    println(responseObject)
+                    self.allUsers = responseObject!
+                    
+                    
+                }
+                else {
+                    self.alertUser("Cannot retrieve data", messageText: "Data could not be loaded. Check connection to internet", buttonText: "OK")
+                }
             }
         }
         
         // Reload the table
         self.tableView.reloadData()
+    }
+    
+    func properStringSQL(names: [String]) -> String{
+        var ret = "("
+        for i in 0..<names.count{
+            if i != names.count-1{
+                ret += "'" + names[i] + "',"
+            }
+            else{
+                ret += "'" + names[i] + "')"
+            }
+        }
+        return ret
     }
     
     override func didReceiveMemoryWarning() {

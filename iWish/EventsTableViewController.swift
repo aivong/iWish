@@ -87,12 +87,19 @@ class EventsTableViewController: UITableViewController {
             let dayNotification = event.dayEventNotification()
             let weekNotifcation = event.weekEventNotification()
             
-            if let goodDayNotification = dayNotification {
+            let nsud = NSUserDefaults.standardUserDefaults()
+            let notiOn = nsud.boolForKey("notificationsAllowed")
+            
+            if let goodDayNotification = dayNotification{
+                if notiOn{
                 self.scheduleNotificationIfNotAlreadyScheduled(goodDayNotification)
+                }
             }
             
-            if let goodWeekNotification = weekNotifcation {
+            if let goodWeekNotification = weekNotifcation{
+                if notiOn{
                 self.scheduleNotificationIfNotAlreadyScheduled(goodWeekNotification)
+                }
             }
         }
     }
