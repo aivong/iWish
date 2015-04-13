@@ -26,6 +26,7 @@
 		55D888A01AB4FB3500FF8A72 /* ViewEventGiftDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D8889E1AB4FB3500FF8A72 /* ViewEventGiftDetailViewController.swift */; };
 		55D888A21AB4FB5500FF8A72 /* EventMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D888A11AB4FB5500FF8A72 /* EventMenuViewController.swift */; };
 		55D888B51AB5310400FF8A72 /* ViewEventGuestsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D888B41AB5310400FF8A72 /* ViewEventGuestsTableViewController.swift */; };
+		5B968B53CEC1F2C46CD6CE60 /* Pods_iWishUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 654A3C23DDA67A597062444E /* Pods_iWishUITests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		84072B171ACAE88F004F51B4 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84072B161ACAE88F004F51B4 /* UserSettings.swift */; };
 		84072B191ACAE897004F51B4 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84072B161ACAE88F004F51B4 /* UserSettings.swift */; };
 		84072B1B1ACAECDD004F51B4 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84072B1A1ACAECDD004F51B4 /* SettingsTableViewController.swift */; };
@@ -62,11 +63,19 @@
 		CD40415B1A967D8C00DB40D5 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849337B11A905551003456B5 /* SwiftyJSON.swift */; };
 		CD7FBB021AD748220039C35B /* EventTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7FBB011AD748220039C35B /* EventTests.swift */; };
 		CD9935EB1AD3140000B47654 /* EditGiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9935EA1AD3140000B47654 /* EditGiftViewController.swift */; };
+		CDE49A2F1ADC45ED00B1BC88 /* CreateEventTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE49A2E1ADC45ED00B1BC88 /* CreateEventTests.m */; };
 		FE37C09FFD0583E16F1A66C7 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37E27FB9C3FA22115D0EA60A /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		8E9730611A86BA2C006543B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8E9730411A86BA2C006543B1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8E9730481A86BA2C006543B1;
+			remoteInfo = iWish;
+		};
+		CD8FDEA41ADC439800F26DBF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8E9730411A86BA2C006543B1 /* Project object */;
 			proxyType = 1;
@@ -102,6 +111,7 @@
 		55D8889E1AB4FB3500FF8A72 /* ViewEventGiftDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewEventGiftDetailViewController.swift; sourceTree = "<group>"; };
 		55D888A11AB4FB5500FF8A72 /* EventMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMenuViewController.swift; sourceTree = "<group>"; };
 		55D888B41AB5310400FF8A72 /* ViewEventGuestsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewEventGuestsTableViewController.swift; sourceTree = "<group>"; };
+		654A3C23DDA67A597062444E /* Pods_iWishUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iWishUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84072B161ACAE88F004F51B4 /* UserSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		84072B1A1ACAECDD004F51B4 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		841887F21AACE8CA00B69533 /* FriendsProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsProfileViewController.swift; sourceTree = "<group>"; };
@@ -132,12 +142,18 @@
 		8EFEFCDF1A9AA496004EC929 /* door24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = door24.png; sourceTree = "<group>"; };
 		8EFEFCE11A9AA4D8004EC929 /* unicorn.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = unicorn.jpg; sourceTree = "<group>"; };
 		A0F28DCB4973B13F5B239FB1 /* Pods-iWish.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iWish.release.xcconfig"; path = "Pods/Target Support Files/Pods-iWish/Pods-iWish.release.xcconfig"; sourceTree = "<group>"; };
+		A708FB70CEB79A986AC13E46 /* Pods-iWishUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iWishUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iWishUITests/Pods-iWishUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A8AD01EC84DB701BA1DBB5E5 /* Pods_iWish.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iWish.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C66DE6131AB6113500BAF9A2 /* Invite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Invite.swift; sourceTree = "<group>"; };
 		C66DE61A1AB623A600BAF9A2 /* AddFriendToEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendToEventViewController.swift; sourceTree = "<group>"; };
 		CD7FBB011AD748220039C35B /* EventTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTests.swift; sourceTree = "<group>"; };
+		CD8FDE9E1ADC439800F26DBF /* iWishUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iWishUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD8FDEA11ADC439800F26DBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD9935EA1AD3140000B47654 /* EditGiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditGiftViewController.swift; sourceTree = "<group>"; };
+		CDE49A2D1ADC45ED00B1BC88 /* CreateEventTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateEventTests.h; sourceTree = "<group>"; };
+		CDE49A2E1ADC45ED00B1BC88 /* CreateEventTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateEventTests.m; sourceTree = "<group>"; };
 		F0A1826BAC1A72BBFE9B456B /* Pods-iWish.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iWish.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iWish/Pods-iWish.debug.xcconfig"; sourceTree = "<group>"; };
+		F72AE233DE0A8F0605A36520 /* Pods-iWishUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iWishUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iWishUITests/Pods-iWishUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +173,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CD8FDE9B1ADC439800F26DBF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B968B53CEC1F2C46CD6CE60 /* Pods_iWishUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -165,6 +189,8 @@
 			children = (
 				F0A1826BAC1A72BBFE9B456B /* Pods-iWish.debug.xcconfig */,
 				A0F28DCB4973B13F5B239FB1 /* Pods-iWish.release.xcconfig */,
+				A708FB70CEB79A986AC13E46 /* Pods-iWishUITests.debug.xcconfig */,
+				F72AE233DE0A8F0605A36520 /* Pods-iWishUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -174,6 +200,7 @@
 			children = (
 				A8AD01EC84DB701BA1DBB5E5 /* Pods_iWish.framework */,
 				37E27FB9C3FA22115D0EA60A /* Pods.framework */,
+				654A3C23DDA67A597062444E /* Pods_iWishUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -190,6 +217,7 @@
 			children = (
 				8E97304B1A86BA2C006543B1 /* iWish */,
 				8E9730631A86BA2C006543B1 /* iWishTests */,
+				CD8FDE9F1ADC439800F26DBF /* iWishUITests */,
 				8E97304A1A86BA2C006543B1 /* Products */,
 				28FA8B9816B291F976D59AD1 /* Pods */,
 				722CBB0C85CA2028A0464E48 /* Frameworks */,
@@ -201,6 +229,7 @@
 			children = (
 				8E9730491A86BA2C006543B1 /* iWish.app */,
 				8E9730601A86BA2C006543B1 /* iWishTests.xctest */,
+				CD8FDE9E1ADC439800F26DBF /* iWishUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -335,6 +364,24 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		CD8FDE9F1ADC439800F26DBF /* iWishUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CD8FDEA01ADC439800F26DBF /* Supporting Files */,
+				CDE49A2D1ADC45ED00B1BC88 /* CreateEventTests.h */,
+				CDE49A2E1ADC45ED00B1BC88 /* CreateEventTests.m */,
+			);
+			path = iWishUITests;
+			sourceTree = "<group>";
+		};
+		CD8FDEA01ADC439800F26DBF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CD8FDEA11ADC439800F26DBF /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -377,6 +424,27 @@
 			productReference = 8E9730601A86BA2C006543B1 /* iWishTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		CD8FDE9D1ADC439800F26DBF /* iWishUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD8FDEA61ADC439800F26DBF /* Build configuration list for PBXNativeTarget "iWishUITests" */;
+			buildPhases = (
+				1AAF2A3A332E6C18A845F5EA /* Check Pods Manifest.lock */,
+				CD8FDE9A1ADC439800F26DBF /* Sources */,
+				CD8FDE9B1ADC439800F26DBF /* Frameworks */,
+				CD8FDE9C1ADC439800F26DBF /* Resources */,
+				A68073F00F9669A84D888DC8 /* Embed Pods Frameworks */,
+				C57F5E470C88867069F162E5 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CD8FDEA51ADC439800F26DBF /* PBXTargetDependency */,
+			);
+			name = iWishUITests;
+			productName = iWishUITests;
+			productReference = CD8FDE9E1ADC439800F26DBF /* iWishUITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -391,6 +459,10 @@
 					};
 					8E97305F1A86BA2C006543B1 = {
 						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 8E9730481A86BA2C006543B1;
+					};
+					CD8FDE9D1ADC439800F26DBF = {
+						CreatedOnToolsVersion = 6.3;
 						TestTargetID = 8E9730481A86BA2C006543B1;
 					};
 				};
@@ -410,6 +482,7 @@
 			targets = (
 				8E9730481A86BA2C006543B1 /* iWish */,
 				8E97305F1A86BA2C006543B1 /* iWishTests */,
+				CD8FDE9D1ADC439800F26DBF /* iWishUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -436,9 +509,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CD8FDE9C1ADC439800F26DBF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1AAF2A3A332E6C18A845F5EA /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		24FE4D5D58F5C9E44FE6B1E6 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -452,6 +547,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A68073F00F9669A84D888DC8 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iWishUITests/Pods-iWishUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		AA643C563DE9006FC543C1CB /* Check Pods Manifest.lock */ = {
@@ -482,6 +592,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C57F5E470C88867069F162E5 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iWishUITests/Pods-iWishUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -548,6 +673,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CD8FDE9A1ADC439800F26DBF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDE49A2F1ADC45ED00B1BC88 /* CreateEventTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -555,6 +688,11 @@
 			isa = PBXTargetDependency;
 			target = 8E9730481A86BA2C006543B1 /* iWish */;
 			targetProxy = 8E9730611A86BA2C006543B1 /* PBXContainerItemProxy */;
+		};
+		CD8FDEA51ADC439800F26DBF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8E9730481A86BA2C006543B1 /* iWish */;
+			targetProxy = CD8FDEA41ADC439800F26DBF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -713,6 +851,49 @@
 			};
 			name = Release;
 		};
+		CD8FDEA71ADC439800F26DBF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A708FB70CEB79A986AC13E46 /* Pods-iWishUITests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = iWishUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iWish.app/iWish";
+			};
+			name = Debug;
+		};
+		CD8FDEA81ADC439800F26DBF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F72AE233DE0A8F0605A36520 /* Pods-iWishUITests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = iWishUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iWish.app/iWish";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -739,6 +920,15 @@
 			buildConfigurations = (
 				8E97306E1A86BA2D006543B1 /* Debug */,
 				8E97306F1A86BA2D006543B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD8FDEA61ADC439800F26DBF /* Build configuration list for PBXNativeTarget "iWishUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD8FDEA71ADC439800F26DBF /* Debug */,
+				CD8FDEA81ADC439800F26DBF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

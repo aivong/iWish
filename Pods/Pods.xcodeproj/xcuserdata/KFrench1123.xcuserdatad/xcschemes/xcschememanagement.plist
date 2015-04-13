@@ -29,6 +29,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-iWishUITests-KIF.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-iWishUITests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,32 +47,42 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>211FE5780AA301CBC1329F51</key>
+		<key>10D240C15A0C54E9C352721C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4C33A60F9FFD0708C22D8DB5</key>
+		<key>2F519A63B6E089D6BEA8BA1C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>50C4F120C60CFC535CA40D95</key>
+		<key>31F3CA084BA282CE9DDD4CD0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>732EFE45008A68475C4B750C</key>
+		<key>5A2AE036CF3EDC6E16D70973</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9BB6F00D70237F6479788E6B</key>
+		<key>6998222162D52B4E3871DDA0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C43E7442C669AF7DD97ECF14</key>
+		<key>BF3F46CF014A78FC2EE722D2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C2A7682B7E0CA3A14FF6F76A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DC879058FB0A86A34C8328EE</key>
 		<dict>
 			<key>primary</key>
 			<true/>

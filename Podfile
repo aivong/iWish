@@ -7,6 +7,10 @@ use_frameworks!
 
 pod 'Alamofire', '~> 1.2'
 
+target 'iWishUITests', :exclusive => true do
+  pod 'KIF', '~> 3.0', :configurations => ['Debug']
+end
+
 target 'iWish' do
 
 end
@@ -14,4 +18,3 @@ end
 target 'iWishTests' do
 
 end
-
