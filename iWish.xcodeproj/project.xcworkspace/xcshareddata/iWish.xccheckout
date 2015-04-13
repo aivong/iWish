@@ -12,6 +12,8 @@
 	<dict>
 		<key>293824208F9CC7C13150BD5581AA55606FA50184</key>
 		<string>https://github.com/aivong/iWish.git</string>
+		<key>7ACF23A507BCFA5964C32B48177971421D05CCCE</key>
+		<string>https://github.com/aivong/mailcore2.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>iWish.xcodeproj</string>
@@ -19,6 +21,8 @@
 	<dict>
 		<key>293824208F9CC7C13150BD5581AA55606FA50184</key>
 		<string>../..</string>
+		<key>7ACF23A507BCFA5964C32B48177971421D05CCCE</key>
+		<string>../../mailcore2/</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/aivong/iWish.git</string>
@@ -35,6 +39,14 @@
 			<string>293824208F9CC7C13150BD5581AA55606FA50184</string>
 			<key>IDESourceControlWCCName</key>
 			<string>iWish</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>7ACF23A507BCFA5964C32B48177971421D05CCCE</string>
+			<key>IDESourceControlWCCName</key>
+			<string>mailcore2</string>
 		</dict>
 	</array>
 </dict>

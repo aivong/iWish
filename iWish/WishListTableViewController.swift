@@ -15,8 +15,11 @@ class WishListTableViewController: UITableViewController {
     var gifts = [WishListGift]()
     var selectedGift : WishListGift!
     
+    //let query = "SELECT * FROM Users WHERE username = '\(usernameTextField.text)'"
+   // SELECT name from WishListGifts where user = '\(VerifyState.selectedUser)'
+    
     func getUsersFeaturedGifts(){
-        DatabaseConnection.GetGifts("SELECT * FROM WishListGifts ORDER BY name") { responseObject, error in
+        DatabaseConnection.GetGifts("SELECT * FROM WishListGifts WHERE user = '\(VerifyState.username)' ORDER BY name") { responseObject, error in
             if responseObject != nil {
                 self.gifts = responseObject!
                 self.tableView.reloadData()
