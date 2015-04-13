@@ -30,9 +30,9 @@ class FriendsProfileViewController: UIViewController {
             usersName = name
         }
         self.title = friendsName
+        VerifyState.selectedUser = friendsName
         friendWasRemoved = false
         // Do any additional setup after loading the view.
-        let queryImage = "SELECT * FROM pictures WHERE username = '\(VerifyState.selectedUser)'"
         // Do any additional setup after loading the view.
         
         
@@ -69,9 +69,9 @@ class FriendsProfileViewController: UIViewController {
                 }
             }
         }
+        let queryImage = "SELECT * FROM pictures WHERE username = '\(VerifyState.selectedUser)'"
         
-        println(queryImage)
-        /*DatabaseConnection.GetImage(queryImage) { responseObject, error in
+        DatabaseConnection.GetImage(queryImage) { responseObject, error in
             //CHECK FOR ERRORS
             if responseObject != nil {
                 
@@ -82,7 +82,7 @@ class FriendsProfileViewController: UIViewController {
                 
                 self.file = responseObject!
             }
-        }*/
+        }
 
         
     }
