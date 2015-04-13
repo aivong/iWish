@@ -278,14 +278,10 @@ class EventsTableViewController: UITableViewController {
                     DatabaseConnection.AcceptOrRemoveEventRequest(self.usersName, eventID: eventRequest.eventID, accept: true){
                         responseObject, error in
                         if responseObject != nil{
-                            //self.friends.append(requestFrom)
-                            //self.friends.sort({$0.username < $1.username})
+                           
                             self.eventRequests.removeAtIndex(indexPath.row)
                             self.tableView.reloadData()
                             self.getUsersUpcomingEvents()
-                            //let alertMessage = UIAlertController(title: "Accepted!", message: "You are now friends with \(requestFrom.username)", preferredStyle: .Alert)
-                            //alertMessage.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-                            //self.presentViewController(alertMessage, animated: true, completion: nil)
                         }
                         else{
                             let alertMessage = UIAlertController(title: "Cannot connect to internet", message: "Check your internet connection and try again", preferredStyle: .Alert)
@@ -317,9 +313,6 @@ class EventsTableViewController: UITableViewController {
                         if responseObject != nil{
                             self.eventRequests.removeAtIndex(indexPath.row)
                             self.tableView.reloadData()
-                            //let alertMessage = UIAlertController(title: "Rejected!", message: "You just hurt \(requestFrom.username)'s feelings :(", preferredStyle: .Alert)
-                            //alertMessage.addAction(UIAlertAction(title: "Oh well", style: .Default, handler: nil))
-                            //self.presentViewController(alertMessage, animated: true, completion: nil)
                         }
                         else{
                             let alertMessage = UIAlertController(title: "Cannot connect to internet", message: "Check your internet connection and try again", preferredStyle: .Alert)
@@ -346,27 +339,7 @@ class EventsTableViewController: UITableViewController {
         return nil
     }
 
-    
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-    // Return NO if you do not want the specified item to be editable.
-    return true
-    }
-    */
-    
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-    if editingStyle == .Delete {
-    // Delete the row from the data source
-    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-    } else if editingStyle == .Insert {
-    // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }
-    }
-    */
-    
+   
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
