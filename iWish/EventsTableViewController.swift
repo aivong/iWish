@@ -137,6 +137,12 @@ class EventsTableViewController: UITableViewController {
             DatabaseConnection.DeleteEvent(wlg.eventID){ responseObject, error in
                 //Do something when Event finishes being deleted
             }
+            DatabaseConnection.UnbindGifts(wlg.eventID){ responseObject, error in
+                //Do something when Event finishes being deleted
+            }
+            DatabaseConnection.UnbindInvites(wlg.eventID){ responseObject, error in
+                //Do something when Event finishes being deleted
+            }
             myEvents.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         } else if editingStyle == .Insert {
@@ -204,9 +210,9 @@ class EventsTableViewController: UITableViewController {
     }
     
     
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell: UITableViewCell!
-        
         switch(indexPath.section){
         case 0:
             cell = tableView.dequeueReusableCellWithIdentifier("RequestCell", forIndexPath: indexPath) as UITableViewCell
@@ -234,6 +240,8 @@ class EventsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 30.0
     }
+    
+
     
     override func tableView(tableView: UITableView, sectionForSectionIndexTitle title: String, atIndex index: Int) -> Int {
         if title == ""{
@@ -301,7 +309,7 @@ class EventsTableViewController: UITableViewController {
             // 3
             var rejectAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Reject" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
                 // 4
-                let rejectMenu = UIAlertController(title: nil, message: "Are you sure you want to reject friend request from \"\(eventRequest.name)?\"", preferredStyle: .ActionSheet)
+                let rejectMenu = UIAlertController(title: nil, message: "Are you sure you don't want to go to \"\(eventRequest.name)?\"", preferredStyle: .ActionSheet)
                 
                 let ryesActionHandler = { (action:UIAlertAction!) -> Void in
                     DatabaseConnection.AcceptOrRemoveEventRequest(self.usersName, eventID: eventRequest.eventID, accept: false){

@@ -337,6 +337,42 @@ class DatabaseConnection{
         }
     }
     
+    //Functions to delete events
+    class func UnbindGifts(eventID: Int, completionHandler: (responseObject: Bool?, error: NSError?)->()){
+        UnbindGiftsQuery(eventID, completionHandler: completionHandler)
+    }
+    private class func UnbindGiftsQuery(eventID: Int, completionHandler: (responseObject: Bool?, error: NSError?)->()){
+        let password = "A7B129MNP"
+        Alamofire.request(.GET, "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php", parameters: ["password": password, "query":"UPDATE WishListGifts SET eventID=99999 WHERE eventID=\(eventID)"]).responseJSON() {
+            (_, _, data, error) in
+            if error != nil{
+                completionHandler(responseObject: false, error: error)
+            }
+            else{
+                completionHandler(responseObject: true, error: error)
+            }
+            
+        }
+    }
+    
+    //Functions to delete events
+    class func UnbindInvites(eventID: Int, completionHandler: (responseObject: Bool?, error: NSError?)->()){
+        UnbindInvitesQuery(eventID, completionHandler: completionHandler)
+    }
+    private class func UnbindInvitesQuery(eventID: Int, completionHandler: (responseObject: Bool?, error: NSError?)->()){
+        let password = "A7B129MNP"
+        Alamofire.request(.GET, "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php", parameters: ["password": password, "query":"DELETE FROM Invites WHERE eventID=\(eventID)"]).responseJSON() {
+            (_, _, data, error) in
+            if error != nil{
+                completionHandler(responseObject: false, error: error)
+            }
+            else{
+                completionHandler(responseObject: true, error: error)
+            }
+            
+        }
+    }
+    
     class func GetFriendsForUser(username: String, completionHandler: (responseObject: [Users]?, error: NSError?) -> ()){
         
         GetFriendsForUserDB(username, completionHandler: completionHandler)
