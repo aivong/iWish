@@ -16,6 +16,8 @@ class CreateAccountViewController: UIViewController {
     @IBOutlet weak var gender: UITextField!
     @IBOutlet weak var birthday: UITextField!
     @IBOutlet weak var mailingaddress: UITextField!
+    
+    var array = [MCOSMTPSendOperation]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,11 +54,53 @@ class CreateAccountViewController: UIViewController {
         }
     }
     
+    private func sendConfirmaton() {
+        var smtpSession:MCOSMTPSession = MCOSMTPSession()
+        smtpSession.hostname = "smtp.gmail.com";
+        smtpSession.port = 465;
+        smtpSession.username = "iWishlegit@gmail.com";
+        smtpSession.password = "iwishiwish";
+        smtpSession.connectionType = MCOConnectionType.TLS;
+        
+        var builder:MCOMessageBuilder = MCOMessageBuilder();
+        builder.header.from = MCOAddress(mailbox: "iWish.legit@gmail.com")
+        //builder.header.to = [MCOAddress(mailbox: "auserthatisnotreal@gmail.com")]
+        builder.header.to = [MCOAddress(mailbox: email.text)]
+        builder.header.subject = "iWish Account Confirmation"
+        builder.htmlBody = "<h1>HI " + fullname.text +  " :D :D</h1>" + "<p>username: " +  username.text + "</p>" + "<p>password: " + password.text + "</p>" +
+            "<p>╲╲╭━━━━━━━╮╱╱<br>" +
+            "╲╭╯╭━╮┈╭━╮╰╮╱<br>" +
+            "╲┃┈┃┈▊┈┃┈▊┈┃╱<br>"    +
+            "╲┃┈┗━┛┈┗━┛┈┃╱<br>"    +
+            "╱┃┈┏━━━━━┓┈┃╲<br>"    +
+            "╱┃┈┃┈┈╭━╮┃┈┃╲<br>"    +
+            "╱╰╮╰━━┻━┻╯╭╯╲<br>"    +
+            "╱╱╰━━━━━━━╯╲╲</p>"    +
+            //"</br>"                +
+            "<p>╲╲╭━━━━╮╲╲<br>"    +
+            "╭╮┃▆┈┈▆┃╭╮<br>"    +
+            "┃╰┫▽▽▽▽┣╯┃<br>"    +
+            "╰━┫△△△△┣━╯<br>"    +
+            "╲╲┃┈┈┈┈┃╲╲<br>"    +
+            "╲╲┃┈┏┓┈┃╲╲<br>"    +
+        "▔▔╰━╯╰━╯▔▔</p>"
+        
+        
+        let rfc822Data:NSData = builder.data()
+        
+        array.append(smtpSession.sendOperationWithData(rfc822Data))
+        
+        array[0].start({ (error:NSError!) -> Void
+            in
+            println("Sent")
+        })
+    }
+    
     private func userSuccessfullyAdded() {
-        //performSegueWithIdentifier("LoginSegue2", sender: self)
+        self.sendConfirmaton()
         self.navigationController?.popViewControllerAnimated(true)
     }
-
+    
     private func validInputs() -> Bool {
         var alertTitle = ""
         var alertBody = ""
@@ -71,7 +115,7 @@ class CreateAccountViewController: UIViewController {
             alertTitle = "Invalid Username"
             alertBody = "Description must be 255 or fewer characters"
         }
-    
+        
         if alertTitle == "" {
             return true
         } else {
@@ -79,6 +123,8 @@ class CreateAccountViewController: UIViewController {
             alertView.show()
             return false
         }
-
+        
     }
+
+
 }

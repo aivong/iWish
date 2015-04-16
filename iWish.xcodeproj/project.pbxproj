@@ -55,6 +55,9 @@
 		849337B61A91AE63003456B5 /* GiftDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849337B51A91AE63003456B5 /* GiftDetailViewController.swift */; };
 		849337BA1A94137F003456B5 /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849337B91A94137F003456B5 /* EventsTableViewController.swift */; };
 		8E0A55891AA11A85000B89ED /* VerifyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0A55861AA11A82000B89ED /* VerifyState.swift */; };
+		8E43B39B1ADC5AD800DD5F25 /* libMailCore-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E43B38C1ADC5AA800DD5F25 /* libMailCore-ios.a */; };
+		8E43B39D1ADC5ADD00DD5F25 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E43B39C1ADC5ADD00DD5F25 /* CFNetwork.framework */; };
+		8E43B39F1ADC5AE100DD5F25 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E43B39E1ADC5AE100DD5F25 /* Security.framework */; };
 		8E97304F1A86BA2C006543B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E97304E1A86BA2C006543B1 /* AppDelegate.swift */; };
 		8E9730561A86BA2C006543B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E9730541A86BA2C006543B1 /* Main.storyboard */; };
 		8E9730581A86BA2C006543B1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E9730571A86BA2C006543B1 /* Images.xcassets */; };
@@ -111,6 +114,69 @@
 			remoteGlobalIDString = 27AB60061A7FAFBF0069F786;
 			remoteInfo = Alamofire;
 		};
+		8E43B3891ADC5AA800DD5F25 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8E43B37D1ADC5AA700DD5F25 /* mailcore2.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C64EA537169E772200778456;
+			remoteInfo = "static mailcore2 osx";
+		};
+		8E43B38B1ADC5AA800DD5F25 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8E43B37D1ADC5AA700DD5F25 /* mailcore2.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C6BA2C191705F4E6003F0E9E;
+			remoteInfo = "static mailcore2 ios";
+		};
+		8E43B38D1ADC5AA800DD5F25 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8E43B37D1ADC5AA700DD5F25 /* mailcore2.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C64EA78C169F259200778456;
+			remoteInfo = tests;
+		};
+		8E43B38F1ADC5AA800DD5F25 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8E43B37D1ADC5AA700DD5F25 /* mailcore2.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C6A81B911706840C00882C15;
+			remoteInfo = "test-ios";
+		};
+		8E43B3911ADC5AA800DD5F25 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8E43B37D1ADC5AA700DD5F25 /* mailcore2.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C6BD288D170BD71100A91AC1;
+			remoteInfo = "mailcore osx";
+		};
+		8E43B3931ADC5AA800DD5F25 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8E43B37D1ADC5AA700DD5F25 /* mailcore2.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 27780C3A19CF9CD100C77E44;
+			remoteInfo = "mailcore ios";
+		};
+		8E43B3951ADC5AA800DD5F25 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8E43B37D1ADC5AA700DD5F25 /* mailcore2.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C6B5AE0219F630B3001352A6;
+			remoteInfo = unittest;
+		};
+		8E43B3971ADC5AA800DD5F25 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8E43B37D1ADC5AA700DD5F25 /* mailcore2.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C600B6141A242C3F000728F1;
+			remoteInfo = unittestcpp;
+		};
+		8E43B3991ADC5ACB00DD5F25 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8E43B37D1ADC5AA700DD5F25 /* mailcore2.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = C6BA2B091705F4E6003F0E9E;
+			remoteInfo = "static mailcore2 ios";
+		};
 		8E9730611A86BA2C006543B1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8E9730411A86BA2C006543B1 /* Project object */;
@@ -164,6 +230,10 @@
 		849337B51A91AE63003456B5 /* GiftDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftDetailViewController.swift; sourceTree = "<group>"; };
 		849337B91A94137F003456B5 /* EventsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewController.swift; sourceTree = "<group>"; };
 		8E0A55861AA11A82000B89ED /* VerifyState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyState.swift; sourceTree = "<group>"; };
+		8E43B37D1ADC5AA700DD5F25 /* mailcore2.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = mailcore2.xcodeproj; path = "mailcore2-master/build-mac/mailcore2.xcodeproj"; sourceTree = "<group>"; };
+		8E43B39C1ADC5ADD00DD5F25 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		8E43B39E1ADC5AE100DD5F25 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		8E43B3A01ADC5B3700DD5F25 /* iWish-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "iWish-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		8E9730491A86BA2C006543B1 /* iWish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iWish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E97304D1A86BA2C006543B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E97304E1A86BA2C006543B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -191,6 +261,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E43B39F1ADC5AE100DD5F25 /* Security.framework in Frameworks */,
+				8E43B39D1ADC5ADD00DD5F25 /* CFNetwork.framework in Frameworks */,
+				8E43B39B1ADC5AD800DD5F25 /* libMailCore-ios.a in Frameworks */,
 				849337AC1A8E6927003456B5 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,9 +294,27 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		8E43B37E1ADC5AA700DD5F25 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8E43B38A1ADC5AA800DD5F25 /* libMailCore.a */,
+				8E43B38C1ADC5AA800DD5F25 /* libMailCore-ios.a */,
+				8E43B38E1ADC5AA800DD5F25 /* tests */,
+				8E43B3901ADC5AA800DD5F25 /* test-ios.app */,
+				8E43B3921ADC5AA800DD5F25 /* MailCore.framework */,
+				8E43B3941ADC5AA800DD5F25 /* MailCore.framework */,
+				8E43B3961ADC5AA800DD5F25 /* unittest.xctest */,
+				8E43B3981ADC5AA800DD5F25 /* unittestcpp */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		8E9730401A86BA2C006543B1 = {
 			isa = PBXGroup;
 			children = (
+				8E43B39E1ADC5AE100DD5F25 /* Security.framework */,
+				8E43B39C1ADC5ADD00DD5F25 /* CFNetwork.framework */,
+				8E43B37D1ADC5AA700DD5F25 /* mailcore2.xcodeproj */,
 				849337A31A8E6913003456B5 /* Alamofire.xcodeproj */,
 				8E97304B1A86BA2C006543B1 /* iWish */,
 				8E9730631A86BA2C006543B1 /* iWishTests */,
@@ -243,6 +334,7 @@
 		8E97304B1A86BA2C006543B1 /* iWish */ = {
 			isa = PBXGroup;
 			children = (
+				8E43B3A01ADC5B3700DD5F25 /* iWish-Bridging-Header.h */,
 				8E9730541A86BA2C006543B1 /* Main.storyboard */,
 				CD40414B1A967A8800DB40D5 /* View Controllers */,
 				CD40414D1A967AB200DB40D5 /* Models */,
@@ -388,6 +480,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				8E43B39A1ADC5ACB00DD5F25 /* PBXTargetDependency */,
 				849337AF1A8E6927003456B5 /* PBXTargetDependency */,
 			);
 			name = iWish;
@@ -447,6 +540,10 @@
 					ProductGroup = 849337A41A8E6913003456B5 /* Products */;
 					ProjectRef = 849337A31A8E6913003456B5 /* Alamofire.xcodeproj */;
 				},
+				{
+					ProductGroup = 8E43B37E1ADC5AA700DD5F25 /* Products */;
+					ProjectRef = 8E43B37D1ADC5AA700DD5F25 /* mailcore2.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -469,6 +566,62 @@
 			fileType = wrapper.cfbundle;
 			path = AlamofireTests.xctest;
 			remoteRef = 849337AA1A8E6913003456B5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8E43B38A1ADC5AA800DD5F25 /* libMailCore.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libMailCore.a;
+			remoteRef = 8E43B3891ADC5AA800DD5F25 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8E43B38C1ADC5AA800DD5F25 /* libMailCore-ios.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libMailCore-ios.a";
+			remoteRef = 8E43B38B1ADC5AA800DD5F25 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8E43B38E1ADC5AA800DD5F25 /* tests */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = tests;
+			remoteRef = 8E43B38D1ADC5AA800DD5F25 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8E43B3901ADC5AA800DD5F25 /* test-ios.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "test-ios.app";
+			remoteRef = 8E43B38F1ADC5AA800DD5F25 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8E43B3921ADC5AA800DD5F25 /* MailCore.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MailCore.framework;
+			remoteRef = 8E43B3911ADC5AA800DD5F25 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8E43B3941ADC5AA800DD5F25 /* MailCore.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MailCore.framework;
+			remoteRef = 8E43B3931ADC5AA800DD5F25 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8E43B3961ADC5AA800DD5F25 /* unittest.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = unittest.xctest;
+			remoteRef = 8E43B3951ADC5AA800DD5F25 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8E43B3981ADC5AA800DD5F25 /* unittestcpp */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = unittestcpp;
+			remoteRef = 8E43B3971ADC5AA800DD5F25 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -591,6 +744,11 @@
 			name = Alamofire;
 			targetProxy = 849337AE1A8E6927003456B5 /* PBXContainerItemProxy */;
 		};
+		8E43B39A1ADC5ACB00DD5F25 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "static mailcore2 ios";
+			targetProxy = 8E43B3991ADC5ACB00DD5F25 /* PBXContainerItemProxy */;
+		};
 		8E9730621A86BA2C006543B1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8E9730481A86BA2C006543B1 /* iWish */;
@@ -702,7 +860,21 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = iWish/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-lctemplate-ios",
+					"-letpan-ios",
+					"-lxml2",
+					"-lsasl2",
+					"-liconv",
+					"-ltidy",
+					"-lz",
+					"-lc++",
+					"-lresolv",
+					"-stdlib=libc++",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/aivong/iWish/iWish-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -713,7 +885,21 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = iWish/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-lctemplate-ios",
+					"-letpan-ios",
+					"-lxml2",
+					"-lsasl2",
+					"-liconv",
+					"-ltidy",
+					"-lz",
+					"-lc++",
+					"-lresolv",
+					"-stdlib=libc++",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/aivong/iWish/iWish-Bridging-Header.h";
 			};
 			name = Release;
 		};

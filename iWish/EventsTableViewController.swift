@@ -10,6 +10,7 @@ import UIKit
 
 class EventsTableViewController: UITableViewController {
     
+ 
     let headerNames = ["Requests", "My Events", "Past Events", "Upcoming Events"]
     let spaceHeaderNames = ["Requests", "", "", "", "My Events", "", "", "", "Past Events", "", "", "", "Upcoming Events"]
     let pastEvents = ["Luncheon"]
@@ -20,6 +21,7 @@ class EventsTableViewController: UITableViewController {
     var myEvents = [UserEvent]()
     var eventRequests = [UserEvent]()
     var upcomingEvents = [UserEvent]()
+  
     
     @IBAction func cancelAddEvent(segue: UIStoryboardSegue){
         
@@ -149,6 +151,7 @@ class EventsTableViewController: UITableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
     }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()

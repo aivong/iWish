@@ -24,7 +24,7 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         let queryImage = "SELECT * FROM pictures WHERE username = '\(VerifyState.selectedUser)'"
         // Do any additional setup after loading the view.
-        
+        VerifyState.selectedUser = VerifyState.username
         
         let queryProfile = "SELECT * FROM Users WHERE username = '\(VerifyState.selectedUser)'"
         

@@ -7,7 +7,7 @@
         <!--Login View Controller-->
         <scene sceneID="5sG-W2-Mc9">
             <objects>
-                <viewController id="lUF-FK-sLw" customClass="LoginViewController" customModule="iWish" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" id="lUF-FK-sLw" customClass="LoginViewController" customModule="iWish" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MWh-Ft-okk"/>
                         <viewControllerLayoutGuide type="bottom" id="q2n-Kl-SbP"/>
@@ -612,7 +612,7 @@
         <!--Create Account View Controller-->
         <scene sceneID="dpp-Cf-GUO">
             <objects>
-                <viewController id="KY6-MU-aXO" customClass="CreateAccountViewController" customModule="iWish" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateVC" id="KY6-MU-aXO" customClass="CreateAccountViewController" customModule="iWish" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2Uk-Uw-qVQ"/>
                         <viewControllerLayoutGuide type="bottom" id="8Ou-8w-5Ix"/>
@@ -1171,7 +1171,7 @@
         <!--Settings-->
         <scene sceneID="qBh-EY-qxP">
             <objects>
-                <tableViewController title="Settings" id="7hn-d1-wfF" customClass="SettingsTableViewController" customModule="iWish" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SettingsVC" title="Settings" id="7hn-d1-wfF" customClass="SettingsTableViewController" customModule="iWish" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="jfM-ve-bTU">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1748,7 +1748,7 @@
         <!--Profile-->
         <scene sceneID="mhG-JH-HiR">
             <objects>
-                <viewController id="pQj-t3-PZ1" customClass="ProfileViewController" customModule="iWish" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileVC" id="pQj-t3-PZ1" customClass="ProfileViewController" customModule="iWish" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yre-E4-Bin"/>
                         <viewControllerLayoutGuide type="bottom" id="PoO-O8-fWP"/>
@@ -2179,6 +2179,6 @@
         <image name="user168.png" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="JNv-2U-zfr"/>
+        <segue reference="gL1-k6-eVZ"/>
     </inferredMetricsTieBreakers>
 </document>
