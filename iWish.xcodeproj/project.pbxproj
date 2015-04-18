@@ -874,7 +874,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/aivong/iWish/iWish-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "iWish-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -899,7 +899,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/aivong/iWish/iWish-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "iWish-Bridging-Header.h";
 			};
 			name = Release;
 		};
