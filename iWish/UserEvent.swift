@@ -95,6 +95,13 @@ class UserEvent{
     
     func daysUntilString() -> String {
         
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        
+        if date == formatter.stringFromDate(NSDate()) {
+            return "Today!"
+        }
+        
         let eventDate = getEventDateFromString()
         
         let eventDateMili = eventDate?.timeIntervalSince1970
@@ -104,11 +111,15 @@ class UserEvent{
         
         if let dif = miliDifference {
             
-            let numberOfDays = (Double(dif) / (60.0*60.0*24.0)) + 1
-            
             if (dif > 0) {
+                
+                let numberOfDays = (Double(dif) / (60.0*60.0*24.0)) + 1
+                
                 return "\(Int(numberOfDays)) day(s) away"
             } else {
+                
+                let numberOfDays = (Double(dif) / (60.0*60.0*24.0))
+                
                 return "\(Int(numberOfDays) * -1) day(s) ago"
             }
          

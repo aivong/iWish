@@ -11,9 +11,9 @@ import XCTest
 
 class EventTests: XCTestCase {
 
-    let userEvent: UserEvent = UserEvent(eventID: 1, eventName: "Test Event", eventDate: "10-10-2015", eventDescription: "Test description")
+    let userEvent: UserEvent = UserEvent(eventID: 1, eventName: "Test Event", eventDate: "2015-10-10", eventDescription: "Test description")
     let badUserEvent: UserEvent = UserEvent(eventID: 2, eventName: "Test Event", eventDate: "October 10th", eventDescription: "Test description")
-    let oldUserEvent: UserEvent = UserEvent(eventID: 1, eventName: "Test Event", eventDate: "10-10-2014", eventDescription: "Test description")
+    let oldUserEvent: UserEvent = UserEvent(eventID: 1, eventName: "Test Event", eventDate: "2014-10-10", eventDescription: "Test description")
     
 //    var dateFormatter: NSDateFormatter
     let dateFormatter = NSDateFormatter()
@@ -21,7 +21,7 @@ class EventTests: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        dateFormatter.dateFormat = "MM-dd-yyyy"
+        dateFormatter.dateFormat = "yyyy-MM-dd"
     }
     
     override func tearDown() {
@@ -99,7 +99,61 @@ class EventTests: XCTestCase {
         
         XCTAssertEqual(previousNotifications.count, newNotifications.count, "Created Notifaction was not added")
     }
+    
+    func testdaysUntilStringValidFuture() {
+        
+        let today = NSDate()
+        let daysAway10 = today.dateByAddingTimeInterval(60*60*24*10)
+    
+        let daysAway10DateString = dateFormatter.stringFromDate(daysAway10)
 
+        let event: UserEvent = UserEvent(eventID: 1, eventName: "Test Event", eventDate: daysAway10DateString, eventDescription: "Test Event Description")
+        let daysUntilString = event.daysUntilString()
+        
+        XCTAssertEqual(daysUntilString, "10 day(s) away", "Days Until string was incorrect")
+    }
+    
+    func testdaysUntilStringInvalidFuture() {
+        
+        let event: UserEvent = UserEvent(eventID: 1, eventName: "Test Event", eventDate: "2016-02-31", eventDescription: "Test Event Description")
+        let daysUntilString = event.daysUntilString()
+        
+        XCTAssertEqual(daysUntilString, "", "Days Until string was incorrect")
+    }
+    
+    func testdaysUntilStringValidPast() {
+        
+        let today = NSDate()
+        let daysAway10 = today.dateByAddingTimeInterval(-60*60*24*10)
+        
+        let daysAway10DateString = dateFormatter.stringFromDate(daysAway10)
+        
+        let event: UserEvent = UserEvent(eventID: 1, eventName: "Test Event", eventDate: daysAway10DateString, eventDescription: "Test Event Description")
+        let daysUntilString = event.daysUntilString()
+        
+        XCTAssertEqual(daysUntilString, "10 day(s) ago", "Days Until string was incorrect")
+    }
+    
+    func testdaysUntilStringInvalidPast() {
+        let event: UserEvent = UserEvent(eventID: 1, eventName: "Test Event", eventDate: "2014-02-31", eventDescription: "Test Event Description")
+        let daysUntilString = event.daysUntilString()
+        
+        XCTAssertEqual(daysUntilString, "", "Days Until string was incorrect")
+    }
+    
+    func testdaysUntilStringToday() {
+        
+        let today = NSDate()
+        
+        let daysAway10DateString = dateFormatter.stringFromDate(today)
+        
+        let event: UserEvent = UserEvent(eventID: 1, eventName: "Test Event", eventDate: daysAway10DateString, eventDescription: "Test Event Description")
+        let daysUntilString = event.daysUntilString()
+        
+        XCTAssertEqual(daysUntilString, "Today!", "Days Until string was incorrect")
+        
+    }
+    
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measureBlock() {
