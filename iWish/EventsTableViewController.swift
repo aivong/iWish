@@ -13,11 +13,9 @@ class EventsTableViewController: UITableViewController {
  
     let headerNames = ["Requests", "My Events", "Past Events", "Upcoming Events"]
     let spaceHeaderNames = ["Requests", "", "", "", "My Events", "", "", "", "Past Events", "", "", "", "Upcoming Events"]
-    let pastEvents = ["Luncheon"]
-    //    let myEvents = ["My Birthday", "Fathers Day", "Columbus Day", "Presidents Day", "Labor Day", "Mothers Day"]
-    //let requests = ["Bulls Game"]
     var usersName: String!
     
+    var pastEvents = [UserEvent]()
     var myEvents = [UserEvent]()
     var eventRequests = [UserEvent]()
     var upcomingEvents = [UserEvent]()
@@ -28,10 +26,13 @@ class EventsTableViewController: UITableViewController {
     }
     
     @IBAction func saveEvent(segue: UIStoryboardSegue){
+
         let addEventVC = segue.sourceViewController as AddEventViewController
         let newEventName = addEventVC.eventName.text
         let newEventDate = addEventVC.eventDate.text
         let newEventDesc = addEventVC.eventDescription.text
+        
+        
         
         if newEventName == "" || newEventDate == "" || newEventDesc == ""{
             alertUser("Not Saved",  messageText: "Please fill in all fields", buttonText: "OK")
@@ -53,40 +54,68 @@ class EventsTableViewController: UITableViewController {
     }
     
     func getUsersFeaturedEvents(){
-        //       println("SELECT * FROM Events WHERE userID='\(usersName)' ORDER BY name")
-        DatabaseConnection.GetEvents("SELECT * FROM Events WHERE userID='\(usersName)' ORDER BY name") { responseObject, error in print(error?.localizedDescription)
+        
+        let query = "SELECT * FROM Events WHERE userID='\(usersName)' AND date >= CURRENT_DATE() ORDER BY name"
+        
+        DatabaseConnection.GetEvents(query) { responseObject, error in print(error?.localizedDescription)
             if responseObject != nil {
                 self.myEvents = responseObject!
                 self.addUpcomingEventNotifications()
                 self.tableView.reloadData()
             }
             else{
-                self.alertUser("No Data", messageText: "Could not retrieve data", buttonText: "OK")
+//                self.alertUser("No Data", messageText: "Could not retrieve data", buttonText: "OK")
             }
         }
         
     }
     
     func getUsersEventRequests(){
-        DatabaseConnection.GetEventRequests("SELECT Events.eventID AS eventID, Events.date AS date, Events.name AS name, Events.description AS description FROM Events INNER JOIN Invites ON Events.eventID=Invites.eventID WHERE Invites.status='pending' AND Invites.invitee='\(usersName)' ORDER BY Events.name") { responseObject, error in print(error?.localizedDescription)
+        
+        let query = "SELECT Events.eventID AS eventID, Events.date AS date, Events.name AS name, Events.description AS description FROM Events INNER JOIN Invites ON Events.eventID=Invites.eventID WHERE Invites.status='pending' AND Invites.invitee='\(usersName)' AND Events.date >= CURRENT_DATE() ORDER BY Events.name"
+        
+        DatabaseConnection.GetEventRequests(query) { responseObject, error in print(error?.localizedDescription)
             if responseObject != nil {
                 self.eventRequests = responseObject!
                 self.tableView.reloadData()
             }
             else{
-                self.alertUser("No Data", messageText: "Could not retrieve data", buttonText: "OK")
+//                self.alertUser("No Data", messageText: "Could not retrieve data", buttonText: "OK")
             }
         }
     }
     
     func getUsersUpcomingEvents(){
-        DatabaseConnection.GetUpcomingEvents("SELECT Events.eventID AS eventID, Events.date AS date, Events.name AS name, Events.description AS description FROM Events INNER JOIN Invites ON Events.eventID=Invites.eventID WHERE Invites.status='confirmed' AND Invites.invitee='\(usersName)' ORDER BY Events.name") { responseObject, error in print(error?.localizedDescription)
+        
+        let query = "SELECT Events.eventID AS eventID, Events.date AS date, Events.name AS name, Events.description AS description FROM Events INNER JOIN Invites ON Events.eventID=Invites.eventID WHERE Invites.status='confirmed' AND Invites.invitee='\(usersName)' AND Events.date >= CURRENT_DATE() ORDER BY Events.name"
+        
+        DatabaseConnection.GetUpcomingEvents(query) { responseObject, error in print(error?.localizedDescription)
             if responseObject != nil {
                 self.upcomingEvents = responseObject!
+                
+    
                 self.tableView.reloadData()
             }
             else{
-                self.alertUser("No Data", messageText: "Could not retrieve data", buttonText: "OK")
+//                self.alertUser("No Data", messageText: "Could not retrieve data", buttonText: "OK")
+            }
+        }
+    }
+    
+    func getUsersPastEvents(){
+        
+        let query = "SELECT Events.eventID AS eventID, Events.date AS date, Events.name AS name, Events.description AS description FROM Events INNER JOIN Invites ON Events.eventID=Invites.eventID WHERE Invites.status='confirmed' AND Invites.invitee='\(usersName)' AND Events.date < CURRENT_DATE() ORDER BY Events.name"
+        
+        DatabaseConnection.GetUpcomingEvents(query) { responseObject, error in print(error?.localizedDescription)
+            
+            if responseObject != nil {
+                
+                self.pastEvents = responseObject!
+
+                self.tableView.reloadData()
+            }
+            else{
+//                self.alertUser("No Data", messageText: "Could not retrieve data", buttonText: "OK")
             }
         }
     }
@@ -156,29 +185,11 @@ class EventsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         usersName = VerifyState.username
-        
-        println("\(UIApplication.sharedApplication().scheduledLocalNotifications.count)")
-        
-        for notifcation in UIApplication.sharedApplication().scheduledLocalNotifications {
-            println("\(notifcation.alertBody)")
-            println("\(notifcation.fireDate)")
-        }
-        
-        //        let defaults = NSUserDefaults.standardUserDefaults()
-        //        if let name = defaults.stringForKey("username")
-        //        {
-        //            usersName = name
-        //            //usersName = VerifyState.username
-        //        }
+    
         getUsersFeaturedEvents()
         getUsersEventRequests()
         getUsersUpcomingEvents()
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        getUsersPastEvents()
     }
     
     override func didReceiveMemoryWarning() {
@@ -216,24 +227,43 @@ class EventsTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell: UITableViewCell!
+        
         switch(indexPath.section){
         case 0:
             cell = tableView.dequeueReusableCellWithIdentifier("RequestCell", forIndexPath: indexPath) as UITableViewCell
-            cell.textLabel?.text = eventRequests[indexPath.row].name
         case 1:
             cell = tableView.dequeueReusableCellWithIdentifier("EventCell", forIndexPath: indexPath) as UITableViewCell
-            cell.textLabel?.text = myEvents[indexPath.row].name
         case 2:
             cell = tableView.dequeueReusableCellWithIdentifier("PastCell", forIndexPath: indexPath) as UITableViewCell
-            cell.textLabel?.text = pastEvents[indexPath.row]
         case 3:
             cell = tableView.dequeueReusableCellWithIdentifier("UpcomingCell", forIndexPath: indexPath) as UITableViewCell
-            cell.textLabel?.text = upcomingEvents[indexPath.row].name
         default:
             cell.textLabel?.text = ""
         }
         
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        switch(indexPath.section){
+            case 0:
+                cell.textLabel?.text = eventRequests[indexPath.row].name
+                cell.detailTextLabel?.text =
+                    eventRequests[indexPath.row].daysUntilString()
+            case 1:
+                cell.textLabel?.text = myEvents[indexPath.row].name
+                cell.detailTextLabel?.text = myEvents[indexPath.row].daysUntilString()
+            case 2:
+                cell.textLabel?.text = pastEvents[indexPath.row].name
+                cell.detailTextLabel?.text = pastEvents[indexPath.row].daysUntilString()
+            case 3:
+                cell.textLabel?.text = upcomingEvents[indexPath.row].name
+                cell.detailTextLabel?.text = upcomingEvents[indexPath.row].daysUntilString()
+            default:
+                cell.textLabel?.text = ""
+        }
+        
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

@@ -31,7 +31,7 @@ class UserEvent{
     func getEventDateFromString() -> NSDate? {
         
         var dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "MM-dd-yyyy"
+        dateFormatter.dateFormat = "yyyy-MM-dd"
         return dateFormatter.dateFromString(self.date)
     }
     
@@ -90,6 +90,30 @@ class UserEvent{
             
         } else {
             return nil
+        }
+    }
+    
+    func daysUntilString() -> String {
+        
+        let eventDate = getEventDateFromString()
+        
+        let eventDateMili = eventDate?.timeIntervalSince1970
+        let today = NSDate()
+        
+        let miliDifference = eventDate?.timeIntervalSinceDate(NSDate())
+        
+        if let dif = miliDifference {
+            
+            let numberOfDays = (Double(dif) / (60.0*60.0*24.0)) + 1
+            
+            if (dif > 0) {
+                return "\(Int(numberOfDays)) day(s) away"
+            } else {
+                return "\(Int(numberOfDays) * -1) day(s) ago"
+            }
+         
+        } else {
+            return ""
         }
     }
 }
