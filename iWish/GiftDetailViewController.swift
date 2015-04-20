@@ -10,9 +10,13 @@ import UIKit
 
 class GiftDetailViewController: UIViewController {
     
-    @IBOutlet weak var giftNameDetail: UILabel!
-    @IBOutlet weak var giftPriceDetail: UILabel!
-    @IBOutlet weak var giftDescriptionDetail: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+
+    @IBOutlet weak var priceLabel: UILabel!
+    
+    @IBOutlet weak var descriptionTextField: UITextView!
+    
+    @IBOutlet weak var giftPoolingSwitch: UISwitch!
     
     let editGiftSegueIdentifier = "EditGiftSegue"
     
@@ -29,9 +33,14 @@ class GiftDetailViewController: UIViewController {
     }
     
     func updateViewWithGiftInformation() {
-        giftNameDetail.text = gift.name
-        giftDescriptionDetail.text = gift.description
-        giftPriceDetail.text = "$" + String(format:"%.2f", gift.price)
+        
+        nameLabel.text = gift.name
+        priceLabel.text = "$" + String(format:"%.2f", gift.price)
+        descriptionTextField.text = gift.description
+        descriptionTextField.userInteractionEnabled = false
+        giftPoolingSwitch.on = gift.allowPooling
+        giftPoolingSwitch.userInteractionEnabled = false;
+        
     }
     
     func editPressed(sender: AnyObject) {

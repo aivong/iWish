@@ -17,6 +17,8 @@ class EditGiftViewController: UIViewController {
 
     @IBOutlet weak var descriptionTextView: UITextView!
     
+    @IBOutlet weak var poolingSwitch: UISwitch!
+    
     let giftEditSavedSegueIdentifier = "GiftEditSavedSegue"
     
     var gift: WishListGift!
@@ -28,6 +30,8 @@ class EditGiftViewController: UIViewController {
         self.priceLabel.text = String(format:"$%.2f", gift.price)
         self.descriptionTextView.editable = true
         self.descriptionTextView.text = gift.description
+        self.poolingSwitch.userInteractionEnabled = true
+        self.poolingSwitch.on = gift.allowPooling
         
         let saveButton = UIBarButtonItem(title: "Save", style: .Plain, target: self, action: "savePressed:")
         let cancelButton = UIBarButtonItem(title: "Cancel", style: .Plain, target: self, action: "cancelPressed:")
@@ -43,9 +47,14 @@ class EditGiftViewController: UIViewController {
         if self.validInputs() {
             
             self.stripInputs()
-            let query = "UPDATE WishListGifts SET name='\(self.gift.name)', description='\(self.gift.description)', price=\(self.gift.price) WHERE id=\(self.gift.databaseID)"
             
-            print("\(query)")
+            var poolingString = "0"
+            
+            if self.poolingSwitch.on { poolingString = "1" }
+        
+            let query = "UPDATE WishListGifts SET name='\(self.gift.name)', description='\(self.gift.description)', price=\(self.gift.price), pooling='\(poolingString)' WHERE id=\(self.gift.databaseID)"
+            
+            println("\(query)")
             
             DatabaseConnection.InsertGift(query){ responseObject, error in
                 //CHECK FOR ERRORS
@@ -101,5 +110,6 @@ class EditGiftViewController: UIViewController {
         var s = self.priceLabel.text as NSString
         s = s.stringByReplacingOccurrencesOfString("$", withString: "")
         self.gift.price = s.doubleValue
+        self.gift.allowPooling = self.poolingSwitch.on
     }
 }

@@ -50,7 +50,7 @@ class WishListTableViewController: UITableViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-        selectedGift = WishListGift(giftID: 0, giftName: "None", giftDescription: "None", giftPrice: 0.00, giftEvent: 9999)
+        selectedGift = WishListGift(giftID: 0, giftName: "None", giftDescription: "None", giftPrice: 0.00, giftEvent: 9999, giftPooling:false)
         getUsersFeaturedGifts()
     }
     

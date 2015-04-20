@@ -15,13 +15,15 @@ class WishListGift{
     var description:String!
     var price:Double!
     var eventID:Int!
+    var allowPooling:Bool!
     
-    init(giftID: Int, giftName:String, giftDescription:String, giftPrice:Double, giftEvent:Int){
+    init(giftID: Int, giftName:String, giftDescription:String, giftPrice:Double, giftEvent:Int, giftPooling:Bool){
         self.databaseID = giftID
         self.name = giftName
         self.description = giftDescription
         self.price = giftPrice
         self.eventID = giftEvent
+        self.allowPooling = giftPooling
     }
     
     func describe () -> String {

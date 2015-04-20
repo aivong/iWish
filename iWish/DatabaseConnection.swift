@@ -54,8 +54,8 @@ class DatabaseConnection{
                     let description = (json[i]["description"]).stringValue
                     let price = (json[i]["price"]).doubleValue
                     let eventID = (json[i]["eventID"]).intValue
-                    gifts.append(WishListGift(giftID: id, giftName: name, giftDescription: description, giftPrice: price, giftEvent: eventID))
-                    
+                    let pooling = (json[i]["pooling"]).boolValue
+                    gifts.append(WishListGift(giftID: id, giftName: name, giftDescription: description, giftPrice: price, giftEvent: eventID, giftPooling: pooling))
                     completionHandler(responseObject: gifts, error: error)
                 }
             }

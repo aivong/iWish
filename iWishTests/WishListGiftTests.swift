@@ -47,7 +47,7 @@ class WishListGIftTests: XCTestCase {
         
         let giftName = "Gift"
         
-        let wlg = WishListGift(giftID: 0, giftName: giftName, giftDescription: "Description", giftPrice: 9.99, giftEvent: 0)
+        let wlg = WishListGift(giftID: 0, giftName: giftName, giftDescription: "Description", giftPrice: 9.99, giftEvent: 0, giftPooling:false)
         
         XCTAssertTrue(wlg.describe().rangeOfString(giftName) != nil)
         
