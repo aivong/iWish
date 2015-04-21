@@ -26,6 +26,16 @@ class EventDetailViewController: UIViewController {
         // Do any edititional setup after loading the view.
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        addStyleToView()
+    }
+    
+    
+    func addStyleToView() {
+        iWishStylingTool.addStyleToSubviewsOfView(self.view)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

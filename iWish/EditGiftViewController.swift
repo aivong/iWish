@@ -42,6 +42,16 @@ class EditGiftViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        addStyleToView()
+    }
+    
+    
+    func addStyleToView() {
+        iWishStylingTool.addStyleToSubviewsOfView(self.view)
+    }
+    
     func savePressed(sender: AnyObject) {
         
         if self.validInputs() {

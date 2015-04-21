@@ -14,13 +14,6 @@ class AddGiftViewController: UIViewController {
     @IBOutlet weak var giftPrice: UITextField!
     @IBOutlet weak var giftDescription: UITextView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        giftDescription.layer.borderWidth = 1
-        giftDescription.layer.borderColor = UIColor.blackColor().CGColor
-    }
-    
-    
     @IBAction func cancelPressed(sender: AnyObject) {
         self.navigationController?.popViewControllerAnimated(true)
     }
@@ -65,6 +58,16 @@ class AddGiftViewController: UIViewController {
             alertView.show()
             return false
         }
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        addStyleToView()
+    }
+    
+    
+    func addStyleToView() {
+        iWishStylingTool.addStyleToSubviewsOfView(self.view)
     }
     
 

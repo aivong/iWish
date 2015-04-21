@@ -187,6 +187,16 @@ class SettingsTableViewController: UITableViewController {
         
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        addStyleToView()
+    }
+    
+    
+    func addStyleToView() {
+        iWishStylingTool.addStyleToSubviewsOfView(self.view)
+    }
+    
     
     
     override func didReceiveMemoryWarning() {

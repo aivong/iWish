@@ -67,6 +67,32 @@ class FriendsTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        addStyleToView()
+    }
+    
+    
+    func addStyleToView() {
+        iWishStylingTool.addStyleToSubviewsOfView(self.view)
+    
+        self.tableView.separatorColor = UIColor(red: 252.0/255.0, green: 80.0/255.0, blue:80.0/255.0, alpha: 1.0)
+        
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 252.0/255.0, green: 80.0/255.0, blue:80.0/255.0, alpha: 1.0)
+        
+        let font = UIFont(name: "Heiti SC", size: 18.0)
+        if let font = font {
+            self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName : font, NSForegroundColorAttributeName : UIColor.whiteColor()]
+        }
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+    }
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -97,11 +123,17 @@ class FriendsTableViewController: UITableViewController {
         if indexPath.section == 0{
             let cell = tableView.dequeueReusableCellWithIdentifier("RequestCell", forIndexPath:indexPath) as UITableViewCell
             cell.textLabel?.text = requests[indexPath.row].username
+            
+            iWishStylingTool.addStyleToTableViewCell(cell)
+            
             return cell
         }
         else{
             let cell = tableView.dequeueReusableCellWithIdentifier("FriendCell", forIndexPath:indexPath) as UITableViewCell
             cell.textLabel?.text = friends[indexPath.row].username
+            
+            iWishStylingTool.addStyleToTableViewCell(cell)
+            
             return cell
         }
     }

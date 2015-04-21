@@ -38,6 +38,17 @@ class AddFriendToEventViewController: UITableViewController {
         refresh()
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        addStyleToView()
+    }
+    
+    
+    func addStyleToView() {
+        iWishStylingTool.addStyleToSubviewsOfView(self.view)
+        self.tableView.separatorColor = UIColor(red: 252.0/255.0, green: 80.0/255.0, blue:80.0/255.0, alpha: 1.0)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -63,6 +74,8 @@ class AddFriendToEventViewController: UITableViewController {
         
         let data = friends[indexPath.row]
         cell.textLabel?.text = data.username
+
+        iWishStylingTool.addStyleToTableViewCell(cell)
         
         return cell
     }

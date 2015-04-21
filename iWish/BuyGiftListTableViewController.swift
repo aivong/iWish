@@ -87,6 +87,8 @@ class BuyGiftListTableViewController: UITableViewController {
             cell.textLabel?.text = ""
         }
         
+        iWishStylingTool.addStyleToTableViewCell(cell)
+        
         return cell
     }
     
@@ -123,6 +125,17 @@ class BuyGiftListTableViewController: UITableViewController {
     override func viewDidAppear(animated: Bool) {
         selectedGift = WishListGift(giftID: 0, giftName: "None", giftDescription: "None", giftPrice: 0.00, giftEvent: 99999, giftPooling:false)
         getBuyFeaturedGifts()
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        addStyleToView()
+    }
+    
+    
+    func addStyleToView() {
+        iWishStylingTool.addStyleToSubviewsOfView(self.view)
+        self.tableView.separatorColor = UIColor(red: 252.0/255.0, green: 80.0/255.0, blue:80.0/255.0, alpha: 1.0)
     }
     
     // Override to support editing thje table view.

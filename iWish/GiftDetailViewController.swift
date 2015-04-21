@@ -32,6 +32,16 @@ class GiftDetailViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = editButton
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        addStyleToView()
+    }
+    
+    
+    func addStyleToView() {
+        iWishStylingTool.addStyleToSubviewsOfView(self.view)
+    }
+    
     func updateViewWithGiftInformation() {
         
         nameLabel.text = gift.name

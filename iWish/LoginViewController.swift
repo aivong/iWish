@@ -29,10 +29,10 @@ class LoginViewController: UIViewController {
         
         logInContainerView.backgroundColor = UIColor.clearColor()
         
+        self.view.backgroundColor = UIColor(red: 252.0/255.0, green: 80.0/255.0, blue: 80.0/255.0, alpha: 1.0)
         
         logInContainerView.layer.cornerRadius = cornerRadius
         usernamePasswordView.layer.cornerRadius = cornerRadius
-        logInButton.layer.cornerRadius = cornerRadius
         logInContainerView.clipsToBounds = true
         
         blurEffect = UIBlurEffect(style: .Light)
@@ -42,6 +42,15 @@ class LoginViewController: UIViewController {
         logInContainerView.insertSubview(blurView, atIndex: 0)
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        addStyleToView()
+    }
+    
+    
+    func addStyleToView() {
+//        iWishStylingTool.addStyleToSubviewsOfView(self.view)
+    }
     
     
     

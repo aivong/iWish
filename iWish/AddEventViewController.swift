@@ -26,6 +26,16 @@ class AddEventViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        addStyleToView()
+    }
+    
+    
+    func addStyleToView() {
+        iWishStylingTool.addStyleToSubviewsOfView(self.view)
+    }
+    
     
     /*
     // MARK: - Navigation

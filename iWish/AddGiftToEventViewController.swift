@@ -44,6 +44,17 @@ class AddGiftToEventViewController: UITableViewController {
         getUsersFeaturedGifts()
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        addStyleToView()
+    }
+    
+    
+    func addStyleToView() {
+        self.tableView.separatorColor = UIColor(red: 252.0/255.0, green: 80.0/255.0, blue:80.0/255.0, alpha: 1.0)
+        iWishStylingTool.addStyleToSubviewsOfView(self.view)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -69,6 +80,8 @@ class AddGiftToEventViewController: UITableViewController {
         
         let data = gifts[indexPath.row]
         cell.textLabel?.text = data.name
+        
+        iWishStylingTool.addStyleToTableViewCell(cell)
         
         return cell
     }

@@ -39,14 +39,23 @@ class WishListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getUsersFeaturedGifts()
-        //self.navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        addStyleToView()
+    }
+    
+    func addStyleToView() {
+        iWishStylingTool.addStyleToSubviewsOfView(self.view)
         
+        self.tableView.separatorColor = UIColor(red: 252.0/255.0, green: 80.0/255.0, blue:80.0/255.0, alpha: 1.0)
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 252.0/255.0, green: 80.0/255.0, blue:80.0/255.0, alpha: 1.0)
         
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        let font = UIFont(name: "Heiti SC", size: 18.0)
+        if let font = font {
+            self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName : font, NSForegroundColorAttributeName : UIColor.whiteColor()]
+        }
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -79,6 +88,8 @@ class WishListTableViewController: UITableViewController {
         
         let data = gifts[indexPath.row]
         cell.textLabel?.text = data.name
+        
+        iWishStylingTool.addStyleToTableViewCell(cell)
         
         return cell
     }

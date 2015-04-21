@@ -11,6 +11,8 @@ import UIKit
 class EventsTableViewController: UITableViewController {
     
  
+    let patsColor = UIColor(red: 252.0/255.0, green: 80.0/255.0, blue: 80.0/255.0, alpha: 1.0)
+    
     let headerNames = ["Requests", "My Events", "Past Events", "Upcoming Events"]
     let spaceHeaderNames = ["Requests", "", "", "", "My Events", "", "", "", "Past Events", "", "", "", "Upcoming Events"]
     var usersName: String!
@@ -192,6 +194,25 @@ class EventsTableViewController: UITableViewController {
         getUsersPastEvents()
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        addStyleToView()
+    }
+    
+    
+    func addStyleToView() {
+        iWishStylingTool.addStyleToSubviewsOfView(self.view)
+        
+        self.tableView.separatorColor = UIColor(red: 252.0/255.0, green: 80.0/255.0, blue:80.0/255.0, alpha: 1.0)
+        
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 252.0/255.0, green: 80.0/255.0, blue:80.0/255.0, alpha: 1.0)
+        
+        let font = UIFont(name: "Heiti SC", size: 18.0)
+        if let font = font {
+            self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName : font, NSForegroundColorAttributeName : UIColor.whiteColor()]
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -241,6 +262,8 @@ class EventsTableViewController: UITableViewController {
             cell.textLabel?.text = ""
         }
         
+        iWishStylingTool.addStyleToTableViewCell(cell)
+    
         return cell
     }
     
@@ -273,8 +296,6 @@ class EventsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 30.0
     }
-    
-    
     
     override func tableView(tableView: UITableView, sectionForSectionIndexTitle title: String, atIndex index: Int) -> Int {
         if title == ""{

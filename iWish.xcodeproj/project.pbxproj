@@ -87,6 +87,8 @@
 		CD4041591A967D7F00DB40D5 /* DatabaseConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433929C1A8D2C1A00E5B01B /* DatabaseConnection.swift */; };
 		CD40415A1A967D8800DB40D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E97304E1A86BA2C006543B1 /* AppDelegate.swift */; };
 		CD40415B1A967D8C00DB40D5 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849337B11A905551003456B5 /* SwiftyJSON.swift */; };
+		CD708DA61AE68FDA006A72A1 /* iWishStylingTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD708DA51AE68FDA006A72A1 /* iWishStylingTool.swift */; };
+		CD708DAF1AE6951C006A72A1 /* iWishStylingTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD708DA51AE68FDA006A72A1 /* iWishStylingTool.swift */; };
 		CD7FBB021AD748220039C35B /* EventTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7FBB011AD748220039C35B /* EventTests.swift */; };
 		CD9935EB1AD3140000B47654 /* EditGiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9935EA1AD3140000B47654 /* EditGiftViewController.swift */; };
 		CD9935ED1AD3182000B47654 /* EditGiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9935EA1AD3140000B47654 /* EditGiftViewController.swift */; };
@@ -252,6 +254,7 @@
 		8EFEFCE11A9AA4D8004EC929 /* unicorn.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = unicorn.jpg; sourceTree = "<group>"; };
 		C66DE6131AB6113500BAF9A2 /* Invite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Invite.swift; sourceTree = "<group>"; };
 		C66DE61A1AB623A600BAF9A2 /* AddFriendToEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendToEventViewController.swift; sourceTree = "<group>"; };
+		CD708DA51AE68FDA006A72A1 /* iWishStylingTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iWishStylingTool.swift; sourceTree = "<group>"; };
 		CD7FBB011AD748220039C35B /* EventTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTests.swift; sourceTree = "<group>"; };
 		CD9935EA1AD3140000B47654 /* EditGiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditGiftViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -339,6 +342,7 @@
 				CD40414B1A967A8800DB40D5 /* View Controllers */,
 				CD40414D1A967AB200DB40D5 /* Models */,
 				8433929C1A8D2C1A00E5B01B /* DatabaseConnection.swift */,
+				CD708DA51AE68FDA006A72A1 /* iWishStylingTool.swift */,
 				8E97304C1A86BA2C006543B1 /* Supporting Files */,
 			);
 			path = iWish;
@@ -667,6 +671,7 @@
 				8433929D1A8D2C1A00E5B01B /* DatabaseConnection.swift in Sources */,
 				555FE40A1AABB9F000EE8C1E /* AddEventViewController.swift in Sources */,
 				8446A9971A8D00F200D51024 /* Users.swift in Sources */,
+				CD708DA61AE68FDA006A72A1 /* iWishStylingTool.swift in Sources */,
 				67C8B5241ADC396B00701C13 /* BuyGiftListTableViewController.swift in Sources */,
 				555FE4041AABB9A400EE8C1E /* UserEvent.swift in Sources */,
 				84072B171ACAE88F004F51B4 /* UserSettings.swift in Sources */,
@@ -699,6 +704,7 @@
 				CD40415A1A967D8800DB40D5 /* AppDelegate.swift in Sources */,
 				CD4041551A967D6F00DB40D5 /* LoginViewController.swift in Sources */,
 				555FE4191AABC51200EE8C1E /* FriendsTableViewController.swift in Sources */,
+				CD708DAF1AE6951C006A72A1 /* iWishStylingTool.swift in Sources */,
 				555FE4151AABC4F800EE8C1E /* SearchUsersTableViewController.swift in Sources */,
 				C66DE61C1AB623A600BAF9A2 /* AddFriendToEventViewController.swift in Sources */,
 				55D888991AB4FAE200FF8A72 /* AddGiftToEventViewController.swift in Sources */,

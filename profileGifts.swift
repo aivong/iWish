@@ -72,6 +72,16 @@ class profileGifts: UITableViewController {
         }
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        addStyleToView()
+    }
+    
+    
+    func addStyleToView() {
+        iWishStylingTool.addStyleToSubviewsOfView(self.view)
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -115,10 +125,14 @@ class profileGifts: UITableViewController {
             let data = gifts[indexPath.row]
             cell.textLabel?.text = data.name
             
+            iWishStylingTool.addStyleToTableViewCell(cell)
+            
             return cell
         }
         let data = events[indexPath.row]
         cell.textLabel?.text = data.name
+        
+        iWishStylingTool.addStyleToTableViewCell(cell)
         
         return cell
     }

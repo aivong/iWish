@@ -54,6 +54,18 @@ class SearchUsersTableViewController: UITableViewController, UISearchBarDelegate
         self.tableView.reloadData()
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        addStyleToView()
+    }
+    
+    
+    func addStyleToView() {
+        iWishStylingTool.addStyleToSubviewsOfView(self.view)
+
+        self.tableView.separatorColor = UIColor(red: 252.0/255.0, green: 80.0/255.0, blue:80.0/255.0, alpha: 1.0)
+    }
+    
     func properStringSQL(names: [String]) -> String{
         var ret = "("
         for i in 0..<names.count{
@@ -89,6 +101,9 @@ class SearchUsersTableViewController: UITableViewController, UISearchBarDelegate
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
         
         cell.textLabel?.text = filteredUsers[indexPath.row].username
+        
+        iWishStylingTool.addStyleToTableViewCell(cell)
+        
         return cell
     }
     
