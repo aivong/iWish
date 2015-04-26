@@ -92,7 +92,7 @@ class BuyGiftListTableViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+/*    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.section == 1 {
             selectedGift = giftList[indexPath.row]
             let query = "UPDATE WishListGifts SET userBought='\(usersName)' WHERE id=\(selectedGift.databaseID)"
@@ -107,7 +107,7 @@ class BuyGiftListTableViewController: UITableViewController {
                 }
             }
         }
-    }
+    }*/
     
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         if indexPath.section == 0{
@@ -163,30 +163,24 @@ class BuyGiftListTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    /*    // In a storyboard-based application, you will often want to do a little preparation before navigation
+        // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-    if(segue.destinationViewController.isKindOfClass(ViewEventGiftDetailViewController)){
-    
-    let vc = segue.destinationViewController as ViewEventGiftDetailViewController
-    
-    let path = self.tableView.indexPathForSelectedRow()!
-    vc.gift = gifts[path.row]
-    
-    //            vc.giftName = selectedGift.name
-    //            vc.giftDescription = selectedGift.description
-    //            vc.giftPrice = selectedGift.price
-    
+        
+        // Get the new view controller using [segue destinationViewController].
+        // Pass the selected object to the new view controller.
+        if(segue.destinationViewController.isKindOfClass(BuyGiftDetailViewController)){
+            
+            let vc = segue.destinationViewController as BuyGiftDetailViewController
+            
+            let path = self.tableView.indexPathForSelectedRow()!
+            if(path.section == 0) {
+                vc.gift = myGifts[path.row]
+            }
+            else {
+                vc.gift = giftList[path.row]
+            }
+        }
     }
-    if(segue.destinationViewController.isKindOfClass(AddGiftToEventViewController)){
-    
-    let vc = segue.destinationViewController as AddGiftToEventViewController
-    
-    vc.eventID = eventID
-    }
-    }*/
     
     
 }
