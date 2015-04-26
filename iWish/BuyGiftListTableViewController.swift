@@ -26,17 +26,64 @@ class BuyGiftListTableViewController: UITableViewController {
     func getMyBoughtGifts(){
         DatabaseConnection.GetGifts("SELECT * FROM WishListGifts WHERE eventID=\(eventID) AND userBought='\(usersName)' ORDER BY name") { responseObject, error in
             if responseObject != nil {
+                print("test")
                 self.myGifts = responseObject!
                 self.tableView.reloadData()
+            }
+        }
+        DatabaseConnection.GetGifts("SELECT * FROM WishListGifts WHERE pooling = 1 ORDER BY name") { responseObject, error in
+            if responseObject != nil {
+                let pooledGifts = responseObject!
+                for pooledGift in pooledGifts {
+                    
+                    let query = "SELECT * FROM GiftPooling WHERE giftID=\(pooledGift.databaseID) AND pooledUser='\(self.usersName)'"
+                    
+                    DatabaseConnection.ExistsPooledGift(query){ responseObject, error in
+                        //CHECK FOR ERRORS
+                        if responseObject != nil {
+                            
+                            let existsGift = responseObject!
+                            if existsGift == true {
+                                if pooledGift.eventID == self.eventID {
+                                    self.myGifts.append(pooledGift)
+                                }
+                            }
+                            self.tableView.reloadData()
+                        }
+                    }
+                }
             }
         }
     }
     
     func getBuyFeaturedGifts(){
-        DatabaseConnection.GetGifts("SELECT * FROM WishListGifts WHERE eventID=\(eventID) AND userBought IS NULL ORDER BY name") { responseObject, error in
+        DatabaseConnection.GetGifts("SELECT * FROM WishListGifts WHERE eventID=\(eventID) AND userBought IS NULL AND pooling = 0 ORDER BY name") { responseObject, error in
             if responseObject != nil {
                 self.giftList = responseObject!
                 self.tableView.reloadData()
+            }
+        }
+        DatabaseConnection.GetGifts("SELECT * FROM WishListGifts WHERE pooling = 1 ORDER BY name") { responseObject, error in
+            if responseObject != nil {
+                let pooledGifts = responseObject!
+                for pooledGift in pooledGifts {
+                    
+                    let query = "SELECT * FROM GiftPooling WHERE giftID=\(pooledGift.databaseID) AND pooledUser='\(self.usersName)'"
+                    
+                    DatabaseConnection.ExistsPooledGift(query){ responseObject, error in
+                        //CHECK FOR ERRORS
+                        if responseObject != nil {
+                            //print("test")
+                            let existsGift = responseObject!
+                            if existsGift == false {
+                                if pooledGift.eventID == self.eventID {
+                                    self.giftList.append(pooledGift)
+                                }
+                            }
+                            self.tableView.reloadData()
+                        }
+                    }
+                }
             }
         }
     }
@@ -92,32 +139,6 @@ class BuyGiftListTableViewController: UITableViewController {
         return cell
     }
     
-/*    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.section == 1 {
-            selectedGift = giftList[indexPath.row]
-            let query = "UPDATE WishListGifts SET userBought='\(usersName)' WHERE id=\(selectedGift.databaseID)"
-            
-            DatabaseConnection.HandleGift(query){ responseObject, error in
-                //CHECK FOR ERRORS
-                if responseObject != nil {
-                    self.getMyBoughtGifts()
-                    self.getBuyFeaturedGifts()
-                    self.giftList.removeAtIndex(indexPath.row)
-                    self.tableView.reloadData()
-                }
-            }
-        }
-    }*/
-    
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        if indexPath.section == 0{
-            return true
-        }
-        else{
-            return false
-        }
-    }
-    
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return headerNames[section]
     }
@@ -145,17 +166,112 @@ class BuyGiftListTableViewController: UITableViewController {
             if editingStyle == .Delete{
                 // Delete the row from the data source
                 var wlg = myGifts[indexPath.row]
-                let query = "UPDATE WishListGifts SET userBought=NULL WHERE id=\(wlg.databaseID)"
-                DatabaseConnection.HandleGift(query){ responseObject, error in
-                    //Do something when Event finishes being deleted
-                    self.myGifts.removeAtIndex(indexPath.row)
-                    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-                    self.getMyBoughtGifts()
-                    self.getBuyFeaturedGifts()
-                    self.tableView.reloadData()
+                let poolingQuery = "SELECT pooling FROM WishListGifts WHERE id=\(wlg.databaseID)"
+                DatabaseConnection.GetGiftPoolingOption(poolingQuery){responseObject, error in
+                    if responseObject != nil {
+                        let poolingOption = responseObject!
+                        if poolingOption == 0 {
+                            let query = "UPDATE WishListGifts SET userBought=NULL WHERE id=\(wlg.databaseID)"
+                            
+                            DatabaseConnection.HandleGift(query){ responseObject, error in
+                                //CHECK FOR ERRORS
+                                if responseObject != nil {
+                                    self.getMyBoughtGifts()
+                                    self.getBuyFeaturedGifts()
+                                    self.myGifts.removeAtIndex(indexPath.row)
+                                    self.tableView.reloadData()
+                                }
+                            }
+                        }
+                        else {
+                            let query = "DELETE FROM GiftPooling WHERE giftID=\(wlg.databaseID) AND pooledUser='\(self.usersName)'"
+                            
+                            DatabaseConnection.DeletePooledGift(query){ responseObject, error in
+                                if responseObject != nil {
+                                    self.getMyBoughtGifts()
+                                    self.getBuyFeaturedGifts()
+                                    self.myGifts.removeAtIndex(indexPath.row)
+                                    self.tableView.reloadData()
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
+    }
+    
+    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]?  {
+        // 1
+        if indexPath.section == 1 {
+            let giftToAdd = giftList[indexPath.row]
+            var buyAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Buy" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
+                // 2
+                let buyMenu = UIAlertController(title: nil, message: "Are you sure you want to buy \"\(giftToAdd.name)\"?", preferredStyle: .ActionSheet)
+                
+                let buyActionHandler = { (action:UIAlertAction!) -> Void in
+                    let poolingQuery = "SELECT pooling FROM WishListGifts WHERE id=\(giftToAdd.databaseID)"
+                    DatabaseConnection.GetGiftPoolingOption(poolingQuery){responseObject, error in
+                        if responseObject != nil {
+                            let poolingOption = responseObject!
+                            if poolingOption == 0 {
+                                let query = "UPDATE WishListGifts SET userBought='\(self.usersName)' WHERE id=\(giftToAdd.databaseID)"
+                                
+                                DatabaseConnection.HandleGift(query){ responseObject, error in
+                                    //CHECK FOR ERRORS
+                                    if responseObject != nil {
+                                        self.getMyBoughtGifts()
+                                        self.getBuyFeaturedGifts()
+                                        self.giftList.removeAtIndex(indexPath.row)
+                                        self.tableView.reloadData()
+                                    }
+                                }
+                            }
+                            else {
+                                let query = "INSERT INTO GiftPooling (giftID, pooledUser) VALUES (\(giftToAdd.databaseID), '\(self.usersName)')"
+                                
+                                DatabaseConnection.InsertPooledGift(query){ responseObject, error in
+                                    if responseObject != nil {
+                                        self.getMyBoughtGifts()
+                                        self.getBuyFeaturedGifts()
+                                        self.giftList.removeAtIndex(indexPath.row)
+                                        self.tableView.reloadData()
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+/*                    let query = "UPDATE WishListGifts SET userBought='\(self.usersName)' WHERE id=\(giftToAdd.databaseID)"
+                    
+                    DatabaseConnection.HandleGift(query){ responseObject, error in
+                        //CHECK FOR ERRORS
+                        if responseObject != nil {
+                            self.getMyBoughtGifts()
+                            self.getBuyFeaturedGifts()
+                            self.giftList.removeAtIndex(indexPath.row)
+                            self.tableView.reloadData()
+                        }
+                    }*/
+                    
+                    
+                }
+                
+                let buyAction = UIAlertAction(title: "Accept", style: UIAlertActionStyle.Default, handler: buyActionHandler)
+                let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
+                
+                buyMenu.addAction(buyAction)
+                buyMenu.addAction(cancelAction)
+                
+                
+                self.presentViewController(buyMenu, animated: true, completion: nil)
+            })
+            
+            buyAction.backgroundColor = UIColor.yellowColor()
+            // 5
+            return [buyAction]
+        }
+        return nil
     }
     
     override func didReceiveMemoryWarning() {

@@ -59,7 +59,7 @@ class CreateAccountViewController: UIViewController {
         smtpSession.hostname = "smtp.gmail.com";
         smtpSession.port = 465;
         smtpSession.username = "iWishlegit@gmail.com";
-        smtpSession.password = "iwishiwish";
+        smtpSession.password = "";
         smtpSession.connectionType = MCOConnectionType.TLS;
         
         var builder:MCOMessageBuilder = MCOMessageBuilder();

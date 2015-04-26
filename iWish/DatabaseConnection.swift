@@ -85,7 +85,25 @@ class DatabaseConnection{
         }
     }
     
-
+    class func GetGiftPoolingOption(query: String, completionHandler: (responseObject: Int?, error: NSError?) -> ()){
+        GetGiftPoolingOptionQuery(query, completionHandler: completionHandler)
+    }
+    
+    private class func GetGiftPoolingOptionQuery(query: String, completionHandler: (responseObject: Int?, error: NSError?)->()){
+        let password = "A7B129MNP"
+        Alamofire.request(.GET, "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php", parameters: ["password": password, "query":query]).responseJSON() {
+            (_, _, data, error) in
+            if data != nil{
+                let json = JSON(data!)
+                let pooling = (json[0]["pooling"]).intValue
+                completionHandler(responseObject: pooling, error: error)
+            }
+            else{
+                completionHandler(responseObject: nil, error: error)
+            }
+        }
+        
+    }
     
     //Functions to insert gifts
     class func InsertGift(query: String, completionHandler: (responseObject: Bool?, error: NSError?)->()){
@@ -101,6 +119,69 @@ class DatabaseConnection{
             }
             else{
                 completionHandler(responseObject: true, error: error)
+            }
+            
+        }
+    }
+    
+    //Functions to insert gifts
+    class func InsertPooledGift(query: String, completionHandler: (responseObject: Bool?, error: NSError?)->()){
+        InsertPooledGiftQuery(query, completionHandler: completionHandler)
+    }
+    
+    private class func InsertPooledGiftQuery(query: String, completionHandler: (responseObject: Bool?, error: NSError?)->()){
+        let password = "A7B129MNP"
+        Alamofire.request(.GET, "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php", parameters: ["password": password, "query":query]).responseJSON() {
+            (_, _, data, error) in
+            if error != nil{
+                completionHandler(responseObject: false, error: error)
+            }
+            else{
+                completionHandler(responseObject: true, error: error)
+            }
+            
+        }
+    }
+    
+    //Functions to insert gifts
+    class func DeletePooledGift(query: String, completionHandler: (responseObject: Bool?, error: NSError?)->()){
+        DeletePooledGiftQuery(query, completionHandler: completionHandler)
+    }
+    
+    private class func DeletePooledGiftQuery(query: String, completionHandler: (responseObject: Bool?, error: NSError?)->()){
+        let password = "A7B129MNP"
+        Alamofire.request(.GET, "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php", parameters: ["password": password, "query":query]).responseJSON() {
+            (_, _, data, error) in
+            if error != nil{
+                completionHandler(responseObject: false, error: error)
+            }
+            else{
+                completionHandler(responseObject: true, error: error)
+            }
+            
+        }
+    }
+    
+    //Functions to insert gifts
+    class func ExistsPooledGift(query: String, completionHandler: (responseObject: Bool?, error: NSError?)->()){
+        ExistsPooledGiftQuery(query, completionHandler: completionHandler)
+    }
+    
+    private class func ExistsPooledGiftQuery(query: String, completionHandler: (responseObject: Bool?, error: NSError?)->()){
+        let password = "A7B129MNP"
+        Alamofire.request(.GET, "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php", parameters: ["password": password, "query":query]).responseJSON() {
+            (_, _, data, error) in
+            if data != nil{
+                let json = JSON(data!)
+                if json.count > 0 {
+                    completionHandler(responseObject: true, error: error)
+                }
+                else {
+                    completionHandler(responseObject: false, error: error)
+                }
+            }
+            else{
+                completionHandler(responseObject: nil, error: error)
             }
             
         }
@@ -123,6 +204,8 @@ class DatabaseConnection{
             
         }
     }
+    
+    
     
     //Functions to Create an account
     class func InsertUser(query: String, completionHandler: (responseObject: Bool?, error: NSError?)->()){
