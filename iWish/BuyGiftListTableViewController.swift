@@ -44,7 +44,13 @@ class BuyGiftListTableViewController: UITableViewController {
                             
                             let existsGift = responseObject!
                             if existsGift == true {
-                                if pooledGift.eventID == self.eventID {
+                                var giftAdded = false
+                                for index in stride(from: self.myGifts.count - 1, through: 0, by: -1) {
+                                    if self.myGifts[index].databaseID == pooledGift.databaseID {
+                                        giftAdded = true
+                                    }
+                                }
+                                if pooledGift.eventID == self.eventID && giftAdded == false {
                                     self.myGifts.append(pooledGift)
                                 }
                             }
@@ -76,7 +82,13 @@ class BuyGiftListTableViewController: UITableViewController {
                             //print("test")
                             let existsGift = responseObject!
                             if existsGift == false {
-                                if pooledGift.eventID == self.eventID {
+                                var giftAdded = false
+                                for index in stride(from: self.giftList.count - 1, through: 0, by: -1) {
+                                    if self.giftList[index].databaseID == pooledGift.databaseID {
+                                        giftAdded = true
+                                    }
+                                }
+                                if pooledGift.eventID == self.eventID && giftAdded == false {
                                     self.giftList.append(pooledGift)
                                 }
                             }
@@ -241,19 +253,6 @@ class BuyGiftListTableViewController: UITableViewController {
                             }
                         }
                     }
-                    
-/*                    let query = "UPDATE WishListGifts SET userBought='\(self.usersName)' WHERE id=\(giftToAdd.databaseID)"
-                    
-                    DatabaseConnection.HandleGift(query){ responseObject, error in
-                        //CHECK FOR ERRORS
-                        if responseObject != nil {
-                            self.getMyBoughtGifts()
-                            self.getBuyFeaturedGifts()
-                            self.giftList.removeAtIndex(indexPath.row)
-                            self.tableView.reloadData()
-                        }
-                    }*/
-                    
                     
                 }
                 
