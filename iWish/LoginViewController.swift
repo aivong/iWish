@@ -30,7 +30,7 @@ class LoginViewController: UIViewController {
         logInContainerView.backgroundColor = UIColor.clearColor()
         
         //self.view.backgroundColor = UIColor(red: 252.0/255.0, green: 80.0/255.0, blue: 80.0/255.0, alpha: 1.0)
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background_1.jpg")!)
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background_1.png")!)
         
         logInContainerView.layer.cornerRadius = cornerRadius
         usernamePasswordView.layer.cornerRadius = cornerRadius
