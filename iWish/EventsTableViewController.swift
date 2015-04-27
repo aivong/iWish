@@ -21,7 +21,11 @@ class EventsTableViewController: UITableViewController {
     var myEvents = [UserEvent]()
     var eventRequests = [UserEvent]()
     var upcomingEvents = [UserEvent]()
-  
+    
+    
+    var array = [MCOSMTPSendOperation]()
+    var invites = [Invite]()
+    var users = [Users]()
     
     @IBAction func cancelAddEvent(segue: UIStoryboardSegue){
         
@@ -162,11 +166,76 @@ class EventsTableViewController: UITableViewController {
         self.presentViewController(alertController, animated: true, completion: nil)
     }
     
+    
+    private func sendCancellation(eventid: Int, email: String) {
+        var smtpSession:MCOSMTPSession = MCOSMTPSession()
+        smtpSession.hostname = "smtp.gmail.com";
+        smtpSession.port = 465;
+        smtpSession.username = "iWishlegit@gmail.com";
+        smtpSession.password = "iwishiwish";
+        smtpSession.connectionType = MCOConnectionType.TLS;
+        
+        var builder:MCOMessageBuilder = MCOMessageBuilder();
+        builder.header.from = MCOAddress(mailbox: "iWish.legit@gmail.com")
+        //builder.header.to = [MCOAddress(mailbox: "auserthatisnotreal@gmail.com")]
+        builder.header.to = [MCOAddress(mailbox: email)]
+        builder.header.subject = "iWish Event Cancellation"
+        
+        var eventString = String(eventid)
+        builder.htmlBody = "<h1>I SORRY</h1>" + "<p>Event " + eventString + " has been CANCELED.</p>"
+        
+        let rfc822Data:NSData = builder.data()
+        
+        array.append(smtpSession.sendOperationWithData(rfc822Data))
+        
+        array[0].start({ (error:NSError!) -> Void
+            in
+            println("Sent")
+        })
+        
+        
+        array.removeLast()
+    }
+    
+    
+    
     // Override to support editing thje table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
+            
+            
             // Delete the row from the data source
             var wlg = myEvents[indexPath.row]
+            println("ONCE HERE")
+            
+            
+            DatabaseConnection.GetGuestsForEvent(wlg.eventID, status:"confirmed")
+                { responseObject, error in
+                    if responseObject != nil
+                    {
+                        self.invites = responseObject!
+                    }
+                    for index in stride(from: self.invites.count - 1, through: 0, by: -1)
+                    {
+                        println(index)
+                        let query = "SELECT * FROM Users WHERE username = '\(self.invites[index].invitee)'"
+                        DatabaseConnection.GetUser(query)
+                            { responseObject, error in
+                                //CHECK FOR ERRORS
+                                if responseObject != nil
+                                {
+                                    self.users = responseObject!
+                                    println(self.users[0].email)
+                                    self.sendCancellation(wlg.eventID, email: self.users[0].email)
+                                }
+                        }
+                        
+                    }
+                    println("RESPONSE HERE")
+            }
+            
+            
+            
             DatabaseConnection.DeleteEvent(wlg.eventID){ responseObject, error in
                 //Do something when Event finishes being deleted
             }
@@ -182,6 +251,7 @@ class EventsTableViewController: UITableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
     }
+    
 
     
     override func viewDidLoad() {

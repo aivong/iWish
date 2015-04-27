@@ -57,6 +57,7 @@
 		849337B61A91AE63003456B5 /* GiftDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849337B51A91AE63003456B5 /* GiftDetailViewController.swift */; };
 		849337BA1A94137F003456B5 /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849337B91A94137F003456B5 /* EventsTableViewController.swift */; };
 		8E0A55891AA11A85000B89ED /* VerifyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0A55861AA11A82000B89ED /* VerifyState.swift */; };
+		8E12370E1AEEC49900C2A863 /* background_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E12370D1AEEC49900C2A863 /* background_1.png */; };
 		8E43B39B1ADC5AD800DD5F25 /* libMailCore-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E43B38C1ADC5AA800DD5F25 /* libMailCore-ios.a */; };
 		8E43B39D1ADC5ADD00DD5F25 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E43B39C1ADC5ADD00DD5F25 /* CFNetwork.framework */; };
 		8E43B39F1ADC5AE100DD5F25 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E43B39E1ADC5AE100DD5F25 /* Security.framework */; };
@@ -67,6 +68,8 @@
 		8E9730671A86BA2C006543B1 /* iWishTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9730661A86BA2C006543B1 /* iWishTests.swift */; };
 		8EADEE2D1ACE0DC00038C498 /* profileGifts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EADEE2C1ACE0DC00038C498 /* profileGifts.swift */; };
 		8EADEE2E1ACE0DC00038C498 /* profileGifts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EADEE2C1ACE0DC00038C498 /* profileGifts.swift */; };
+		8EB5E8DA1AEEC6F200693AF2 /* door24.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EB5E8D91AEEC6F200693AF2 /* door24.png */; };
+		8EB5E8E41AEEC6FC00693AF2 /* user168.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EB5E8E31AEEC6FC00693AF2 /* user168.png */; };
 		8ED35F0C1ACE061C00F6E9A6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED35F0B1ACE061B00F6E9A6 /* ProfileViewController.swift */; };
 		8ED35F0D1ACE061C00F6E9A6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED35F0B1ACE061B00F6E9A6 /* ProfileViewController.swift */; };
 		8EDE536E1A8920DC008B49A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDE536D1A8920DC008B49A0 /* ViewController.swift */; };
@@ -78,11 +81,8 @@
 		C66DE61C1AB623A600BAF9A2 /* AddFriendToEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66DE61A1AB623A600BAF9A2 /* AddFriendToEventViewController.swift */; };
 		CD4041501A967D5E00DB40D5 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446A9961A8D00F200D51024 /* Users.swift */; };
 		CD4041521A967D6800DB40D5 /* AddGiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849337B31A914F58003456B5 /* AddGiftViewController.swift */; };
-		CD4041531A967D6A00DB40D5 /* GiftDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849337B51A91AE63003456B5 /* GiftDetailViewController.swift */; };
 		CD4041541A967D6D00DB40D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDE536D1A8920DC008B49A0 /* ViewController.swift */; };
 		CD4041551A967D6F00DB40D5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446A98F1A8BC07800D51024 /* LoginViewController.swift */; };
-		CD4041561A967D7100DB40D5 /* WishListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446A9981A8D055000D51024 /* WishListTableViewController.swift */; };
-		CD4041571A967D7400DB40D5 /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849337B91A94137F003456B5 /* EventsTableViewController.swift */; };
 		CD4041581A967D7900DB40D5 /* WishListGift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433929A1A8D0B2500E5B01B /* WishListGift.swift */; };
 		CD4041591A967D7F00DB40D5 /* DatabaseConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433929C1A8D2C1A00E5B01B /* DatabaseConnection.swift */; };
 		CD40415A1A967D8800DB40D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E97304E1A86BA2C006543B1 /* AppDelegate.swift */; };
@@ -91,7 +91,6 @@
 		CD708DAF1AE6951C006A72A1 /* iWishStylingTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD708DA51AE68FDA006A72A1 /* iWishStylingTool.swift */; };
 		CD7FBB021AD748220039C35B /* EventTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7FBB011AD748220039C35B /* EventTests.swift */; };
 		CD9935EB1AD3140000B47654 /* EditGiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9935EA1AD3140000B47654 /* EditGiftViewController.swift */; };
-		CD9935ED1AD3182000B47654 /* EditGiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9935EA1AD3140000B47654 /* EditGiftViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -233,6 +232,7 @@
 		849337B51A91AE63003456B5 /* GiftDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftDetailViewController.swift; sourceTree = "<group>"; };
 		849337B91A94137F003456B5 /* EventsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewController.swift; sourceTree = "<group>"; };
 		8E0A55861AA11A82000B89ED /* VerifyState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyState.swift; sourceTree = "<group>"; };
+		8E12370D1AEEC49900C2A863 /* background_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_1.png; sourceTree = "<group>"; };
 		8E43B37D1ADC5AA700DD5F25 /* mailcore2.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = mailcore2.xcodeproj; path = "mailcore2-master/build-mac/mailcore2.xcodeproj"; sourceTree = "<group>"; };
 		8E43B39C1ADC5ADD00DD5F25 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		8E43B39E1ADC5AE100DD5F25 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -247,6 +247,8 @@
 		8E9730651A86BA2C006543B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E9730661A86BA2C006543B1 /* iWishTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iWishTests.swift; sourceTree = "<group>"; };
 		8EADEE2C1ACE0DC00038C498 /* profileGifts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = profileGifts.swift; path = ../profileGifts.swift; sourceTree = "<group>"; };
+		8EB5E8D91AEEC6F200693AF2 /* door24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = door24.png; sourceTree = "<group>"; };
+		8EB5E8E31AEEC6FC00693AF2 /* user168.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user168.png; sourceTree = "<group>"; };
 		8ED35F0B1ACE061B00F6E9A6 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		8EDE536D1A8920DC008B49A0 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8EE8E70C1A9A8AA0000F6076 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
@@ -350,6 +352,9 @@
 		8E97304C1A86BA2C006543B1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8EB5E8E31AEEC6FC00693AF2 /* user168.png */,
+				8EB5E8D91AEEC6F200693AF2 /* door24.png */,
+				8E12370D1AEEC49900C2A863 /* background_1.png */,
 				8EFEFCE11A9AA4D8004EC929 /* unicorn.jpg */,
 				8446A9931A8BCD6600D51024 /* iWishImages */,
 				8E9730571A86BA2C006543B1 /* Images.xcassets */,
@@ -384,8 +389,8 @@
 		CD4041461A967A3800DB40D5 /* Events ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				849337B91A94137F003456B5 /* EventsTableViewController.swift */,
 				555FE4061AABB9E600EE8C1E /* EventDetailViewController.swift */,
+				849337B91A94137F003456B5 /* EventsTableViewController.swift */,
 				555FE4091AABB9F000EE8C1E /* AddEventViewController.swift */,
 				555FE43B1AABF86F00EE8C1E /* EditEventViewController.swift */,
 				55D888971AB4FAE200FF8A72 /* AddGiftToEventViewController.swift */,
@@ -635,8 +640,11 @@
 			files = (
 				8E9730561A86BA2C006543B1 /* Main.storyboard in Resources */,
 				8E97305B1A86BA2C006543B1 /* LaunchScreen.xib in Resources */,
+				8EB5E8E41AEEC6FC00693AF2 /* user168.png in Resources */,
 				8E9730581A86BA2C006543B1 /* Images.xcassets in Resources */,
+				8E12370E1AEEC49900C2A863 /* background_1.png in Resources */,
 				8EFEFCE21A9AA4D8004EC929 /* unicorn.jpg in Resources */,
+				8EB5E8DA1AEEC6F200693AF2 /* door24.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -705,7 +713,6 @@
 				555FE4151AABC4F800EE8C1E /* SearchUsersTableViewController.swift in Sources */,
 				C66DE61C1AB623A600BAF9A2 /* AddFriendToEventViewController.swift in Sources */,
 				55D888991AB4FAE200FF8A72 /* AddGiftToEventViewController.swift in Sources */,
-				CD4041561A967D7100DB40D5 /* WishListTableViewController.swift in Sources */,
 				CD40415B1A967D8C00DB40D5 /* SwiftyJSON.swift in Sources */,
 				55D8889D1AB4FB1700FF8A72 /* ViewEventGiftsViewController.swift in Sources */,
 				555FE40B1AABB9F000EE8C1E /* AddEventViewController.swift in Sources */,
@@ -716,7 +723,6 @@
 				55D888A01AB4FB3500FF8A72 /* ViewEventGiftDetailViewController.swift in Sources */,
 				555FE4051AABB9A400EE8C1E /* UserEvent.swift in Sources */,
 				CD4041581A967D7900DB40D5 /* WishListGift.swift in Sources */,
-				CD9935ED1AD3182000B47654 /* EditGiftViewController.swift in Sources */,
 				67C8B5211ADC394600701C13 /* RequestDetailViewController.swift in Sources */,
 				CD7FBB021AD748220039C35B /* EventTests.swift in Sources */,
 				C66DE6151AB6113500BAF9A2 /* Invite.swift in Sources */,
@@ -726,7 +732,6 @@
 				67C8B5251ADC396B00701C13 /* BuyGiftListTableViewController.swift in Sources */,
 				555FE4081AABB9E600EE8C1E /* EventDetailViewController.swift in Sources */,
 				559A29B51AED50DA0005FA06 /* BuyGiftDetailViewController.swift in Sources */,
-				CD4041531A967D6A00DB40D5 /* GiftDetailViewController.swift in Sources */,
 				CD4041591A967D7F00DB40D5 /* DatabaseConnection.swift in Sources */,
 				84072B2E1ADC4426004F51B4 /* WishListGiftTests.swift in Sources */,
 				555FE43D1AABF86F00EE8C1E /* EditEventViewController.swift in Sources */,
@@ -735,7 +740,6 @@
 				8EADEE2E1ACE0DC00038C498 /* profileGifts.swift in Sources */,
 				84072B1C1ACAECDD004F51B4 /* SettingsTableViewController.swift in Sources */,
 				55D888A31AB4FB5500FF8A72 /* EventMenuViewController.swift in Sources */,
-				CD4041571A967D7400DB40D5 /* EventsTableViewController.swift in Sources */,
 				8E9730671A86BA2C006543B1 /* iWishTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

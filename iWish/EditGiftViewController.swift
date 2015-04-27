@@ -23,6 +23,13 @@ class EditGiftViewController: UIViewController {
     
     var gift: WishListGift!
     
+    var poolSw = "0"
+    
+    var array = [MCOSMTPSendOperation]()
+    
+    var invites = [Invite]()
+    var users = [Users]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,6 +38,11 @@ class EditGiftViewController: UIViewController {
         self.descriptionTextView.editable = true
         self.descriptionTextView.text = gift.description
         self.poolingSwitch.userInteractionEnabled = false;
+        
+        if(gift.allowPooling == true)
+        {
+            poolSw = "1"
+        }
         
         let query = "SELECT userBought FROM WishListGifts WHERE id=\(self.gift.databaseID)"
         
@@ -66,6 +78,33 @@ class EditGiftViewController: UIViewController {
         iWishStylingTool.addStyleToSubviewsOfView(self.view)
     }
     
+    private func poolConfirmation(giftname: String, email: String) {
+        var smtpSession:MCOSMTPSession = MCOSMTPSession()
+        smtpSession.hostname = "smtp.gmail.com";
+        smtpSession.port = 465;
+        smtpSession.username = "iWishlegit@gmail.com";
+        smtpSession.password = "iwishiwish";
+        smtpSession.connectionType = MCOConnectionType.TLS;
+        
+        var builder:MCOMessageBuilder = MCOMessageBuilder();
+        builder.header.from = MCOAddress(mailbox: "iWish.legit@gmail.com")
+        //builder.header.to = [MCOAddress(mailbox: "auserthatisnotreal@gmail.com")]
+        builder.header.to = [MCOAddress(mailbox: email)]
+        builder.header.subject = "iWish Pool Confirmation"
+        builder.htmlBody = "<h1>Giftpooling has been enabled for " + giftname + ".</h1>"
+        
+        let rfc822Data:NSData = builder.data()
+        
+        array.append(smtpSession.sendOperationWithData(rfc822Data))
+        
+        array[0].start({ (error:NSError!) -> Void
+            in
+            println("Sent")
+        })
+        
+        array.removeLast()
+    }
+    
     func savePressed(sender: AnyObject) {
         
         if self.validInputs() {
@@ -74,8 +113,38 @@ class EditGiftViewController: UIViewController {
             
             var poolingString = "0"
             
-            if self.poolingSwitch.on { poolingString = "1" }
-        
+            if self.poolingSwitch.on {
+                poolingString = "1"
+                if(poolSw != "1"){
+                    DatabaseConnection.GetGuestsForEvent(self.gift.eventID, status:"confirmed")
+                        { responseObject, error in
+                            if responseObject != nil
+                            {
+                                self.invites = responseObject!
+                            }
+                            for index in stride(from: self.invites.count - 1, through: 0, by: -1)
+                            {
+                                println(index)
+                                let query = "SELECT * FROM Users WHERE username = '\(self.invites[index].invitee)'"
+                                DatabaseConnection.GetUser(query)
+                                    { responseObject, error in
+                                        //CHECK FOR ERRORS
+                                        if responseObject != nil
+                                        {
+                                            self.users = responseObject!
+                                            println(self.users[0].email)
+                                            self.poolConfirmation(self.gift.name, email: self.users[0].email)
+                                        }
+                                }
+                                
+                            }
+                            println("RESPONSE HERE")
+                            
+                            
+                    }
+                }
+            }
+            
             let query = "UPDATE WishListGifts SET name='\(self.gift.name)', description='\(self.gift.description)', price=\(self.gift.price), pooling='\(poolingString)' WHERE id=\(self.gift.databaseID)"
             
             println("\(query)")
@@ -86,6 +155,7 @@ class EditGiftViewController: UIViewController {
             }
         }
     }
+
     
     private func giftSuccessfullyAdded() {
         self.performSegueWithIdentifier(giftEditSavedSegueIdentifier, sender: self)
