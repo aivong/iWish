@@ -30,8 +30,22 @@ class EditGiftViewController: UIViewController {
         self.priceLabel.text = String(format:"$%.2f", gift.price)
         self.descriptionTextView.editable = true
         self.descriptionTextView.text = gift.description
-        self.poolingSwitch.userInteractionEnabled = true
-        self.poolingSwitch.on = gift.allowPooling
+        self.poolingSwitch.userInteractionEnabled = false;
+        
+        let query = "SELECT userBought FROM WishListGifts WHERE id=\(self.gift.databaseID)"
+        
+        DatabaseConnection.ExistsUserBought(query){ responseObject, error in
+            let existsUserBought = responseObject!
+            
+            if existsUserBought == true {
+                self.poolingSwitch.on = self.gift.allowPooling
+                self.poolingSwitch.userInteractionEnabled = false;
+            }
+            else {
+                self.poolingSwitch.userInteractionEnabled = true
+                self.poolingSwitch.on = self.gift.allowPooling
+            }
+        }
         
         let saveButton = UIBarButtonItem(title: "Save", style: .Plain, target: self, action: "savePressed:")
         let cancelButton = UIBarButtonItem(title: "Cancel", style: .Plain, target: self, action: "cancelPressed:")
