@@ -41,9 +41,6 @@ class FriendsTableViewController: UITableViewController {
                 self.friends.sort({$0.username < $1.username})
                 self.tableView.reloadData()
             }
-            else {
-                //DATA NOT RETURNED
-            }
             println(self.friends.count)
             
         }
@@ -58,13 +55,6 @@ class FriendsTableViewController: UITableViewController {
             }
             
         }
-        
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
     override func viewWillLayoutSubviews() {

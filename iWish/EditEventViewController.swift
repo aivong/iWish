@@ -14,7 +14,6 @@ class EditEventViewController: UIViewController {
     @IBOutlet weak var eventDate: UITextField!
     @IBOutlet weak var eventDescription: UITextView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         eventDescription.layer.borderWidth = 1

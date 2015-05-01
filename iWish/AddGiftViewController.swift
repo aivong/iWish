@@ -25,7 +25,6 @@ class AddGiftViewController: UIViewController {
             let query = "INSERT INTO WishListGifts (user, name, description, price) VALUES ('bohlin2', '\(giftName.text)', '\(giftDescription.text)', \(giftPrice.text))"
             
             DatabaseConnection.InsertGift(query){ responseObject, error in
-                //CHECK FOR ERRORS
                 self.giftSuccessfullyAdded()
             }
         }
@@ -69,17 +68,4 @@ class AddGiftViewController: UIViewController {
     func addStyleToView() {
         iWishStylingTool.addStyleToSubviewsOfView(self.view)
     }
-    
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

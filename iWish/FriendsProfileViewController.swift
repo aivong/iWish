@@ -32,9 +32,6 @@ class FriendsProfileViewController: UIViewController {
         self.title = friendsName
         VerifyState.selectedUser = friendsName
         friendWasRemoved = false
-        // Do any additional setup after loading the view.
-        // Do any additional setup after loading the view.
-        
         
         let queryProfile = "SELECT * FROM Users WHERE username = '\(friendsName)'"
         
@@ -44,7 +41,7 @@ class FriendsProfileViewController: UIViewController {
 
 
             DatabaseConnection.GetUser(queryProfile) { responseObject, error in
-                //CHECK FOR ERRORS
+
                 if responseObject != nil {
                     println("SEA: \(us.showEmailAddress.boolValue)")
                     println("SB: \(us.showBirthday.boolValue)")
@@ -72,7 +69,7 @@ class FriendsProfileViewController: UIViewController {
         let queryImage = "SELECT * FROM pictures WHERE username = '\(VerifyState.selectedUser)'"
         
         DatabaseConnection.GetImage(queryImage) { responseObject, error in
-            //CHECK FOR ERRORS
+
             if responseObject != nil {
                 
                 let profileImage : UIImage = UIImage(named: "/Users/aivong/Desktop/iWishimage/" + VerifyState.selectedPic)!
@@ -100,11 +97,6 @@ class FriendsProfileViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func alertUser(titleText: String, messageText: String, buttonText: String){
@@ -140,14 +132,4 @@ class FriendsProfileViewController: UIViewController {
         
         self.presentViewController(friendOptionsMenu, animated: true, completion: nil)
     }
-    
-    
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-
-    }
-    
-    
 }

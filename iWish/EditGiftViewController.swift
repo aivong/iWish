@@ -39,8 +39,7 @@ class EditGiftViewController: UIViewController {
         self.descriptionTextView.text = gift.description
         self.poolingSwitch.userInteractionEnabled = false;
         
-        if(gift.allowPooling == true)
-        {
+        if(gift.allowPooling == true) {
             poolSw = "1"
         }
         
@@ -65,7 +64,6 @@ class EditGiftViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = saveButton
         self.navigationItem.leftBarButtonItem = cancelButton
         
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillLayoutSubviews() {
@@ -150,7 +148,7 @@ class EditGiftViewController: UIViewController {
             println("\(query)")
             
             DatabaseConnection.InsertGift(query){ responseObject, error in
-                //CHECK FOR ERRORS
+
                 self.giftSuccessfullyAdded()
             }
         }

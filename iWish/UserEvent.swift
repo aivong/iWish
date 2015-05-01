@@ -24,7 +24,6 @@ class UserEvent{
     }
     
     func descripe () -> String {
-        //        return "Name: \(name)\nDescription: \(description)\nPrice: \(price)\nDatabaseID: \(databaseID)"
         return "";
     }
     

@@ -9,14 +9,9 @@
 import UIKit
 
 class WishListTableViewController: UITableViewController {
-//    
-//    let testData = [WishListGift(giftID: 0, giftName: "Hot Wheels", giftDescription: "Fun little car", giftPrice: 2.00), WishListGift(giftID: 1, giftName: "GI Joe", giftDescription: "Action Figure", giftPrice: 4.99)]
     
     var gifts = [WishListGift]()
     var selectedGift : WishListGift!
-    
-    //let query = "SELECT * FROM Users WHERE username = '\(usernameTextField.text)'"
-   // SELECT name from WishListGifts where user = '\(VerifyState.selectedUser)'
     
     func getUsersFeaturedGifts(){
         DatabaseConnection.GetGifts("SELECT * FROM WishListGifts WHERE user = '\(VerifyState.username)' ORDER BY name") { responseObject, error in
@@ -63,22 +58,11 @@ class WishListTableViewController: UITableViewController {
         getUsersFeaturedGifts()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    // MARK: - Table view data source
-    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
         return 1
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
         return gifts.count
     }
     
@@ -94,20 +78,11 @@ class WishListTableViewController: UITableViewController {
         return cell
     }
     
-    //    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    //
-    //        selectedGift = gifts[indexPath.row]
-    //    }
-    
-    
-    
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return NO if you do not want the specified item to be editable.
         return true
     }
-    
-    
     
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -124,30 +99,8 @@ class WishListTableViewController: UITableViewController {
         }
     }
     
-    
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-    
-    }
-    */
-    
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-    // Return NO if you do not want the item to be re-orderable.
-    return true
-    }
-    */
-    
-    
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
         if(segue.destinationViewController.isKindOfClass(GiftDetailViewController)){
             
             let vc = segue.destinationViewController as GiftDetailViewController

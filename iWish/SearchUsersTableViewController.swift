@@ -35,7 +35,8 @@ class SearchUsersTableViewController: UITableViewController, UISearchBarDelegate
         
         DatabaseConnection.GetProperUsers(self.usersName){responseObject, error in
             let ps = self.properStringSQL(responseObject!)
-        //Query will only return names of people user is not friends with
+            
+            //Query will only return names of people user is not friends with
             DatabaseConnection.GetUser("SELECT DISTINCT Users.username as username, Users.password as password FROM Users, Friends WHERE (username != '\(self.usersName)' AND ((Friends.requester = '\(self.usersName)' AND Friends.requestee != username) OR (Friends.requester != username AND Friends.requestee = '\(self.usersName)') OR (Friends.requester != '\(self.usersName)' AND Friends.requestee != '\(self.usersName)'))) AND username IN \(ps) ORDER BY username") { responseObject, error in
                 
                 if responseObject != nil {
@@ -49,8 +50,7 @@ class SearchUsersTableViewController: UITableViewController, UISearchBarDelegate
                 }
             }
         }
-        
-        // Reload the table
+    
         self.tableView.reloadData()
     }
     
@@ -77,11 +77,6 @@ class SearchUsersTableViewController: UITableViewController, UISearchBarDelegate
             }
         }
         return ret
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // MARK: - Table view data source
@@ -115,7 +110,7 @@ class SearchUsersTableViewController: UITableViewController, UISearchBarDelegate
     }
     
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]?  {
-        // 1
+
         var acceptAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Add Friend" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
             let friendName = self.filteredUsers[indexPath.row].username
             let acceptMenu = UIAlertController(title: nil, message: "Send friend request?", preferredStyle: .ActionSheet)
@@ -141,17 +136,9 @@ class SearchUsersTableViewController: UITableViewController, UISearchBarDelegate
         
         
         acceptAction.backgroundColor = UIColor.greenColor()
-        // 5
+
         return [acceptAction]
     }
     
-    /*
-    // MARK: - Navigation
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-    }
-    */
     
 }

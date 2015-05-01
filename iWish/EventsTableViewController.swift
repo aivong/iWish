@@ -69,9 +69,6 @@ class EventsTableViewController: UITableViewController {
                 self.addUpcomingEventNotifications()
                 self.tableView.reloadData()
             }
-            else{
-//                self.alertUser("No Data", messageText: "Could not retrieve data", buttonText: "OK")
-            }
         }
         
     }
@@ -84,9 +81,6 @@ class EventsTableViewController: UITableViewController {
             if responseObject != nil {
                 self.eventRequests = responseObject!
                 self.tableView.reloadData()
-            }
-            else{
-//                self.alertUser("No Data", messageText: "Could not retrieve data", buttonText: "OK")
             }
         }
     }
@@ -102,9 +96,6 @@ class EventsTableViewController: UITableViewController {
     
                 self.tableView.reloadData()
             }
-            else{
-//                self.alertUser("No Data", messageText: "Could not retrieve data", buttonText: "OK")
-            }
         }
     }
     
@@ -119,9 +110,6 @@ class EventsTableViewController: UITableViewController {
                 self.pastEvents = responseObject!
 
                 self.tableView.reloadData()
-            }
-            else{
-//                self.alertUser("No Data", messageText: "Could not retrieve data", buttonText: "OK")
             }
         }
     }

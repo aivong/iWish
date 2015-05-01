@@ -22,8 +22,6 @@ class EventDetailViewController: UIViewController {
         eventNameDetail.text = event.name
         eventDescriptionDetail.text = event.description
         eventDateDetail.text = event.date
-        
-        // Do any edititional setup after loading the view.
     }
     
     override func viewWillLayoutSubviews() {
@@ -34,15 +32,6 @@ class EventDetailViewController: UIViewController {
     
     func addStyleToView() {
         iWishStylingTool.addStyleToSubviewsOfView(self.view)
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func cancelEditEvent(segue: UIStoryboardSegue){
-        
     }
     
     @IBAction func updateEvent(segue: UIStoryboardSegue){
@@ -84,15 +73,6 @@ class EventDetailViewController: UIViewController {
         self.presentViewController(alertController, animated: true, completion: nil)
     }
     
-    /*
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
-    }
-    */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         // Get the new view controller using [segue destinationViewController].
