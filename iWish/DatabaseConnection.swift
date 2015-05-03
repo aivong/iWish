@@ -230,8 +230,6 @@ class DatabaseConnection{
         }
     }
     
-    
-    
     //Functions to Create an account
     class func InsertUser(query: String, completionHandler: (responseObject: Bool?, error: NSError?)->()){
         InsertUserQuery(query, completionHandler: completionHandler)
@@ -251,25 +249,6 @@ class DatabaseConnection{
         }
     }
     
-//    class func CheckUser(query: String, completionHandler: (responseObject: Bool?, error: NSError?)->()){
-//        InsertUserQuery(query, completionHandler: completionHandler)
-//    }
-//    
-//    private class func CheckUserQuery(query: String, completionHandler: (responseObject: Bool?, error: NSError?)->()){
-//        let password = "A7B129MNP"
-//        Alamofire.request(.GET, "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php", parameters: ["password": password, "query":query]).responseJSON() {
-//            (_, _, data, error) in
-//            if data != nil{
-//                let json = JSON(data!)
-//                if json.count > 0 {
-//                    completionHandler(responseObject: true, error: error)
-//                }
-//            }
-//            else{
-//                completionHandler(responseObject: false, error: error)
-//            }
-//        }
-//    }
     class func GetUser(query: String, completionHandler: (responseObject: [Users]?, error: NSError?) -> ()){
         GetUsers(query, completionHandler: completionHandler)
     }
@@ -625,8 +604,7 @@ class DatabaseConnection{
         let password = "A7B129MNP"
         Alamofire.request(.GET, "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php", parameters: ["password": password, "query":query]).responseJSON() {
             (_, _, data, error) in
-            //println(data)
-            //println(error?.description)
+
             if data != nil{
                 completionHandler(responseObject: true, error: error)
                 
@@ -675,8 +653,7 @@ class DatabaseConnection{
         let password = "A7B129MNP"
         Alamofire.request(.GET, "http://cs429iwish.web.engr.illinois.edu/Webservice/service.php", parameters: ["password": password, "query":query]).responseJSON() {
             (_, _, data, error) in
-            //println(data)
-            //println(error?.description)
+
             if data != nil{
                 completionHandler(responseObject: true, error: error)
                 
@@ -742,7 +719,6 @@ class DatabaseConnection{
             
             (_, _, data, error) in
             
-            //println("Get: \(JSON(data!)[0])")
             
             if data != nil && JSON(data!)[0] != nil{
                 
@@ -784,7 +760,6 @@ class DatabaseConnection{
     class func SetUserSettings(userSettings: UserSettings, completionHandler: (responseObject: Bool?, error: NSError?) -> ()){
         
         let query = "UPDATE UserSettings SET notifications = \(userSettings.notifications), showEmailAddress = \(userSettings.showEmailAddress), allowSystemEmails = \(userSettings.allowSystemEmails), showBirthday = \(userSettings.showBirthday), allowSearchByUsername = \(userSettings.allowSearchByUsername) WHERE username='\(userSettings.user)'"
-        //println(query)
         SetUserSettingsDB(query, completionHandler: completionHandler)
         
     }
@@ -799,7 +774,6 @@ class DatabaseConnection{
             
             (_, _, data, error) in
             
-            //println("Set: \(data)")
             
             if data != nil{
                 
@@ -838,8 +812,6 @@ class DatabaseConnection{
             
             (_, _, data, error) in
             
-            //println("Set: \(data)")
-            
             if data != nil{
                 var ret = [String]()
                 let json = JSON(data!)
@@ -873,21 +845,22 @@ class DatabaseConnection{
                 println(json)
                 
                 if json == [] {
-                    completionHandler(responseObject: nil, error: error)
+                    var defaultImage = "default.png"
+                    VerifyState.selectedPic = "default.png"
+                    completionHandler(responseObject: defaultImage, error: error)
                 }
                 else {
                     for i in 0..<json.count{
                         var filename = (json[i]["image"]).stringValue
-                        //    println(filename)
                         VerifyState.DBFinished = true
                         VerifyState.selectedPic = filename
+                        println(VerifyState.selectedPic)
                         completionHandler(responseObject: filename, error: error)
                     }
                 }
                 
             }
         }
-        //println(VerifyState.selectedPic)
         
     }
     

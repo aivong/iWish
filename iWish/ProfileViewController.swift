@@ -43,13 +43,11 @@ class ProfileViewController: UIViewController {
             }
         }
         
-        println(queryImage)
         DatabaseConnection.GetImage(queryImage) { responseObject, error in
-            //CHECK FOR ERRORS
             if responseObject != nil {
                 
-                let profileImage : UIImage = UIImage(named: "/Users/aivong/Desktop/iWishimage/" + VerifyState.selectedPic)!
-                let imageview = UIImageView(image: profileImage)
+                let profileImage : UIImage = UIImage(named: VerifyState.selectedPic)!
+                let imageview = UIImageView(image: UIImage(named: VerifyState.selectedPic)!)
                 imageview.frame = CGRectMake(31, 26, 172, 191)
                 self.view.addSubview(imageview)
                 
@@ -68,23 +66,8 @@ class ProfileViewController: UIViewController {
     func addStyleToView() {
         iWishStylingTool.addStyleToSubviewsOfView(self.view)
     }
-    
-    
-    
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
-    
-    /*
-    // MARK: - Navigation
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
-    }
-    */
-    
 }

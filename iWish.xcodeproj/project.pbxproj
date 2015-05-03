@@ -66,6 +66,14 @@
 		8E9730581A86BA2C006543B1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E9730571A86BA2C006543B1 /* Images.xcassets */; };
 		8E97305B1A86BA2C006543B1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E9730591A86BA2C006543B1 /* LaunchScreen.xib */; };
 		8E9730671A86BA2C006543B1 /* iWishTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9730661A86BA2C006543B1 /* iWishTests.swift */; };
+		8E9B1C691AF6DB5500912AA9 /* tester.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E9B1C611AF6DB5500912AA9 /* tester.png */; };
+		8E9B1C6A1AF6DB5500912AA9 /* gemma.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8E9B1C621AF6DB5500912AA9 /* gemma.jpeg */; };
+		8E9B1C6B1AF6DB5500912AA9 /* zach.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8E9B1C631AF6DB5500912AA9 /* zach.jpg */; };
+		8E9B1C6C1AF6DB5500912AA9 /* pat.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8E9B1C641AF6DB5500912AA9 /* pat.jpeg */; };
+		8E9B1C6D1AF6DB5500912AA9 /* unicorn.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8E9B1C651AF6DB5500912AA9 /* unicorn.jpg */; };
+		8E9B1C6E1AF6DB5500912AA9 /* kevin.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8E9B1C661AF6DB5500912AA9 /* kevin.jpeg */; };
+		8E9B1C6F1AF6DB5500912AA9 /* default.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E9B1C671AF6DB5500912AA9 /* default.png */; };
+		8E9B1C701AF6DB5500912AA9 /* ai.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E9B1C681AF6DB5500912AA9 /* ai.png */; };
 		8EADEE2D1ACE0DC00038C498 /* profileGifts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EADEE2C1ACE0DC00038C498 /* profileGifts.swift */; };
 		8EADEE2E1ACE0DC00038C498 /* profileGifts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EADEE2C1ACE0DC00038C498 /* profileGifts.swift */; };
 		8EB5E8DA1AEEC6F200693AF2 /* door24.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EB5E8D91AEEC6F200693AF2 /* door24.png */; };
@@ -246,6 +254,14 @@
 		8E9730601A86BA2C006543B1 /* iWishTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iWishTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E9730651A86BA2C006543B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E9730661A86BA2C006543B1 /* iWishTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iWishTests.swift; sourceTree = "<group>"; };
+		8E9B1C611AF6DB5500912AA9 /* tester.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tester.png; sourceTree = "<group>"; };
+		8E9B1C621AF6DB5500912AA9 /* gemma.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gemma.jpeg; sourceTree = "<group>"; };
+		8E9B1C631AF6DB5500912AA9 /* zach.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = zach.jpg; sourceTree = "<group>"; };
+		8E9B1C641AF6DB5500912AA9 /* pat.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pat.jpeg; sourceTree = "<group>"; };
+		8E9B1C651AF6DB5500912AA9 /* unicorn.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = unicorn.jpg; sourceTree = "<group>"; };
+		8E9B1C661AF6DB5500912AA9 /* kevin.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kevin.jpeg; sourceTree = "<group>"; };
+		8E9B1C671AF6DB5500912AA9 /* default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default.png; sourceTree = "<group>"; };
+		8E9B1C681AF6DB5500912AA9 /* ai.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ai.png; sourceTree = "<group>"; };
 		8EADEE2C1ACE0DC00038C498 /* profileGifts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = profileGifts.swift; path = ../profileGifts.swift; sourceTree = "<group>"; };
 		8EB5E8D91AEEC6F200693AF2 /* door24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = door24.png; sourceTree = "<group>"; };
 		8EB5E8E31AEEC6FC00693AF2 /* user168.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user168.png; sourceTree = "<group>"; };
@@ -282,13 +298,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8446A9931A8BCD6600D51024 /* iWishImages */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = iWishImages;
-			sourceTree = "<group>";
-		};
 		849337A41A8E6913003456B5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -352,11 +361,18 @@
 		8E97304C1A86BA2C006543B1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8E9B1C611AF6DB5500912AA9 /* tester.png */,
+				8E9B1C621AF6DB5500912AA9 /* gemma.jpeg */,
+				8E9B1C631AF6DB5500912AA9 /* zach.jpg */,
+				8E9B1C641AF6DB5500912AA9 /* pat.jpeg */,
+				8E9B1C651AF6DB5500912AA9 /* unicorn.jpg */,
+				8E9B1C661AF6DB5500912AA9 /* kevin.jpeg */,
+				8E9B1C671AF6DB5500912AA9 /* default.png */,
+				8E9B1C681AF6DB5500912AA9 /* ai.png */,
 				8EB5E8E31AEEC6FC00693AF2 /* user168.png */,
 				8EB5E8D91AEEC6F200693AF2 /* door24.png */,
 				8E12370D1AEEC49900C2A863 /* background_1.png */,
 				8EFEFCE11A9AA4D8004EC929 /* unicorn.jpg */,
-				8446A9931A8BCD6600D51024 /* iWishImages */,
 				8E9730571A86BA2C006543B1 /* Images.xcassets */,
 				8E9730591A86BA2C006543B1 /* LaunchScreen.xib */,
 				8E97304E1A86BA2C006543B1 /* AppDelegate.swift */,
@@ -639,9 +655,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E9730561A86BA2C006543B1 /* Main.storyboard in Resources */,
+				8E9B1C6E1AF6DB5500912AA9 /* kevin.jpeg in Resources */,
+				8E9B1C6B1AF6DB5500912AA9 /* zach.jpg in Resources */,
 				8E97305B1A86BA2C006543B1 /* LaunchScreen.xib in Resources */,
+				8E9B1C6A1AF6DB5500912AA9 /* gemma.jpeg in Resources */,
+				8E9B1C701AF6DB5500912AA9 /* ai.png in Resources */,
+				8E9B1C6D1AF6DB5500912AA9 /* unicorn.jpg in Resources */,
 				8EB5E8E41AEEC6FC00693AF2 /* user168.png in Resources */,
 				8E9730581A86BA2C006543B1 /* Images.xcassets in Resources */,
+				8E9B1C6C1AF6DB5500912AA9 /* pat.jpeg in Resources */,
+				8E9B1C6F1AF6DB5500912AA9 /* default.png in Resources */,
+				8E9B1C691AF6DB5500912AA9 /* tester.png in Resources */,
 				8E12370E1AEEC49900C2A863 /* background_1.png in Resources */,
 				8EFEFCE21A9AA4D8004EC929 /* unicorn.jpg in Resources */,
 				8EB5E8DA1AEEC6F200693AF2 /* door24.png in Resources */,

@@ -23,7 +23,7 @@
                   symbolName = "iWish.EventsTableViewController.init (iWish.EventsTableViewController.Type)(style : C.UITableViewStyle) -&gt; iWish.EventsTableViewController"
                   moduleName = "iWish"
                   urlString = "file:///Users/aivong/iWish/iWish/EventsTableViewController.swift"
-                  timestampString = "451805934.723958"
+                  timestampString = "452385421.919698"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"
@@ -37,7 +37,7 @@
                   symbolName = "iWish.EventsTableViewController.init (iWish.EventsTableViewController.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;ObjectiveC.NSBundle&gt;) -&gt; iWish.EventsTableViewController"
                   moduleName = "iWish"
                   urlString = "file:///Users/aivong/iWish/iWish/EventsTableViewController.swift"
-                  timestampString = "451805934.724132"
+                  timestampString = "452385421.919875"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"
@@ -51,7 +51,7 @@
                   symbolName = "iWish.EventsTableViewController.init (iWish.EventsTableViewController.Type)() -&gt; iWish.EventsTableViewController"
                   moduleName = "iWish"
                   urlString = "file:///Users/aivong/iWish/iWish/EventsTableViewController.swift"
-                  timestampString = "451805934.724274"
+                  timestampString = "452385421.920026"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"
@@ -65,7 +65,7 @@
                   symbolName = "iWish.EventsTableViewController.init (iWish.EventsTableViewController.Type)(coder : ObjectiveC.NSCoder) -&gt; iWish.EventsTableViewController"
                   moduleName = "iWish"
                   urlString = "file:///Users/aivong/iWish/iWish/EventsTableViewController.swift"
-                  timestampString = "451805934.724522"
+                  timestampString = "452385421.920201"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"
@@ -89,6 +89,52 @@
             endingLineNumber = "53"
             landmarkName = "updateViewWithGiftInformation()"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iWish/VerifyState.swift"
+            timestampString = "452385334.87773"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "VerifyState"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "globalinit_func4"
+                  moduleName = "iWish"
+                  urlString = "file:///Users/aivong/iWish/iWish/VerifyState.swift"
+                  timestampString = "452385421.925969"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iWish.VerifyState.selectedPic.mutableAddressor : Swift.ImplicitlyUnwrappedOptional&lt;Swift.String&gt;"
+                  moduleName = "iWish"
+                  urlString = "file:///Users/aivong/iWish/iWish/VerifyState.swift"
+                  timestampString = "452385421.926145"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
