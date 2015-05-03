@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lUF-FK-sLw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lUF-FK-sLw">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
@@ -76,9 +75,21 @@
                             </view>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="d37-CZ-J8h" firstAttribute="leading" secondItem="XOw-PW-MCn" secondAttribute="leadingMargin" constant="124" id="3dH-ve-hcv"/>
-                            <constraint firstItem="d37-CZ-J8h" firstAttribute="top" secondItem="MWh-Ft-okk" secondAttribute="bottom" id="bd6-Q2-EVj"/>
+                            <constraint firstAttribute="centerX" secondItem="d37-CZ-J8h" secondAttribute="centerX" constant="8" id="6iw-0P-XNx"/>
+                            <constraint firstItem="q2n-Kl-SbP" firstAttribute="top" secondItem="d37-CZ-J8h" secondAttribute="bottom" constant="148" id="flI-Hr-Yq7"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="6iw-0P-XNx"/>
+                                <exclude reference="flI-Hr-Yq7"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="6iw-0P-XNx"/>
+                                <include reference="flI-Hr-Yq7"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="logInButton" destination="PeB-Wf-ORd" id="piK-sg-9TA"/>
